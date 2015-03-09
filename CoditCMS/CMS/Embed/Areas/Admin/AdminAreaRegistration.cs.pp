@@ -16,7 +16,27 @@ namespace  $rootnamespace$.Areas.Admin
 
 		public override void RegisterArea(AreaRegistrationContext context)
 		{
-            //context.MapRoute(
+            
+			            context.MapRoute(
+               "Admin_start",
+               "Admin",
+               new { controller = "SiteSettings", action = "General" },
+               new[] { Namespace }
+           );
+
+            context.MapRoute(
+                "Admin_action",
+               "Admin/{controller}",
+                new { action = "General" },
+                new[] { Namespace }
+            );
+
+            context.MapRoute(
+                        "Admin_default",
+                        "Admin/{controller}/{action}/{id}",
+                        new { action = "Index", id = UrlParameter.Optional }
+                        );
+			//context.MapRoute(
             //    "AdminDefaultStartPage",
             //    "admin",
             //    new { controller = MVC.Admin.Locations.Name, action = MVC.Admin.Locations.ActionNames.Index },

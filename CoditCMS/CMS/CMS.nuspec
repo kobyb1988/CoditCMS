@@ -1,22 +1,20 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>KenigLabs</authors>
-    <owners>KenigLabs</owners>
-    
+    <id>CoditCMS</id>
+    <version>1.0.0</version>
+    <authors>aganzha</authors>
+    <owners>aganzha</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>CoditCMS</description>
     <releaseNotes>CoditCMS</releaseNotes>
     <copyright>Copyright 2015</copyright>
-
   </metadata>
-  
   <files>
-    <file src="embed\**\*.*" target="content" />    
-    
+    <file src="embed\**\*.*" target="content" />
+    <file src="bin\Debug\DB.dll" target="lib\net45" />
+    <file src="bin\Debug\Libs.dll" target="lib\net45" />
+    <file src="bin\Debug\CMS.dll" target="lib\net45" />
   </files>
 
 </package>

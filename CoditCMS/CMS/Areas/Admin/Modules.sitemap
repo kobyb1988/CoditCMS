@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<siteMap>
+	<siteMapNode title="Konig Labs">
+		<siteMapNode title="Карта сайта" controller="Locations" action="index" />
+		<siteMapNode title="Статьи" controller="Article" action="" />
+		<siteMapNode title="Новости" controller="NewsItems" action="" />
+    <siteMapNode title="Галереи" controller="Galleries" action="" />
+    <siteMapNode title="Группы с описаниями" controller="DescGroups" action="" />
+    <siteMapNode title="Категории продукции" controller="Categories" action="" />
+    <siteMapNode title="Продукты" controller="Products" action="" />
+    <siteMapNode title="Каталоги" controller="Catalogs" action="" />
+    <siteMapNode title="Сертификаты" controller="Sertificates" action="" />
+    <siteMapNode title="Проекты" controller="Projects" action="" />
+	</siteMapNode>
+	<siteMapNode title="Обратная связь">
+		<siteMapNode title="Вопросы" controller="Questions" action=""/>
+	</siteMapNode>
+	<siteMapNode title="Логи и настройки сайта">
+		<siteMapNode title="Настройки почты" controller="SiteSettings" action="Emails" />
+		<siteMapNode title="Лог отправки почты" controller="SiteSettings" action="Logs" />
+		<siteMapNode title="Настройки сайта" controller="SiteSettings" action="General" />
+		<siteMapNode title="Пользователи" controller="Account" action="" />
+	</siteMapNode>
+</siteMap>
