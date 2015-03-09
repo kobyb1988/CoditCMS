@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS", "CMS\CMS.csproj", "{1EAD88E9-F75C-406C-B46C-01F0B111B560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libs", "Libs\Libs.csproj", "{F1AF1D4E-87B3-44E0-AF0A-CCA1F634BE17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{554E7884-BECC-4AFD-9203-D18B33EF3E53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedIn.Domain", "MedIn.Domain\MedIn.Domain.csproj", "{C0421861-C54C-4D27-8AEE-411459B9AF47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B7734EFB-5EEB-49D1-942F-49EA6A9F315B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedIn.Web", "MedIn.Web\MedIn.Web.csproj", "{A26F7471-74F4-442E-B97E-962969BA14AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EAD88E9-F75C-406C-B46C-01F0B111B560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EAD88E9-F75C-406C-B46C-01F0B111B560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EAD88E9-F75C-406C-B46C-01F0B111B560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EAD88E9-F75C-406C-B46C-01F0B111B560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1AF1D4E-87B3-44E0-AF0A-CCA1F634BE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1AF1D4E-87B3-44E0-AF0A-CCA1F634BE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1AF1D4E-87B3-44E0-AF0A-CCA1F634BE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1AF1D4E-87B3-44E0-AF0A-CCA1F634BE17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554E7884-BECC-4AFD-9203-D18B33EF3E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554E7884-BECC-4AFD-9203-D18B33EF3E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554E7884-BECC-4AFD-9203-D18B33EF3E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554E7884-BECC-4AFD-9203-D18B33EF3E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0421861-C54C-4D27-8AEE-411459B9AF47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0421861-C54C-4D27-8AEE-411459B9AF47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0421861-C54C-4D27-8AEE-411459B9AF47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0421861-C54C-4D27-8AEE-411459B9AF47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26F7471-74F4-442E-B97E-962969BA14AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26F7471-74F4-442E-B97E-962969BA14AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26F7471-74F4-442E-B97E-962969BA14AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26F7471-74F4-442E-B97E-962969BA14AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
