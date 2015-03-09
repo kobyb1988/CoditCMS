@@ -11,6 +11,12 @@
     <description>CoditCMS</description>
     <releaseNotes>CoditCMS</releaseNotes>
     <copyright>Copyright 2015</copyright>
-    
+
   </metadata>
+  
+  <files>
+    <file src="embed\**\*.*" target="content" />    
+    
+  </files>
+
 </package>

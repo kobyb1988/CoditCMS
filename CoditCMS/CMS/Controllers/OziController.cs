@@ -6,7 +6,7 @@ using Libs;
 
 namespace CMS.Controllers
 {
-    public abstract class OziController : Controller
+    public abstract partial class OziController : Controller
     {
         protected string L(string key)
         {
