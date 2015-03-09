@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace MedIn.Web.Areas.Admin.Ckeditor.plugins.filemanager.connectors.ashx
+namespace $rootnamespace$.Areas.Admin.Ckeditor.plugins.filemanager.connectors.ashx
 {
 	/// <summary>
 	/// Summary description for FileManager

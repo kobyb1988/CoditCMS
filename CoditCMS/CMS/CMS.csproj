@@ -102,9 +102,7 @@
     <Compile Include="Controllers\GenericController.Files.cs" />
     <Compile Include="Controllers\OziController.cs" />
     <None Include="Embed\Areas\Admin\AdminAreaRegistration.cs.pp" />
-    <Compile Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\FileManager.ashx.cs">
-      <DependentUpon>FileManager.ashx</DependentUpon>
-    </Compile>
+    <None Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\FileManager.ashx.cs.pp" />
     <None Include="Embed\Areas\Admin\Controllers\SiteSettingsController.cs.pp" />
     <None Include="Embed\Areas\Admin\Controllers\UtilsController.cs.pp" />
     <None Include="Embed\Areas\Admin\Models\CommentViewModel.cs.pp" />
@@ -463,9 +461,9 @@
     <Content Include="Embed\Areas\Admin\Ckeditor\plugins\dialog\dialogDefinition.js" />
     <Content Include="Embed\Areas\Admin\Ckeditor\plugins\div\dialogs\div.js" />
     <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\.gitignore" />
-    <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\asp\filemanager.asp" />
-    <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\asp\filemanager.class.asp" />
-    <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\asp\filemanager.config.asp" />
+    <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\asp\filemanager.asp" />
+    <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\asp\filemanager.class.asp" />
+    <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\asp\filemanager.config.asp" />
     <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\jsp\libraries\java\src\com\nartex\FileManager.java" />
     <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\jsp\libraries\java\src\org\json\JSONArray.java" />
     <Content Include="Embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\jsp\libraries\java\src\org\json\JSONException.java" />
