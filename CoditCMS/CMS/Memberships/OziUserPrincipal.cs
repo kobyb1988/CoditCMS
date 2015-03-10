@@ -3,9 +3,9 @@ using System.Web.Security;
 
 namespace CMS.Memberships
 {
-	public class OziUserPrincipal : IPrincipal
+	public class CoditUserPrincipal : IPrincipal
 	{
-		public OziUserPrincipal(IIdentity identity)
+		public CoditUserPrincipal(IIdentity identity)
 		{
 			Identity = identity;
 		}

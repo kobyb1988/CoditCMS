@@ -4,7 +4,7 @@ namespace  $rootnamespace$.Areas.Admin
 {
 	public class AdminAreaRegistration : AreaRegistration
 	{
-		public readonly string Namespace = "MedIn.Web.Areas.Admin.Controllers";
+		public readonly string Namespace = "$rootnamespace$.Areas.Admin.Controllers";
 
 		public override string AreaName
 		{

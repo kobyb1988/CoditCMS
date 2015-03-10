@@ -31,14 +31,14 @@
 
 	public class ControlsNames
 	{
-		public const string String = "ozi_String";
-		public const string Filter = "ozi_Filter";
-		public const string Date = "ozi_Date";
-		public const string Checkbox = "ozi_Checkbox";
+		public const string String = "codit_String";
+		public const string Filter = "codit_Filter";
+		public const string Date = "codit_Date";
+		public const string Checkbox = "codit_Checkbox";
 		public const string Create = "create";
 		public const string Localize = "localize";
-		public const string Currency = "ozi_Currency";
-		public const string Image = "ozi_Image";
+		public const string Currency = "codit_Currency";
+		public const string Image = "codit_Image";
 		public const string Sort = "sort";
 		public const string Visibility = "visibility";
 		//public const string = "";

@@ -3,14 +3,14 @@
 @model MedIn.Web.Areas.Admin.ViewModels.Accounts.LogOnModel
 @{
     Layout = "../Shared/_Account.cshtml";
-	ViewBag.OziPageTitle = "Ozi.cms — Авторизация";    
+	ViewBag.CoditPageTitle = "CoditCms.cms — Авторизация";    
 }    
 
 @using (Html.BeginForm()) 
 {
         
     <div class="auth-block">
-    <div id="logo"><img src="/Areas/Admin/Images/Default/logo.gif" alt="Ozi.cms 3.0" /></div>
+    <div id="logo"><img src="/Areas/Admin/Images/Default/logo.gif" alt="CoditCms.cms 3.0" /></div>
         <fieldset>
             <legend>Авторизация</legend>
             @Html.ValidationSummary(true, "Ошибка")

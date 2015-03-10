@@ -139,7 +139,7 @@
     <Compile Include="Mvc\Constants.cs" />
     <Compile Include="Mvc\DotOrgViewPage.cs" />
     <Compile Include="Mvc\IDotOrgWebContext.cs" />
-    <Compile Include="Mvc\OziModelBinder.cs" />
+    <Compile Include="Mvc\CoditModelBinder.cs" />
     <Compile Include="PagesSettings\FormSettings.cs" />
     <Compile Include="PagesSettings\Forms\CheckboxSettings.cs" />
     <Compile Include="PagesSettings\Forms\CodeSettings.cs" />
@@ -211,7 +211,7 @@
     <None Include="embed\Areas\Admin\Ckeditor\ckeditor.php" />
     <None Include="embed\Areas\Admin\Ckeditor\ckeditor_php4.php" />
     <None Include="embed\Areas\Admin\Ckeditor\ckeditor_php5.php" />
-    <None Include="embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\FileManager.ashx" />
+    <None Include="embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\FileManager.ashx.pp" />
     <None Include="embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\cfm\Application.cfc" />
     <None Include="embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\cfm\filemanager.cfm" />
     <None Include="embed\Areas\Admin\Ckeditor\plugins\filemanager\connectors\cfm\filemanager.config.cfm" />

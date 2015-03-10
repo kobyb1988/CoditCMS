@@ -6,7 +6,7 @@ using IOFile = System.IO.File;
 
 namespace $rootnamespace$.Areas.Admin.Controllers
 {
-    [OziAuthorize]
+    [CoditAuthorize]
     public partial class UtilsController : Controller
     {
         public virtual ActionResult ClearApplicationCache()

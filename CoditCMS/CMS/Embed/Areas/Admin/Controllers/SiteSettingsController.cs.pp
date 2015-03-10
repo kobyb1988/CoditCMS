@@ -12,8 +12,8 @@ using CMS.Models;
 
 namespace $rootnamespace$.Areas.Admin.Controllers
 {
-    [OziAuthorize(Roles = "admin, superadmin", LoginUrl = "/admin/account/login")]
-    public partial class SiteSettingsController : OziController
+    [CoditAuthorize(Roles = "admin, superadmin", LoginUrl = "/admin/account/login")]
+    public partial class SiteSettingsController : CoditController
     {
         const string PathTemplate = "~/App_Data/{0}.xml";
 

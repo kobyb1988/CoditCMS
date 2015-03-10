@@ -1,11 +1,11 @@
 ﻿@using System.Collections
 @using System.ComponentModel
-@using MedIn.OziCms.Controllers
-@using MedIn.OziCms.PagesSettings.Forms
+@using MedIn.CoditCms.Controllers
+@using MedIn.CoditCms.PagesSettings.Forms
 @using MedIn.Db.Entities
 @using MedIn.Libs
-@using DateSettings = MedIn.OziCms.PagesSettings.Forms.DateSettings
-@using StringSettings = MedIn.OziCms.PagesSettings.Forms.StringSettings
+@using DateSettings = MedIn.CoditCms.PagesSettings.Forms.DateSettings
+@using StringSettings = MedIn.CoditCms.PagesSettings.Forms.StringSettings
 
 @{
     var settings = (CollectionSettings)WebContext.FieldSettings;
@@ -137,7 +137,7 @@ var @(settings.Name)ViewModel = function() {
         { @GenerateJsonField(field, item) }
         foreach (var child in children)
         { <text> @(child.Name): @RenderInitModelValues(child, (IEntity)item), </text> } 
-        <text> ItemId: @(((IEntity)item).Id), OziPropertiesPath: '@(settings.GetFullPropertyName())'},</text>
+        <text> ItemId: @(((IEntity)item).Id), CoditPropertiesPath: '@(settings.GetFullPropertyName())'},</text>
     }
 @:]
 }
@@ -157,7 +157,7 @@ var @(settings.Name)ViewModel = function() {
 
 @helper RenderModel(CollectionSettings settings)
 {
-    var db = ((OziController) ViewContext.Controller).DataModelContext;
+    var db = ((CoditController) ViewContext.Controller).DataModelContext;
     foreach (var item in settings.Fields.GetOf<FieldSettings, CollectionSettings>())
     {
 @RenderModel(item)

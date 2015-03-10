@@ -1,7 +1,7 @@
 ﻿@using MedIn.Web
 @using MedIn.Web
 @{
-    WebContext.HtmlPageTitle = "Ozi.cms — редактирование объекта";
+    WebContext.HtmlPageTitle = "CoditCms.cms — редактирование объекта";
     Layout = MVC.Admin.Shared.Views._Main;
 }
 
@@ -34,7 +34,7 @@
         
 	Html.RenderPartial(Url.Content("~/Areas/Admin/Views/Shared/Form/FormButtons.cshtml"));
     
-    @Html.EditorFor(model => model, "ozi_Object")
+    @Html.EditorFor(model => model, "CoditCms_Object")
     
 	Html.RenderPartial(Url.Content("~/Areas/Admin/Views/Shared/Form/FormButtons.cshtml"));
 }

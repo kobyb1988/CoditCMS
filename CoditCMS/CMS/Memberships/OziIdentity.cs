@@ -5,21 +5,21 @@ using CMS.Mvc;
 
 namespace CMS.Memberships
 {
-	public class OziIdentity : IIdentity
+	public class CoditIdentity : IIdentity
 	{
-		public OziIdentity()
+		public CoditIdentity()
 		{
 			IsAuthenticated = false;
 			Name = string.Empty;
 		}
 
-		public OziIdentity(string username)
+		public CoditIdentity(string username)
 		{
 			Name = username;
 		}
 
 		
-		public OziIdentity(FormsAuthenticationTicket ticket)
+		public CoditIdentity(FormsAuthenticationTicket ticket)
 		{
 			if (ticket == null)
 				throw new ArgumentNullException("ticket");
@@ -48,13 +48,13 @@ namespace CMS.Memberships
 			IsAuthenticated = true;
 		}
 
-		public static OziIdentity FromString(string userContextData)
+		public static CoditIdentity FromString(string userContextData)
 		{
 			if (!string.IsNullOrEmpty(userContextData))
 			{
 				var values = userContextData.Split(new[] {Delimiter}, StringSplitOptions.RemoveEmptyEntries);
 				if (values.Length == 2 && values[0] == values[1])
-					return new OziIdentity(values[0]);
+					return new CoditIdentity(values[0]);
 			}
 			return null;
 		}

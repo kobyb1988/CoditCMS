@@ -17,11 +17,11 @@ using EntityState = System.Data.Entity.EntityState;
 
 namespace CMS.Mvc
 {
-	public class OziModelBinder : DefaultModelBinder
+	public class CoditModelBinder : DefaultModelBinder
 	{
 		private ModelBinderDictionary _binders;
 
-		private ModelBinderDictionary OziBinders
+		private ModelBinderDictionary CoditBinders
 		{
 			get { return _binders ?? (_binders = ModelBinders.Binders); }
 		}
@@ -175,7 +175,7 @@ namespace CMS.Mvc
 
 		private void BindProperties(ControllerContext controllerContext, ModelBindingContext bindingContext)
 		{
-			IEnumerable<PropertyDescriptor> properties = OziGetFilteredModelProperties(controllerContext, bindingContext);
+			IEnumerable<PropertyDescriptor> properties = CoditGetFilteredModelProperties(controllerContext, bindingContext);
 			foreach (PropertyDescriptor property in properties)
 			{
 				BindProperty(controllerContext, bindingContext, property);
@@ -185,18 +185,14 @@ namespace CMS.Mvc
 		protected override void BindProperty(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor)
 		{
 			// need to skip properties that aren't part of the request, else we might hit a StackOverflowException
-			var fullPropertyKey = OziCreateSubPropertyName(bindingContext.ModelName, propertyDescriptor.Name);
+			var fullPropertyKey = CoditCreateSubPropertyName(bindingContext.ModelName, propertyDescriptor.Name);
 			if (!bindingContext.ValueProvider.ContainsPrefix(fullPropertyKey) && (!(typeof(IEnumerable).IsAssignableFrom(propertyDescriptor.PropertyType)) || typeof(string) == propertyDescriptor.PropertyType))
 			{
 				return;
 			}
 
 			// call into the property's model binder
-			//IModelBinder propertyBinder = OziBinders.GetBinder(propertyDescriptor.PropertyType);
-			//if (propertyBinder.GetType() == typeof (DefaultModelBinder))
-			//{
-			//	propertyBinder = this;
-			//}
+			
 			var originalPropertyValue = propertyDescriptor.GetValue(bindingContext.Model);
 			var propertyMetadata = bindingContext.PropertyMetadata[propertyDescriptor.Name];
 			propertyMetadata.Model = originalPropertyValue;
@@ -360,17 +356,17 @@ namespace CMS.Mvc
 			// fallback to the type's default constructor
 			object result = null;
 			var isEntityCollection = typeof (IEntity).IsAssignableFrom(typeToCreate);
-			var db = ((OziController)controllerContext.Controller).DataModelContext;
+			var db = ((CoditController)controllerContext.Controller).DataModelContext;
 			if (isEntityCollection)
 			{
 				// надо вот именно здесь проверять существует ли уже такое значение в базе (по ключу и, если надо, имени)
 				// именно тут надо добавлять элемент в базу. Итак:
-				var id = bindingContext.ValueProvider.GetValue(OziCreateSubPropertyName(bindingContext.ModelName, "Id"));
+				var id = bindingContext.ValueProvider.GetValue(CoditCreateSubPropertyName(bindingContext.ModelName, "Id"));
                 ((IObjectContextAdapter)db).ObjectContext.TryGetObjectByKey(new EntityKey(Libs.TypeHelpers.GetEntitySetName(typeToCreate, db), "Id", id.ConvertTo(typeof(int))), out result);
 				if (result == null)
 				{
 					var added = ((IObjectContextAdapter)db).ObjectContext.ObjectStateManager.GetObjectStateEntries((EntityState) System.Data.EntityState.Added);
-					var name = bindingContext.ValueProvider.GetValue(OziCreateSubPropertyName(bindingContext.ModelName, "Name"));
+					var name = bindingContext.ValueProvider.GetValue(CoditCreateSubPropertyName(bindingContext.ModelName, "Name"));
 					result = added.FirstOrDefault(entry => Libs.TypeHelpers.GetPropertyValue(entry.Entity, "Name", null) == name);
 					if (result != null)
 					{
@@ -389,17 +385,17 @@ namespace CMS.Mvc
 			return result;
 		}
 
-		protected static string OziCreateSubIndexName(string prefix, int index)
+		protected static string CoditCreateSubIndexName(string prefix, int index)
 		{
 			return String.Format(CultureInfo.InvariantCulture, "{0}[{1}]", prefix, index);
 		}
 
-		protected static string OziCreateSubIndexName(string prefix, string index)
+		protected static string CoditCreateSubIndexName(string prefix, string index)
 		{
 			return String.Format(CultureInfo.InvariantCulture, "{0}[{1}]", prefix, index);
 		}
 
-		protected static string OziCreateSubPropertyName(string prefix, string propertyName)
+		protected static string CoditCreateSubPropertyName(string prefix, string propertyName)
 		{
 			if (String.IsNullOrEmpty(prefix))
 			{
@@ -412,7 +408,7 @@ namespace CMS.Mvc
 			return prefix + "." + propertyName;
 		}
 
-		protected IEnumerable<PropertyDescriptor> OziGetFilteredModelProperties(ControllerContext controllerContext, ModelBindingContext bindingContext)
+		protected IEnumerable<PropertyDescriptor> CoditGetFilteredModelProperties(ControllerContext controllerContext, ModelBindingContext bindingContext)
 		{
 			var properties = GetModelProperties(controllerContext, bindingContext);
 			var propertyFilter = bindingContext.PropertyFilter;
@@ -424,7 +420,7 @@ namespace CMS.Mvc
 
 		private static void GetIndexes(ModelBindingContext bindingContext, out bool stopOnIndexNotFound, out IEnumerable<string> indexes)
 		{
-			var indexKey = OziCreateSubPropertyName(bindingContext.ModelName, "index");
+			var indexKey = CoditCreateSubPropertyName(bindingContext.ModelName, "index");
 			var valueProviderResult = bindingContext.ValueProvider.GetValue(indexKey);
 
 			if (valueProviderResult != null)
@@ -492,7 +488,7 @@ namespace CMS.Mvc
 
 			foreach (var validationResult in ModelValidator.GetModelValidator(bindingContext.ModelMetadata, controllerContext).Validate(null))
 			{
-				var subPropertyName = OziCreateSubPropertyName(bindingContext.ModelName, validationResult.MemberName);
+				var subPropertyName = CoditCreateSubPropertyName(bindingContext.ModelName, validationResult.MemberName);
 
 				if (!startedValid.ContainsKey(subPropertyName))
 				{
@@ -527,7 +523,7 @@ namespace CMS.Mvc
 		{
 			var propertyMetadata = bindingContext.PropertyMetadata[propertyDescriptor.Name];
 			propertyMetadata.Model = value;
-			var modelStateKey = OziCreateSubPropertyName(bindingContext.ModelName, propertyMetadata.PropertyName);
+			var modelStateKey = CoditCreateSubPropertyName(bindingContext.ModelName, propertyMetadata.PropertyName);
 
 			// If the value is null, and the validation system can find a Required validator for
 			// us, we'd prefer to run it before we attempt to set the value; otherwise, property
@@ -593,18 +589,13 @@ namespace CMS.Mvc
 			bool stopOnIndexNotFound;
 			IEnumerable<string> indexes;
 			GetIndexes(bindingContext, out stopOnIndexNotFound, out indexes);
-			//var elementBinder = OziBinders.GetBinder(elementType);
-			//if (elementBinder.GetType() == typeof(DefaultModelBinder))
-			//{
-			//	elementBinder = this;
-			//}
 
 			// build up a list of items from the request
 			var modelList = new List<object>();
 			var isEntityCollection = typeof (IEntity).IsAssignableFrom(elementType);
 			foreach (string currentIndex in indexes)
 			{
-				var subIndexKey = OziCreateSubIndexName(bindingContext.ModelName, currentIndex);
+				var subIndexKey = CoditCreateSubIndexName(bindingContext.ModelName, currentIndex);
 				if (!bindingContext.ValueProvider.ContainsPrefix(subIndexKey))
 				{
 					if (stopOnIndexNotFound)
@@ -703,24 +694,15 @@ namespace CMS.Mvc
 			IEnumerable<string> indexes;
 			GetIndexes(bindingContext, out stopOnIndexNotFound, out indexes);
 
-			//IModelBinder keyBinder = OziBinders.GetBinder(keyType);
-			//if (keyBinder.GetType() == typeof(DefaultModelBinder))
-			//{
-			//	keyBinder = this;
-			//}
-			//IModelBinder valueBinder = OziBinders.GetBinder(valueType);
-			//if (valueBinder.GetType() == typeof(DefaultModelBinder))
-			//{
-			//	valueBinder = this;
-			//}
+			
 
 			// build up a list of items from the request
 			var modelList = new List<KeyValuePair<object, object>>();
 			foreach (string currentIndex in indexes)
 			{
-				var subIndexKey = OziCreateSubIndexName(bindingContext.ModelName, currentIndex);
-				var keyFieldKey = OziCreateSubPropertyName(subIndexKey, "key");
-				var valueFieldKey = OziCreateSubPropertyName(subIndexKey, "value");
+				var subIndexKey = CoditCreateSubIndexName(bindingContext.ModelName, currentIndex);
+				var keyFieldKey = CoditCreateSubPropertyName(subIndexKey, "key");
+				var valueFieldKey = CoditCreateSubPropertyName(subIndexKey, "value");
 
 				if (!(bindingContext.ValueProvider.ContainsPrefix(keyFieldKey) && bindingContext.ValueProvider.ContainsPrefix(valueFieldKey)))
 				{

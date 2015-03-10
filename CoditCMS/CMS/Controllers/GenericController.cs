@@ -26,8 +26,8 @@ using CurrencySettings = CMS.PagesSettings.Forms.CurrencySettings;
 namespace CMS.Controllers
 {
 	[ValidateInput(false)]
-	[OziAuthorize]
-	public abstract partial class GenericController<TEntity, TDbContext> : OziController
+	[CoditAuthorize]
+	public abstract partial class GenericController<TEntity, TDbContext> : CoditController
 		where TEntity : class, IEntity, new()
 		where TDbContext : DbContext, new()
 	{
@@ -280,20 +280,10 @@ namespace CMS.Controllers
 
 			UpdateCurrencies(entity, collection);
 
-			//if (Binders.GetBinder(typeof (TEntity)).GetType() == typeof(DefaultModelBinder))
-			//{
-			//	Binders.Add(typeof(TEntity), new OziModelBinder());
-			//}
+			
 			TryUpdateModel(entity, collection);
-			//var bindingContext = new ModelBindingContext
-			//{
-			//	ModelMetadata = ModelMetadataProviders.Current.GetMetadataForType(() => entity, typeof(TEntity)),
-			//	ModelName = null,
-			//	ModelState = ModelState,
-			//	PropertyFilter = null,
-			//	ValueProvider = ValueProvider
-			//};
-			//new OziModelBinder().BindModel(ControllerContext, bindingContext);
+			
+			
 
 			UpdateAlias(entity, collection);
 			UpdateCollections(entity, collection);

@@ -9,7 +9,7 @@ namespace CMS.Memberships.Implementations
 	{
 		public void SignIn(string username, bool createPersistentCookie)
 		{
-			var userData = new OziIdentity(username);
+			var userData = new CoditIdentity(username);
 			var authTicket = new FormsAuthenticationTicket(1, username, DateTime.Now, CalculateCookieExpirationDate(), createPersistentCookie, userData.ToString());
 			var ticket = FormsAuthentication.Encrypt(authTicket);
 			var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, ticket);
@@ -23,12 +23,12 @@ namespace CMS.Memberships.Implementations
 
 		public IPrincipal GetPrincipal(string encryptedTicket)
 		{
-			return new OziUserPrincipal(GetIdentity(encryptedTicket));
+			return new CoditUserPrincipal(GetIdentity(encryptedTicket));
 		}
 
 		private IIdentity GetIdentity(string encryptedTicket)
 		{
-			return new OziIdentity(Decrypt(encryptedTicket));
+			return new CoditIdentity(Decrypt(encryptedTicket));
 		}
 
 		private static DateTime CalculateCookieExpirationDate()

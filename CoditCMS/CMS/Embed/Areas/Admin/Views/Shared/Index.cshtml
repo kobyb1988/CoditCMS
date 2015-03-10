@@ -4,7 +4,7 @@
 @model ListViewModel
 
 @{
-    ViewBag.HtmlPageTitle = "OziCms.cms — список объектов";
+    ViewBag.HtmlPageTitle = "CoditCms.cms — список объектов";
     var roles = Roles.GetRolesForUser(User.Identity.Name);
     Func<string, bool> allowed = role => string.IsNullOrEmpty(role) || roles.Contains(role);
 }

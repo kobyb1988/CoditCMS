@@ -6,7 +6,7 @@ using System.Web.Security;
 
 namespace CMS.Memberships
 {
-    public class OziAuthorizeAttribute : AuthorizeAttribute
+    public class CoditAuthorizeAttribute : AuthorizeAttribute
     {
 		public string LoginUrl { get; set; }
 
@@ -15,7 +15,7 @@ namespace CMS.Memberships
 			var authCookie = httpContext.Request.Cookies[FormsAuthentication.FormsCookieName];
 			if (authCookie == null)
 			{
-				httpContext.User = new OziUserPrincipal(new OziIdentity());
+				httpContext.User = new CoditUserPrincipal(new CoditIdentity());
 				return false;
 			}
 			var formsAuth = DependencyResolver.Current.GetService<IFormsAuthenticationService>();
