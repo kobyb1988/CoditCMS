@@ -1,4 +1,4 @@
-﻿@using MedIn.Domain.Entities;
+﻿@using CMS.Models;
 
 @{
     var model = (ReferralField)WebContext.Model ?? new ReferralField();

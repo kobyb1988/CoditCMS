@@ -1,5 +1,5 @@
 ﻿@using $rootnamespace$
-@model MedIn.Db.Entities.ISortableEntity
+@model DB.Entities.ISortableEntity
 
 <input type="hidden" name="SortListItems.Index" value="@Model.Id" />
 <input type="hidden" name="SortListItems[@Model.Id].Id" value="@Model.Id" />

@@ -4,7 +4,6 @@ using System.Net.Configuration;
 using System.Net.Mail;
 using System.Web.Configuration;
 using System.Web.Mvc;
-//using MedIn.Domain.Entities;
 using CMS.Controllers;
 using CMS.Memberships;
 using $rootnamespace$;

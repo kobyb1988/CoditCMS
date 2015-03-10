@@ -1,12 +1,12 @@
 ﻿@using System.Collections
 @using System.ComponentModel
 @using CMS.Controllers
-@using MedIn.CoditCms.Helpers
-@using MedIn.CoditCms.PagesSettings.Forms
+@using CMS.Helpers
+@using CMS.PagesSettings.Forms
 @using $rootnamespace$
 @using $rootnamespace$.Core
-@using MedIn.Db.Entities
-@using MedIn.Libs
+@using DB.Entities
+@using Libs
 
 @{
     

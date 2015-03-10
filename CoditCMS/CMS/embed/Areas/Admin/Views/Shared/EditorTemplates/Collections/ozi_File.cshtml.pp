@@ -1,4 +1,4 @@
-﻿@using MedIn.CoditCms.PagesSettings.Forms
+﻿@using CMS.PagesSettings.Forms
 @using $rootnamespace$
 
 @model UploadFileSettings

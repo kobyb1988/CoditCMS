@@ -1,5 +1,5 @@
 ﻿@using $rootnamespace$
-@model MedIn.CoditCms.PagesSettings.Forms.StringSettings
+@model CMS.PagesSettings.Forms.StringSettings
 @{
     var bind = string.Format("{{value: {0}, attr: {{ name: generateName() + '.{0}' }}}}", Model.Name);
 }

@@ -1,7 +1,7 @@
 ﻿@using System.Diagnostics
 @using System.Globalization
 @using $rootnamespace$
-@using CurrencySettings = MedIn.CoditCms.PagesSettings.Forms.CurrencySettings
+@using CurrencySettings = CMS.PagesSettings.Forms.CurrencySettings
 
 @{
     var fieldSettings = (CurrencySettings)WebContext.FieldSettings;

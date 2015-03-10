@@ -1,6 +1,6 @@
 ﻿@using $rootnamespace$
-@using MedIn.Db.Entities
-@using MedIn.Libs
+@using DB.Entities
+@using Libs
 @model ListViewModel
 
 @{

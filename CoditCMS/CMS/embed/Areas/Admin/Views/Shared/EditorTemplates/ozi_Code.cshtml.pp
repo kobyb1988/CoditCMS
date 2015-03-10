@@ -1,4 +1,4 @@
-﻿@using MedIn.CoditCms.PagesSettings.Forms
+﻿@using CMS.PagesSettings.Forms
 @{ 
     var fieldSettings = (CodeSettings)WebContext.FieldSettings;
     var path = string.Format("{0}/{1}/{2}.js", "~/Areas/Admin/Scripts/Default/CodeMirror/mode", fieldSettings.Type, fieldSettings.Type);

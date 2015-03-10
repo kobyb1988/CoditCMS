@@ -1,6 +1,5 @@
 ﻿@using $rootnamespace$
-@using MedIn.Libs
-@using $rootnamespace$
+@using Libs
 <!DOCTYPE html>
 
 <html>

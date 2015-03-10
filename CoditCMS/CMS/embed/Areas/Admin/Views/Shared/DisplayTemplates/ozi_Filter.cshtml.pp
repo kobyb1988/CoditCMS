@@ -1,5 +1,5 @@
-﻿@using MedIn.CoditCms.PagesSettings
-@using MedIn.Libs
+﻿@using CMS.PagesSettings
+@using Libs
 @model string
 @{
 	var column = (FilterSettings)ViewData["ColSettings"];

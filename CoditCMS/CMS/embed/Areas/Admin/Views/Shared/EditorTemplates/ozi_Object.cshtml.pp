@@ -1,4 +1,4 @@
-﻿@using MedIn.CoditCms.PagesSettings
+﻿@using CMS.PagesSettings
 @using $rootnamespace$
 @model Object
 

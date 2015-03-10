@@ -1,5 +1,5 @@
 ﻿@using $rootnamespace$
-@using MedIn.Libs
+@using Libs
 @{
     var settings = WebContext.CurrentTab;
     var roles = Roles.GetRolesForUser(User.Identity.Name);

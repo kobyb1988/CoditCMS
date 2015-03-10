@@ -1,7 +1,7 @@
 ﻿@using System.Collections
-@using MedIn.CoditCms.PagesSettings.Forms
+@using CMS.PagesSettings.Forms
 @using $rootnamespace$
-@using MedIn.Db.Entities
+@using DB.Entities
 @{
     var field = (UploadFileSettings)WebContext.FieldSettings;
     //var propertyValue = TypeHelpers.GetPropertyValue(Model, fieldSettings.Name);

@@ -1,11 +1,11 @@
 ﻿@using System.Collections
 @using System.ComponentModel
-@using MedIn.CoditCms.Controllers
-@using MedIn.CoditCms.PagesSettings.Forms
-@using MedIn.Db.Entities
-@using MedIn.Libs
-@using DateSettings = MedIn.CoditCms.PagesSettings.Forms.DateSettings
-@using StringSettings = MedIn.CoditCms.PagesSettings.Forms.StringSettings
+@using CMS.Controllers
+@using CMS.PagesSettings.Forms
+@using DB.Entities
+@using Libs
+@using DateSettings = CMS.PagesSettings.Forms.DateSettings
+@using StringSettings = CMS.PagesSettings.Forms.StringSettings
 
 @{
     var settings = (CollectionSettings)WebContext.FieldSettings;

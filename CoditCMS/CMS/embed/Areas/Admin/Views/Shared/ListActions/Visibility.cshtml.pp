@@ -1,6 +1,6 @@
 ﻿@using $rootnamespace$
-@using MedIn.Db.Entities
-@model MedIn.Db.Entities.IEntity
+@using DB.Entities
+@model DB.Entities.IEntity
 
 @if (((IVisibleEntity)Model).Visibility)
 {
