@@ -9,7 +9,8 @@ using CMS.Memberships;
 using CMS.Memberships.Implementations;
 using CMS.Mvc;
 using CMS.Services;
-using CMS.Models;$rootnamespace$.Areas.Admin.ViewModels.Accounts;
+using CMS.Models;
+using $rootnamespace$.Areas.Admin.ViewModels.Accounts;
 
 using Membership = System.Web.Security.Membership;
 using CMS.Models;
