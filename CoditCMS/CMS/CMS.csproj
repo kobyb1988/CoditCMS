@@ -117,6 +117,7 @@
     <None Include="embed\Areas\Admin\ViewModels\FineUploadResult.cs.pp" />
     <None Include="embed\Areas\Admin\ViewModels\ImportViewModel.cs.pp" />
     <None Include="embed\Areas\Admin\ViewModels\JsonProjectModel.cs.pp" />
+    <None Include="embed\Areas\Admin\Controllers\AccountController.cs.pp" />
     <Compile Include="Helpers\MvcExtensions.cs" />
     <Compile Include="Helpers\PlainTree.cs" />
     <Compile Include="Infrastructure\FilterParameters.cs" />
