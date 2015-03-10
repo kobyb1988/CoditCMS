@@ -1,4 +1,4 @@
-﻿namespace MedIn.Web.Areas.Admin.ViewModels
+﻿namespace $rootnamespace$.Areas.Admin.ViewModels
 {
 	public class ImportViewModel
 	{

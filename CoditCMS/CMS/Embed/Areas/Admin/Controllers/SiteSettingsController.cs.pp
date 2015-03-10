@@ -7,7 +7,7 @@ using System.Web.Mvc;
 //using MedIn.Domain.Entities;
 using CMS.Controllers;
 using CMS.Memberships;
-using MedIn.Web;
+using $rootnamespace$;
 using CMS.Models;
 
 namespace $rootnamespace$.Areas.Admin.Controllers
