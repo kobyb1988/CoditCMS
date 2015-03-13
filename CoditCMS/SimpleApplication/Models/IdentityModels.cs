@@ -30,5 +30,6 @@ namespace SimpleApplication.Models
             return new ApplicationDbContext();
         }
         public virtual DbSet<SimpleModel> SimpleModels { get; set; }
+        public virtual DbSet<AreaModel> AreaModels { get; set; }
     }
 }

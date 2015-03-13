@@ -162,6 +162,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Test\Controllers\AreaModelsController.cs" />
+    <Compile Include="Areas\Test\TestAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -170,6 +172,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AreaModel.cs" />
     <Compile Include="Models\DBInitializer.cs" />
     <Compile Include="Models\SimpleModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -186,6 +189,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Test\Views\web.config" />
+    <Content Include="Areas\Test\Views\AreaModels\Create.cshtml" />
+    <Content Include="Areas\Test\Views\AreaModels\Delete.cshtml" />
+    <Content Include="Areas\Test\Views\AreaModels\Details.cshtml" />
+    <Content Include="Areas\Test\Views\AreaModels\Edit.cshtml" />
+    <Content Include="Areas\Test\Views\AreaModels\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -241,6 +250,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Test\Models\" />
+    <Folder Include="Areas\Test\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
