@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DB.Entities
 {
-    class EmailLog
+    public class EmailLog
     {
         
         public global::System.Int32 Id { get; set; }

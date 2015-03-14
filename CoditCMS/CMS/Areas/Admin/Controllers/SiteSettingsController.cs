@@ -63,7 +63,7 @@ namespace MedIn.Web.Areas.Admin.Controllers
 
         public virtual ActionResult General()
         {
-            using (var db = new DataModelContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var model = db.SiteSettings.ToList();
                 return View(model);
@@ -73,7 +73,7 @@ namespace MedIn.Web.Areas.Admin.Controllers
         [HttpPost]
         public virtual ActionResult General(FormCollection values)
         {
-            using (var db = new DataModelContext())
+            using (var db = ApplicationDbContext.Create())
             {
                 var settings = db.SiteSettings.ToList();
                 foreach (string key in values.Keys)

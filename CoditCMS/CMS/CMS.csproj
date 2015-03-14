@@ -106,9 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.AccountController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Admin.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -122,7 +119,6 @@
     <Compile Include="Areas\Admin\Ckeditor\plugins\filemanager\connectors\ashx\FileManager.ashx.cs">
       <DependentUpon>FileManager.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\SiteSettingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UtilsController.cs" />
     <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />

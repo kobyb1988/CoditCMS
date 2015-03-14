@@ -35,8 +35,7 @@ namespace T4MVC
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class AdminClass
     {
-        public readonly string Name = "Admin";
-        public MedIn.Web.Areas.Admin.Controllers.AccountController Account = new MedIn.Web.Areas.Admin.Controllers.T4MVC_AccountController();
+        public readonly string Name = "Admin";        
         public MedIn.Web.Areas.Admin.Controllers.SiteSettingsController SiteSettings = new MedIn.Web.Areas.Admin.Controllers.T4MVC_SiteSettingsController();
         public MedIn.Web.Areas.Admin.Controllers.UtilsController Utils = new MedIn.Web.Areas.Admin.Controllers.T4MVC_UtilsController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
