@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using Microsoft.AspNet.Identity;
 namespace SimpleApplication.Models
 {
     public class DBInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ApplicationDbContext>
@@ -12,6 +13,8 @@ namespace SimpleApplication.Models
             var simple = "simple";
             simple += " and even simpler";
             simple += " and super simple";
+            //Add other entities using context methods
+
         }
     }
 }

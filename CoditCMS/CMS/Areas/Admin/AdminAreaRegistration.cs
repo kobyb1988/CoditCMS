@@ -2,20 +2,26 @@
 
 namespace MedIn.Web.Areas.Admin
 {
-	public class AdminAreaRegistration : AreaRegistration
-	{
-		public readonly string Namespace = "MedIn.Web.Areas.Admin.Controllers";
+    public class AdminAreaRegistration : AreaRegistration
+    {
+        public readonly string Namespace = "MedIn.Web.Areas.Admin.Controllers";
 
-		public override string AreaName
-		{
-			get
-			{
-				return "Admin";
-			}
-		}
+        public override string AreaName
+        {
+            get
+            {
+                return "Admin";
+            }
+        }
 
-		public override void RegisterArea(AreaRegistrationContext context)
-		{
+        public override void RegisterArea(AreaRegistrationContext context)
+        {
+            context.MapRoute(
+              "Admin_default",
+              "Admin/{controller}/{action}/{id}",
+              new { action = "Index", id = UrlParameter.Optional }
+          );
+            // aganzha
             //context.MapRoute(
             //    "AdminDefaultStartPage",
             //    "admin",
@@ -34,6 +40,6 @@ namespace MedIn.Web.Areas.Admin
             //    new { controller = MVC.Admin.Locations.Name, action = MVC.Admin.Locations.ActionNames.Index, id = UrlParameter.Optional },
             //    new[] { Namespace }
             //);
-		}
-	}
+        }
+    }
 }

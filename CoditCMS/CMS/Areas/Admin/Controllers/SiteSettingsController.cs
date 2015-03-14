@@ -11,7 +11,8 @@ using DB.DAL;
 
 namespace MedIn.Web.Areas.Admin.Controllers
 {
-    [OziAuthorize(Roles = "admin, superadmin", LoginUrl = "/admin/account/login")]
+    //[OziAuthorize(Roles = "admin, superadmin", LoginUrl = "/admin/account/login")]
+    [Authorize(Roles = "admin, superadmin")]
     public partial class SiteSettingsController : OziController
     {
         const string PathTemplate = "~/App_Data/{0}.xml";
