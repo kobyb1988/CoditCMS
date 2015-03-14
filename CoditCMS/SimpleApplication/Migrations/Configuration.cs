@@ -20,22 +20,22 @@ namespace SimpleApplication.Migrations
         protected override void Seed(SimpleApplication.Models.ApplicationDbContext context)
         {
 
-            var roleName = "admin";
+            //var roleName = "admin";
 
           
-            ApplicationUserManager userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-            var roleResult = roleManager.Create(new IdentityRole() { Name = roleName });
-            Console.WriteLine(roleResult.Succeeded.ToString());
+            //ApplicationUserManager userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            //var roleResult = roleManager.Create(new IdentityRole() { Name = roleName });
+            //Console.WriteLine(roleResult.Succeeded.ToString());
 
-            var user = new ApplicationUser { Email = "aganzha@yandex.ru", UserName = "aganzha@yandex.ru" };
-            var userResult = userManager.Create(user, "aganzha@yandex.ru");
+            //var user = new ApplicationUser { Email = "aganzha@yandex.ru", UserName = "aganzha@yandex.ru" };
+            //var userResult = userManager.Create(user, "aganzha@yandex.ru");
 
-            Console.WriteLine(userResult.Succeeded.ToString());
-            if (userResult.Succeeded)
-            {
-                userManager.AddToRole(user.Id, "admin");
-            }
+            //Console.WriteLine(userResult.Succeeded.ToString());
+            //if (userResult.Succeeded)
+            //{
+            //    userManager.AddToRole(user.Id, "admin");
+            //}
 
         }
     }
