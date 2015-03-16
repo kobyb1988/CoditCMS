@@ -67,7 +67,9 @@ namespace MedIn.Web.Areas.Admin.Controllers
             using (var db = ApplicationDbContext.Create())
             {
                 var model = db.SiteSettings.ToList();
+                var me = MVC.Admin.SiteSettings.General();
                 return View(model);
+                //return View("~/Areas/Admin/Views/SiteSettings/General.cshtml", model);
             }
         }
 

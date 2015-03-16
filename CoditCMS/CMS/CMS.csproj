@@ -380,9 +380,15 @@
     <None Include="Areas\Admin\Views\Shared\NotRealizedYet.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_Account.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_Main.cshtml" />
-    <None Include="Areas\Admin\Views\SiteSettings\Emails.cshtml" />
-    <None Include="Areas\Admin\Views\SiteSettings\General.cshtml" />
-    <None Include="Areas\Admin\Views\SiteSettings\Logs.cshtml" />
+    <None Include="Areas\Admin\Views\SiteSettings\Emails.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Areas\Admin\Views\SiteSettings\General.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Areas\Admin\Views\SiteSettings\Logs.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Areas\Admin\Views\Web.config" />
     <None Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <None Include="packages.config" />

@@ -17,8 +17,11 @@ namespace SimpleApplication.Controllers
         {
             
             ApplicationUserManager userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
-            ApplicationUser user = userManager.FindById(User.Identity.GetUserId());            
-            var isAdmin = userManager.IsInRole(user.Id, "admin");
+            ApplicationUser user = userManager.FindById(User.Identity.GetUserId());
+            if (user != null)
+            {
+                var isAdmin = userManager.IsInRole(user.Id, "admin");
+            }
             
             return View();
         }

@@ -1,7 +1,29 @@
-﻿using System.Web.Mvc;
+﻿using System.IO;
+using System.Reflection;
+using System.Web.Hosting;
+using System.Web.Mvc;
+using System.Linq;
 
 namespace MedIn.Web.Areas.Admin
 {
+    public class CustomViewEngine : RazorViewEngine
+    {
+        public CustomViewEngine()
+        {
+            MasterLocationFormats = new string[]
+        {
+            "~/bin/Views/{1}/{0}.cshtml",
+            "~/bin/Views/Shared/{0}.cshtml",
+
+        };
+            ViewLocationFormats = new string[]
+        {
+            "~/bin/Areas/Admin/Views/{1}/{0}.cshtml",  
+            "~/bin/Areas/Admin/Views/Shared/{0}.cshtml",
+        };
+        }
+    }
+
     public class AdminAreaRegistration : AreaRegistration
     {
         public readonly string Namespace = "MedIn.Web.Areas.Admin.Controllers";
@@ -16,10 +38,14 @@ namespace MedIn.Web.Areas.Admin
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
+            ViewEngines.Engines.Add(new CustomViewEngine());
+            
             context.MapRoute(
               "Admin_default",
               "Admin/{controller}/{action}/{id}",
               new { action = "Index", id = UrlParameter.Optional }
+                //,null
+                //,new string[] { "Namespace.Application.Controllers" }
           );
             // aganzha
             //context.MapRoute(
