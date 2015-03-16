@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿using MedIn.Web.Areas.Admin;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Web;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -33,3 +35,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.*")]
+[assembly: PreApplicationStartMethod(typeof(PluginAreaBootstrapper), "Init")]
