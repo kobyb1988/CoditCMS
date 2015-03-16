@@ -10,132 +10,27 @@ using System.Web.Compilation;
 namespace MedIn.Web.Areas.Admin
 {
 
-    public class PluginAreaBootstrapper
+
+
+
+    public class CustomViewEngine : RazorViewEngine
     {
-        public static readonly List<Assembly> PluginAssemblies = new List<Assembly>();
-
-        public static List<string> PluginNames()
+        public CustomViewEngine()
         {
-            return PluginAssemblies.Select(
-                pluginAssembly => pluginAssembly.GetName().Name)
-                .ToList();
-        }
-
-        public static void Init()
+            MasterLocationFormats = new string[]
         {
-            var fullPluginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Areas");
+            "~/bin/Views/{1}/{0}.cshtml",
+            "~/bin/Views/Shared/{0}.cshtml",
 
-            foreach (var file in Directory.EnumerateFiles(fullPluginPath, "*Plugin*.dll"))
-                PluginAssemblies.Add(Assembly.LoadFile(file));
-
-            PluginAssemblies.ForEach(BuildManager.AddReferencedAssembly);
+        };
+            ViewLocationFormats = new string[]
+        {
+            "~/bin/Areas/Admin/Views/{1}/{0}.cshtml",  
+            "~/bin/Areas/Admin/Views/Shared/{0}.cshtml",
+        };
         }
     }
 
-
-    //public class CustomViewEngine : RazorViewEngine
-    //{
-    //    public CustomViewEngine()
-    //    {
-    //        MasterLocationFormats = new string[]
-    //    {
-    //        "~/bin/Views/{1}/{0}.cshtml",
-    //        "~/bin/Views/Shared/{0}.cshtml",
-
-    //    };
-    //        ViewLocationFormats = new string[]
-    //    {
-    //        "~/bin/Areas/Admin/Views/{1}/{0}.cshtml",  
-    //        "~/bin/Areas/Admin/Views/Shared/{0}.cshtml",
-    //    };
-    //    }
-    //}
-
-    public class PluginRazorViewEngine : RazorViewEngine
-    {
-        public PluginRazorViewEngine()
-        {
-            AreaMasterLocationFormats = new[]
-        {
-            "~/Areas/{2}/Views/{1}/{0}.cshtml",
-            "~/Areas/{2}/Views/{1}/{0}.vbhtml",
-            "~/Areas/{2}/Views/Shared/{0}.cshtml",
-            "~/Areas/{2}/Views/Shared/{0}.vbhtml"
-        };
-
-            AreaPartialViewLocationFormats = new[]
-        {
-            "~/Areas/{2}/Views/{1}/{0}.cshtml",
-            "~/Areas/{2}/Views/{1}/{0}.vbhtml",
-            "~/Areas/{2}/Views/Shared/{0}.cshtml",
-            "~/Areas/{2}/Views/Shared/{0}.vbhtml"
-        };
-
-            var areaViewAndPartialViewLocationFormats = new List<string>
-        {
-            "~/Areas/{2}/Views/{1}/{0}.cshtml",
-            "~/Areas/{2}/Views/{1}/{0}.vbhtml",
-            "~/Areas/{2}/Views/Shared/{0}.cshtml",
-            "~/Areas/{2}/Views/Shared/{0}.vbhtml"
-        };
-
-            var partialViewLocationFormats = new List<string>
-        {
-            "~/Views/{1}/{0}.cshtml",
-            "~/Views/{1}/{0}.vbhtml",
-            "~/Views/Shared/{0}.cshtml",
-            "~/Views/Shared/{0}.vbhtml"
-        };
-
-            var masterLocationFormats = new List<string>
-        {
-            "~/Views/{1}/{0}.cshtml",
-            "~/Views/{1}/{0}.vbhtml",
-            "~/Views/Shared/{0}.cshtml",
-            "~/Views/Shared/{0}.vbhtml"
-        };
-
-            foreach (var plugin in PluginAreaBootstrapper.PluginNames())
-            {
-                masterLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/{1}/{0}.cshtml");
-                masterLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/{1}/{0}.vbhtml");
-                masterLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/Shared/{1}/{0}.cshtml");
-                masterLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/Shared/{1}/{0}.vbhtml");
-
-                partialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/{1}/{0}.cshtml");
-                partialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/{1}/{0}.vbhtml");
-                partialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/Shared/{0}.cshtml");
-                partialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/Shared/{0}.vbhtml");
-
-                areaViewAndPartialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/{1}/{0}.cshtml");
-                areaViewAndPartialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Views/{1}/{0}.vbhtml");
-                areaViewAndPartialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Areas/{2}/Views/{1}/{0}.cshtml");
-                areaViewAndPartialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Areas/{2}/Views/{1}/{0}.vbhtml");
-                areaViewAndPartialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Areas/{2}/Views/Shared/{0}.cshtml");
-                areaViewAndPartialViewLocationFormats.Add(
-                    "~/Areas/" + plugin + "/Areas/{2}/Views/Shared/{0}.vbhtml");
-            }
-
-            ViewLocationFormats = partialViewLocationFormats.ToArray();
-            MasterLocationFormats = masterLocationFormats.ToArray();
-            PartialViewLocationFormats = partialViewLocationFormats.ToArray();
-            AreaPartialViewLocationFormats = areaViewAndPartialViewLocationFormats.ToArray();
-            AreaViewLocationFormats = areaViewAndPartialViewLocationFormats.ToArray();
-        }
-    }
     public class AdminAreaRegistration : AreaRegistration
     {
         public readonly string Namespace = "MedIn.Web.Areas.Admin.Controllers";
@@ -150,8 +45,7 @@ namespace MedIn.Web.Areas.Admin
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            //ViewEngines.Engines.Add(new CustomViewEngine());
-            ViewEngines.Engines.Add(new PluginRazorViewEngine());
+            //ViewEngines.Engines.Add(new CustomViewEngine());            
             context.MapRoute(
               "Admin_default",
               "Admin/{controller}/{action}/{id}",

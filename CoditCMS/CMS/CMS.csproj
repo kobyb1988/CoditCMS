@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="DataAnnotationsExtensions">
       <HintPath>..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
     </Reference>
@@ -51,7 +54,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -80,6 +86,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
@@ -103,6 +112,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="T4MVCExtensions">
       <HintPath>..\packages\T4MVCExtensions.3.14.1\lib\net40\T4MVCExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +145,11 @@
     <Compile Include="Areas\Admin\ViewModels\FineUploadResult.cs" />
     <Compile Include="Areas\Admin\ViewModels\ImportViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\JsonProjectModel.cs" />
+    <Compile Include="Areas\Admin\Views\SiteSettings\General.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>General.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\GenericController.Collections.cs" />
     <Compile Include="Controllers\GenericController.cs" />
     <Compile Include="Controllers\GenericController.Files.cs" />
@@ -381,7 +398,10 @@
     <None Include="Areas\Admin\Views\Shared\_Account.cshtml" />
     <None Include="Areas\Admin\Views\Shared\_Main.cshtml" />
     <None Include="Areas\Admin\Views\SiteSettings\Emails.cshtml" />
-    <None Include="Areas\Admin\Views\SiteSettings\General.cshtml" />
+    <None Include="Areas\Admin\Views\SiteSettings\General.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>General.generated.cs</LastGenOutput>
+    </None>
     <None Include="Areas\Admin\Views\SiteSettings\Logs.cshtml" />
     <None Include="Areas\Admin\Views\Web.config" />
     <None Include="Areas\Admin\Views\_ViewStart.cshtml" />
