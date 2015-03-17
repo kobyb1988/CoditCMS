@@ -40,6 +40,12 @@ namespace ASP
     using System.Web.UI;
     using System.Web.WebPages;
     
+    #line 6 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+    using CMS;
+    
+    #line default
+    #line hidden
+    
     #line 3 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
     using CMS.Controllers;
     
@@ -60,28 +66,15 @@ namespace ASP
     #line hidden
     using CMS.PagesSettings.Lists;
     using CMS.ViewModels;
-    using DB.Entities;
     
-    #line 9 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-    using Libs;
+    #line 7 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+    using DB.Entities;
     
     #line default
     #line hidden
     
     #line 8 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-    using DB.Entities;
-    
-    #line default
-    #line hidden
-    
-    #line 6 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-    using CMS;
-    
-    #line default
-    #line hidden
-    
-    #line 7 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-    using CMS.Core;
+    using Libs;
     
     #line default
     #line hidden
@@ -91,14 +84,14 @@ namespace ASP
     public partial class _Areas_Admin_Views_Shared_EditorTemplates_ozi_Select_cshtml_ : CMS.Mvc.AdminViewPage<dynamic>
     {
 
-#line 171 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 170 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
 public System.Web.WebPages.HelperResult IsValue(string curVal, object model, string mString = null)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 172 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 171 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
  
     if (mString != null && curVal == mString)
     {
@@ -113,7 +106,7 @@ WriteLiteralTo(__razor_helper_writer, "selected=\"selected\"");
 WriteLiteralTo(__razor_helper_writer, "\r\n");
 
 
-#line 176 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 175 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
     }
     if (model is string && curVal == (string)model)
     {
@@ -128,7 +121,7 @@ WriteLiteralTo(__razor_helper_writer, "selected=\"selected\"");
 WriteLiteralTo(__razor_helper_writer, "\r\n");
 
 
-#line 180 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 179 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
     }
     else if (model is IEnumerable && !(model is string))
     {
@@ -146,7 +139,7 @@ WriteLiteralTo(__razor_helper_writer, "selected=\"selected\"");
 WriteLiteralTo(__razor_helper_writer, "\r\n");
 
 
-#line 187 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 186 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
         }
     }
     else if (model != null)
@@ -165,7 +158,7 @@ WriteLiteralTo(__razor_helper_writer, "selected=\"selected\"");
 WriteLiteralTo(__razor_helper_writer, "\r\n");
 
 
-#line 195 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 194 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
         }
     }
 
@@ -174,7 +167,7 @@ WriteLiteralTo(__razor_helper_writer, "\r\n");
 #line hidden
 });
 
-#line 197 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+#line 196 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
 }
 #line default
 #line hidden
@@ -187,7 +180,7 @@ WriteLiteralTo(__razor_helper_writer, "\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 11 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 10 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
   
     
     /*  описание свойств:
@@ -271,7 +264,7 @@ WriteLiteral("\r\n");
 WriteLiteral("\r\n\r\n");
 
             
-            #line 89 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 88 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
  if (!fieldSettings.Editable)
 {
 
@@ -281,14 +274,14 @@ WriteLiteral("\r\n\r\n");
             #line hidden
 WriteLiteral("    <select");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 3490), Tuple.Create("\"", 3535)
+WriteAttribute("name", Tuple.Create(" name=\"", 3455), Tuple.Create("\"", 3500)
             
-            #line 92 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-, Tuple.Create(Tuple.Create("", 3497), Tuple.Create<System.Object, System.Int32>(ViewData.TemplateInfo.HtmlFieldPrefix
+            #line 91 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+, Tuple.Create(Tuple.Create("", 3462), Tuple.Create<System.Object, System.Int32>(ViewData.TemplateInfo.HtmlFieldPrefix
             
             #line default
             #line hidden
-, 3497), false)
+, 3462), false)
 );
 
 WriteLiteral(" class=\"ozi-select\"");
@@ -296,7 +289,7 @@ WriteLiteral(" class=\"ozi-select\"");
 WriteLiteral(" \r\n        ");
 
             
-            #line 93 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 92 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
          if (fieldSettings.Multiple)
         {
 
@@ -310,7 +303,7 @@ WriteLiteral("multiple=\"multiple\" style=\"width: 400px;\"");
 WriteLiteral("\r\n");
 
             
-            #line 96 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 95 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
             if (fieldSettings.Height != 0)
             {
 
@@ -322,7 +315,7 @@ WriteLiteral("                ");
 WriteLiteral("size=\"");
 
             
-            #line 98 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 97 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                         Write(fieldSettings.Height);
 
             
@@ -333,7 +326,7 @@ WriteLiteral("\"");
 WriteLiteral("\r\n");
 
             
-            #line 99 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 98 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
             }
         } 
 
@@ -343,7 +336,7 @@ WriteLiteral("\r\n");
 WriteLiteral("        ");
 
             
-            #line 101 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 100 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
          if (fieldSettings.Disabled)
         {
             
@@ -356,7 +349,7 @@ WriteLiteral("disabled=\"disabled\"");
 WriteLiteral(" ");
 
             
-            #line 102 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 101 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                            }
 
             
@@ -365,7 +358,7 @@ WriteLiteral(" ");
 WriteLiteral("        ");
 
             
-            #line 103 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 102 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
          if (fieldSettings.Readonly)
         {
             
@@ -376,7 +369,7 @@ WriteLiteral(" ");
 WriteLiteral("readonly=\"readonly\"");
 
             
-            #line 104 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 103 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                           }
             
             #line default
@@ -384,13 +377,13 @@ WriteLiteral("readonly=\"readonly\"");
 WriteLiteral(">\r\n        \r\n");
 
             
-            #line 106 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 105 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 106 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 105 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
          foreach (OptionSettings option in fieldSettings.Options)
         {
             
@@ -399,7 +392,7 @@ WriteLiteral(">\r\n        \r\n");
 WriteLiteral("<option ");
 
             
-            #line 107 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 106 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
             Write(IsValue(option.Value, model, modelString));
 
             
@@ -408,7 +401,7 @@ WriteLiteral("<option ");
 WriteLiteral(" value=\"");
 
             
-            #line 107 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 106 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                               Write(option.Value);
 
             
@@ -417,7 +410,7 @@ WriteLiteral(" value=\"");
 WriteLiteral("\">");
 
             
-            #line 107 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 106 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                              Write(option.Title);
 
             
@@ -426,7 +419,7 @@ WriteLiteral("\">");
 WriteLiteral("</option>");
 
             
-            #line 107 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 106 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                         }
 
             
@@ -435,7 +428,7 @@ WriteLiteral("</option>");
 WriteLiteral("        ");
 
             
-            #line 108 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 107 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
          if (data != null)
         {
             foreach (var option in data)
@@ -453,7 +446,7 @@ WriteLiteral("        ");
 WriteLiteral("                <option ");
 
             
-            #line 118 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 117 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                    Write(IsValue(optionValue, model, modelString));
 
             
@@ -462,7 +455,7 @@ WriteLiteral("                <option ");
 WriteLiteral(" value=\"");
 
             
-            #line 118 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 117 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                     Write(optionValue);
 
             
@@ -471,7 +464,7 @@ WriteLiteral(" value=\"");
 WriteLiteral("\">");
 
             
-            #line 118 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 117 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                         if (fieldSettings.Levels)
                                                                                        {
                                                                                            for (var i = 0; i < (Int32.Parse(TypeHelpers.GetPropertyValue(option, "Level").ToString()) - 1); i++)
@@ -482,7 +475,7 @@ WriteLiteral("\">");
 WriteLiteral("&nbsp;-&nbsp;");
 
             
-            #line 121 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 120 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                       }
             
             #line default
@@ -492,13 +485,13 @@ WriteLiteral("○&nbsp;");
 WriteLiteral(" ");
 
             
-            #line 121 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 120 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                             }
             
             #line default
             #line hidden
             
-            #line 121 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 120 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                         Write(value);
 
             
@@ -507,7 +500,7 @@ WriteLiteral(" ");
 WriteLiteral("</option>\r\n");
 
             
-            #line 122 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 121 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
             }
         }
 
@@ -517,7 +510,7 @@ WriteLiteral("</option>\r\n");
 WriteLiteral("    </select>\r\n");
 
             
-            #line 125 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 124 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
 }
 else
 {
@@ -543,64 +536,64 @@ WriteLiteral("    <input");
 
 WriteLiteral(" type=\"hidden\"");
 
-WriteAttribute("name", Tuple.Create(" name=\"", 5861), Tuple.Create("\"", 5918)
+WriteAttribute("name", Tuple.Create(" name=\"", 5826), Tuple.Create("\"", 5883)
             
-            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-, Tuple.Create(Tuple.Create("", 5868), Tuple.Create<System.Object, System.Int32>(fieldSettings.Name
-            
-            #line default
-            #line hidden
-, 5868), false)
-, Tuple.Create(Tuple.Create("", 5889), Tuple.Create(".", 5889), true)
-            
-            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-, Tuple.Create(Tuple.Create("", 5890), Tuple.Create<System.Object, System.Int32>(fieldSettings.OptionValue
+            #line 141 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+, Tuple.Create(Tuple.Create("", 5833), Tuple.Create<System.Object, System.Int32>(fieldSettings.Name
             
             #line default
             #line hidden
-, 5890), false)
+, 5833), false)
+, Tuple.Create(Tuple.Create("", 5854), Tuple.Create(".", 5854), true)
+            
+            #line 141 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+, Tuple.Create(Tuple.Create("", 5855), Tuple.Create<System.Object, System.Int32>(fieldSettings.OptionValue
+            
+            #line default
+            #line hidden
+, 5855), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 5919), Tuple.Create("\"", 5974)
+WriteAttribute("id", Tuple.Create(" id=\"", 5884), Tuple.Create("\"", 5939)
             
-            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-        , Tuple.Create(Tuple.Create("", 5924), Tuple.Create<System.Object, System.Int32>(fieldSettings.Name
-            
-            #line default
-            #line hidden
-, 5924), false)
-, Tuple.Create(Tuple.Create("", 5945), Tuple.Create("_", 5945), true)
-            
-            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-                              , Tuple.Create(Tuple.Create("", 5946), Tuple.Create<System.Object, System.Int32>(fieldSettings.OptionValue
+            #line 141 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+        , Tuple.Create(Tuple.Create("", 5889), Tuple.Create<System.Object, System.Int32>(fieldSettings.Name
             
             #line default
             #line hidden
-, 5946), false)
+, 5889), false)
+, Tuple.Create(Tuple.Create("", 5910), Tuple.Create("_", 5910), true)
+            
+            #line 141 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+                              , Tuple.Create(Tuple.Create("", 5911), Tuple.Create<System.Object, System.Int32>(fieldSettings.OptionValue
+            
+            #line default
+            #line hidden
+, 5911), false)
 );
 
-WriteAttribute("value", Tuple.Create(" value=\"", 5975), Tuple.Create("\"", 5987)
+WriteAttribute("value", Tuple.Create(" value=\"", 5940), Tuple.Create("\"", 5952)
             
-            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-                                                                  , Tuple.Create(Tuple.Create("", 5983), Tuple.Create<System.Object, System.Int32>(val
+            #line 141 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+                                                                  , Tuple.Create(Tuple.Create("", 5948), Tuple.Create<System.Object, System.Int32>(val
             
             #line default
             #line hidden
-, 5983), false)
+, 5948), false)
 );
 
 WriteLiteral(" />\r\n");
 
 WriteLiteral("    <input");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 6003), Tuple.Create("\"", 6017)
+WriteAttribute("value", Tuple.Create(" value=\"", 5968), Tuple.Create("\"", 5982)
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
-, Tuple.Create(Tuple.Create("", 6011), Tuple.Create<System.Object, System.Int32>(label
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+, Tuple.Create(Tuple.Create("", 5976), Tuple.Create<System.Object, System.Int32>(label
             
             #line default
             #line hidden
-, 6011), false)
+, 5976), false)
 );
 
 WriteLiteral(" class=\"autocomplete ozi-string\"");
@@ -610,7 +603,7 @@ WriteLiteral(" type=\"text\"");
 WriteLiteral(" ");
 
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                  Write(Html.Raw(ByCondition(fieldSettings.Multiple, "multiple='true'")));
 
             
@@ -619,7 +612,7 @@ WriteLiteral(" ");
 WriteLiteral(" data-hiddenid=\"");
 
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                    Write(fieldSettings.Name);
 
             
@@ -628,7 +621,7 @@ WriteLiteral(" data-hiddenid=\"");
 WriteLiteral("_");
 
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                          Write(fieldSettings.OptionValue);
 
             
@@ -637,7 +630,7 @@ WriteLiteral("_");
 WriteLiteral("\" data-sourcename=\"");
 
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                                                                         Write(fieldSettings.Name);
 
             
@@ -646,7 +639,7 @@ WriteLiteral("\" data-sourcename=\"");
 WriteLiteral("\" name=\"");
 
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                                                                                                      Write(fieldSettings.Name);
 
             
@@ -655,7 +648,7 @@ WriteLiteral("\" name=\"");
 WriteLiteral(".");
 
             
-            #line 143 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 142 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                                                                                                                            Write(fieldSettings.OptionTitle);
 
             
@@ -666,7 +659,7 @@ WriteLiteral("\" />\r\n");
 WriteLiteral("    <script>\r\n        var d;\r\n        try {\r\n            d = $(\"body\").data(\"");
 
             
-            #line 147 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 146 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                             Write(fieldSettings.Name);
 
             
@@ -676,13 +669,13 @@ WriteLiteral("\");\r\n        } catch(e) {\r\n            \r\n        }\r\n     
 "      d = [\r\n");
 
             
-            #line 153 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 152 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 153 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 152 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                      foreach (var option in data)
                     {
                         var optionValue = TypeHelpers.GetPropertyValue(option, fieldSettings.OptionValue).ToString();
@@ -696,7 +689,7 @@ WriteLiteral("                        ");
 WriteLiteral("{ value: \'");
 
             
-            #line 157 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 156 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                    Write(optionValue);
 
             
@@ -705,7 +698,7 @@ WriteLiteral("{ value: \'");
 WriteLiteral("\', label : \'");
 
             
-            #line 157 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 156 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                        if (fieldSettings.Levels){for (var i = 0; i < (Int32.Parse(TypeHelpers.GetPropertyValue(option, "Level").ToString()) - 1); i++){
             
             #line default
@@ -713,7 +706,7 @@ WriteLiteral("\', label : \'");
 WriteLiteral("&nbsp;-&nbsp;");
 
             
-            #line 157 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 156 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                                                                                  }
             
             #line default
@@ -721,13 +714,13 @@ WriteLiteral("&nbsp;-&nbsp;");
 WriteLiteral("○&nbsp;");
 
             
-            #line 157 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 156 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                                                                                                       }
             
             #line default
             #line hidden
             
-            #line 157 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 156 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                                                                                                                                                                                                                                                         Write(value);
 
             
@@ -738,7 +731,7 @@ WriteLiteral("\'},");
 WriteLiteral("\r\n");
 
             
-            #line 158 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 157 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                     }
 
             
@@ -747,7 +740,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                ];\r\n                $(\"body\").data(\"");
 
             
-            #line 160 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 159 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
                             Write(fieldSettings.Name);
 
             
@@ -756,7 +749,7 @@ WriteLiteral("                ];\r\n                $(\"body\").data(\"");
 WriteLiteral("\", d);\r\n            }\r\n    </script>\r\n");
 
             
-            #line 163 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
+            #line 162 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml"
 }
 
             

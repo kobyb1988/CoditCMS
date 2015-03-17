@@ -50,7 +50,7 @@ namespace ASP
             
             #line 2 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.cshtml"
   
-    var field = (ReferralField)WebContext.Model;
+    var field = (ReferralField)System.Web.Configuration.WebContext.Model;
     var vm = new ReferralNameValueViewModel
         {
             Field = field,
@@ -88,32 +88,32 @@ WriteLiteral(@"
 </style>
 <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1469), Tuple.Create("\"", 1517)
-, Tuple.Create(Tuple.Create("", 1476), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/sh_style.css")
-, 1476), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1494), Tuple.Create("\"", 1542)
+, Tuple.Create(Tuple.Create("", 1501), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/sh_style.css")
+, 1501), false)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n<script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1547), Tuple.Create("\"", 1597)
-, Tuple.Create(Tuple.Create("", 1553), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/sh_main.min.js")
-, 1553), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 1572), Tuple.Create("\"", 1622)
+, Tuple.Create(Tuple.Create("", 1578), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/sh_main.min.js")
+, 1578), false)
 );
 
 WriteLiteral("></script>\r\n<script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1617), Tuple.Create("\"", 1667)
-, Tuple.Create(Tuple.Create("", 1623), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/sh_html.min.js")
-, 1623), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 1642), Tuple.Create("\"", 1692)
+, Tuple.Create(Tuple.Create("", 1648), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/sh_html.min.js")
+, 1648), false)
 );
 
 WriteLiteral("></script>\r\n<script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1687), Tuple.Create("\"", 1743)
-, Tuple.Create(Tuple.Create("", 1693), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/sh_javascript.min.js")
-, 1693), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 1712), Tuple.Create("\"", 1768)
+, Tuple.Create(Tuple.Create("", 1718), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/sh_javascript.min.js")
+, 1718), false)
 );
 
 WriteLiteral(@"></script>

@@ -711,7 +711,7 @@ WriteLiteralTo(__razor_helper_writer, @"
 
 
 #line 177 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Collection.cshtml"
-WriteTo(__razor_helper_writer, WebContext.Model != null ? WebContext.Model.Id : 0);
+WriteTo(__razor_helper_writer, System.Web.Configuration.WebContext.Model != null ? System.Web.Configuration.WebContext.Model.Id : 0);
 
 
 #line default
