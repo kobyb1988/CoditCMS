@@ -30,7 +30,8 @@ namespace ASP
     using CMS.Mvc;
     using CMS.PagesSettings.Lists;
     using CMS.ViewModels;
-    using Libs; 
+    using DB.Entities;
+    using Libs;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/SiteSettings/General.cshtml")]
