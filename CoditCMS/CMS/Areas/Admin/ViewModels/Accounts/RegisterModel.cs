@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Libs.Validation;
 
-namespace MedIn.Web.Areas.Admin.ViewModels.Accounts
+namespace CMS.Areas.Admin.ViewModels.Accounts
 {
 	[PropertiesMustMatch("Password", "ConfirmPassword", ErrorMessage = "The password and confirmation password do not match.")]
 	public class RegisterModel

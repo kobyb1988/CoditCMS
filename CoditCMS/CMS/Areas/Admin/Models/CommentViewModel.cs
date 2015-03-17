@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MedIn.Web.Areas.Admin.Models
+namespace CMS.Areas.Admin.Models
 {
 	public class CommentViewModel
 	{

@@ -1,7 +1,7 @@
 using System.IO;
 using System.Web.Mvc;
 
-namespace MedIn.Web.Areas.Admin.ViewModels
+namespace CMS.Areas.Admin.ViewModels
 {
     [ModelBinder(typeof(ModelBinder))]
     public class FineUpload

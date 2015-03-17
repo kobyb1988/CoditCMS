@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using DataAnnotationsExtensions;
 
-namespace MedIn.Web.Areas.Admin.ViewModels.Accounts
+namespace CMS.Areas.Admin.ViewModels.Accounts
 {
 	public class EditModel
 	{

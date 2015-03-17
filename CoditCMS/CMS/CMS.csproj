@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>32d38c6c</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -152,10 +153,235 @@
     <Compile Include="Areas\Admin\ViewModels\FineUploadResult.cs" />
     <Compile Include="Areas\Admin\ViewModels\ImportViewModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\JsonProjectModel.cs" />
+    <Compile Include="Areas\Admin\Views\Shared\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Checkbox.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Checkbox.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Currency.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Currency.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Date.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Date.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Filter.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Filter.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Header.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_String.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_String.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_File.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_File.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Select.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_String.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_String.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_Textarea.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Textarea.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\FakeView.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FakeView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Checkbox.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Checkbox.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Code.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Code.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Collection.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Collection.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Currency.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Currency.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Date.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Date.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_File.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_File.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Hidden.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Hidden.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Object.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Select.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Static.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Static.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_String.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_String.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Textarea.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Textarea.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Wysiwyg.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ozi_Wysiwyg.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReferralExplains.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralFields.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReferralFields.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ObjectFields.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\StartDistribution.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StartDistribution.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Subscription.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Subscription.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\SubscriptionGroup.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubscriptionGroup.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\Form\FormButtons.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormButtons.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\GlobalActions\Create.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Create.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\Index.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\ListActions\Delete.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Delete.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\ListActions\Edit.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\ListActions\Sort.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sort.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\ListActions\Visibility.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Visibility.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\NotRealizedYet.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotRealizedYet.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\_Account.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Account.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\Shared\_Main.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Main.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\SiteSettings\Emails.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Emails.cshtml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Admin\Views\SiteSettings\General.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>General.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\SiteSettings\Logs.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Logs.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Views\_ViewStart.generated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_ViewStart.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Controllers\GenericController.Collections.cs" />
     <Compile Include="Controllers\GenericController.cs" />
@@ -357,61 +583,191 @@
     <None Include="Areas\Admin\Styles\Default\fontello.eot" />
     <None Include="Areas\Admin\Styles\Default\fontello.ttf" />
     <None Include="Areas\Admin\Styles\Default\fontello.woff" />
-    <None Include="Areas\Admin\Views\Account\Create.cshtml" />
-    <None Include="Areas\Admin\Views\Account\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\Account\Index.cshtml" />
-    <None Include="Areas\Admin\Views\Account\Login.cshtml" />
-    <None Include="Areas\Admin\Views\Account\Permissions.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\Create.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Checkbox.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Currency.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Date.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Filter.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_String.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_File.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_Select.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_String.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_Textarea.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\FakeView.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Checkbox.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Code.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Collection.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Currency.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Date.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Hidden.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Static.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_String.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Textarea.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Wysiwyg.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralFields.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\StartDistribution.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Subscription.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\SubscriptionGroup.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\Form\FormButtons.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\GlobalActions\Create.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\Index.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\ListActions\Delete.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\ListActions\Edit.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\ListActions\Sort.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\ListActions\Visibility.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\NotRealizedYet.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\_Account.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\_Main.cshtml" />
-    <None Include="Areas\Admin\Views\SiteSettings\Emails.cshtml" />
+    <None Include="Areas\Admin\Views\Shared\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Checkbox.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Checkbox.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Currency.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Currency.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Date.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Date.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Filter.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Filter.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Header.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\DisplayTemplates\ozi_String.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_String.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_File.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_File.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Select.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_String.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_String.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Collections\ozi_Textarea.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Textarea.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\FakeView.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>FakeView.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Checkbox.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Checkbox.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Code.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Code.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Collection.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Collection.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Currency.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Currency.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Date.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Date.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_File.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Hidden.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Hidden.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Object.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Select.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Select.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Static.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Static.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_String.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_String.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Textarea.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Textarea.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ozi_Wysiwyg.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ozi_Wysiwyg.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReferralExplains.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralFields.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ReferralFields.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>ObjectFields.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\StartDistribution.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>StartDistribution.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Subscription.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Subscription.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\SubscriptionGroup.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>SubscriptionGroup.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\Form\FormButtons.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>FormButtons.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\GlobalActions\Create.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Create.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\Index.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Index.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\ListActions\Delete.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Delete.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\ListActions\Edit.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Edit.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\ListActions\Sort.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Sort.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\ListActions\Visibility.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Visibility.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\NotRealizedYet.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>NotRealizedYet.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\_Account.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Account.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\Shared\_Main.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_Main.generated.cs</LastGenOutput>
+    </None>
+    <None Include="Areas\Admin\Views\SiteSettings\Emails.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Emails.generated.cs</LastGenOutput>
+    </None>
     <None Include="Areas\Admin\Views\SiteSettings\General.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>General.generated.cs</LastGenOutput>
     </None>
-    <None Include="Areas\Admin\Views\SiteSettings\Logs.cshtml" />
+    <None Include="Areas\Admin\Views\SiteSettings\Logs.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>Logs.generated.cs</LastGenOutput>
+    </None>
     <None Include="Areas\Admin\Views\Web.config" />
-    <None Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Admin\Views\_ViewStart.cshtml">
+      <Generator>RazorGenerator</Generator>
+      <LastGenOutput>_ViewStart.generated.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

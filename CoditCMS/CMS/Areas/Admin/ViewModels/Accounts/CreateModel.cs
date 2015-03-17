@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Libs.Validation;
 
-namespace MedIn.Web.Areas.Admin.ViewModels.Accounts
+namespace CMS.Areas.Admin.ViewModels.Accounts
 {
 	[PropertiesMustMatch("NewPassword", "NewPasswordConfirm", ErrorMessage = "Пароли не совпадают.")]
 	public class CreateModel

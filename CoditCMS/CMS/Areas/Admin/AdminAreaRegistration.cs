@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System;
 using System.Web.Compilation;
 
-namespace MedIn.Web.Areas.Admin
+namespace CMS.Areas.Admin
 {
 
 
@@ -33,7 +33,7 @@ namespace MedIn.Web.Areas.Admin
 
     public class AdminAreaRegistration : AreaRegistration
     {
-        public readonly string Namespace = "MedIn.Web.Areas.Admin.Controllers";
+        public readonly string Namespace = "CMS.Areas.Admin.Controllers";
 
         public override string AreaName
         {

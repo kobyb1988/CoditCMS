@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MedIn.Web.Areas.Admin.ViewModels.Accounts
+namespace CMS.Areas.Admin.ViewModels.Accounts
 {
 	public class LogOnModel
 	{

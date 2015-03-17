@@ -6,10 +6,10 @@ using System.Web.Configuration;
 using System.Web.Mvc;
 using CMS.Controllers;
 using CMS.Memberships;
-using MedIn.Web;
+using CMS;
 using DB.DAL;
 
-namespace MedIn.Web.Areas.Admin.Controllers
+namespace CMS.Areas.Admin.Controllers
 {
     //[OziAuthorize(Roles = "admin, superadmin", LoginUrl = "/admin/account/login")]
     [Authorize(Roles = "admin, superadmin")]

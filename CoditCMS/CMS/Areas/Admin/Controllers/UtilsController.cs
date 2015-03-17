@@ -4,7 +4,7 @@ using CMS.Memberships;
 using IOFile = System.IO.File;
 
 
-namespace MedIn.Web.Areas.Admin.Controllers
+namespace CMS.Areas.Admin.Controllers
 {
     [OziAuthorize]
     public partial class UtilsController : Controller

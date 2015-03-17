@@ -3,7 +3,7 @@ using Libs.Services;
 using DB.DAL;
 using DB.Entities;
 
-namespace MedIn.Web.Areas.Admin.Mvc
+namespace CMS.Areas.Admin.Mvc
 {
 	public class DefaultSettingsProvider : ISettingsProvider
 	{

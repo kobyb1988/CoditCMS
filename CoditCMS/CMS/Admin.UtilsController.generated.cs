@@ -22,7 +22,7 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace MedIn.Web.Areas.Admin.Controllers
+namespace CMS.Areas.Admin.Controllers
 {
     public partial class UtilsController
     {
@@ -101,7 +101,7 @@ namespace MedIn.Web.Areas.Admin.Controllers
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_UtilsController : MedIn.Web.Areas.Admin.Controllers.UtilsController
+    public partial class T4MVC_UtilsController : CMS.Areas.Admin.Controllers.UtilsController
     {
         public T4MVC_UtilsController() : base(Dummy.Instance) { }
 

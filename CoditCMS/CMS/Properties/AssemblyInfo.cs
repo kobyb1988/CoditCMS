@@ -1,4 +1,4 @@
-﻿using MedIn.Web.Areas.Admin;
+﻿using CMS.Areas.Admin;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;

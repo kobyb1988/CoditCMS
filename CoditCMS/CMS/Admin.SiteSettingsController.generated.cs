@@ -22,7 +22,7 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace MedIn.Web.Areas.Admin.Controllers
+namespace CMS.Areas.Admin.Controllers
 {
     public partial class SiteSettingsController
     {
@@ -141,7 +141,7 @@ namespace MedIn.Web.Areas.Admin.Controllers
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_SiteSettingsController : MedIn.Web.Areas.Admin.Controllers.SiteSettingsController
+    public partial class T4MVC_SiteSettingsController : CMS.Areas.Admin.Controllers.SiteSettingsController
     {
         public T4MVC_SiteSettingsController() : base(Dummy.Instance) { }
 

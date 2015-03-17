@@ -1,7 +1,7 @@
 using System.Web.Mvc;
 using Newtonsoft.Json.Linq;
 
-namespace MedIn.Web.Areas.Admin.ViewModels
+namespace CMS.Areas.Admin.ViewModels
 {
     /// <remarks>
     /// Docs at https://github.com/valums/file-uploader/blob/master/server/readme.md
