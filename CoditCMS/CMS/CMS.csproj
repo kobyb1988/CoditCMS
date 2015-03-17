@@ -283,16 +283,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ozi_Wysiwyg.cshtml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReferralExplains.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralFields.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReferralFields.cshtml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -302,16 +292,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StartDistribution.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\Subscription.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Subscription.cshtml</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Views\Shared\EditorTemplates\SubscriptionGroup.generated.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SubscriptionGroup.cshtml</DependentUpon>
     </Compile>
     <Compile Include="Areas\Admin\Views\Shared\Form\FormButtons.generated.cs">
       <AutoGen>True</AutoGen>
@@ -687,14 +667,8 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ozi_Wysiwyg.generated.cs</LastGenOutput>
     </None>
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ReferralExplains.generated.cs</LastGenOutput>
-    </None>
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralFields.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>ReferralFields.generated.cs</LastGenOutput>
-    </None>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralExplains.cshtml.old" />
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\ReferralFields.cshtml.old" />
     <None Include="Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml">
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>ObjectFields.generated.cs</LastGenOutput>
@@ -703,12 +677,7 @@
       <Generator>RazorGenerator</Generator>
       <LastGenOutput>StartDistribution.generated.cs</LastGenOutput>
     </None>
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\Subscription.cshtml">
-      <Generator>RazorGenerator</Generator>
-      <LastGenOutput>Subscription.generated.cs</LastGenOutput>
-    </None>
-    <None Include="Areas\Admin\Views\Shared\EditorTemplates\SubscriptionGroup.cshtml">
-      <Generator>RazorGenerator</Generator>
+    <None Include="Areas\Admin\Views\Shared\EditorTemplates\SubscriptionGroup.cshtml.old">
       <LastGenOutput>SubscriptionGroup.generated.cs</LastGenOutput>
     </None>
     <None Include="Areas\Admin\Views\Shared\Form\FormButtons.cshtml">

@@ -503,15 +503,7 @@ WriteLiteral(">Здравствуйте, ");
             #line hidden
 WriteLiteral(" <a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 3629), Tuple.Create("\"", 3675)
-            
-            #line 50 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-                              , Tuple.Create(Tuple.Create("", 3636), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Account.Logout())
-            
-            #line default
-            #line hidden
-, 3636), false)
-);
+WriteLiteral(" href=\"/account/logout\"");
 
 WriteLiteral(">Выйти</a></span></td>\r\n        </tr>\r\n    </table>\r\n\r\n    <table");
 
@@ -558,14 +550,14 @@ WriteLiteral(" class=\"left-function\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create("  href=\"", 5294), Tuple.Create("\"", 5354)
+WriteAttribute("href", Tuple.Create("  href=\"", 5270), Tuple.Create("\"", 5330)
             
             #line 86 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 5302), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
+, Tuple.Create(Tuple.Create("", 5278), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
             
             #line default
             #line hidden
-, 5302), false)
+, 5278), false)
 );
 
 WriteLiteral(">Очистить кэш</a></div>\r\n                    <div");
@@ -576,15 +568,7 @@ WriteLiteral("><a");
 
 WriteLiteral(" target=\"_blank\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5445), Tuple.Create("\"", 5484)
-            
-            #line 87 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 5452), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Default.Index())
-            
-            #line default
-            #line hidden
-, 5452), false)
-);
+WriteLiteral(" href=\"/\"");
 
 WriteLiteral(">На главную</a></div>\r\n                </div>\r\n                \r\n            </td" +
 ">\r\n            \r\n            <td");
