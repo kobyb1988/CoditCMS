@@ -200,6 +200,7 @@
     <Content Include="Areas\Test\Views\AreaModels\Details.cshtml" />
     <Content Include="Areas\Test\Views\AreaModels\Edit.cshtml" />
     <Content Include="Areas\Test\Views\AreaModels\Index.cshtml" />
+    <Content Include="Modules.sitemap" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

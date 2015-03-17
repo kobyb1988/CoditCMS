@@ -18,8 +18,8 @@ namespace Libs
 		private string SitemapFilePath { get; set; }
 
 		public Sitemap(string path)
-		{
-			SitemapFilePath = HttpContext.Current.Server.MapPath(path);
+		{            
+            SitemapFilePath = HttpContext.Current.Server.MapPath(path);
 			XDoc = XDocument.Load(SitemapFilePath);
 			var q = XDoc.Root;
 			SitemapList = GetChilds(q);

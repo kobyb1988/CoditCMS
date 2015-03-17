@@ -174,7 +174,7 @@ var @(settings.Name)ViewModel = function() {
     };
     self.index = ko.observable(index);
     self.ItemId = ko.observable(m.ItemId || 0);
-    self.ModelId = @(System.Web.Configuration.WebContext.Model != null ? System.Web.Configuration.WebContext.Model.Id : 0);
+    self.ModelId = @(WebContext.Model != null ? WebContext.Model.Id : 0);
     self.parent = parent;
     self.propName = '@(settings.Name)';
     self.parentCollection = parentCollection;
