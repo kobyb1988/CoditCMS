@@ -167,7 +167,7 @@ td#logo-right a { font:bold 12px tahoma; color: #ff8a21; margin-left:10px; }
 #left-menu div.left-function a { color: #555; font-size:11px; }
 
 
-div.root { color:#444; font-size:14px; padding-left:24px;font-weight:bold; height:19px; background: url(../../Images/Default/Tree/Globe.gif) 0 2px no-repeat;}
+div.root { color:#444; font-size:14px; padding-left:24px;font-weight:bold; height:19px; background: url(../../Images/Default/Tree/globe.gif) 0 2px no-repeat;}
 table#main-table { width:100%; }
 td#main-right { width: 80%; }
 td#main-left { width:20%;  white-space:nowrap; padding-right:20px; }
@@ -190,30 +190,30 @@ p.copyright { font-size:10px; margin-top:20px; }
     ul#modules-ul li ul {padding-top:5px;}
     ul#modules-ul  li.liOpen  { padding-bottom:0; }
 
-    ul#modules-ul  li.liOpen a,ul#modules-ul li.liOpen span.folder{ background: url(../../Images/Default/Tree/Folderopen.gif) 0 -5px no-repeat; padding: 2px 0 4px 20px; cursor:pointer;}
-    ul#modules-ul  li.liClosed a,ul#modules-ul li.liClosed span.folder{ background: url(../../Images/Default/Tree/Folder.gif) 0 0 no-repeat;  padding: 2px 0 4px 20px; cursor:pointer;}
+    ul#modules-ul  li.liOpen a,ul#modules-ul li.liOpen span.folder{ background: url(../../Images/Default/Tree/folderopen.gif) 0 -5px no-repeat; padding: 2px 0 4px 20px; cursor:pointer;}
+    ul#modules-ul  li.liClosed a,ul#modules-ul li.liClosed span.folder{ background: url(../../Images/Default/Tree/folder.gif) 0 0 no-repeat;  padding: 2px 0 4px 20px; cursor:pointer;}
 
-    ul#modules-ul  li.liBullet a{ background: url(../../Images/Default/Tree/Module.gif) 0 0 no-repeat;  padding: 2px 0 4px 20px; }
+    ul#modules-ul  li.liBullet a{ background: url(../../Images/Default/Tree/module.gif) 0 0 no-repeat;  padding: 2px 0 4px 20px; }
     ul#modules-ul  li.liBullet a.selected { color:#ff8a21; font-weight:bold; }	
 
 
-    ul#modules-ul  li.liOpen span.bullet { background: url(../../Images/Default/Tree/Minus.gif) 0 0 no-repeat; }
-    ul#modules-ul li.liOpen span.bullet.last { background: url(../../Images/Default/Tree/Minuslast.gif) 0 0 no-repeat; }
+    ul#modules-ul  li.liOpen span.bullet { background: url(../../Images/Default/Tree/minus.gif) 0 0 no-repeat; }
+    ul#modules-ul li.liOpen span.bullet.last { background: url(../../Images/Default/Tree/minuslast.gif) 0 0 no-repeat; }
 
-    ul#modules-ul li.liClosed span.bullet { background: url(../../Images/Default/Tree/Plus.gif) 0 0 no-repeat; }
-    ul#modules-ul li.liClosed span.bullet.last { background: url(../../Images/Default/Tree/Pluslast.gif) 0 0 no-repeat; }
+    ul#modules-ul li.liClosed span.bullet { background: url(../../Images/Default/Tree/plus.gif) 0 0 no-repeat; }
+    ul#modules-ul li.liClosed span.bullet.last { background: url(../../Images/Default/Tree/pluslast.gif) 0 0 no-repeat; }
 
-    ul#modules-ul li.liBullet span.bullet{ background: url(../../Images/Default/Tree/Join.gif) 0 0 no-repeat; }
-    ul#modules-ul li.liBullet span.bullet.last { background: url(../../Images/Default/Tree/Joinlast.gif) 0 0 no-repeat; }
+    ul#modules-ul li.liBullet span.bullet{ background: url(../../Images/Default/Tree/join.gif) 0 0 no-repeat; }
+    ul#modules-ul li.liBullet span.bullet.last { background: url(../../Images/Default/Tree/joinlast.gif) 0 0 no-repeat; }
 
     ul#modules-ul  li span.bullet {  padding:7px; }
 
-    ul#modules-ul  li span.level { background: url(../../Images/Default/Tree/Line.gif) 0 0 no-repeat; padding:7px;}
+    ul#modules-ul  li span.level { background: url(../../Images/Default/Tree/line.gif) 0 0 no-repeat; padding:7px;}
     ul#modules-ul li span.blank { background: url(../../Images/Default/Tree/Blank.gif) 0 0 no-repeat; padding:7px ;}
 
     ul#modules-ul li  span.folder { color:#444; font-weight:bold;}
 
-    td.left div.root { color:#444; font-size:14px; padding-left:24px;font-weight:bold; height:19px; background: url(../../Images/Default/Tree/Globe.gif) 0 2px no-repeat;}
+    td.left div.root { color:#444; font-size:14px; padding-left:24px;font-weight:bold; height:19px; background: url(../../Images/Default/Tree/globe.gif) 0 2px no-repeat;}
     
     /*---/ Дерево модулей ----------------- */
 
@@ -267,8 +267,8 @@ ffa517
 	span.global-action { color: #000;}
     a.global-action:hover { color:blue; }
 
-    a.global-action.create { background:url(../../Images/Default/Create.gif) no-repeat 0 7px; }
-    a.global-action.delete-selected { background:url(../../Images/Default/DeleteSelected.gif) no-repeat 0 7px; }
+    a.global-action.create { background:url(../../Images/Default/create.gif) no-repeat 0 7px; }
+    a.global-action.delete-selected { background:url(../../Images/Default/deleteselected.gif) no-repeat 0 7px; }
 
     span.global-action { font-size: 14px; }
     span.global-action img{ margin-right:5px; vertical-align:bottom }
