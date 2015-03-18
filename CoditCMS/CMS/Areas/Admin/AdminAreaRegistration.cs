@@ -52,7 +52,7 @@ namespace CMS.Areas.Admin
               new { action = "Index", id = UrlParameter.Optional }
                 //,null
                 //,new string[] { "Namespace.Application.Controllers" }
-          );
+          );            
             // aganzha
             //context.MapRoute(
             //    "AdminDefaultStartPage",

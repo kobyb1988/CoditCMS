@@ -185,11 +185,9 @@ WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n<head>\r\n    <title>");
             #line hidden
 WriteLiteral("</title>\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 126), Tuple.Create("\"", 220)
-, Tuple.Create(Tuple.Create("", 133), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/themes/base/jquery.ui.a" +
-"ll.css")
-, 133), false)
-);
+WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
+"reas/Admin/Scripts/Default/jqueryUI/development-bundle/themes/base/jquery.ui.all" +
+".css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
@@ -197,46 +195,36 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 268), Tuple.Create("\"", 334)
-, Tuple.Create(Tuple.Create("", 275), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/jquery-ui-timepicker-addon.css")
-, 275), false)
-);
+WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
+"reas/Admin/Styles/Default/jquery-ui-timepicker-addon.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 366), Tuple.Create("\"", 431)
-, Tuple.Create(Tuple.Create("", 373), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/fileuploader/fineuploader.css")
-, 373), false)
-);
+WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
+"reas/Admin/Styles/Default/fileuploader/fineuploader.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 463), Tuple.Create("\"", 516)
-, Tuple.Create(Tuple.Create("", 470), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/toastr/toastr.css")
-, 470), false)
-);
+WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
+"reas/Admin/Styles/Default/toastr/toastr.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 548), Tuple.Create("\"", 612)
-, Tuple.Create(Tuple.Create("", 555), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/toastr/toastr-responsive.css")
-, 555), false)
-);
+WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
+"reas/Admin/Styles/Default/toastr/toastr-responsive.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 644), Tuple.Create("\"", 691)
-, Tuple.Create(Tuple.Create("", 651), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Styles/Default/Default.css")
-, 651), false)
-);
+WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
+"reas/Admin/Styles/Default/Default.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
@@ -244,215 +232,159 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 741), Tuple.Create("\"", 776)
-, Tuple.Create(Tuple.Create("", 747), Tuple.Create<System.Object, System.Int32>(Href("~/Scripts/jquery-2.1.1.min.js")
-, 747), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/jquery-2.1.1.min.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 823), Tuple.Create("\"", 922)
-, Tuple.Create(Tuple.Create("", 829), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/minified/jquery-ui.c" +
-"ustom.min.js")
-, 829), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/minified/jquery-ui.cust" +
+"om.min.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 969), Tuple.Create("\"", 1067)
-, Tuple.Create(Tuple.Create("", 975), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/i18n/jquery.ui.datep" +
-"icker-ru.js")
-, 975), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/i18n/jquery.ui.datepick" +
+"er-ru.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1114), Tuple.Create("\"", 1183)
-, Tuple.Create(Tuple.Create("", 1120), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/drag/jquery.dragsort-0.5.1.min.js")
-, 1120), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/drag/jquery.dragsort-0.5.1.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1207), Tuple.Create("\"", 1263)
-, Tuple.Create(Tuple.Create("", 1213), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/util.js")
-, 1213), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/util.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1287), Tuple.Create("\"", 1345)
-, Tuple.Create(Tuple.Create("", 1293), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/button.js")
-, 1293), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/button.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1369), Tuple.Create("\"", 1427)
-, Tuple.Create(Tuple.Create("", 1375), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/header.js")
-, 1375), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/header.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1451), Tuple.Create("\"", 1509)
-, Tuple.Create(Tuple.Create("", 1457), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/header.js")
-, 1457), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/header.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1533), Tuple.Create("\"", 1597)
-, Tuple.Create(Tuple.Create("", 1539), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/handler.base.js")
-, 1539), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/handler.base.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1621), Tuple.Create("\"", 1685)
-, Tuple.Create(Tuple.Create("", 1627), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/handler.form.js")
-, 1627), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/handler.form.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1709), Tuple.Create("\"", 1772)
-, Tuple.Create(Tuple.Create("", 1715), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/handler.xhr.js")
-, 1715), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/handler.xhr.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1796), Tuple.Create("\"", 1862)
-, Tuple.Create(Tuple.Create("", 1802), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/uploader.basic.js")
-, 1802), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/uploader.basic.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1886), Tuple.Create("\"", 1941)
-, Tuple.Create(Tuple.Create("", 1892), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/dnd.js")
-, 1892), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/dnd.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1965), Tuple.Create("\"", 2025)
-, Tuple.Create(Tuple.Create("", 1971), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/uploader.js")
-, 1971), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/uploader.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2049), Tuple.Create("\"", 2114)
-, Tuple.Create(Tuple.Create("", 2055), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/fileuploader/jquery-plugin.js")
-, 2055), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/fileuploader/jquery-plugin.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2138), Tuple.Create("\"", 2211)
-, Tuple.Create(Tuple.Create("", 2144), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-sliderAccess.js")
-, 2144), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-sliderAccess.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2235), Tuple.Create("\"", 2312)
-, Tuple.Create(Tuple.Create("", 2241), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-addon.js")
-, 2241), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-addon.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2336), Tuple.Create("\"", 2403)
-, Tuple.Create(Tuple.Create("", 2342), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/js/ui.datepicker-ru.js")
-, 2342), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/jqueryUI/js/ui.datepicker-ru.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2427), Tuple.Create("\"", 2501)
-, Tuple.Create(Tuple.Create("", 2433), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-ru.js")
-, 2433), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-ru.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2525), Tuple.Create("\"", 2587)
-, Tuple.Create(Tuple.Create("", 2531), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/knockout/knockout-2.2.1.js")
-, 2531), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/knockout/knockout-2.2.1.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2611), Tuple.Create("\"", 2676)
-, Tuple.Create(Tuple.Create("", 2617), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/knockout/knockout-sortable.js")
-, 2617), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/knockout/knockout-sortable.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2700), Tuple.Create("\"", 2752)
-, Tuple.Create(Tuple.Create("", 2706), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/toastr/toastr.js")
-, 2706), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/toastr/toastr.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2776), Tuple.Create("\"", 2826)
-, Tuple.Create(Tuple.Create("", 2782), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/autoNumeric.js")
-, 2782), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/autoNumeric.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2850), Tuple.Create("\"", 2896)
-, Tuple.Create(Tuple.Create("", 2856), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/Default.js")
-, 2856), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/Default.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2943), Tuple.Create("\"", 2988)
-, Tuple.Create(Tuple.Create("", 2949), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/Mktree.js")
-, 2949), false)
-);
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral("></script>\r\n\t<script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3032), Tuple.Create("\"", 3072)
-, Tuple.Create(Tuple.Create("", 3038), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Ckeditor/ckeditor.js")
-, 3038), false)
-);
-
-WriteLiteral(" type=\"text/javascript\"");
-
-WriteLiteral("></script>\r\n\t<script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 3116), Tuple.Create("\"", 3165)
-, Tuple.Create(Tuple.Create("", 3122), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/Myckconfig.js")
-, 3122), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/Mktree.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3212), Tuple.Create("\"", 3262)
-, Tuple.Create(Tuple.Create("", 3218), Tuple.Create<System.Object, System.Int32>(Href("~/Areas/Admin/Scripts/Default/files-logic.js")
-, 3218), false)
-);
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Ckeditor/ckeditor.js\"");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/Myckconfig.js\"");
+
+WriteLiteral(" type=\"text/javascript\"");
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
+"eas/Admin/Scripts/Default/files-logic.js\"");
 
 WriteLiteral("></script>\r\n</head>\r\n\r\n<body>\r\n\r\n    <table");
 
@@ -468,14 +400,14 @@ WriteLiteral(" id=\"logo\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3389), Tuple.Create("\"", 3448)
+WriteAttribute("src", Tuple.Create(" src=\"", 5821), Tuple.Create("\"", 5876)
             
             #line 49 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3395), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Areas/Admin/Images/Default/logo.gif")
+, Tuple.Create(Tuple.Create("", 5827), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/Images/Default/logo.gif")
             
             #line default
             #line hidden
-, 3395), false)
+, 5827), false)
 );
 
 WriteLiteral(" alt=\"OziCms.cms 4.0\"");
@@ -550,14 +482,14 @@ WriteLiteral(" class=\"left-function\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create("  href=\"", 5270), Tuple.Create("\"", 5330)
+WriteAttribute("href", Tuple.Create("  href=\"", 7686), Tuple.Create("\"", 7746)
             
             #line 86 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 5278), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
+, Tuple.Create(Tuple.Create("", 7694), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
             
             #line default
             #line hidden
-, 5278), false)
+, 7694), false)
 );
 
 WriteLiteral(">Очистить кэш</a></div>\r\n                    <div");
