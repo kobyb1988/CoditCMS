@@ -185,9 +185,8 @@ WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n<head>\r\n    <title>");
             #line hidden
 WriteLiteral("</title>\r\n    <link");
 
-WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
-"reas/Admin/Scripts/Default/jqueryUI/development-bundle/themes/base/jquery.ui.all" +
-".css\"");
+WriteLiteral(" href=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defau" +
+"lt/jqueryUI/development-bundle/themes/base/jquery.ui.all.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
@@ -195,36 +194,36 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
-"reas/Admin/Styles/Default/jquery-ui-timepicker-addon.css\"");
+WriteLiteral(" href=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Styles/Defaul" +
+"t/jquery-ui-timepicker-addon.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
-"reas/Admin/Styles/Default/fileuploader/fineuploader.css\"");
+WriteLiteral(" href=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Styles/Defaul" +
+"t/fileuploader/fineuploader.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
-"reas/Admin/Styles/Default/toastr/toastr.css\"");
+WriteLiteral(" href=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Styles/Defaul" +
+"t/toastr/toastr.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
-"reas/Admin/Styles/Default/toastr/toastr-responsive.css\"");
+WriteLiteral(" href=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Styles/Defaul" +
+"t/toastr/toastr-responsive.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteLiteral(" href=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/A" +
-"reas/Admin/Styles/Default/Default.css\"");
+WriteLiteral(" href=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Styles/Defaul" +
+"t/Default.css\"");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
@@ -232,159 +231,157 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/jquery-2.1.1.min.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/jquery" +
+"-1.7.1.min.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/minified/jquery-ui.cust" +
-"om.min.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/jqueryUI/development-bundle/ui/minified/jquery-ui.custom.min.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/i18n/jquery.ui.datepick" +
-"er-ru.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/jqueryUI/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/drag/jquery.dragsort-0.5.1.min.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/drag/jquery.dragsort-0.5.1.min.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/util.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/util.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/button.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/button.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/header.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/header.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/header.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/header.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/handler.base.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/handler.base.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/handler.form.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/handler.form.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/handler.xhr.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/handler.xhr.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/uploader.basic.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/uploader.basic.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/dnd.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/dnd.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/uploader.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/uploader.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/fileuploader/jquery-plugin.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/fileuploader/jquery-plugin.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-sliderAccess.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/jqueryUI/js/jquery-ui-sliderAccess.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-addon.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/jqueryUI/js/jquery-ui-timepicker-addon.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/jqueryUI/js/ui.datepicker-ru.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/jqueryUI/js/ui.datepicker-ru.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-ru.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/jqueryUI/js/jquery-ui-timepicker-ru.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/knockout/knockout-2.2.1.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/knockout/knockout-2.2.1.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/knockout/knockout-sortable.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/knockout/knockout-sortable.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/toastr/toastr.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/toastr/toastr.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/autoNumeric.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/autoNumeric.js\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/Default.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/Default.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/Mktree.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/Mktree.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Ckeditor/ckeditor.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Ckeditor/ckedi" +
+"tor.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/Myckconfig.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/Myckconfig.js\"");
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteLiteral(" src=\"https://raw.githubusercontent.com/kobyb1988/CoditCMS/master/CoditCMS/CMS/Ar" +
-"eas/Admin/Scripts/Default/files-logic.js\"");
+WriteLiteral(" src=\"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS/Areas/Admin/Scripts/Defaul" +
+"t/files-logic.js\"");
 
 WriteLiteral("></script>\r\n</head>\r\n\r\n<body>\r\n\r\n    <table");
 
@@ -400,14 +397,14 @@ WriteLiteral(" id=\"logo\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 5821), Tuple.Create("\"", 5876)
+WriteAttribute("src", Tuple.Create(" src=\"", 5005), Tuple.Create("\"", 5060)
             
             #line 49 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 5827), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/Images/Default/logo.gif")
+, Tuple.Create(Tuple.Create("", 5011), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Content/Images/Default/logo.gif")
             
             #line default
             #line hidden
-, 5827), false)
+, 5011), false)
 );
 
 WriteLiteral(" alt=\"OziCms.cms 4.0\"");
@@ -482,14 +479,14 @@ WriteLiteral(" class=\"left-function\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create("  href=\"", 7686), Tuple.Create("\"", 7746)
+WriteAttribute("href", Tuple.Create("  href=\"", 6870), Tuple.Create("\"", 6930)
             
             #line 86 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 7694), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
+, Tuple.Create(Tuple.Create("", 6878), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
             
             #line default
             #line hidden
-, 7694), false)
+, 6878), false)
 );
 
 WriteLiteral(">Очистить кэш</a></div>\r\n                    <div");
