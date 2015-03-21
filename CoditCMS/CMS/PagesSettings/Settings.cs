@@ -17,7 +17,10 @@ namespace CMS.PagesSettings
 {
 	public class Settings
 	{
-		private const string SettingsFolderPath = "~/Areas/Admin/Settings";
+
+        public const string AdminRole = "admin";
+
+        public const string SettingsFolderPath = "~/Codit";
 
 		private XDocument XDoc
 		{

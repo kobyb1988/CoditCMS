@@ -22,11 +22,12 @@ using DB.Infrastructure;
 using Libs;
 using Libs.Services;
 using CurrencySettings = CMS.PagesSettings.Forms.CurrencySettings;
+using DB.Infrastructure.Implementation;
+using DB.DAL;
 
 namespace CMS.Controllers
 {
-	[ValidateInput(false)]
-	[OziAuthorize]
+	[ValidateInput(false)]	
 	public abstract partial class GenericController<TEntity, TDbContext> : OziController
 		where TEntity : class, IEntity, new()
 		where TDbContext : DbContext, new()
@@ -41,14 +42,20 @@ namespace CMS.Controllers
 
 		public AdminWebContext WebContext
 		{
-			get { return DependencyResolver.Current.GetService<AdminWebContext>(); }
+			get 
+            {
+                return AdminWebContext.GetContext();
+            }
 		}
 
 		#region properties
 
 		protected Settings Settings
 		{
-			get { return WebContext.GetSettings(); }
+			get {
+                var settings = WebContext.GetSettings();
+                return settings; 
+            }
 		}
 		
 		private IRepository<TEntity, TDbContext> _repository;
@@ -508,8 +515,14 @@ namespace CMS.Controllers
 				{
 				}
 			}
-			var unitOfWork = DependencyResolver.Current.GetService<IUnitOfWork>();
-			unitOfWork.Commit();
+			//aganzha
+            //var unitOfWork = DependencyResolver.Current.GetService<IUnitOfWork>();            
+            //unitOfWork.Commit();
+            using (var db = ApplicationDbContext.Create())
+            {
+                db.SaveChanges();
+            }
+            
 		}
 
 		private void SaveFormPrerequisites(FormCollection collection, TEntity entity)

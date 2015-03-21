@@ -172,6 +172,10 @@
     <Compile Include="Migrations\201503211053084_Init.Designer.cs">
       <DependentUpon>201503211053084_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503211106348_AdminRole.cs" />
+    <Compile Include="Migrations\201503211106348_AdminRole.Designer.cs">
+      <DependentUpon>201503211106348_AdminRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -180,6 +184,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Codit\Location.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -188,6 +193,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Codit\Modules.sitemap" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -250,6 +256,23 @@
     <EmbeddedResource Include="Migrations\201503211053084_Init.resx">
       <DependentUpon>201503211053084_Init.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503211106348_AdminRole.resx">
+      <DependentUpon>201503211106348_AdminRole.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS\CMS.csproj">
+      <Project>{1ead88e9-f75c-406c-b46c-01f0b111b560}</Project>
+      <Name>CMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DB\DB.csproj">
+      <Project>{554e7884-becc-4afd-9203-d18b33ef3e53}</Project>
+      <Name>DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libs\Libs.csproj">
+      <Project>{f1af1d4e-87b3-44e0-af0a-cca1f634be17}</Project>
+      <Name>Libs</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

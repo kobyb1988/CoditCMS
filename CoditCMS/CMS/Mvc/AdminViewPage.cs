@@ -4,7 +4,7 @@ namespace CMS.Mvc
 {
 	public abstract class AdminViewPage<TModel> : DotOrgViewPage<TModel>
 	{
-		public AdminWebContext WebContext { get { return DependencyResolver.Current.GetService<AdminWebContext>(); } }
+        public AdminWebContext WebContext { get { return AdminWebContext.GetContext(); } }
 		protected override IDotOrgWebContext DotOrgWebContext
 		{
 			get { return null; }

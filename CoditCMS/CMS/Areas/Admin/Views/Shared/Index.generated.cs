@@ -30,22 +30,15 @@ namespace ASP
     using CMS.Mvc;
     using CMS.PagesSettings.Lists;
     using CMS.ViewModels;
-    using DB.Entities;
     
-    #line 3 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-    using Libs;
+    #line 1 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+    using DB.Entities;
     
     #line default
     #line hidden
     
     #line 2 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-    using DB.Entities;
-    
-    #line default
-    #line hidden
-    
-    #line 1 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-    using CMS;
+    using Libs;
     
     #line default
     #line hidden
@@ -55,14 +48,14 @@ namespace ASP
     public partial class _Areas_Admin_Views_Shared_Index_cshtml : CMS.Mvc.AdminViewPage<ListViewModel>
     {
 
-#line 127 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 125 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 public System.Web.WebPages.HelperResult Indents(IEntity row, ColSettings col)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 128 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 126 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
  
     if (!col.Levels)
     {
@@ -79,13 +72,13 @@ WriteLiteralTo(__razor_helper_writer, " class=\"list-levels\"");
 WriteLiteralTo(__razor_helper_writer, ">\r\n");
 
 
-#line 134 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 132 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         
 
 #line default
 #line hidden
 
-#line 134 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 132 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
          for (var i = 1; i < ((IPlainTreeItem)row).Level; i++)
         {
 
@@ -99,7 +92,7 @@ WriteLiteralTo(__razor_helper_writer, " class=\"list-level\"");
 WriteLiteralTo(__razor_helper_writer, "></span>\r\n");
 
 
-#line 137 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 135 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         }
 
 
@@ -108,7 +101,7 @@ WriteLiteralTo(__razor_helper_writer, "></span>\r\n");
 WriteLiteralTo(__razor_helper_writer, "    </span>\r\n");
 
 
-#line 139 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 137 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 
     if (((IPlainTreeItem)row).HasChilds)
     {
@@ -122,7 +115,7 @@ WriteLiteralTo(__razor_helper_writer, " class=\"list-parent\"");
 WriteLiteralTo(__razor_helper_writer, "></span>");
 
 
-#line 141 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 139 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                                       }
     else
     {
@@ -136,7 +129,7 @@ WriteLiteralTo(__razor_helper_writer, " class=\"list-child\"");
 WriteLiteralTo(__razor_helper_writer, "></span>");
 
 
-#line 143 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 141 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                                      }
 
 
@@ -144,19 +137,19 @@ WriteLiteralTo(__razor_helper_writer, "></span>");
 #line hidden
 });
 
-#line 144 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 142 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 }
 #line default
 #line hidden
 
-#line 146 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 144 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 public System.Web.WebPages.HelperResult OutputCollection(IEnumerable<string> collection)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 147 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 145 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
  
     foreach (var item in collection)
     {
@@ -165,14 +158,14 @@ return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 #line default
 #line hidden
 
-#line 150 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 148 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 WriteTo(__razor_helper_writer, Html.Raw(item));
 
 
 #line default
 #line hidden
 
-#line 150 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 148 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                    
     }
 
@@ -181,7 +174,7 @@ WriteTo(__razor_helper_writer, Html.Raw(item));
 #line hidden
 });
 
-#line 152 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+#line 150 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 }
 #line default
 #line hidden
@@ -192,11 +185,10 @@ WriteTo(__razor_helper_writer, Html.Raw(item));
         public override void Execute()
         {
             
-            #line 6 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 5 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
   
-    ViewBag.HtmlPageTitle = "OziCms.cms — список объектов";
-    var roles = Roles.GetRolesForUser(User.Identity.Name);
-    Func<string, bool> allowed = role => string.IsNullOrEmpty(role) || roles.Contains(role);
+    ViewBag.HtmlPageTitle = "OziCms.cms — список объектов";    
+    Func<string, bool> allowed = role =>true;
 
             
             #line default
@@ -208,7 +200,7 @@ WriteLiteral(" type=\"text/javascript\"");
 WriteLiteral(">\r\n    _sorlListActionUrl = \'");
 
             
-            #line 13 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 11 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                      Write(Url.Action(Constants.SortListAction));
 
             
@@ -218,14 +210,14 @@ WriteLiteral("\';\r\n</script>\r\n<script");
 
 WriteLiteral(" type=\"text/ecmascript\"");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 446), Tuple.Create("\"", 505)
+WriteAttribute("src", Tuple.Create(" src=\"", 319), Tuple.Create("\"", 378)
             
-            #line 15 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 452), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Areas/Admin/Scripts/Default/List.js")
+            #line 13 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 325), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Areas/Admin/Scripts/Default/List.js")
             
             #line default
             #line hidden
-, 452), false)
+, 325), false)
 );
 
 WriteLiteral("></script>\r\n\r\n<div");
@@ -235,13 +227,13 @@ WriteLiteral(" class=\"global-actions\"");
 WriteLiteral(">\r\n");
 
             
-            #line 18 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 16 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 18 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 16 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
      foreach (GlobalActionSettings globalAction in Model.Settings.ListSettings.GlobalActions)
     {
         if (!string.IsNullOrEmpty(globalAction.Control))
@@ -255,14 +247,14 @@ WriteLiteral(">\r\n");
             #line default
             #line hidden
             
-            #line 26 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 24 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
        Write(Html.ActionLink(globalAction.Text, globalAction.Action, null, new { @class="global-action"}));
 
             
             #line default
             #line hidden
             
-            #line 26 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 24 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                                                                                                          
         }
     }
@@ -273,7 +265,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("</div>\r\n\r\n");
 
             
-            #line 31 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 29 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
  using (Html.BeginForm(null, null, FormMethod.Post, new { id = "list-form" }))
 {
 
@@ -286,14 +278,14 @@ WriteLiteral(" type=\"hidden\"");
 
 WriteLiteral(" name=\"page\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1187), Tuple.Create("\"", 1211)
+WriteAttribute("value", Tuple.Create(" value=\"", 1060), Tuple.Create("\"", 1084)
             
-            #line 33 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 1195), Tuple.Create<System.Object, System.Int32>(Request["page"]
+            #line 31 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 1068), Tuple.Create<System.Object, System.Int32>(Request["page"]
             
             #line default
             #line hidden
-, 1195), false)
+, 1068), false)
 );
 
 WriteLiteral(" />\r\n");
@@ -305,7 +297,7 @@ WriteLiteral(" class=\"list-table\"");
 WriteLiteral(">\r\n        <colgroup>\r\n            <col ");
 
             
-            #line 36 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 34 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
             Write(Html.Raw("width=\"24\""));
 
             
@@ -316,7 +308,7 @@ WriteLiteral(" />\r\n");
 WriteLiteral("            ");
 
             
-            #line 37 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 35 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
        Write(OutputCollection(Model.Settings.ListSettings.Cols.Where(s => allowed(s.RoleName)).Select(col => string.Format("<col {0} />", col.Width > 0 ? string.Format("width={0}", col.Width) : string.Empty))));
 
             
@@ -327,7 +319,7 @@ WriteLiteral("\r\n");
 WriteLiteral("            ");
 
             
-            #line 38 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 36 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
        Write(OutputCollection(Model.Settings.ListSettings.ListActions.Select(settings => "<col width=\"24\" />")));
 
             
@@ -338,7 +330,7 @@ WriteLiteral("\r\n        </colgroup>\r\n        <tr>\r\n            <th>№</th
 WriteLiteral("            ");
 
             
-            #line 42 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 40 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
        Write(OutputCollection(Model.Settings.ListSettings.Cols.Where(settings => settings != null && allowed(settings.RoleName)).Select(settings =>
                                 {
                                     var value = settings.HeaderValue();
@@ -351,13 +343,13 @@ WriteLiteral("            ");
 WriteLiteral("\r\n\r\n");
 
             
-            #line 48 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 46 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 48 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 46 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
              foreach (var listAction in Model.Settings.ListSettings.ListActions.Where(settings => settings != null))
             {
                 if (listAction.Control == "sort")
@@ -377,7 +369,7 @@ WriteLiteral(" value=\"Применить\"");
 WriteLiteral(" /></th>\r\n");
 
             
-            #line 53 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 51 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                 }
                 else
                 {
@@ -388,7 +380,7 @@ WriteLiteral(" /></th>\r\n");
 WriteLiteral("                    <th>&nbsp;</th>\r\n");
 
             
-            #line 57 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 55 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                 }
             }
 
@@ -398,13 +390,13 @@ WriteLiteral("                    <th>&nbsp;</th>\r\n");
 WriteLiteral("        </tr>\r\n");
 
             
-            #line 60 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 58 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 60 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 58 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
           
             var number = 0;
             var hasEdit = Model.Settings.ListSettings.ListActions.Any(a => a.Control == "edit");
@@ -415,13 +407,13 @@ WriteLiteral("        </tr>\r\n");
 WriteLiteral("\r\n\r\n");
 
             
-            #line 65 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 63 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 65 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 63 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
          foreach (IEntity row in Model.ListData)
         {
             var action = Html.Raw(hasEdit ? string.Format("target=\"{0}\"", Url.Action(Constants.EditView, new { id = row.Id })) : string.Empty);
@@ -433,7 +425,7 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("            <tr ");
 
             
-            #line 69 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 67 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
            Write(Html.ByCondition(selectedRow, "class=\"selected\""));
 
             
@@ -446,7 +438,7 @@ WriteLiteral(" class=\"number\"");
 WriteLiteral(">");
 
             
-            #line 71 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 69 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                                Write(++number + (Model.FilterParameters.StartPosition));
 
             
@@ -455,13 +447,13 @@ WriteLiteral(">");
 WriteLiteral("</td>\r\n");
 
             
-            #line 72 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 70 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 72 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 70 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                  foreach (var col in Model.Settings.ListSettings.Cols.Where(s => allowed(s.RoleName)))
                 {
 
@@ -471,7 +463,7 @@ WriteLiteral("</td>\r\n");
 WriteLiteral("                    <td ");
 
             
-            #line 74 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 72 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                    Write(action);
 
             
@@ -482,7 +474,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                        ");
 
             
-            #line 75 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 73 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                    Write(Indents(row, col));
 
             
@@ -491,13 +483,13 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n");
 
             
-            #line 76 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 74 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 76 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 74 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                           
                             var propValue = TypeHelpers.GetPropertyValue(row, col.Name);
                             if (col.Localizable)
@@ -514,7 +506,7 @@ WriteLiteral("\r\n");
 WriteLiteral("                        ");
 
             
-            #line 84 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 82 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                    Write(Html.DisplayFor(model => propValue, col.Control, new { ColSettings = col, Row = row }));
 
             
@@ -523,7 +515,7 @@ WriteLiteral("                        ");
 WriteLiteral("\r\n                    </td>\r\n");
 
             
-            #line 86 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 84 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                 }
 
             
@@ -532,13 +524,13 @@ WriteLiteral("\r\n                    </td>\r\n");
 WriteLiteral("\r\n\r\n");
 
             
-            #line 89 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 87 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 89 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 87 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                  foreach (var listAction in Model.Settings.ListSettings.ListActions)
                 {
 
@@ -552,13 +544,13 @@ WriteLiteral(" class=\"list-action\"");
 WriteLiteral(">\r\n");
 
             
-            #line 92 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 90 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                         
             
             #line default
             #line hidden
             
-            #line 92 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 90 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                           Html.RenderPartial("ListActions/" + listAction.Control, row, new ViewDataDictionary { { "Settings", Model.Settings }, { "listActionSettings", listAction }, { "listViewModel", Model } });
             
             #line default
@@ -566,7 +558,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("\r\n                    </td>    \r\n");
 
             
-            #line 94 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 92 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                 }
 
             
@@ -575,7 +567,7 @@ WriteLiteral("\r\n                    </td>    \r\n");
 WriteLiteral("            </tr>\r\n");
 
             
-            #line 96 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 94 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         }
 
             
@@ -584,13 +576,13 @@ WriteLiteral("            </tr>\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 98 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 96 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 98 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 96 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
          if (Model.FilterParameters.ItemsCount == 0)
         {
             var colspan = Model.Settings.ListSettings.Cols.Count() + Model.Settings.ListSettings.ListActions.Count();
@@ -600,20 +592,20 @@ WriteLiteral("\r\n");
             #line hidden
 WriteLiteral("            <tr>\r\n                <td");
 
-WriteAttribute("colspan", Tuple.Create(" colspan=\"", 4697), Tuple.Create("\"", 4721)
+WriteAttribute("colspan", Tuple.Create(" colspan=\"", 4570), Tuple.Create("\"", 4594)
             
-            #line 102 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 4707), Tuple.Create<System.Object, System.Int32>(colspan + 1
+            #line 100 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 4580), Tuple.Create<System.Object, System.Int32>(colspan + 1
             
             #line default
             #line hidden
-, 4707), false)
+, 4580), false)
 );
 
 WriteLiteral(">Список пуст</td>\r\n            </tr>\r\n");
 
             
-            #line 104 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 102 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
         }
 
             
@@ -622,14 +614,14 @@ WriteLiteral(">Список пуст</td>\r\n            </tr>\r\n");
 WriteLiteral("    </table>\r\n");
 
             
-            #line 106 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 104 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 }
 
             
             #line default
             #line hidden
             
-            #line 107 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 105 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
  if (Model.FilterParameters.HasPager())
 {
     var count = Model.FilterParameters.GetPagesCount();
@@ -644,13 +636,13 @@ WriteLiteral(" id=\"pager\"");
 WriteLiteral(">\r\n        Страница:\r\n");
 
             
-            #line 112 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 110 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 		
             
             #line default
             #line hidden
             
-            #line 112 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 110 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
    for (var i = 1; i <= count; i++)
   {
       if (Model.FilterParameters.Page == i)
@@ -662,7 +654,7 @@ WriteLiteral(">\r\n        Страница:\r\n");
 WriteLiteral("            <span>");
 
             
-            #line 116 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 114 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
              Write(i);
 
             
@@ -671,7 +663,7 @@ WriteLiteral("            <span>");
 WriteLiteral("</span>\r\n");
 
             
-            #line 117 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 115 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
       }
       else
       {
@@ -683,20 +675,20 @@ WriteLiteral("            <a");
 
 WriteLiteral(" class=\"list-action\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 5119), Tuple.Create("\"", 5173)
+WriteAttribute("href", Tuple.Create(" href=\"", 4992), Tuple.Create("\"", 5046)
             
-            #line 120 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 5126), Tuple.Create<System.Object, System.Int32>(Request.Url.SetParameter("page", i.ToString())
+            #line 118 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+, Tuple.Create(Tuple.Create("", 4999), Tuple.Create<System.Object, System.Int32>(Request.Url.SetParameter("page", i.ToString())
             
             #line default
             #line hidden
-, 5126), false)
+, 4999), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 120 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 118 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
                                                                                      Write(i);
 
             
@@ -705,7 +697,7 @@ WriteLiteral(">");
 WriteLiteral("</a>\r\n");
 
             
-            #line 121 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 119 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
       }
   }
 
@@ -715,7 +707,7 @@ WriteLiteral("</a>\r\n");
 WriteLiteral("\r\n    </div>\r\n");
 
             
-            #line 125 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
+            #line 123 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
 }
 
             

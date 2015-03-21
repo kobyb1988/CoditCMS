@@ -81,11 +81,10 @@ namespace T4MVC.Admin
                 public readonly string ozi_String = "ozi_String";
                 public readonly string ozi_Textarea = "ozi_Textarea";
                 public readonly string ozi_Wysiwyg = "ozi_Wysiwyg";
-                public readonly string ReferralExplains = "ReferralExplains";
-                public readonly string ReferralFields = "ReferralFields";
+                public readonly string ReferralExplains_cshtml = "ReferralExplains.cshtml";
+                public readonly string ReferralFields_cshtml = "ReferralFields.cshtml";
                 public readonly string StartDistribution = "StartDistribution";
-                public readonly string Subscription = "Subscription";
-                public readonly string SubscriptionGroup = "SubscriptionGroup";
+                public readonly string SubscriptionGroup_cshtml = "SubscriptionGroup.cshtml";
                 static readonly _CollectionsClass s_Collections = new _CollectionsClass();
                 public _CollectionsClass Collections { get { return s_Collections; } }
                 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

@@ -1,12 +1,10 @@
-﻿@using MedIn.Web
-@using DB.Entities
+﻿@using DB.Entities
 @using Libs
 @model ListViewModel
 
 @{
-    ViewBag.HtmlPageTitle = "OziCms.cms — список объектов";
-    var roles = Roles.GetRolesForUser(User.Identity.Name);
-    Func<string, bool> allowed = role => string.IsNullOrEmpty(role) || roles.Contains(role);
+    ViewBag.HtmlPageTitle = "OziCms.cms — список объектов";    
+    Func<string, bool> allowed = role =>true;
 }
 
 <script type="text/javascript">

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0"?>
 <settings xmlns="urn:settings" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="urn:settings Settings.xsd">
-	<list orderAsc="Sort">
+	<list orderAsc="Sort" levels="true">
 		<!--selectRowProperty="IsDefault"-->
+
 		<global>
 			<create/>
 		</global>
@@ -14,8 +15,8 @@
 		</actions>
 
 		<cols>
-			<string name="Name" title="Название"/>
-			<string name="Alias" title="Псевдоним" />
+			<string name="Name" title="Название" levels="true"/>
+			<string name="Alias" title="Псевдоним"/>
 		</cols>
 
 	</list>
@@ -23,10 +24,15 @@
 	<form>
 		<tab name="General">
 			<string name="Name" title="Название" />
-			<wysiwyg name="Description" title="Описание" />
+			<string name="Header" title="Заголовок" />
+			<checkbox name="ShowInMenu" title="Показывать в меню" />
+			<select name="ParentId" title="Родительская страница" reference="Parent" optionTitle="Name" optionValue="Id" levels="true" localizable="true">
+				<option>Нет</option>
+			</select>
+			<wysiwyg name="Content" title="Содержание страницы" />
 		</tab>
-		<tab name="Images">
-			<file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
+		<tab name="Advanced">
+			<wysiwyg name="Teaser" title="Вступительный текст" />
 		</tab>
 		<tab name="Metadata">
 			<string name="Alias" title="Псевдоним" info="Используется для генерации url" />

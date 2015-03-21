@@ -35,7 +35,8 @@ namespace T4MVC
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class AdminClass
     {
-        public readonly string Name = "Admin";        
+        public readonly string Name = "Admin";
+        public CMS.Areas.Admin.Controllers.LocationsController Locations = new CMS.Areas.Admin.Controllers.T4MVC_LocationsController();
         public CMS.Areas.Admin.Controllers.SiteSettingsController SiteSettings = new CMS.Areas.Admin.Controllers.T4MVC_SiteSettingsController();
         public CMS.Areas.Admin.Controllers.UtilsController Utils = new CMS.Areas.Admin.Controllers.T4MVC_UtilsController();
         public T4MVC.Admin.SharedController Shared = new T4MVC.Admin.SharedController();
@@ -61,6 +62,19 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     }
      
     public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_CMS_ViewModels_FineUploaderResult : CMS.ViewModels.FineUploaderResult, IT4MVCActionResult
+{
+    public T4MVC_CMS_ViewModels_FineUploaderResult(string area, string controller, string action, string protocol = null): base(default(bool), null, null, null)
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
     
     public string Controller { get; set; }
     public string Action { get; set; }

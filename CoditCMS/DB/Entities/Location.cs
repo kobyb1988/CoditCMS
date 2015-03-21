@@ -16,7 +16,7 @@ namespace DB.Entities
         
         public virtual Location Parent {get;set;}
 
-        public ICollection<Location> Locations { get; set; } 
+        public virtual ICollection<Location> Locations { get; set; } 
 
         //public Nullable<global::System.Int32> GalleryId { get; set; }
         
@@ -49,9 +49,12 @@ namespace DB.Entities
         {
             get { 
                 var entityCollection = new EntityCollection<Location>();
-                foreach (var location in Locations)
+                if (Locations != null)
                 {
-                    entityCollection.Add(location);
+                    foreach (var location in Locations)
+                    {
+                        entityCollection.Add(location);
+                    }
                 }
                 return entityCollection; 
             }

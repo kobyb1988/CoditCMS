@@ -1,9 +1,7 @@
-﻿@using MedIn.Web
-@using Libs
+﻿@using Libs
 @{
-    var settings = WebContext.CurrentTab;
-    var roles = Roles.GetRolesForUser(User.Identity.Name);
-    Func<string, bool> allowed = role => string.IsNullOrEmpty(role) || roles.Contains(role);
+    var settings = WebContext.CurrentTab;    
+    Func<string, bool> allowed = role => true;
 }
 
 

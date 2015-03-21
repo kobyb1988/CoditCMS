@@ -81,7 +81,7 @@
                 }
                 
                 <ul class="mktree" id="modules-ul">
-                    @RenderModulesTree(new Sitemap(@Url.Content("~/Modules.sitemap")).SitemapList)
+                    @RenderModulesTree(new Sitemap(@Url.Content(CMS.PagesSettings.Settings.SettingsFolderPath+"/Modules.sitemap")).SitemapList)
                 </ul>
                 
                 <div id="left-menu">

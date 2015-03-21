@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<siteMap>
+<siteMapNode title="Konig Labs">
+  <siteMapNode title="Карта сайта" controller="Locations" action="index" />
+  
+</siteMapNode>
+<siteMapNode title="Обратная связь">
+  
+</siteMapNode>
+<siteMapNode title="Логи и настройки сайта">
+  <siteMapNode title="Настройки почты" controller="SiteSettings" action="Emails" />
+  <siteMapNode title="Лог отправки почты" controller="SiteSettings" action="Logs" />
+  <siteMapNode title="Настройки сайта" controller="SiteSettings" action="General" />  
+</siteMapNode>
+</siteMap>

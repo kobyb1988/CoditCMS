@@ -10,8 +10,7 @@ using CMS;
 using DB.DAL;
 
 namespace CMS.Areas.Admin.Controllers
-{
-    //[OziAuthorize(Roles = "admin, superadmin", LoginUrl = "/admin/account/login")]
+{    
     [Authorize(Roles = "admin, superadmin")]
     public partial class SiteSettingsController : OziController
     {

@@ -32,14 +32,8 @@ namespace ASP
     using CMS.ViewModels;
     using DB.Entities;
     
-    #line 2 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
-    using Libs;
-    
-    #line default
-    #line hidden
-    
     #line 1 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
-    using CMS;
+    using Libs;
     
     #line default
     #line hidden
@@ -54,11 +48,10 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 3 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 2 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
   
-    var settings = WebContext.CurrentTab;
-    var roles = Roles.GetRolesForUser(User.Identity.Name);
-    Func<string, bool> allowed = role => string.IsNullOrEmpty(role) || roles.Contains(role);
+    var settings = WebContext.CurrentTab;    
+    Func<string, bool> allowed = role => true;
 
             
             #line default
@@ -66,7 +59,7 @@ namespace ASP
 WriteLiteral("\r\n\r\n\r\n");
 
             
-            #line 10 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 8 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
  foreach (var field in settings.Fields.Where(field => allowed(field.RoleName)))
 {
     WebContext.FieldSettings = field;
@@ -77,14 +70,14 @@ WriteLiteral("\r\n\r\n\r\n");
             #line default
             #line hidden
             
-            #line 15 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 13 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
    Write(Html.Editor(field.Name, field.Control, field.Name, new { FieldSettings = field }));
 
             
             #line default
             #line hidden
             
-            #line 15 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 13 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                                                                                           
     }
     else if (string.IsNullOrEmpty(field.Condition) || (bool)TypeHelpers.GetPropertyValue(Model, field.Condition))
@@ -100,13 +93,13 @@ WriteLiteral(" class=\"form-table-row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 18 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 18 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
              if (field.Control == "hr")
             {
 
@@ -120,7 +113,7 @@ WriteLiteral(" colspan=\"2\"");
 WriteLiteral(">\r\n                    <hr />\r\n                </td>\r\n");
 
             
-            #line 25 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 23 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
             }
             else
             {
@@ -137,7 +130,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 29 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 27 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                Write(field.Title);
 
             
@@ -154,7 +147,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    ");
 
             
-            #line 32 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 30 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                Write(Html.Editor(field.Name, field.Control, field.Name));
 
             
@@ -163,13 +156,13 @@ WriteLiteral("                    ");
 WriteLiteral("\r\n");
 
             
-            #line 33 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 31 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 33 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 31 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                      if (field.Info != null)
                     {
 
@@ -183,7 +176,7 @@ WriteLiteral(" class=\"field-info\"");
 WriteLiteral(">");
 
             
-            #line 35 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 33 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                                            Write(field.Info);
 
             
@@ -192,7 +185,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n");
 
             
-            #line 36 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 34 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                     }
 
             
@@ -205,7 +198,7 @@ WriteLiteral(" class=\"error-message\"");
 WriteLiteral(">");
 
             
-            #line 37 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 35 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
                                           Write(Html.ValidationMessage(field.Name));
 
             
@@ -214,7 +207,7 @@ WriteLiteral(">");
 WriteLiteral("</div>\r\n                </td>\r\n");
 
             
-            #line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 37 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
             }
 
             
@@ -223,7 +216,7 @@ WriteLiteral("</div>\r\n                </td>\r\n");
 WriteLiteral("        </tr>\r\n");
 
             
-            #line 41 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
+            #line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\Shared\ObjectFields.cshtml"
     }
 }
             

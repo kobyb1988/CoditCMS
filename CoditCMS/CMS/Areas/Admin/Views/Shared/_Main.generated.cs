@@ -751,7 +751,7 @@ WriteLiteral("                    ");
 
             
             #line 84 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-               Write(RenderModulesTree(new Sitemap(@Url.Content("~/Modules.sitemap")).SitemapList));
+               Write(RenderModulesTree(new Sitemap(@Url.Content(CMS.PagesSettings.Settings.SettingsFolderPath+"/Modules.sitemap")).SitemapList));
 
             
             #line default
@@ -770,14 +770,14 @@ WriteLiteral(" class=\"left-function\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create("  href=\"", 5780), Tuple.Create("\"", 5840)
+WriteAttribute("href", Tuple.Create("  href=\"", 5825), Tuple.Create("\"", 5885)
             
             #line 89 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 5788), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
+, Tuple.Create(Tuple.Create("", 5833), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
             
             #line default
             #line hidden
-, 5788), false)
+, 5833), false)
 );
 
 WriteLiteral(">Очистить кэш</a></div>\r\n                    <div");

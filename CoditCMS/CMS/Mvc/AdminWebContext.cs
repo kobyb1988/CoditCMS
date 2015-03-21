@@ -8,76 +8,97 @@ using DB.Entities;
 
 namespace CMS.Mvc
 {
-	public class AdminWebContext
-	{
-		public AdminWebContext()
-		{
-			
-		}
+    public class AdminWebContext
+    {
+        public AdminWebContext()
+        {
 
-		private Settings _settings;
-		private string _returnUrl;
+        }
 
-		public string ReturnUrl
-		{
-			get { return _returnUrl ?? HttpContext.Current.Request["returnUrl"] ?? HttpContext.Current.Request["ozi_backlink"]; }
-			set { _returnUrl = value; }
-		}
+        // aganhza
+        private static object syncRoot = new Object();
+        private static AdminWebContext _context { get; set; }
+        public static AdminWebContext GetContext()
+        {
+            if (_context == null)
+            {
+                lock (syncRoot)
+                {
+                    _context = new AdminWebContext();
+                }
+            }
+            return _context;
+        }
 
-		public int? PrevId { get; set; }
-		public int? NextId { get; set; }
+        private Settings _settings;
+        private string _returnUrl;
 
-		public bool IsCreate { get; set; }
+        public string ReturnUrl
+        {
+            get { return _returnUrl ?? HttpContext.Current.Request["returnUrl"] ?? HttpContext.Current.Request["ozi_backlink"]; }
+            set { _returnUrl = value; }
+        }
 
-		public string EditViewName { get; set; }
+        public int? PrevId { get; set; }
+        public int? NextId { get; set; }
 
-		public Settings GetSettings(Type controllerType = null)
-		{
-			if (controllerType == null)
-				return _settings;
-			return _settings ?? (_settings = new Settings(GetSettingsName(controllerType)));
-		}
+        public bool IsCreate { get; set; }
 
-		private string GetSettingsName(Type controllerType)
-		{
-			Debug.Assert(controllerType.BaseType != null);
-			return controllerType.BaseType.GetGenericArguments()[0].Name;
-		}
+        public string EditViewName { get; set; }
 
-		private ViewDataDictionary _viewData;
-		private Libs.DynamicViewDataDictionary _dynamicViewData;
+        public Settings GetSettings(Type controllerType = null)
+        {
+            if (_settings == null)
+            {
+                if (controllerType != null)
+                {
+                    var name = GetSettingsName(controllerType);
+                    _settings = new Settings(name);
+                }
+            }
+            return _settings;
+        }
 
-		public dynamic ViewBag
-		{
-			get { return _dynamicViewData ?? (_dynamicViewData = new Libs.DynamicViewDataDictionary(() => ViewData)); }
-		}
+        private string GetSettingsName(Type controllerType)
+        {
+            Debug.Assert(controllerType.BaseType != null);
+            return controllerType.BaseType.GetGenericArguments()[0].Name;
+        }
 
-		protected virtual void SetViewData(ViewDataDictionary viewData)
-		{
-			_viewData = viewData;
-		}
+        private ViewDataDictionary _viewData;
+        private Libs.DynamicViewDataDictionary _dynamicViewData;
 
-		public ViewDataDictionary ViewData
-		{
-			get
-			{
-				if (_viewData == null)
-				{
-					SetViewData(new ViewDataDictionary());
-				}
-				return _viewData;
-			}
-			set { SetViewData(value); }
-		}
+        public dynamic ViewBag
+        {
+            get { return _dynamicViewData ?? (_dynamicViewData = new Libs.DynamicViewDataDictionary(() => ViewData)); }
+        }
 
-		public FieldSettings FieldSettings { get; set; }
+        protected virtual void SetViewData(ViewDataDictionary viewData)
+        {
+            _viewData = viewData;
+        }
 
-		public TabsSettings CurrentTab { get; set; }
+        public ViewDataDictionary ViewData
+        {
+            get
+            {
+                if (_viewData == null)
+                {
+                    SetViewData(new ViewDataDictionary());
+                }
+                return _viewData;
+            }
+            set { SetViewData(value); }
+        }
 
-		public string HtmlPageTitle { get; set; }
+        public FieldSettings FieldSettings { get; set; }
 
-		public IEntity Model { get; set; }
+        public TabsSettings CurrentTab { get; set; }
 
-		public Type ModelType { get; set; }
-	}
+        public string HtmlPageTitle { get; set; }
+
+        public IEntity Model { get; set; }
+
+        public Type ModelType { get; set; }
+    }
 }
