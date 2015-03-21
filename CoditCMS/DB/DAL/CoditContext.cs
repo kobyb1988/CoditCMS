@@ -26,6 +26,7 @@ namespace DB.DAL
             }
             public virtual DbSet<SiteSetting> SiteSettings { get; set; }
             public virtual DbSet<EmailLog> EmailLogs { get; set; }
+            public virtual DbSet<Location> Location { get; set; }
         }
 
 }
