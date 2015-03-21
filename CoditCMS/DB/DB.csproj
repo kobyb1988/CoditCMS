@@ -127,6 +127,10 @@
     <Compile Include="Migrations\201503211102188_Locations.Designer.cs">
       <DependentUpon>201503211102188_Locations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503211641177_ExtendLocation.cs" />
+    <Compile Include="Migrations\201503211641177_ExtendLocation.Designer.cs">
+      <DependentUpon>201503211641177_ExtendLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -147,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503211102188_Locations.resx">
       <DependentUpon>201503211102188_Locations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503211641177_ExtendLocation.resx">
+      <DependentUpon>201503211641177_ExtendLocation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

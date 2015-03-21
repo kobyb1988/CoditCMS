@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMS.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,7 @@ namespace KonigLabs.Controllers
 
         public virtual ActionResult Page()
         {
+            var cntx = DependencyResolver.Current.GetService<IWebContext>();
             return View();
         }
     }

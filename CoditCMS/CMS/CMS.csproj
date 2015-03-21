@@ -399,6 +399,7 @@
     <Compile Include="Mvc\AdminWebContext.cs" />
     <Compile Include="Mvc\AjaxOnlyAttribute.cs" />
     <Compile Include="Mvc\AjaxPostAttribute.cs" />
+    <Compile Include="Mvc\BaseWebPage.cs" />
     <Compile Include="Mvc\Constants.cs" />
     <Compile Include="Mvc\DotOrgViewPage.cs" />
     <Compile Include="Mvc\IDotOrgWebContext.cs" />

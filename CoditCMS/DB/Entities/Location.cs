@@ -23,6 +23,8 @@ namespace DB.Entities
         public global::System.String Name { get; set; }
         
         public global::System.String Alias { get; set; }
+
+        public global::System.String Header { get; set; }
         
         public global::System.String Teaser { get; set; }
         
