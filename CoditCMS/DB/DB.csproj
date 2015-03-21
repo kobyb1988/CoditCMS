@@ -98,6 +98,7 @@
     <Compile Include="Entities\ISortableEntity.cs" />
     <Compile Include="Entities\IUserEntity.cs" />
     <Compile Include="Entities\IVisibleEntity.cs" />
+    <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\Mocks\CustomFileEntity.cs" />
     <Compile Include="Entities\Mocks\CustomMetadata.cs" />
     <Compile Include="Entities\SiteSetting.cs" />
