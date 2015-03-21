@@ -382,6 +382,7 @@
     <Compile Include="Controllers\GenericController.cs" />
     <Compile Include="Controllers\GenericController.Files.cs" />
     <Compile Include="Controllers\OziController.cs" />
+    <Compile Include="Core\Pages.cs" />
     <Compile Include="Helpers\MvcExtensions.cs" />
     <Compile Include="Helpers\PlainTree.cs" />
     <Compile Include="Infrastructure\FilterParameters.cs" />
@@ -401,7 +402,9 @@
     <Compile Include="Mvc\Constants.cs" />
     <Compile Include="Mvc\DotOrgViewPage.cs" />
     <Compile Include="Mvc\IDotOrgWebContext.cs" />
+    <Compile Include="Mvc\LocationConstraints.cs" />
     <Compile Include="Mvc\OziModelBinder.cs" />
+    <Compile Include="Mvc\WebContext.cs" />
     <Compile Include="PagesSettings\FormSettings.cs" />
     <Compile Include="PagesSettings\Forms\CheckboxSettings.cs" />
     <Compile Include="PagesSettings\Forms\CodeSettings.cs" />
@@ -447,9 +450,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BreadCrumbViewModel.cs" />
     <Compile Include="ViewModels\EditViewModel.cs" />
     <Compile Include="ViewModels\FineUpload.cs" />
     <Compile Include="ViewModels\FineUploadResult.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\ListViewModel.cs" />
     <Compile Include="ViewModels\PagerViewModel.cs" />
     <Compile Include="ViewModels\SendMailViewModel.cs" />

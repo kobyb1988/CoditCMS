@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMS.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,11 +14,17 @@ namespace KonigLabs
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            var route = routes.MapRoute("locations", "{*location}", MVC.Default.Page(),
+                        new { localizationRedirectRouteName = "homepage" },
+                        new { location = new LocationConstraints() });
+            route.DataTokens["RouteName"] = "locations";
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
         }
     }
 }

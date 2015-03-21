@@ -39,25 +39,19 @@ namespace ASP
     using DB.Entities;
     using Libs;
     
-    #line 2 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
-    using CMS;
-    
-    #line default
-    #line hidden
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/Shared/EditorTemplates/ozi_Object.cshtml")]
     public partial class _Areas_Admin_Views_Shared_EditorTemplates_ozi_Object_cshtml_ : CMS.Mvc.AdminViewPage<Object>
     {
 
-#line 30 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+#line 29 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
 public System.Web.WebPages.HelperResult RenderTabs(Settings settings)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 31 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+#line 30 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
  
     var index = 0;
     foreach (var tab in settings.FormSettings.Tabs)
@@ -70,15 +64,15 @@ return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 #line hidden
 WriteLiteralTo(__razor_helper_writer, "        <div");
 
-WriteAttributeTo(__razor_helper_writer, "id", Tuple.Create(" id=\"", 784), Tuple.Create("\"", 800)
-, Tuple.Create(Tuple.Create("", 789), Tuple.Create("tab", 789), true)
+WriteAttributeTo(__razor_helper_writer, "id", Tuple.Create(" id=\"", 766), Tuple.Create("\"", 782)
+, Tuple.Create(Tuple.Create("", 771), Tuple.Create("tab", 771), true)
 
-#line 37 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
-, Tuple.Create(Tuple.Create("", 792), Tuple.Create<System.Object, System.Int32>(index
+#line 36 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+, Tuple.Create(Tuple.Create("", 774), Tuple.Create<System.Object, System.Int32>(index
 
 #line default
 #line hidden
-, 792), false)
+, 774), false)
 );
 
 WriteLiteralTo(__razor_helper_writer, ">\r\n            <table");
@@ -88,13 +82,13 @@ WriteLiteralTo(__razor_helper_writer, " class=\"form-table\"");
 WriteLiteralTo(__razor_helper_writer, ">\r\n");
 
 
-#line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+#line 38 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
                 
 
 #line default
 #line hidden
 
-#line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+#line 38 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
                    Html.RenderPartial("EditorTemplates/Shared/ObjectFields"); 
 
 #line default
@@ -102,7 +96,7 @@ WriteLiteralTo(__razor_helper_writer, ">\r\n");
 WriteLiteralTo(__razor_helper_writer, "\r\n            </table>\r\n        </div>\r\n");
 
 
-#line 42 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+#line 41 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
     }
 
 
@@ -110,7 +104,7 @@ WriteLiteralTo(__razor_helper_writer, "\r\n            </table>\r\n        </div
 #line hidden
 });
 
-#line 43 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+#line 42 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
 }
 #line default
 #line hidden
@@ -121,7 +115,7 @@ WriteLiteralTo(__razor_helper_writer, "\r\n            </table>\r\n        </div
         public override void Execute()
         {
             
-            #line 5 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 4 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
   
     var settings = WebContext.GetSettings();
     var tabsCount = settings.FormSettings.Tabs.Count;
@@ -132,7 +126,7 @@ WriteLiteralTo(__razor_helper_writer, "\r\n            </table>\r\n        </div
 WriteLiteral("\r\n\r\n\r\n");
 
             
-            #line 11 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 10 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
  if (tabsCount > 1)
 {
     var index = 0;
@@ -147,13 +141,13 @@ WriteLiteral("<div id=\"edit-form-tabs\">\r\n");
 WriteLiteral("        <ul>\r\n");
 
             
-            #line 16 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 15 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 16 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 15 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
              foreach (var tab in settings.FormSettings.Tabs)
             {
                 index++;
@@ -164,21 +158,21 @@ WriteLiteral("        <ul>\r\n");
             #line hidden
 WriteLiteral("                <li><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 462), Tuple.Create("\"", 481)
-, Tuple.Create(Tuple.Create("", 469), Tuple.Create("#tab", 469), true)
+WriteAttribute("href", Tuple.Create(" href=\"", 444), Tuple.Create("\"", 463)
+, Tuple.Create(Tuple.Create("", 451), Tuple.Create("#tab", 451), true)
             
-            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
-, Tuple.Create(Tuple.Create("", 473), Tuple.Create<System.Object, System.Int32>(index
+            #line 19 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+, Tuple.Create(Tuple.Create("", 455), Tuple.Create<System.Object, System.Int32>(index
             
             #line default
             #line hidden
-, 473), false)
+, 455), false)
 );
 
 WriteLiteral(">");
 
             
-            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 19 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
                                       Write(name);
 
             
@@ -187,7 +181,7 @@ WriteLiteral(">");
 WriteLiteral("</a></li>\r\n");
 
             
-            #line 21 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
             }
 
             
@@ -196,14 +190,14 @@ WriteLiteral("</a></li>\r\n");
 WriteLiteral("        </ul>\r\n");
 
             
-            #line 23 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 22 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
 }
 
             
             #line default
             #line hidden
             
-            #line 24 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 23 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
 Write(RenderTabs(settings));
 
             
@@ -212,7 +206,7 @@ Write(RenderTabs(settings));
 WriteLiteral("\r\n");
 
             
-            #line 25 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 24 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
  if (tabsCount > 1)
 {
 
@@ -222,7 +216,7 @@ WriteLiteral("\r\n");
 WriteLiteral("</div>\r\n");
 
             
-            #line 28 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
+            #line 27 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_Object.cshtml"
 }
 
             

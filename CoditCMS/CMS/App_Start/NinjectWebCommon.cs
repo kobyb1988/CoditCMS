@@ -12,6 +12,7 @@ namespace CMS.App_Start
     using Ninject.Web.Common;
     using DB.Infrastructure;
     using DB.Infrastructure.Implementation;
+    using CMS.Mvc;
 
     public static class NinjectWebCommon 
     {
@@ -69,8 +70,8 @@ namespace CMS.App_Start
             //kernel.Bind<IEmailLogService>().To<EmailLogsService>();
             //kernel.Bind<ITabService>().To<TabService>();
 
-            //kernel.Bind<AdminWebContext>().ToSelf().InRequestScope();
-            //kernel.Bind<IWebContext>().To<WebContext>().InRequestScope();
+            kernel.Bind<AdminWebContext>().ToSelf().InRequestScope();
+            kernel.Bind<IWebContext>().To<WebContext>().InRequestScope();
             //kernel.Bind<ILogger>().To<Logger>().InRequestScope();
 
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>().InRequestScope();
