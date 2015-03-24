@@ -29,5 +29,7 @@ namespace KonigLabs.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<CrewMember> CrewMembers { get; set; }
     }
 }

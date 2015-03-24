@@ -2,11 +2,11 @@
 <siteMap>
 <siteMapNode title="Konig Labs">
   <siteMapNode title="Карта сайта" controller="Locations" action="index" />
-  
+  <siteMapNode title="Команда" controller="Crew" action="" />
 </siteMapNode>
-<siteMapNode title="Обратная связь">
+<!--<siteMapNode title="Обратная связь">
   
-</siteMapNode>
+</siteMapNode>-->
 <siteMapNode title="Логи и настройки сайта">
   <siteMapNode title="Настройки почты" controller="SiteSettings" action="Emails" />
   <siteMapNode title="Лог отправки почты" controller="SiteSettings" action="Logs" />

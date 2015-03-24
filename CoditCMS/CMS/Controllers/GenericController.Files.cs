@@ -17,7 +17,8 @@ using Newtonsoft.Json.Linq;
 
 namespace CMS.Controllers
 {
-	partial class GenericController<TEntity, TDbContext>
+    [Authorize(Roles = "admin, superadmin")]
+    partial class GenericController<TEntity, TDbContext>
 	{
 		protected virtual UploadFileSettings GetFileSettings(string propName)
 		{
