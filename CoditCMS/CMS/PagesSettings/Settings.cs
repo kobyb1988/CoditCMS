@@ -21,7 +21,7 @@ namespace CMS.PagesSettings
         public const string AdminRole = "admin";
 
         public const string SettingsFolderPath = "~/Codit";
-
+        public const string MediaRoot = "http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS";/*"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS" "http://localhost:8000" */
 		private XDocument XDoc
 		{
 			get;

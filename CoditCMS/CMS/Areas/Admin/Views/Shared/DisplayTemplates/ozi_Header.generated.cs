@@ -33,12 +33,6 @@ namespace ASP
     using DB.Entities;
     using Libs;
     
-    #line 1 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-    using CMS;
-    
-    #line default
-    #line hidden
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/Shared/DisplayTemplates/ozi_Header.cshtml")]
     public partial class _Areas_Admin_Views_Shared_DisplayTemplates_ozi_Header_cshtml_ : CMS.Mvc.AdminViewPage<dynamic>
@@ -49,7 +43,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 2 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 1 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
 Write(ViewData.TemplateInfo.FormattedModelValue);
 
             
@@ -58,7 +52,7 @@ Write(ViewData.TemplateInfo.FormattedModelValue);
 WriteLiteral("\r\n\r\n");
 
             
-            #line 4 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 3 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
   
     ColSettings settings = ViewBag.ColSettings;
     var order = settings.GetOrderField();
@@ -76,7 +70,7 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("\r\n");
 
             
-            #line 15 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 14 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
  if (order != null)
 {
 
@@ -96,7 +90,7 @@ WriteLiteral(" class=\"get-click\"");
 WriteLiteral(" data-order=\"");
 
             
-            #line 18 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 17 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
                                                               Write(order);
 
             
@@ -107,7 +101,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-desc=\"");
 
             
-            #line 18 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 17 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
                                                                                  Write(desc);
 
             
@@ -118,13 +112,13 @@ WriteLiteral("\"");
 WriteLiteral(">\r\n");
 
             
-            #line 19 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 18 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
             
             
             #line default
             #line hidden
             
-            #line 19 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 18 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
              if (curOrder != order)
             {
 
@@ -135,12 +129,20 @@ WriteLiteral("                <img");
 
 WriteLiteral(" width=\"20\"");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/down_g.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 588), Tuple.Create("\"", 675)
+            
+            #line 20 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 594), Tuple.Create<System.Object, System.Int32>(CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/down_g.png"
+            
+            #line default
+            #line hidden
+, 594), false)
+);
 
 WriteLiteral(" />\r\n");
 
             
-            #line 22 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 21 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
             }
             else if (curDesc)
             {
@@ -152,12 +154,20 @@ WriteLiteral("                <img");
 
 WriteLiteral(" width=\"20\"");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/up.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 773), Tuple.Create("\"", 856)
+            
+            #line 24 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 779), Tuple.Create<System.Object, System.Int32>(CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/up.png"
+            
+            #line default
+            #line hidden
+, 779), false)
+);
 
 WriteLiteral(" />\r\n");
 
             
-            #line 26 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 25 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
             }
             else
             {
@@ -169,28 +179,36 @@ WriteLiteral("                <img");
 
 WriteLiteral(" width=\"20\"");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/down.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 941), Tuple.Create("\"", 1026)
+            
+            #line 28 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 947), Tuple.Create<System.Object, System.Int32>(CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/down.png"
+            
+            #line default
+            #line hidden
+, 947), false)
+);
 
 WriteLiteral(" />\r\n");
 
             
-            #line 30 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 29 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
             }
 
             
             #line default
             #line hidden
-WriteLiteral("        </a>\r\n    </div>\r\n");
+WriteLiteral("</a>\r\n    </div>\r\n");
 
             
-            #line 33 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 32 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
 }
 
             
             #line default
             #line hidden
             
-            #line 34 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 33 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
   
     var filter = settings.GetFilterField();
 
@@ -200,7 +218,7 @@ WriteLiteral("        </a>\r\n    </div>\r\n");
 WriteLiteral("\r\n\r\n");
 
             
-            #line 38 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 37 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
  if (filter != null)
 {
     var curValue = Request.QueryString[filter];
@@ -215,13 +233,13 @@ WriteLiteral(" class=\"header-panel\"");
 WriteLiteral(">\r\n        \r\n");
 
             
-            #line 43 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 42 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 43 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 42 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
          if (curValue != null)
         {
             string d = "data-" + filter + "=''";
@@ -236,34 +254,34 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"hidden get-blur\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1296), Tuple.Create("\"", 1313)
+WriteAttribute("value", Tuple.Create(" value=\"", 1399), Tuple.Create("\"", 1416)
             
-            #line 47 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-, Tuple.Create(Tuple.Create("", 1304), Tuple.Create<System.Object, System.Int32>(curValue
+            #line 46 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 1407), Tuple.Create<System.Object, System.Int32>(curValue
             
             #line default
             #line hidden
-, 1304), false)
+, 1407), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1314), Tuple.Create("\"", 1326)
+WriteAttribute("id", Tuple.Create(" id=\"", 1417), Tuple.Create("\"", 1429)
             
-            #line 47 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-, Tuple.Create(Tuple.Create("", 1319), Tuple.Create<System.Object, System.Int32>(filter
+            #line 46 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 1422), Tuple.Create<System.Object, System.Int32>(filter
             
             #line default
             #line hidden
-, 1319), false)
+, 1422), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1327), Tuple.Create("\"", 1343)
+WriteAttribute("name", Tuple.Create(" name=\"", 1430), Tuple.Create("\"", 1446)
             
-            #line 47 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-             , Tuple.Create(Tuple.Create("", 1334), Tuple.Create<System.Object, System.Int32>(filter
+            #line 46 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+             , Tuple.Create(Tuple.Create("", 1437), Tuple.Create<System.Object, System.Int32>(filter
             
             #line default
             #line hidden
-, 1334), false)
+, 1437), false)
 );
 
 WriteLiteral("/>\r\n");
@@ -277,7 +295,7 @@ WriteLiteral(" data-hide=\"true\"");
 WriteLiteral(" data-target-show=\"");
 
             
-            #line 48 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 47 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
                                                                         Write(filter);
 
             
@@ -288,7 +306,7 @@ WriteLiteral("\"");
 WriteLiteral(">");
 
             
-            #line 48 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 47 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
                                                                                   Write(curValue);
 
             
@@ -305,7 +323,7 @@ WriteLiteral(" class=\"get-click\"");
 WriteLiteral(" ");
 
             
-            #line 49 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 48 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
                                                       Write(Html.Raw(d));
 
             
@@ -315,12 +333,20 @@ WriteLiteral(">\r\n                <img");
 
 WriteLiteral(" width=\"20\"");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/filter_delete.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 1658), Tuple.Create("\"", 1753)
+            
+            #line 49 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 1664), Tuple.Create<System.Object, System.Int32>( CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/filter_delete.png"
+            
+            #line default
+            #line hidden
+, 1664), false)
+);
 
-WriteLiteral(" />\r\n            </a>\r\n");
+WriteLiteral(" />\r\n            ></a>\r\n");
 
             
-            #line 52 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 51 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
         }
         else
         {
@@ -334,34 +360,34 @@ WriteLiteral(" type=\"text\"");
 
 WriteLiteral(" class=\"hidden get-blur\"");
 
-WriteAttribute("value", Tuple.Create(" value=\"", 1720), Tuple.Create("\"", 1737)
+WriteAttribute("value", Tuple.Create(" value=\"", 1868), Tuple.Create("\"", 1885)
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-, Tuple.Create(Tuple.Create("", 1728), Tuple.Create<System.Object, System.Int32>(curValue
+            #line 54 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 1876), Tuple.Create<System.Object, System.Int32>(curValue
             
             #line default
             #line hidden
-, 1728), false)
+, 1876), false)
 );
 
-WriteAttribute("name", Tuple.Create(" name=\"", 1738), Tuple.Create("\"", 1752)
+WriteAttribute("name", Tuple.Create(" name=\"", 1886), Tuple.Create("\"", 1900)
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-, Tuple.Create(Tuple.Create("", 1745), Tuple.Create<System.Object, System.Int32>(filter
+            #line 54 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 1893), Tuple.Create<System.Object, System.Int32>(filter
             
             #line default
             #line hidden
-, 1745), false)
+, 1893), false)
 );
 
-WriteAttribute("id", Tuple.Create(" id=\"", 1753), Tuple.Create("\"", 1765)
+WriteAttribute("id", Tuple.Create(" id=\"", 1901), Tuple.Create("\"", 1913)
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
-            , Tuple.Create(Tuple.Create("", 1758), Tuple.Create<System.Object, System.Int32>(filter
+            #line 54 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            , Tuple.Create(Tuple.Create("", 1906), Tuple.Create<System.Object, System.Int32>(filter
             
             #line default
             #line hidden
-, 1758), false)
+, 1906), false)
 );
 
 WriteLiteral("/>\r\n");
@@ -373,7 +399,7 @@ WriteLiteral(" href=\"javascript:void(0)\"");
 WriteLiteral(" data-target-show=\"");
 
             
-            #line 56 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 55 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
                                                       Write(filter);
 
             
@@ -385,12 +411,20 @@ WriteLiteral(">\r\n                <img");
 
 WriteLiteral(" width=\"20\"");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/filter_add.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 2019), Tuple.Create("\"", 2112)
+            
+            #line 56 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+, Tuple.Create(Tuple.Create("", 2025), Tuple.Create<System.Object, System.Int32>( CMS.PagesSettings.Settings.MediaRoot + "/Areas/Admin/Images/Default/filter_add.png"
+            
+            #line default
+            #line hidden
+, 2025), false)
+);
 
 WriteLiteral(" />\r\n            </a>\r\n");
 
             
-            #line 59 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 58 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
         }
 
             
@@ -399,7 +433,7 @@ WriteLiteral(" />\r\n            </a>\r\n");
 WriteLiteral("    </div>\r\n");
 
             
-            #line 61 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
+            #line 60 "..\..\Areas\Admin\Views\Shared\DisplayTemplates\ozi_Header.cshtml"
 }
             
             #line default

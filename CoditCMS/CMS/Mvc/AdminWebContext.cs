@@ -48,14 +48,13 @@ namespace CMS.Mvc
 
         public Settings GetSettings(Type controllerType = null)
         {
-            if (_settings == null)
+
+            if (controllerType != null)
             {
-                if (controllerType != null)
-                {
-                    var name = GetSettingsName(controllerType);
-                    _settings = new Settings(name);
-                }
+                var name = GetSettingsName(controllerType);
+                _settings = new Settings(name);
             }
+
             return _settings;
         }
 

@@ -30,20 +30,13 @@ namespace ASP
     using CMS.Mvc;
     using CMS.PagesSettings.Lists;
     using CMS.ViewModels;
-    using DB.Entities;
-    using Libs;
-    
-    #line 2 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
-    using DB.Entities;
-    
-    #line default
-    #line hidden
     
     #line 1 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
-    using CMS;
+    using DB.Entities;
     
     #line default
     #line hidden
+    using Libs;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/Shared/ListActions/Visibility.cshtml")]
@@ -55,7 +48,7 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 5 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
+            #line 4 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
  if (((IVisibleEntity)Model).Visibility)
 {
 
@@ -66,26 +59,34 @@ WriteLiteral("    <a");
 
 WriteLiteral(" class=\"list-action\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 151), Tuple.Create("\"", 247)
+WriteAttribute("href", Tuple.Create(" href=\"", 121), Tuple.Create("\"", 217)
             
-            #line 7 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
-, Tuple.Create(Tuple.Create("", 158), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.SetVisibilityAction, new {id = Model.Id, visibilityToSet = false })
+            #line 6 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
+, Tuple.Create(Tuple.Create("", 128), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.SetVisibilityAction, new {id = Model.Id, visibilityToSet = false })
             
             #line default
             #line hidden
-, 158), false)
+, 128), false)
 );
 
 WriteLiteral("><img");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/VisibilityOn.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 223), Tuple.Create("\"", 316)
+            
+            #line 6 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
+                                                        , Tuple.Create(Tuple.Create("", 229), Tuple.Create<System.Object, System.Int32>(CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/VisibilityOn.png"
+            
+            #line default
+            #line hidden
+, 229), false)
+);
 
 WriteLiteral(" alt=\"Выключить\"");
 
 WriteLiteral(" /></a>\r\n");
 
             
-            #line 8 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
+            #line 7 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
 }
 else
 {
@@ -97,19 +98,27 @@ WriteLiteral("    <a");
 
 WriteLiteral(" class=\"list-action\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 367), Tuple.Create("\"", 463)
+WriteAttribute("href", Tuple.Create(" href=\"", 380), Tuple.Create("\"", 476)
             
-            #line 11 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
-, Tuple.Create(Tuple.Create("", 374), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.SetVisibilityAction, new { id = Model.Id, visibilityToSet = true })
+            #line 10 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
+, Tuple.Create(Tuple.Create("", 387), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.SetVisibilityAction, new { id = Model.Id, visibilityToSet = true })
             
             #line default
             #line hidden
-, 374), false)
+, 387), false)
 );
 
-WriteLiteral("><img");
+WriteLiteral(">\r\n    <img");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/VisibilityOff.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 488), Tuple.Create("\"", 582)
+            
+            #line 11 "..\..\Areas\Admin\Views\Shared\ListActions\Visibility.cshtml"
+, Tuple.Create(Tuple.Create("", 494), Tuple.Create<System.Object, System.Int32>(CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/VisibilityOff.png"
+            
+            #line default
+            #line hidden
+, 494), false)
+);
 
 WriteLiteral(" alt=\"Включить\"");
 

@@ -1,4 +1,3 @@
-﻿@using MedIn.Web
-@model DB.Entities.IEntity
+﻿@model DB.Entities.IEntity
 
-<a class="list-action" href="@Url.Action(Constants.EditView, new { id = Model.Id })"><img src="/Areas/Admin/Images/Default/edit.png" alt="Редактировать" /></a>
+<a class="list-action" href="@Url.Action(Constants.EditView, new { id = Model.Id })"><img src="@( CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/edit.png")" alt="Редактировать" /></a>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <settings xmlns="urn:settings" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="urn:settings Settings.xsd">
-	<list orderAsc="Sort" levels="true">
+	<list orderAsc="Sort">
 		<!--selectRowProperty="IsDefault"-->
 
 		<global>
@@ -15,7 +15,7 @@
 		</actions>
 
 		<cols>
-			<string name="FirstName" title="Имя" levels="true"/>
+			<string name="FirstName" title="Имя"/>
 			<string name="Title" title="Должность"/>
 		</cols>
 

@@ -33,12 +33,6 @@ namespace ASP
     using DB.Entities;
     using Libs;
     
-    #line 1 "..\..\Areas\Admin\Views\Shared\ListActions\Edit.cshtml"
-    using CMS;
-    
-    #line default
-    #line hidden
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/Shared/ListActions/Edit.cshtml")]
     public partial class _Areas_Admin_Views_Shared_ListActions_Edit_cshtml : CMS.Mvc.AdminViewPage<DB.Entities.IEntity>
@@ -52,23 +46,31 @@ WriteLiteral("<a");
 
 WriteLiteral(" class=\"list-action\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 76), Tuple.Create("\"", 137)
+WriteAttribute("href", Tuple.Create(" href=\"", 52), Tuple.Create("\"", 113)
             
-            #line 4 "..\..\Areas\Admin\Views\Shared\ListActions\Edit.cshtml"
-, Tuple.Create(Tuple.Create("", 83), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.EditView, new { id = Model.Id })
+            #line 3 "..\..\Areas\Admin\Views\Shared\ListActions\Edit.cshtml"
+, Tuple.Create(Tuple.Create("", 59), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.EditView, new { id = Model.Id })
             
             #line default
             #line hidden
-, 83), false)
+, 59), false)
 );
 
 WriteLiteral("><img");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/edit.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 119), Tuple.Create("\"", 205)
+            
+            #line 3 "..\..\Areas\Admin\Views\Shared\ListActions\Edit.cshtml"
+                 , Tuple.Create(Tuple.Create("", 125), Tuple.Create<System.Object, System.Int32>( CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/edit.png"
+            
+            #line default
+            #line hidden
+, 125), false)
+);
 
 WriteLiteral(" alt=\"Редактировать\"");
 
-WriteLiteral(" /></a>\r\n");
+WriteLiteral(" /></a>");
 
         }
     }

@@ -33,15 +33,9 @@ namespace ASP
     using DB.Entities;
     using Libs;
     
-    #line 1 "..\..\Areas\Admin\Views\Shared\ListActions\Delete.cshtml"
-    using CMS;
-    
-    #line default
-    #line hidden
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/Shared/ListActions/Delete.cshtml")]
-    public partial class _Areas_Admin_Views_Shared_ListActions_Delete_cshtml : CMS.Mvc.AdminViewPage<DB.Entities.IEntity>
+    public partial class _Areas_Admin_Views_Shared_ListActions_Delete_cshtml : CMS.Mvc.AdminViewPage<dynamic>
     {
         public _Areas_Admin_Views_Shared_ListActions_Delete_cshtml()
         {
@@ -54,19 +48,27 @@ WriteLiteral(" class=\"list-action\"");
 
 WriteLiteral(" onclick=\"if(!confirm(\'Удалить объект?\')) return false;\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 132), Tuple.Create("\"", 197)
+WriteAttribute("href", Tuple.Create(" href=\"", 78), Tuple.Create("\"", 143)
             
-            #line 4 "..\..\Areas\Admin\Views\Shared\ListActions\Delete.cshtml"
-      , Tuple.Create(Tuple.Create("", 139), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.DeleteAction, new { id = Model.Id })
+            #line 1 "..\..\Areas\Admin\Views\Shared\ListActions\Delete.cshtml"
+       , Tuple.Create(Tuple.Create("", 85), Tuple.Create<System.Object, System.Int32>(Url.Action(Constants.DeleteAction, new { id = Model.Id })
             
             #line default
             #line hidden
-, 139), false)
+, 85), false)
 );
 
 WriteLiteral("><img");
 
-WriteLiteral(" src=\"/Areas/Admin/Images/Default/delete.png\"");
+WriteAttribute("src", Tuple.Create(" src=\"", 149), Tuple.Create("\"", 237)
+            
+            #line 1 "..\..\Areas\Admin\Views\Shared\ListActions\Delete.cshtml"
+                                                                             , Tuple.Create(Tuple.Create("", 155), Tuple.Create<System.Object, System.Int32>( CMS.PagesSettings.Settings.MediaRoot +"/Areas/Admin/Images/Default/delete.png"
+            
+            #line default
+            #line hidden
+, 155), false)
+);
 
 WriteLiteral(" alt=\"Удалить\"");
 

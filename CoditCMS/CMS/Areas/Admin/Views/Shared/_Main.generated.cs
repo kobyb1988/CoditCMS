@@ -194,23 +194,23 @@ WriteLiteral("</title>        \r\n");
             
             #line 9 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
       
-        var mediaRoot = "http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS";/*"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS" "http://localhost:8000" */
+        var mediaRoot = CMS.PagesSettings.Settings.MediaRoot;
     
             
             #line default
             #line hidden
 WriteLiteral("\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 305), Tuple.Create("\"", 408)
+WriteAttribute("href", Tuple.Create(" href=\"", 212), Tuple.Create("\"", 315)
             
             #line 12 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 312), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 219), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 312), false)
-, Tuple.Create(Tuple.Create("", 322), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/themes/base/jquery.ui.al" +
-"l.css", 322), true)
+, 219), false)
+, Tuple.Create(Tuple.Create("", 229), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/themes/base/jquery.ui.al" +
+"l.css", 229), true)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -219,75 +219,75 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 456), Tuple.Create("\"", 531)
+WriteAttribute("href", Tuple.Create(" href=\"", 363), Tuple.Create("\"", 438)
             
             #line 13 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 463), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 370), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 463), false)
-, Tuple.Create(Tuple.Create("", 473), Tuple.Create("/Areas/Admin/Styles/Default/jquery-ui-timepicker-addon.css", 473), true)
+, 370), false)
+, Tuple.Create(Tuple.Create("", 380), Tuple.Create("/Areas/Admin/Styles/Default/jquery-ui-timepicker-addon.css", 380), true)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 563), Tuple.Create("\"", 637)
+WriteAttribute("href", Tuple.Create(" href=\"", 470), Tuple.Create("\"", 544)
             
             #line 14 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 570), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 477), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 570), false)
-, Tuple.Create(Tuple.Create("", 580), Tuple.Create("/Areas/Admin/Styles/Default/fileuploader/fineuploader.css", 580), true)
+, 477), false)
+, Tuple.Create(Tuple.Create("", 487), Tuple.Create("/Areas/Admin/Styles/Default/fileuploader/fineuploader.css", 487), true)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 669), Tuple.Create("\"", 731)
+WriteAttribute("href", Tuple.Create(" href=\"", 576), Tuple.Create("\"", 638)
             
             #line 15 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 676), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 583), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 676), false)
-, Tuple.Create(Tuple.Create("", 686), Tuple.Create("/Areas/Admin/Styles/Default/toastr/toastr.css", 686), true)
+, 583), false)
+, Tuple.Create(Tuple.Create("", 593), Tuple.Create("/Areas/Admin/Styles/Default/toastr/toastr.css", 593), true)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 763), Tuple.Create("\"", 836)
+WriteAttribute("href", Tuple.Create(" href=\"", 670), Tuple.Create("\"", 743)
             
             #line 16 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 770), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 677), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 770), false)
-, Tuple.Create(Tuple.Create("", 780), Tuple.Create("/Areas/Admin/Styles/Default/toastr/toastr-responsive.css", 780), true)
+, 677), false)
+, Tuple.Create(Tuple.Create("", 687), Tuple.Create("/Areas/Admin/Styles/Default/toastr/toastr-responsive.css", 687), true)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 868), Tuple.Create("\"", 924)
+WriteAttribute("href", Tuple.Create(" href=\"", 775), Tuple.Create("\"", 831)
             
             #line 17 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 875), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 782), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 875), false)
-, Tuple.Create(Tuple.Create("", 885), Tuple.Create("/Areas/Admin/Styles/Default/Default.css", 885), true)
+, 782), false)
+, Tuple.Create(Tuple.Create("", 792), Tuple.Create("/Areas/Admin/Styles/Default/Default.css", 792), true)
 );
 
 WriteLiteral(" rel=\"stylesheet\"");
@@ -296,382 +296,382 @@ WriteLiteral(" type=\"text/css\"");
 
 WriteLiteral(" />\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 974), Tuple.Create("\"", 1038)
+WriteAttribute("src", Tuple.Create(" src=\"", 881), Tuple.Create("\"", 945)
             
             #line 18 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 980), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 887), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 980), false)
-, Tuple.Create(Tuple.Create("", 990), Tuple.Create("/Areas/Admin/Scripts/Default/jquery-1.7.1.min.js", 990), true)
+, 887), false)
+, Tuple.Create(Tuple.Create("", 897), Tuple.Create("/Areas/Admin/Scripts/Default/jquery-1.7.1.min.js", 897), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1085), Tuple.Create("\"", 1193)
+WriteAttribute("src", Tuple.Create(" src=\"", 992), Tuple.Create("\"", 1100)
             
             #line 19 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1091), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 998), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1091), false)
-, Tuple.Create(Tuple.Create("", 1101), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/minified/jquery-ui.cu" +
-"stom.min.js", 1101), true)
+, 998), false)
+, Tuple.Create(Tuple.Create("", 1008), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/minified/jquery-ui.cu" +
+"stom.min.js", 1008), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1240), Tuple.Create("\"", 1347)
+WriteAttribute("src", Tuple.Create(" src=\"", 1147), Tuple.Create("\"", 1254)
             
             #line 20 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1246), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1153), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1246), false)
-, Tuple.Create(Tuple.Create("", 1256), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/i18n/jquery.ui.datepi" +
-"cker-ru.js", 1256), true)
+, 1153), false)
+, Tuple.Create(Tuple.Create("", 1163), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/development-bundle/ui/i18n/jquery.ui.datepi" +
+"cker-ru.js", 1163), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1394), Tuple.Create("\"", 1472)
+WriteAttribute("src", Tuple.Create(" src=\"", 1301), Tuple.Create("\"", 1379)
             
             #line 21 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1400), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1307), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1400), false)
-, Tuple.Create(Tuple.Create("", 1410), Tuple.Create("/Areas/Admin/Scripts/Default/drag/jquery.dragsort-0.5.1.min.js", 1410), true)
+, 1307), false)
+, Tuple.Create(Tuple.Create("", 1317), Tuple.Create("/Areas/Admin/Scripts/Default/drag/jquery.dragsort-0.5.1.min.js", 1317), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1496), Tuple.Create("\"", 1561)
+WriteAttribute("src", Tuple.Create(" src=\"", 1403), Tuple.Create("\"", 1468)
             
             #line 22 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1502), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1409), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1502), false)
-, Tuple.Create(Tuple.Create("", 1512), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/util.js", 1512), true)
+, 1409), false)
+, Tuple.Create(Tuple.Create("", 1419), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/util.js", 1419), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1585), Tuple.Create("\"", 1652)
+WriteAttribute("src", Tuple.Create(" src=\"", 1492), Tuple.Create("\"", 1559)
             
             #line 23 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1591), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1498), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1591), false)
-, Tuple.Create(Tuple.Create("", 1601), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/button.js", 1601), true)
+, 1498), false)
+, Tuple.Create(Tuple.Create("", 1508), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/button.js", 1508), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1676), Tuple.Create("\"", 1743)
+WriteAttribute("src", Tuple.Create(" src=\"", 1583), Tuple.Create("\"", 1650)
             
             #line 24 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1682), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1589), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1682), false)
-, Tuple.Create(Tuple.Create("", 1692), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/header.js", 1692), true)
+, 1589), false)
+, Tuple.Create(Tuple.Create("", 1599), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/header.js", 1599), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1767), Tuple.Create("\"", 1834)
+WriteAttribute("src", Tuple.Create(" src=\"", 1674), Tuple.Create("\"", 1741)
             
             #line 25 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1773), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1680), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1773), false)
-, Tuple.Create(Tuple.Create("", 1783), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/header.js", 1783), true)
+, 1680), false)
+, Tuple.Create(Tuple.Create("", 1690), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/header.js", 1690), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1858), Tuple.Create("\"", 1931)
+WriteAttribute("src", Tuple.Create(" src=\"", 1765), Tuple.Create("\"", 1838)
             
             #line 26 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1864), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1771), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1864), false)
-, Tuple.Create(Tuple.Create("", 1874), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/handler.base.js", 1874), true)
+, 1771), false)
+, Tuple.Create(Tuple.Create("", 1781), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/handler.base.js", 1781), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 1955), Tuple.Create("\"", 2028)
+WriteAttribute("src", Tuple.Create(" src=\"", 1862), Tuple.Create("\"", 1935)
             
             #line 27 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 1961), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1868), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 1961), false)
-, Tuple.Create(Tuple.Create("", 1971), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/handler.form.js", 1971), true)
+, 1868), false)
+, Tuple.Create(Tuple.Create("", 1878), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/handler.form.js", 1878), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2052), Tuple.Create("\"", 2124)
+WriteAttribute("src", Tuple.Create(" src=\"", 1959), Tuple.Create("\"", 2031)
             
             #line 28 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2058), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 1965), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2058), false)
-, Tuple.Create(Tuple.Create("", 2068), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/handler.xhr.js", 2068), true)
+, 1965), false)
+, Tuple.Create(Tuple.Create("", 1975), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/handler.xhr.js", 1975), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2148), Tuple.Create("\"", 2223)
+WriteAttribute("src", Tuple.Create(" src=\"", 2055), Tuple.Create("\"", 2130)
             
             #line 29 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2154), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2061), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2154), false)
-, Tuple.Create(Tuple.Create("", 2164), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/uploader.basic.js", 2164), true)
+, 2061), false)
+, Tuple.Create(Tuple.Create("", 2071), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/uploader.basic.js", 2071), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2247), Tuple.Create("\"", 2311)
+WriteAttribute("src", Tuple.Create(" src=\"", 2154), Tuple.Create("\"", 2218)
             
             #line 30 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2253), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2160), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2253), false)
-, Tuple.Create(Tuple.Create("", 2263), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/dnd.js", 2263), true)
+, 2160), false)
+, Tuple.Create(Tuple.Create("", 2170), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/dnd.js", 2170), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2335), Tuple.Create("\"", 2404)
+WriteAttribute("src", Tuple.Create(" src=\"", 2242), Tuple.Create("\"", 2311)
             
             #line 31 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
+, Tuple.Create(Tuple.Create("", 2248), Tuple.Create<System.Object, System.Int32>(mediaRoot
+            
+            #line default
+            #line hidden
+, 2248), false)
+, Tuple.Create(Tuple.Create("", 2258), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/uploader.js", 2258), true)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 2335), Tuple.Create("\"", 2409)
+            
+            #line 32 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
 , Tuple.Create(Tuple.Create("", 2341), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
 , 2341), false)
-, Tuple.Create(Tuple.Create("", 2351), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/uploader.js", 2351), true)
+, Tuple.Create(Tuple.Create("", 2351), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/jquery-plugin.js", 2351), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2428), Tuple.Create("\"", 2502)
-            
-            #line 32 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2434), Tuple.Create<System.Object, System.Int32>(mediaRoot
-            
-            #line default
-            #line hidden
-, 2434), false)
-, Tuple.Create(Tuple.Create("", 2444), Tuple.Create("/Areas/Admin/Scripts/Default/fileuploader/jquery-plugin.js", 2444), true)
-);
-
-WriteLiteral("></script>\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 2526), Tuple.Create("\"", 2608)
+WriteAttribute("src", Tuple.Create(" src=\"", 2433), Tuple.Create("\"", 2515)
             
             #line 33 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2532), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2439), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2532), false)
-, Tuple.Create(Tuple.Create("", 2542), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-sliderAccess.js", 2542), true)
+, 2439), false)
+, Tuple.Create(Tuple.Create("", 2449), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-sliderAccess.js", 2449), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2632), Tuple.Create("\"", 2718)
+WriteAttribute("src", Tuple.Create(" src=\"", 2539), Tuple.Create("\"", 2625)
             
             #line 34 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2638), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2545), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2638), false)
-, Tuple.Create(Tuple.Create("", 2648), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-addon.js", 2648), true)
+, 2545), false)
+, Tuple.Create(Tuple.Create("", 2555), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-addon.js", 2555), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2742), Tuple.Create("\"", 2818)
+WriteAttribute("src", Tuple.Create(" src=\"", 2649), Tuple.Create("\"", 2725)
             
             #line 35 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2748), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2655), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2748), false)
-, Tuple.Create(Tuple.Create("", 2758), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/ui.datepicker-ru.js", 2758), true)
+, 2655), false)
+, Tuple.Create(Tuple.Create("", 2665), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/ui.datepicker-ru.js", 2665), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2842), Tuple.Create("\"", 2925)
+WriteAttribute("src", Tuple.Create(" src=\"", 2749), Tuple.Create("\"", 2832)
             
             #line 36 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2848), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2755), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2848), false)
-, Tuple.Create(Tuple.Create("", 2858), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-ru.js", 2858), true)
+, 2755), false)
+, Tuple.Create(Tuple.Create("", 2765), Tuple.Create("/Areas/Admin/Scripts/Default/jqueryUI/js/jquery-ui-timepicker-ru.js", 2765), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2949), Tuple.Create("\"", 3020)
+WriteAttribute("src", Tuple.Create(" src=\"", 2856), Tuple.Create("\"", 2927)
             
             #line 37 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 2955), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2862), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 2955), false)
-, Tuple.Create(Tuple.Create("", 2965), Tuple.Create("/Areas/Admin/Scripts/Default/knockout/knockout-2.2.1.js", 2965), true)
+, 2862), false)
+, Tuple.Create(Tuple.Create("", 2872), Tuple.Create("/Areas/Admin/Scripts/Default/knockout/knockout-2.2.1.js", 2872), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3044), Tuple.Create("\"", 3118)
+WriteAttribute("src", Tuple.Create(" src=\"", 2951), Tuple.Create("\"", 3025)
             
             #line 38 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3050), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 2957), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3050), false)
-, Tuple.Create(Tuple.Create("", 3060), Tuple.Create("/Areas/Admin/Scripts/Default/knockout/knockout-sortable.js", 3060), true)
+, 2957), false)
+, Tuple.Create(Tuple.Create("", 2967), Tuple.Create("/Areas/Admin/Scripts/Default/knockout/knockout-sortable.js", 2967), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3142), Tuple.Create("\"", 3203)
+WriteAttribute("src", Tuple.Create(" src=\"", 3049), Tuple.Create("\"", 3110)
             
             #line 39 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3148), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3055), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3148), false)
-, Tuple.Create(Tuple.Create("", 3158), Tuple.Create("/Areas/Admin/Scripts/Default/toastr/toastr.js", 3158), true)
+, 3055), false)
+, Tuple.Create(Tuple.Create("", 3065), Tuple.Create("/Areas/Admin/Scripts/Default/toastr/toastr.js", 3065), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3227), Tuple.Create("\"", 3286)
+WriteAttribute("src", Tuple.Create(" src=\"", 3134), Tuple.Create("\"", 3193)
             
             #line 40 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3233), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3140), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3233), false)
-, Tuple.Create(Tuple.Create("", 3243), Tuple.Create("/Areas/Admin/Scripts/Default/autoNumeric.js", 3243), true)
+, 3140), false)
+, Tuple.Create(Tuple.Create("", 3150), Tuple.Create("/Areas/Admin/Scripts/Default/autoNumeric.js", 3150), true)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3310), Tuple.Create("\"", 3365)
+WriteAttribute("src", Tuple.Create(" src=\"", 3217), Tuple.Create("\"", 3272)
             
             #line 41 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3316), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3223), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3316), false)
-, Tuple.Create(Tuple.Create("", 3326), Tuple.Create("/Areas/Admin/Scripts/Default/Default.js", 3326), true)
+, 3223), false)
+, Tuple.Create(Tuple.Create("", 3233), Tuple.Create("/Areas/Admin/Scripts/Default/Default.js", 3233), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3412), Tuple.Create("\"", 3466)
+WriteAttribute("src", Tuple.Create(" src=\"", 3319), Tuple.Create("\"", 3373)
             
             #line 42 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3418), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3325), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3418), false)
-, Tuple.Create(Tuple.Create("", 3428), Tuple.Create("/Areas/Admin/Scripts/Default/Mktree.js", 3428), true)
+, 3325), false)
+, Tuple.Create(Tuple.Create("", 3335), Tuple.Create("/Areas/Admin/Scripts/Default/Mktree.js", 3335), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3513), Tuple.Create("\"", 3562)
+WriteAttribute("src", Tuple.Create(" src=\"", 3420), Tuple.Create("\"", 3469)
             
             #line 43 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3519), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3426), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3519), false)
-, Tuple.Create(Tuple.Create("", 3529), Tuple.Create("/Areas/Admin/Ckeditor/ckeditor.js", 3529), true)
+, 3426), false)
+, Tuple.Create(Tuple.Create("", 3436), Tuple.Create("/Areas/Admin/Ckeditor/ckeditor.js", 3436), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3609), Tuple.Create("\"", 3667)
+WriteAttribute("src", Tuple.Create(" src=\"", 3516), Tuple.Create("\"", 3574)
             
             #line 44 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3615), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3522), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3615), false)
-, Tuple.Create(Tuple.Create("", 3625), Tuple.Create("/Areas/Admin/Scripts/Default/Myckconfig.js", 3625), true)
+, 3522), false)
+, Tuple.Create(Tuple.Create("", 3532), Tuple.Create("/Areas/Admin/Scripts/Default/Myckconfig.js", 3532), true)
 );
 
 WriteLiteral(" type=\"text/javascript\"");
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3714), Tuple.Create("\"", 3773)
+WriteAttribute("src", Tuple.Create(" src=\"", 3621), Tuple.Create("\"", 3680)
             
             #line 45 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3720), Tuple.Create<System.Object, System.Int32>(mediaRoot
+, Tuple.Create(Tuple.Create("", 3627), Tuple.Create<System.Object, System.Int32>(mediaRoot
             
             #line default
             #line hidden
-, 3720), false)
-, Tuple.Create(Tuple.Create("", 3730), Tuple.Create("/Areas/Admin/Scripts/Default/files-logic.js", 3730), true)
+, 3627), false)
+, Tuple.Create(Tuple.Create("", 3637), Tuple.Create("/Areas/Admin/Scripts/Default/files-logic.js", 3637), true)
 );
 
 WriteLiteral("></script>\r\n</head>\r\n\r\n<body>\r\n\r\n    <table");
@@ -688,14 +688,14 @@ WriteLiteral(" id=\"logo\"");
 
 WriteLiteral("><img");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 3900), Tuple.Create("\"", 3970)
+WriteAttribute("src", Tuple.Create(" src=\"", 3807), Tuple.Create("\"", 3877)
             
             #line 52 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 3906), Tuple.Create<System.Object, System.Int32>(Url.Content(mediaRoot + "/Areas/Admin/Images/Default/logo.gif")
+, Tuple.Create(Tuple.Create("", 3813), Tuple.Create<System.Object, System.Int32>(Url.Content(mediaRoot + "/Areas/Admin/Images/Default/logo.gif")
             
             #line default
             #line hidden
-, 3906), false)
+, 3813), false)
 );
 
 WriteLiteral(" alt=\"OziCms.cms 4.0\"");
@@ -770,14 +770,14 @@ WriteLiteral(" class=\"left-function\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create("  href=\"", 5825), Tuple.Create("\"", 5885)
+WriteAttribute("href", Tuple.Create("  href=\"", 5732), Tuple.Create("\"", 5792)
             
             #line 89 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-, Tuple.Create(Tuple.Create("", 5833), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
+, Tuple.Create(Tuple.Create("", 5740), Tuple.Create<System.Object, System.Int32>(Url.Action(MVC.Admin.Utils.ClearApplicationCache())
             
             #line default
             #line hidden
-, 5833), false)
+, 5740), false)
 );
 
 WriteLiteral(">Очистить кэш</a></div>\r\n                    <div");
