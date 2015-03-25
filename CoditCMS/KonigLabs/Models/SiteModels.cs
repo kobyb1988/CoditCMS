@@ -21,33 +21,11 @@ namespace KonigLabs.Models
         public bool Visibility { get; set; }
 
         public int Sort { get; set; }
-    }
 
-    public class Gallery : IVisibleEntity, ISortableEntity, IMetadataEntity
-    {
-
-        public global::System.Int32 Id {get;set;}
-        
-        public global::System.String Name {get;set;}
-        
-        public global::System.String Alias {get;set;}
-        
-        public global::System.String Description {get;set;}
-        
-        public global::System.Int32 Sort {get;set;}
-        
-        public global::System.Boolean Visibility {get;set;}
-        
-        public global::System.String MetaTitle {get;set;}
-        
-        public global::System.String MetaKeywords {get;set;}
-        
-        public global::System.String MetaDescription {get;set;}
-     
         public virtual ICollection<File> Files { get; set; } 
     }
 
-
+   
     public class File : IFileEntity
     {
               
@@ -70,8 +48,8 @@ namespace KonigLabs.Models
         public global::System.String Title {get;set;}
         
         public global::System.String Description {get;set;}
-      
-        public virtual ICollection<Gallery> Galleries { get; set; } 
+
+        public virtual ICollection<CrewMember> Members { get; set; } 
 
     }
 }

@@ -27,7 +27,10 @@
 			<string name="LastName" title="Фамилия" />
       <string name="Title" title="Должность" />			
 			<wysiwyg name="Bio" title="БИО" />
-		</tab>		
+		</tab>
+    <tab name="Images">
+      <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
+    </tab>
 		<tab name="Metadata">			
 			<string name="MetaTitle" title="MetaTitle" />
 			<string name="MetaKeywords" title="MetaKeywords" />

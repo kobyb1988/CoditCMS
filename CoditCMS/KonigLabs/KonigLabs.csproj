@@ -172,7 +172,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CrewController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DefaultController.generated.cs">
@@ -199,9 +198,9 @@
     <Compile Include="Migrations\201503241012428_CrewMember.Designer.cs">
       <DependentUpon>201503241012428_CrewMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503251821085_Galleries.cs" />
-    <Compile Include="Migrations\201503251821085_Galleries.Designer.cs">
-      <DependentUpon>201503251821085_Galleries.cs</DependentUpon>
+    <Compile Include="Migrations\201503251911447_Files.cs" />
+    <Compile Include="Migrations\201503251911447_Files.Designer.cs">
+      <DependentUpon>201503251911447_Files.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -220,7 +219,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Codit\Gallery.xml" />
     <Content Include="Codit\Location.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -309,8 +307,8 @@
     <EmbeddedResource Include="Migrations\201503241012428_CrewMember.resx">
       <DependentUpon>201503241012428_CrewMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503251821085_Galleries.resx">
-      <DependentUpon>201503251821085_Galleries.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503251911447_Files.resx">
+      <DependentUpon>201503251911447_Files.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

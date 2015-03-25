@@ -30,8 +30,7 @@ namespace KonigLabs.Models
             return new ApplicationDbContext();
         }
 
-        public virtual DbSet<CrewMember> CrewMembers { get; set; }
-        public virtual DbSet<Gallery> Galleries { get; set; }
+        public virtual DbSet<CrewMember> CrewMembers { get; set; }        
         public virtual DbSet<File> Files { get; set; }
     }
 }
