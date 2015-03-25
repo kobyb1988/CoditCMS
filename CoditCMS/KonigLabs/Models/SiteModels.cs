@@ -1,6 +1,8 @@
 ﻿using DB.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
 using System.Web;
 
@@ -54,7 +56,69 @@ namespace KonigLabs.Models
         
         public global::System.String Description {get;set;}
 
-        public virtual ICollection<CrewMember> Members { get; set; } 
+        public virtual ICollection<CrewMember> Members { get; set; }
+        public virtual ICollection<Project> Projects { get; set; } 
 
+    }
+
+    public class ProjectCategory : IVisibleEntity, ISortableEntity, IMetadataEntity, INestedEntity<ProjectCategory>
+    {
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string MetaTitle { get; set; }
+        public string MetaDescription { get; set; }
+        public string MetaKeywords { get; set; }
+        public bool Visibility { get; set; }
+
+        public int Sort { get; set; }
+        public virtual ICollection<Project> Projects { get; set; }
+        public Nullable<int> ProjectCategoryID { get; set; }
+        public virtual ICollection<ProjectCategory> SubCategories { get; set; }
+
+        [NotMapped]
+        public int? ParentId { get; set; }
+        [NotMapped]
+        public int Level { get; set; }
+        [NotMapped]
+        public bool HasChilds { get; set; }
+
+        public EntityCollection<ProjectCategory> Children
+        {
+            get
+            {
+                var entityCollection = new EntityCollection<ProjectCategory>();
+                if (SubCategories != null)
+                {
+                    foreach (var location in SubCategories)
+                    {
+                        entityCollection.Add(location);
+                    }
+                }
+                return entityCollection;
+            }
+            set { }
+        }
+    }
+
+    public class Project : IVisibleEntity, ISortableEntity, IMetadataEntity
+    {
+        public int Id { get; set; }
+        
+        public string Name { get; set; }
+        public string Description{ get; set; }
+
+        public string MetaTitle { get; set; }
+        public string MetaDescription { get; set; }
+        public string MetaKeywords { get; set; }
+
+        public bool Visibility { get; set; }
+
+        public int Sort { get; set; }
+
+        public virtual ICollection<File> Files { get; set; }
+        
+        public int ProjectCategoryID { get; set; }
     }
 }

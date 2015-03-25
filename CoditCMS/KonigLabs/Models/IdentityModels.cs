@@ -32,5 +32,8 @@ namespace KonigLabs.Models
 
         public virtual DbSet<CrewMember> CrewMembers { get; set; }        
         public virtual DbSet<File> Files { get; set; }
+        public virtual DbSet<ProjectCategory> ProjectCategories { get; set; }
+        public virtual DbSet<Project> Projects { get; set; }
+
     }
 }
