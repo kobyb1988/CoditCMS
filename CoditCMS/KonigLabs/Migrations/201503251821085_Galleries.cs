@@ -21,11 +21,8 @@ namespace KonigLabs.Migrations
                         Alt = c.String(),
                         Title = c.String(),
                         Description = c.String(),
-                        Gallery_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Galleries", t => t.Gallery_Id)
-                .Index(t => t.Gallery_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Galleries",
@@ -43,12 +40,28 @@ namespace KonigLabs.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.GalleryFiles",
+                c => new
+                    {
+                        Gallery_Id = c.Int(nullable: false),
+                        File_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Gallery_Id, t.File_Id })
+                .ForeignKey("dbo.Galleries", t => t.Gallery_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Files", t => t.File_Id, cascadeDelete: true)
+                .Index(t => t.Gallery_Id)
+                .Index(t => t.File_Id);
+            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Files", "Gallery_Id", "dbo.Galleries");
-            DropIndex("dbo.Files", new[] { "Gallery_Id" });
+            DropForeignKey("dbo.GalleryFiles", "File_Id", "dbo.Files");
+            DropForeignKey("dbo.GalleryFiles", "Gallery_Id", "dbo.Galleries");
+            DropIndex("dbo.GalleryFiles", new[] { "File_Id" });
+            DropIndex("dbo.GalleryFiles", new[] { "Gallery_Id" });
+            DropTable("dbo.GalleryFiles");
             DropTable("dbo.Galleries");
             DropTable("dbo.Files");
         }

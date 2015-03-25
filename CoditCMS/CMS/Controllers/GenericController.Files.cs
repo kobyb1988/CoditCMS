@@ -14,6 +14,7 @@ using DB.Entities;
 using DB.Entities.Mocks;
 using Libs;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
 
 namespace CMS.Controllers
 {
@@ -44,7 +45,11 @@ namespace CMS.Controllers
 
 						// формируем пути
 						var defaultPath = AppConfig.GetValue(AppConfig.BasePathForImages);
-						var relativePath = settings.PathToSave ?? defaultPath;
+                        if (String.IsNullOrEmpty(defaultPath))
+                        {
+                            defaultPath = "~/Content/";
+                        }
+                        var relativePath = settings.PathToSave ?? defaultPath;
 						if (string.IsNullOrEmpty(relativePath))
 						{
 							throw new Exception("Не указан путь сохранения файла");
@@ -76,16 +81,22 @@ namespace CMS.Controllers
 					IFileEntity result;
 					if (value is IEnumerable)
 					{
-                        result = saveImage();                        
+                        result = saveImage();
+                        var type = value.GetType();
+                        MethodInfo methodInfo = type.GetMethod("Add");
+                        object[] parametersArray = new object[] { result };
+                        methodInfo.Invoke(value, parametersArray);
+                        // aganzha
+                        //var set = (System.Collections.Generic.HashSet<object>)value;                        
+                        
+
                         //var type = result.GetType();
-                        ////var list = ((IListSource)value).GetList();
-                        //// aganzha
-                        //var list = (System.Collections.Generic.HashSet<IFileEntity>)value;
-                        ////var sortList = list.Cast<IFileEntity>().ToList();
-                        ////if (sortList.Any())
-                        ////{
-                        ////    result.Sort = sortList.Max(fileEntity => fileEntity.Sort) + 1;
-                        ////}
+                        //var list = ((IListSource)value).GetList();
+                        //var sortList = list.Cast<IFileEntity>().ToList();
+                        //if (sortList.Any())
+                        //{
+                        //    result.Sort = sortList.Max(fileEntity => fileEntity.Sort) + 1;
+                        //}
                         //list.Add(result);
 					}
 					else

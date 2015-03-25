@@ -44,7 +44,7 @@ namespace KonigLabs.Models
         
         public global::System.String MetaDescription {get;set;}
      
-                public virtual ICollection<File> Files { get; set; } 
+        public virtual ICollection<File> Files { get; set; } 
     }
 
 
@@ -69,6 +69,9 @@ namespace KonigLabs.Models
         
         public global::System.String Title {get;set;}
         
-        public global::System.String Description {get;set;}        
+        public global::System.String Description {get;set;}
+      
+        public virtual ICollection<Gallery> Galleries { get; set; } 
+
     }
 }

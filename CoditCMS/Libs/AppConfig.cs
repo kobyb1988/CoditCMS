@@ -11,7 +11,12 @@ namespace Libs
 		public static string GetValue(string name)
 		{
 			var settings = DependencyResolver.Current.GetService<ISettingsProvider>();
-			return settings.GetValue(name);
+            var value = "";
+            if (settings != null) 
+            { 
+                value = settings.GetValue(name);
+            }
+            return value;
 		}
 	}
 }

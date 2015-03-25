@@ -10,6 +10,9 @@ namespace CMS.Areas.Admin.Controllers
 {
     public class GalleryController : GenericController<Gallery, ApplicationDbContext>
     {
-    
+        public void test()
+        {
+            
+        }
     }
 }

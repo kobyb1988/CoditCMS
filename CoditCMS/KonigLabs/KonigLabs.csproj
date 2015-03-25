@@ -199,9 +199,9 @@
     <Compile Include="Migrations\201503241012428_CrewMember.Designer.cs">
       <DependentUpon>201503241012428_CrewMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503250923596_Galleries.cs" />
-    <Compile Include="Migrations\201503250923596_Galleries.Designer.cs">
-      <DependentUpon>201503250923596_Galleries.cs</DependentUpon>
+    <Compile Include="Migrations\201503251821085_Galleries.cs" />
+    <Compile Include="Migrations\201503251821085_Galleries.Designer.cs">
+      <DependentUpon>201503251821085_Galleries.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -309,8 +309,8 @@
     <EmbeddedResource Include="Migrations\201503241012428_CrewMember.resx">
       <DependentUpon>201503241012428_CrewMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503250923596_Galleries.resx">
-      <DependentUpon>201503250923596_Galleries.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503251821085_Galleries.resx">
+      <DependentUpon>201503251821085_Galleries.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
