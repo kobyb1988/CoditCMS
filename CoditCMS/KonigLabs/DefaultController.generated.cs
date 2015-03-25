@@ -96,7 +96,9 @@ namespace KonigLabs.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Page = "Page";
             }
+            public readonly string Page = "~/Views/Default/Page.cshtml";
         }
     }
 

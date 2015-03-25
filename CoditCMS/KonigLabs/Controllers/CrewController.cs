@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CMS.Areas.Admin.Controllers
 {
-    public class CrewController : GenericController<CrewMember, ApplicationDbContext>
+    public partial class CrewController : GenericController<CrewMember, ApplicationDbContext>
     {
         
     }

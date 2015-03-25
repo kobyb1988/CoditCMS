@@ -27,6 +27,7 @@ using T4MVC;
 public static partial class MVC
 {
     public static KonigLabs.Controllers.AccountController Account = new KonigLabs.Controllers.T4MVC_AccountController();
+    public static CMS.Areas.Admin.Controllers.CrewController Crew = new CMS.Areas.Admin.Controllers.T4MVC_CrewController();
     public static KonigLabs.Controllers.DefaultController Default = new KonigLabs.Controllers.T4MVC_DefaultController();
     public static KonigLabs.Controllers.HomeController Home = new KonigLabs.Controllers.T4MVC_HomeController();
     public static KonigLabs.Controllers.ManageController Manage = new KonigLabs.Controllers.T4MVC_ManageController();
@@ -56,6 +57,19 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     }
      
     public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_CMS_ViewModels_FineUploaderResult : CMS.ViewModels.FineUploaderResult, IT4MVCActionResult
+{
+    public T4MVC_CMS_ViewModels_FineUploaderResult(string area, string controller, string action, string protocol = null): base(default(bool), null, null, null)
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
     
     public string Controller { get; set; }
     public string Action { get; set; }
