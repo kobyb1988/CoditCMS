@@ -76,14 +76,17 @@ namespace CMS.Controllers
 					IFileEntity result;
 					if (value is IEnumerable)
 					{
-						result = saveImage();
-						var list = ((IListSource)value).GetList();
-						var sortList = list.Cast<IFileEntity>().ToList();
-						if (sortList.Any())
-						{
-							result.Sort = sortList.Max(fileEntity => fileEntity.Sort) + 1;
-						}
-						list.Add(result);
+                        result = saveImage();                        
+                        //var type = result.GetType();
+                        ////var list = ((IListSource)value).GetList();
+                        //// aganzha
+                        //var list = (System.Collections.Generic.HashSet<IFileEntity>)value;
+                        ////var sortList = list.Cast<IFileEntity>().ToList();
+                        ////if (sortList.Any())
+                        ////{
+                        ////    result.Sort = sortList.Max(fileEntity => fileEntity.Sort) + 1;
+                        ////}
+                        //list.Add(result);
 					}
 					else
 					{

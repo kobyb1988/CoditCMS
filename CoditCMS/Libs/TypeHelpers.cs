@@ -113,12 +113,14 @@ namespace Libs
 
 		public static string GetEntitySetName(object entity, DbContext db)
 		{
-			var obj = (EntityObject)entity;
-			if (obj.EntityKey != null)
-			{
-				return obj.EntityKey.EntitySetName;
-			}
-			return GetEntitySetName(entity.GetType(), db);
+            //aganzha
+            return GetEntitySetName(entity.GetType(), db);
+            //var obj = (EntityObject)entity;
+            //if (obj.EntityKey != null)
+            //{
+            //    return obj.EntityKey.EntitySetName;
+            //}
+            //return GetEntitySetName(entity.GetType(), db);
 		}
 
         public static string GetEntitySetName(Type entityType, DbContext db)

@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CrewController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DefaultController.generated.cs">
@@ -198,6 +199,10 @@
     <Compile Include="Migrations\201503241012428_CrewMember.Designer.cs">
       <DependentUpon>201503241012428_CrewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503250923596_Galleries.cs" />
+    <Compile Include="Migrations\201503250923596_Galleries.Designer.cs">
+      <DependentUpon>201503250923596_Galleries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -215,6 +220,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Codit\Gallery.xml" />
     <Content Include="Codit\Location.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -284,6 +290,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Crew\" />
+    <Folder Include="Views\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -301,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503241012428_CrewMember.resx">
       <DependentUpon>201503241012428_CrewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503250923596_Galleries.resx">
+      <DependentUpon>201503250923596_Galleries.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

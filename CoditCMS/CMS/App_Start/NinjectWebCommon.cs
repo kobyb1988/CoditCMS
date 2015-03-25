@@ -13,6 +13,8 @@ namespace CMS.App_Start
     using DB.Infrastructure;
     using DB.Infrastructure.Implementation;
     using CMS.Mvc;
+    using Libs.Services;
+    using CMS.Areas.Admin.Mvc;
 
     public static class NinjectWebCommon 
     {
@@ -66,7 +68,7 @@ namespace CMS.App_Start
         {
             //kernel.Bind<IFormsAuthenticationService>().To<FormsAuthenticationService>();
             //kernel.Bind<IMembershipService>().To<AccountMembershipService>();
-            //kernel.Bind<ISettingsProvider>().To<DefaultSettingsProvider>();
+            kernel.Bind<ISettingsProvider>().To<DefaultSettingsProvider>();
             //kernel.Bind<IEmailLogService>().To<EmailLogsService>();
             //kernel.Bind<ITabService>().To<TabService>();
 

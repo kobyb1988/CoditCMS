@@ -42,8 +42,19 @@ namespace CMS.Mvc
         public int? PrevId { get; set; }
         public int? NextId { get; set; }
 
-        public bool IsCreate { get; set; }
+        private bool _isCreate;
 
+        public bool IsCreate
+        {
+            get
+            {
+                return _isCreate;
+            }
+            set
+            {
+                _isCreate = value;
+            }
+        }
         public string EditViewName { get; set; }
 
         public Settings GetSettings(Type controllerType = null)
