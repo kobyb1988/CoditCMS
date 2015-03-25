@@ -97,6 +97,13 @@ namespace KonigLabs.Controllers
                 public readonly string Index = "Index";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
+            public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _DisplayTemplatesClass
+            {
+                public readonly string Member = "Member";
+            }
         }
     }
 

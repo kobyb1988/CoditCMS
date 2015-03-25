@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model KonigLabs.Models.LandingPage
+<!DOCTYPE html>
 <!-- saved from url=(0034)http://7eshko.myjino.ru/koniglabs/ -->
 <html class=" js touch rgba multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns csstransforms csstransforms3d csstransitions fontface generatedcontent" lang="ru" style="">
 <!--<![endif]-->
@@ -44,16 +45,16 @@
             <div class="row">
                 <!--LOGO-->
                 <div id="logo">
-                    <a class="scroll" href="http://7eshko.myjino.ru/koniglabs/#home"><img src="/Content/Media/logo.png" alt=""></a>
+                    <a class="scroll" href="/#home"><img src="/Content/Media/logo.png" alt=""></a>
                 </div>
                 <!--//LOGO-->
                 <!--MENU-->
                 <ul id="menu">
-                    <li><a class="scroll" href="http://7eshko.myjino.ru/koniglabs/#home">Главная</a></li>
-                    <li><a class="scroll" href="http://7eshko.myjino.ru/koniglabs/#about">Услуги</a></li>
-                    <li><a class="scroll" href="http://7eshko.myjino.ru/koniglabs/#team">Команда</a></li>
-                    <li><a class="scroll" href="http://7eshko.myjino.ru/koniglabs/#work">Наши работы</a></li>
-                    <li><a class="scroll" href="http://7eshko.myjino.ru/koniglabs/#contact">Контакты</a></li>
+                    <li><a class="scroll" href="/#home">Главная</a></li>
+                    <li><a class="scroll" href="/#about">Услуги</a></li>
+                    <li><a class="scroll" href="/#team">Команда</a></li>
+                    <li><a class="scroll" href="/#work">Наши работы</a></li>
+                    <li><a class="scroll" href="/#contact">Контакты</a></li>
                 </ul>
                 <!--//MENU-->
                 <!--RESPONSIVE TOGGLE-->
@@ -69,7 +70,7 @@
     <section id="home" class="top_video" style="position: relative;">
         <div id="overlay"></div>
         <!--ADD YOUR VIDEO-->
-        <div id="BigVideo" class="player mb_YTVPlayer" data-property="{videoURL:&#39;http://youtube.com/watch?v=PnwNOtG06Dg&#39;, containment:&#39;.top_video&#39;, autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}" title="Калининград | Kaliningrad Timelapse by dimid" style="display: none; position: relative;"></div>
+        @*<div id="BigVideo" class="player mb_YTVPlayer" data-property="{videoURL:&#39;http://youtube.com/watch?v=PnwNOtG06Dg&#39;, containment:&#39;.top_video&#39;, autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}" title="Калининград | Kaliningrad Timelapse by dimid" style="display: none; position: relative;"></div>*@
 
         <!--ANIMATED TEXT-->
         <div id="content" style="top: 76.5px;">
@@ -90,7 +91,7 @@
             </div>
 
             <div class="text-center pad30">
-                <a href="http://7eshko.myjino.ru/koniglabs/#about" class="scroll">
+                <a href="/#about" class="scroll">
                     <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn animated" data-wow-duration="1s" data-wow-delay="8s" style="visibility: visible; -webkit-animation-duration: 1s; -webkit-animation-delay: 8s;"></i>
                 </a>
             </div>
@@ -265,14 +266,19 @@
             <div class="row">
                 <div class="col-sm-12 col-lg-12 pad15">
                     <!--BUTTONS-->
-                    <a href="http://7eshko.myjino.ru/koniglabs/#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s" style="visibility: hidden; -webkit-animation-duration: 2s; -webkit-animation-name: none;">КОНТАКТЫ</a>
-                    <a href="http://7eshko.myjino.ru/koniglabs/#work" class="scroll btn wow bounceIn" data-wow-offset="80" data-wow-duration="2s" style="visibility: hidden; -webkit-animation-duration: 2s; -webkit-animation-name: none;">ПОРТФОЛИО</a>
+                    <a href="/#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s" style="visibility: hidden; -webkit-animation-duration: 2s; -webkit-animation-name: none;">КОНТАКТЫ</a>
+                    <a href="/#work" class="scroll btn wow bounceIn" data-wow-offset="80" data-wow-duration="2s" style="visibility: hidden; -webkit-animation-duration: 2s; -webkit-animation-name: none;">ПОРТФОЛИО</a>
                     <div class="pad45"></div>
 
                     <!--TEAM MEMBERS-->
                     <div id="grid-container" class="cbp-l-grid-team cbp cbp-chrome cbp-caption-zoom cbp-animation-sequentially cbp-ready" style="height: 277px;">
                         <ul class="cbp-l-grid-team cbp-wrapper">
-                            <!--1-->
+                            @foreach(var member in Model.Members)
+                            {
+                                Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
+                            }
+
+                                  @*<!--1-->
                             <li class="cbp-item" style="width: 277px; height: 277px; transform: translate3d(0px, 0px, 0px);">
                                 <div class="cbp-item-wrapper">
                                     <a href="http://7eshko.myjino.ru/koniglabs/ajax/team1.html" class="cbp-caption cbp-singlePage">
@@ -347,7 +353,7 @@
                                     <a href="http://7eshko.myjino.ru/koniglabs/ajax/team4.html" class="cbp-singlePage cbp-l-grid-team-name">Николай Пасько</a>
                                     <div class="cbp-l-grid-team-position">Смотрящий</div>
                                 </div>
-                            </li>
+                            </li>*@
                         </ul>
                     </div>
                     <!--//TEAM MEMBERS-->

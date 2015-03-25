@@ -1,0 +1,21 @@
+﻿
+@model KonigLabs.Models.Member
+
+<li class="cbp-item" style="width: 277px; height: 277px; transform: translate3d(0px, 0px, 0px);">
+    <div class="cbp-item-wrapper">
+        <a href="http://7eshko.myjino.ru/koniglabs/ajax/team1.html" class="cbp-caption cbp-singlePage">
+            <div class="cbp-caption-defaultWrap">
+                <img src="@Url.Content(Model.Avatar)" alt="">
+            </div>
+            <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                    <div class="cbp-l-caption-body">
+                        <div class="cbp-l-caption-text">МАША</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="/ajax/team1.html" class="cbp-singlePage cbp-l-grid-team-name">@Model.Name</a>
+        <div class="cbp-l-grid-team-position">@Model.Title</div>
+    </div>
+</li>

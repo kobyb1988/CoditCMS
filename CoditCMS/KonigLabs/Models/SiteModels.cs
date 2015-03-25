@@ -22,7 +22,12 @@ namespace KonigLabs.Models
 
         public int Sort { get; set; }
 
-        public virtual ICollection<File> Files { get; set; } 
+        public virtual ICollection<File> Files { get; set; }
+
+        public string GetAvatarPath()
+        {
+            return Files.FirstOrDefault().Name;
+        }
     }
 
    
