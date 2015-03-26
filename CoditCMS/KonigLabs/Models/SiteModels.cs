@@ -78,6 +78,8 @@ namespace KonigLabs.Models
         public virtual ICollection<ProjectCategory> SubCategories { get; set; }
 
         [NotMapped]
+        public virtual ProjectCategory Parent { get; set; }
+        [NotMapped]
         public int? ParentId { get; set; }
         [NotMapped]
         public int Level { get; set; }
@@ -91,9 +93,9 @@ namespace KonigLabs.Models
                 var entityCollection = new EntityCollection<ProjectCategory>();
                 if (SubCategories != null)
                 {
-                    foreach (var location in SubCategories)
+                    foreach (var cat in SubCategories)
                     {
-                        entityCollection.Add(location);
+                        entityCollection.Add(cat);
                     }
                 }
                 return entityCollection;

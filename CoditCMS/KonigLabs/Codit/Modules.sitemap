@@ -3,7 +3,7 @@
 <siteMapNode title="Konig Labs">
   <siteMapNode title="Карта сайта" controller="Locations" action="index" />
   <siteMapNode title="Команда" controller="Crew" action="" />
-  <siteMapNode title="Галереи" controller="Gallery" action="" />
+  <siteMapNode title="Категории проектов" controller="Category" action="" />
 </siteMapNode>
 <!--<siteMapNode title="Обратная связь">
   
