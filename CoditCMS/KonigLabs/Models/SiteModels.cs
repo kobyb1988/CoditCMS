@@ -122,5 +122,7 @@ namespace KonigLabs.Models
         public virtual ICollection<File> Files { get; set; }
         
         public int ProjectCategoryID { get; set; }
+        [NotMapped]
+        public virtual ProjectCategory Category { get; set; }
     }
 }

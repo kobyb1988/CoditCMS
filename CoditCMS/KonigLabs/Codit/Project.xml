@@ -15,18 +15,18 @@
 		</actions>
 
 		<cols>
-			<string name="FirstName" title="Имя"/>
-			<string name="Title" title="Должность"/>
+			<string name="Name" title="Название"/>			
 		</cols>
 
 	</list>
 
 	<form>
 		<tab name="General">
-			<string name="FirstName" title="Имя" />
-			<string name="LastName" title="Фамилия" />
-      <string name="Title" title="Должность" />			
-			<wysiwyg name="Bio" title="БИО" />
+			<string name="Name" title="Название" />
+      <select name="ProjectCategoryID" title="Категория" reference="Category" optionTitle="Name" optionValue="Id" levels="true" localizable="true">
+        <option>Нет</option>
+      </select>
+			<wysiwyg name="Description" title="Описание" />
 		</tab>
     <tab name="Images">
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
