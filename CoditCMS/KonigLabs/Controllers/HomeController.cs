@@ -13,10 +13,10 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var landing = new LandingPage() { Members = new List<Member>() };
+                var landing = new LandingPage() { Members = new List<ViewMember>() };
                 foreach(var member in db.CrewMembers.Include("Files").ToList())
                 {
-                    landing.Members.Add(new Member(member));
+                    landing.Members.Add(new ViewMember(member));
                 }
                 return View( landing);
             }
