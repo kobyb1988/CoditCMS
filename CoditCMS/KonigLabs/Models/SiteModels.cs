@@ -57,7 +57,8 @@ namespace KonigLabs.Models
         public global::System.String Description {get;set;}
 
         public virtual ICollection<CrewMember> Members { get; set; }
-        public virtual ICollection<Project> Projects { get; set; } 
+        public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<Client> Clients { get; set; } 
 
     }
 
@@ -124,5 +125,28 @@ namespace KonigLabs.Models
         public int ProjectCategoryID { get; set; }
         [NotMapped]
         public virtual ProjectCategory Category { get; set; }
+    }
+
+
+    public class Client : IVisibleEntity, ISortableEntity, IMetadataEntity
+    {
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+        
+        public string MetaTitle { get; set; }
+        public string MetaDescription { get; set; }
+        public string MetaKeywords { get; set; }
+
+        public bool Visibility { get; set; }
+
+        public int Sort { get; set; }
+
+        public virtual ICollection<File> Files { get; set; }
+
+        public string GetAvatarPath()
+        {
+            return Files.FirstOrDefault().Name;
+        }
     }
 }

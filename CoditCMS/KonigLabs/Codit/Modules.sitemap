@@ -5,6 +5,7 @@
   <siteMapNode title="Команда" controller="Crew" action="" />
   <siteMapNode title="Категории проектов" controller="Category" action="" />
   <siteMapNode title="Проекты" controller="Project" action="" />
+  <siteMapNode title="Клиенты" controller="Client" action="" />
 </siteMapNode>
 <!--<siteMapNode title="Обратная связь">
   

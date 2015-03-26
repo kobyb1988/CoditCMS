@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CrewController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -211,6 +212,10 @@
     <Compile Include="Migrations\201503252351218_Projects.Designer.cs">
       <DependentUpon>201503252351218_Projects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503261751202_Clients.cs" />
+    <Compile Include="Migrations\201503261751202_Clients.Designer.cs">
+      <DependentUpon>201503261751202_Clients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -229,6 +234,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Codit\Client.xml" />
     <Content Include="Codit\Project.xml" />
     <Content Include="Codit\ProjectCategory.xml" />
     <Content Include="Codit\Location.xml" />
@@ -393,6 +399,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Category\" />
+    <Folder Include="Views\Client\" />
     <Folder Include="Views\Project\" />
   </ItemGroup>
   <ItemGroup>
@@ -417,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503252351218_Projects.resx">
       <DependentUpon>201503252351218_Projects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503261751202_Clients.resx">
+      <DependentUpon>201503261751202_Clients.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
