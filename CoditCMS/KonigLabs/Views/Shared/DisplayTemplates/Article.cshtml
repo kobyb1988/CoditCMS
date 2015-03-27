@@ -1,0 +1,21 @@
+﻿@model KonigLabs.Models.ViewArticle
+<li class="cbp-item" style="width: 277px; height: 277px; transform: translate3d(0px, 0px, 0px);">
+    <div class="cbp-item-wrapper">
+        <a href="" class="cbp-caption">
+            <div class="cbp-caption-defaultWrap">
+                <img src="@Url.Content(Model.Image)" alt="">
+            </div>
+            <div class="cbp-caption-activeWrap">
+                <div class="cbp-l-caption-alignCenter">
+                    <div class="cbp-l-caption-body">
+                        <div class="cbp-l-caption-text">ЧИТАТЬ</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="s/#" class="cbp-l-grid-blog-title">@Model.Title</a>
+        <div class="cbp-l-grid-blog-date">@Model.Date</div>
+        <div class="cbp-l-grid-blog-split">|</div>
+        @*<a href="" class="cbp-l-grid-blog-comments">10 комментариев</a>*@
+    </div>
+</li>

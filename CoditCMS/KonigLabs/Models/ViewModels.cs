@@ -11,8 +11,8 @@ namespace KonigLabs.Models
         public List<ViewMember> Members { get; set; }
         public List<ViewCategory> Categories { get; set; }
         public List<ViewProject> Projects { get; set; }
-        //public List<Client> Clients { get; set; }
-        //public List<Client> { get; set; }
+        public List<ViewClient> Clients { get; set; }
+        public List<ViewArticle> Articles { get; set; }    
     }
 
     public class ViewCategory
@@ -79,4 +79,33 @@ namespace KonigLabs.Models
             Title = member.Title;
         }
     }
+
+    public class ViewClient
+    {
+        public string Logo { get; set;}
+        public string Title { get; set; }
+
+        public ViewClient(Client client)
+        {
+            Logo = client.GetLogo();
+            Title = client.Title;
+        }
+    }
+
+    public class ViewArticle
+    {
+        public string Image { get; set; }
+        public string Title { get; set; }
+        public string Date { get; set; }
+
+        public ViewArticle(Article article)
+        {
+            Image = article.GetImage();
+            Title = article.Title;
+            Date = article.Date.ToString("d MMMM yyyy");
+        }
+
+        
+    }
+
 }

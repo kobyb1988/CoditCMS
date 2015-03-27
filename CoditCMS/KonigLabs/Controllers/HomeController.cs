@@ -22,7 +22,9 @@ namespace KonigLabs.Controllers
                 { 
                     Members = new List<ViewMember>(),
                     Projects=new List<ViewProject>(),
-                    Categories = new List<ViewCategory>()
+                    Categories = new List<ViewCategory>(),
+                    Clients = new List<ViewClient>(),
+                    Articles = new List<ViewArticle>()
                 };
 
                 foreach(var member in db.CrewMembers.Include("Files").ToList())
@@ -50,6 +52,18 @@ namespace KonigLabs.Controllers
 
                 }
                 landing.Categories = cats.Values.ToList();
+
+                foreach (var cl in db.Clients.Include("Files").ToArray())
+                {
+                    landing.Clients.Add(new ViewClient(cl));
+                }
+
+
+                foreach (var ar in db.Articles.Include("Files").ToArray())
+                {
+                    landing.Articles.Add(new ViewArticle(ar));
+                }
+
                 return View( landing);
             }
         }

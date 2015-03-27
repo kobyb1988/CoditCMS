@@ -164,6 +164,17 @@ namespace KonigLabs.Models
             }
             return answer;
         }
+
+        internal string GetLogo()
+        {
+            var answer = "";
+            var file = Files.FirstOrDefault();
+            if (file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
+        }
     }
 
     public class Article : IVisibleEntity, ISortableEntity, IMetadataEntity
@@ -185,6 +196,16 @@ namespace KonigLabs.Models
         public int Sort { get; set; }
 
         public virtual ICollection<File> Files { get; set; }
-        
+
+        internal string GetImage()
+        {
+            var answer = "";
+            var file = Files.FirstOrDefault();
+            if (file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
+        }
     }
 }
