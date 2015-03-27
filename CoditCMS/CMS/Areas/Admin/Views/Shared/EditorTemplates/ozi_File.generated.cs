@@ -42,34 +42,27 @@ namespace ASP
     #line hidden
     using CMS.PagesSettings.Lists;
     using CMS.ViewModels;
-    using DB.Entities;
-    using Libs;
-    
-    #line 4 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
-    using DB.Entities;
-    
-    #line default
-    #line hidden
     
     #line 3 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
-    using CMS;
+    using DB.Entities;
     
     #line default
     #line hidden
+    using Libs;
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Areas/Admin/Views/Shared/EditorTemplates/ozi_File.cshtml")]
     public partial class _Areas_Admin_Views_Shared_EditorTemplates_ozi_File_cshtml_ : CMS.Mvc.AdminViewPage<dynamic>
     {
 
-#line 74 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 73 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 public System.Web.WebPages.HelperResult RenderScript(UploadFileSettings upload, IFileEntity file)
 {
 #line default
 #line hidden
 return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
-#line 75 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 74 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
  
 
 
@@ -80,7 +73,7 @@ WriteLiteralTo(__razor_helper_writer, "    ");
 WriteLiteralTo(__razor_helper_writer, "\r\n        files[\"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 WriteTo(__razor_helper_writer, upload.Name);
 
 
@@ -89,7 +82,7 @@ WriteTo(__razor_helper_writer, upload.Name);
 WriteLiteralTo(__razor_helper_writer, "_array\"].files.push(new FileItem({ Id: ");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                       WriteTo(__razor_helper_writer, file.Id);
 
 
@@ -98,7 +91,7 @@ WriteLiteralTo(__razor_helper_writer, "_array\"].files.push(new FileItem({ Id: "
 WriteLiteralTo(__razor_helper_writer, ", Url: \"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                        WriteTo(__razor_helper_writer, Url.Content(file.Name));
 
 
@@ -107,7 +100,7 @@ WriteLiteralTo(__razor_helper_writer, ", Url: \"");
 WriteLiteralTo(__razor_helper_writer, "\", SourceName: \"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                WriteTo(__razor_helper_writer, file.SourceName);
 
 
@@ -116,7 +109,7 @@ WriteLiteralTo(__razor_helper_writer, "\", SourceName: \"");
 WriteLiteralTo(__razor_helper_writer, "\", Alt: \"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                         WriteTo(__razor_helper_writer, file.Alt);
 
 
@@ -125,7 +118,7 @@ WriteLiteralTo(__razor_helper_writer, "\", Alt: \"");
 WriteLiteralTo(__razor_helper_writer, "\", Title: \"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                             WriteTo(__razor_helper_writer, file.Title);
 
 
@@ -134,7 +127,7 @@ WriteLiteralTo(__razor_helper_writer, "\", Title: \"");
 WriteLiteralTo(__razor_helper_writer, "\", Description: \"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                         WriteTo(__razor_helper_writer, file.Description);
 
 
@@ -143,7 +136,7 @@ WriteLiteralTo(__razor_helper_writer, "\", Description: \"");
 WriteLiteralTo(__razor_helper_writer, "\", Date: \"");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                                    WriteTo(__razor_helper_writer, file.Date);
 
 
@@ -152,7 +145,7 @@ WriteLiteralTo(__razor_helper_writer, "\", Date: \"");
 WriteLiteralTo(__razor_helper_writer, "\", Visibility: ");
 
 
-#line 77 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                                                             WriteTo(__razor_helper_writer, file.Visibility.ToString().ToLower());
 
 
@@ -163,14 +156,14 @@ WriteLiteralTo(__razor_helper_writer, " }));\r\n    ");
 WriteLiteralTo(__razor_helper_writer, "\r\n");
 
 
-#line 79 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 78 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 
 
 #line default
 #line hidden
 });
 
-#line 79 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+#line 78 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 }
 #line default
 #line hidden
@@ -181,7 +174,7 @@ WriteLiteralTo(__razor_helper_writer, "\r\n");
         public override void Execute()
         {
             
-            #line 5 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 4 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
   
     var field = (UploadFileSettings)WebContext.FieldSettings;
     //var propertyValue = TypeHelpers.GetPropertyValue(Model, fieldSettings.Name);
@@ -194,8 +187,8 @@ WriteLiteralTo(__razor_helper_writer, "\r\n");
 WriteLiteral("\r\n\r\n");
 
             
-            #line 12 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
- if (isCreate)
+            #line 11 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+ if (WebContext.Model == null)
 {
 
             
@@ -204,7 +197,7 @@ WriteLiteral("\r\n\r\n");
 WriteLiteral("    <div>\r\n        Необходимо сначала сохранить объект\r\n    </div> \r\n");
 
             
-            #line 17 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 16 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 }
 else
 {
@@ -214,28 +207,28 @@ else
             #line hidden
 WriteLiteral("    <div");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 440), Tuple.Create("\"", 489)
+WriteAttribute("id", Tuple.Create(" id=\"", 432), Tuple.Create("\"", 481)
             
-            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
-, Tuple.Create(Tuple.Create("", 445), Tuple.Create<System.Object, System.Int32>(field.GetFullPropertyId()
+            #line 19 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+, Tuple.Create(Tuple.Create("", 437), Tuple.Create<System.Object, System.Int32>(field.GetFullPropertyId()
             
             #line default
             #line hidden
-, 445), false)
-, Tuple.Create(Tuple.Create("", 473), Tuple.Create("-files-container", 473), true)
+, 437), false)
+, Tuple.Create(Tuple.Create("", 465), Tuple.Create("-files-container", 465), true)
 );
 
 WriteLiteral(">\r\n        <ul");
 
-WriteAttribute("id", Tuple.Create(" id=\"", 504), Tuple.Create("\"", 542)
+WriteAttribute("id", Tuple.Create(" id=\"", 496), Tuple.Create("\"", 534)
             
-            #line 21 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
-, Tuple.Create(Tuple.Create("", 509), Tuple.Create<System.Object, System.Int32>(field.GetFullPropertyId()
+            #line 20 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+, Tuple.Create(Tuple.Create("", 501), Tuple.Create<System.Object, System.Int32>(field.GetFullPropertyId()
             
             #line default
             #line hidden
-, 509), false)
-, Tuple.Create(Tuple.Create("", 537), Tuple.Create("-list", 537), true)
+, 501), false)
+, Tuple.Create(Tuple.Create("", 529), Tuple.Create("-list", 529), true)
 );
 
 WriteLiteral(" data-bind=\"sortable: { data: files, afterMove: saveList }\"");
@@ -251,13 +244,13 @@ WriteLiteral(" class=\"fl\"");
 WriteLiteral(">\r\n");
 
             
-            #line 24 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 23 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 24 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 23 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                      if (field.IsImage)
                     {
 
@@ -271,7 +264,7 @@ WriteLiteral(" data-bind=\"attr: { src: Url }\"");
 WriteLiteral(" ");
 
             
-            #line 26 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 25 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                        Write(ByCondition(field.Size != 0, string.Format("width=\"{0}\"", field.Size)));
 
             
@@ -280,7 +273,7 @@ WriteLiteral(" ");
 WriteLiteral("/>\r\n");
 
             
-            #line 27 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 26 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                     }
                     else
                     {
@@ -295,7 +288,7 @@ WriteLiteral(" data-bind=\"{attr: {href: Url}, text: SourceName}\"");
 WriteLiteral("></a>\r\n");
 
             
-            #line 31 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 30 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                     }
 
             
@@ -308,13 +301,13 @@ WriteLiteral(" class=\"fl\"");
 WriteLiteral(">\r\n\r\n");
 
             
-            #line 35 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 34 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                     
             
             #line default
             #line hidden
             
-            #line 35 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 34 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                      if (field.IsImage)
                     {
 
@@ -334,7 +327,7 @@ WriteLiteral(" data-bind=\"value: Alt\"");
 WriteLiteral(" /></div>\r\n");
 
             
-            #line 38 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 37 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                     }
 
             
@@ -343,7 +336,7 @@ WriteLiteral(" /></div>\r\n");
 WriteLiteral("                    ");
 
             
-            #line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 38 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                      if (field.ShowTitle) {
             
             #line default
@@ -363,7 +356,7 @@ WriteLiteral(" data-bind=\"value: Title\"");
 WriteLiteral("></textarea></div> ");
 
             
-            #line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 38 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                      }
 
             
@@ -372,7 +365,7 @@ WriteLiteral("></textarea></div> ");
 WriteLiteral("                    ");
 
             
-            #line 40 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                      if (field.ShowDescription) {
             
             #line default
@@ -392,7 +385,7 @@ WriteLiteral(" data-bind=\"value: Description\"");
 WriteLiteral("></textarea></div> ");
 
             
-            #line 40 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 39 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                   }
 
             
@@ -401,7 +394,7 @@ WriteLiteral("></textarea></div> ");
 WriteLiteral("                    ");
 
             
-            #line 41 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 40 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                      if (field.Visibility) {
             
             #line default
@@ -419,7 +412,7 @@ WriteLiteral(" data-bind=\"checked: Visibility\"");
 WriteLiteral("/></div> ");
 
             
-            #line 41 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 40 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                    }
 
             
@@ -443,7 +436,7 @@ WriteLiteral(" class=\"upload-panel\"");
 WriteLiteral(" data-single=\"");
 
             
-            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 49 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                       Write(Html.Raw(propertyValue is IEnumerable ? "false" : "true"));
 
             
@@ -454,7 +447,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-url=\"");
 
             
-            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 49 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                             Write(Url.Action(Actions.UploadFile));
 
             
@@ -465,7 +458,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-save-url=\"");
 
             
-            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 49 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                             Write(Url.Action(Actions.SaveFileData));
 
             
@@ -476,7 +469,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-delete-url=\"");
 
             
-            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 49 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                                                 Write(Url.Action(Actions.DeleteFile));
 
             
@@ -487,7 +480,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-name=\"");
 
             
-            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 49 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                                                                                             Write(field.GetFullPropertyId());
 
             
@@ -498,7 +491,7 @@ WriteLiteral("\"");
 WriteLiteral(" data-id=\"");
 
             
-            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 49 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                                                                                                                                  Write(WebContext.Model.Id);
 
             
@@ -509,7 +502,7 @@ WriteLiteral("\"");
 WriteLiteral("></div>\r\n");
 
             
-            #line 51 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 50 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 
 
             
@@ -518,7 +511,7 @@ WriteLiteral("></div>\r\n");
 WriteLiteral("    <script>\r\n\r\n        files[\"");
 
             
-            #line 54 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 53 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
            Write(field.GetFullPropertyId());
 
             
@@ -528,7 +521,7 @@ WriteLiteral("_array\"] = { files: ko.observableArray([]), saveList: function() 
 "aveOrder(\"");
 
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 54 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                    Write(field.GetFullPropertyId());
 
             
@@ -537,7 +530,7 @@ WriteLiteral("_array\"] = { files: ko.observableArray([]), saveList: function() 
 WriteLiteral("_array\", \"");
 
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 54 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                          Write(Url.Action(Actions.SaveOrder));
 
             
@@ -546,7 +539,7 @@ WriteLiteral("_array\", \"");
 WriteLiteral("\", ");
 
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 54 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                             Write(WebContext.Model.Id);
 
             
@@ -555,7 +548,7 @@ WriteLiteral("\", ");
 WriteLiteral(", \"");
 
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 54 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                      Write(field.GetFullPropertyId());
 
             
@@ -564,7 +557,7 @@ WriteLiteral(", \"");
 WriteLiteral("\", \"");
 
             
-            #line 55 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 54 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                      Write(field.Name);
 
             
@@ -573,13 +566,13 @@ WriteLiteral("\", \"");
 WriteLiteral("\");\r\n        }};\r\n\r\n");
 
             
-            #line 58 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 57 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
         
             
             #line default
             #line hidden
             
-            #line 58 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 57 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
          if (propertyValue is IEnumerable)
         {
             foreach (var item in ((IEnumerable<IFileEntity>) propertyValue).OrderBy(entity => entity.Sort))
@@ -589,14 +582,14 @@ WriteLiteral("\");\r\n        }};\r\n\r\n");
             #line default
             #line hidden
             
-            #line 62 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 61 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
            Write(RenderScript(field, item));
 
             
             #line default
             #line hidden
             
-            #line 62 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 61 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                           
             }
         }
@@ -607,14 +600,14 @@ WriteLiteral("\");\r\n        }};\r\n\r\n");
             #line default
             #line hidden
             
-            #line 67 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 66 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
        Write(RenderScript(field, (IFileEntity) propertyValue));
 
             
             #line default
             #line hidden
             
-            #line 67 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 66 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                              
         }
 
@@ -624,7 +617,7 @@ WriteLiteral("\");\r\n        }};\r\n\r\n");
 WriteLiteral("\r\n        ko.applyBindings(files[\"");
 
             
-            #line 70 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 69 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                             Write(field.GetFullPropertyId());
 
             
@@ -633,7 +626,7 @@ WriteLiteral("\r\n        ko.applyBindings(files[\"");
 WriteLiteral("_array\"], $(\"#");
 
             
-            #line 70 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 69 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                       Write(field.GetFullPropertyId());
 
             
@@ -642,7 +635,7 @@ WriteLiteral("_array\"], $(\"#");
 WriteLiteral("-files-container\").get(0));\r\n\r\n    </script>\r\n");
 
             
-            #line 73 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+            #line 72 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
 }
 
             

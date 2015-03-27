@@ -35,6 +35,7 @@ namespace KonigLabs.Models
         public virtual DbSet<ProjectCategory> ProjectCategories { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Article> Articles { get; set; }
 
     }
 }
