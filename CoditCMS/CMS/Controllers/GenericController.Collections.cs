@@ -18,6 +18,7 @@ using DB.Entities;
 using CMS.PagesSettings.Forms;
 using CMS.ViewModels;
 using EntityState = System.Data.Entity.EntityState;
+using System.Reflection;
 
 namespace CMS.Controllers
 {
@@ -314,25 +315,68 @@ namespace CMS.Controllers
 		{
 			foreach (var item in Settings.FormSettings.Fields.Where(settings => settings is SelectSettings).Cast<SelectSettings>().Where(s => s.Multiple && !s.Editable))
 			{
-				var type = TypeHelpers.GetPropertyType(entity, item.Name);
-				var value = (IListSource) TypeHelpers. GetPropertyValue(entity, item.Name);
-				var list = value.GetList();
-				var values = collection[item.Name];
-				var ids = values == null ? new int[0] : values.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
-				list.Clear();
-				foreach (var id in ids)
-				{
-					var entitySetName = TypeHelpers.GetEntitySetName(type, Repository.DataContext);
+                //result = saveImage();
+                //var type = value.GetType();
+                //MethodInfo methodInfo = type.GetMethod("Add");
+                //object[] parametersArray = new object[] { result };
+                //methodInfo.Invoke(value, parametersArray);
+                
+                
+                var properety = TypeHelpers.GetPropertyValue(entity, item.Name);
+                var collectionType = properety.GetType();
+                MethodInfo clear = collectionType.GetMethod("Clear");
+                object[] parametersArray = new object[] { };
+                clear.Invoke(properety, parametersArray);
+
+
+                //try
+                //{
+                //    MethodInfo methodInfo = type.GetMethod("Clear");
+                //    object[] parametersArray = new object[] { };
+                //    methodInfo.Invoke(properety, parametersArray);
+                //}
+                //catch (Exception exception)
+                //{
+                //    var property = Activator.CreateInstance(type);
+                //    PropertyInfo prop = entity.GetType().GetProperty(item.Name, BindingFlags.Public | BindingFlags.Instance);
+                //    if (null != prop && prop.CanWrite)
+                //    {
+                //        prop.SetValue(entity, property, null);
+                //    }
+                //}
+                
+
+                //var value = (IListSource) TypeHelpers. GetPropertyValue(entity, item.Name);
+                //var list = value.GetList();
+                var type = TypeHelpers.GetPropertyType(entity, item.Name);
+                var values = collection[item.Name];
+                var ids = values == null ? new int[0] : values.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+                var entitySetName = TypeHelpers.GetEntitySetName(type, Repository.DataContext);
+
+                MethodInfo add = collectionType.GetMethod("Add");
+                
+
+                foreach (var id in ids)
+                {
                     var v = (IEntity)((IObjectContextAdapter)Repository.DataContext).ObjectContext.GetObjectByKey(new EntityKey(entitySetName, new[] { new EntityKeyMember("Id", id) }));
-					if (v == null)
-					{
-						v = (IEntity) Activator.CreateInstance(type);
-						v.Id = id;
-                        ((IObjectContextAdapter)Repository.DataContext).ObjectContext.AttachTo(TypeHelpers.GetEntitySetName(v, Repository.DataContext), v);
-					}
-					list.Add(v);
-				}
-				ModelState.Remove(item.Name);
+                    object[] parameters = new object[] { v};
+                    add.Invoke(properety, parameters);    
+                }
+
+                //list.Clear();
+                //foreach (var id in ids)
+                //{
+                //    var entitySetName = TypeHelpers.GetEntitySetName(type, Repository.DataContext);
+                //    var v = (IEntity)((IObjectContextAdapter)Repository.DataContext).ObjectContext.GetObjectByKey(new EntityKey(entitySetName, new[] { new EntityKeyMember("Id", id) }));
+                //    if (v == null)
+                //    {
+                //        v = (IEntity) Activator.CreateInstance(type);
+                //        v.Id = id;
+                //        ((IObjectContextAdapter)Repository.DataContext).ObjectContext.AttachTo(TypeHelpers.GetEntitySetName(v, Repository.DataContext), v);
+                //    }
+                //    list.Add(v);
+                //}
+                ModelState.Remove(item.Name);
 			}
 		}
     }

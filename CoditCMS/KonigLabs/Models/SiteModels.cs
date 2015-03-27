@@ -62,7 +62,7 @@ namespace KonigLabs.Models
 
     }
 
-    public class ProjectCategory : IVisibleEntity, ISortableEntity, IMetadataEntity, INestedEntity<ProjectCategory>
+    public class ProjectCategory : IVisibleEntity, ISortableEntity, IMetadataEntity
     {
 
         public int Id { get; set; }
@@ -75,34 +75,7 @@ namespace KonigLabs.Models
 
         public int Sort { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
-        public Nullable<int> ProjectCategoryID { get; set; }
-        public virtual ICollection<ProjectCategory> SubCategories { get; set; }
-
-        [NotMapped]
-        public virtual ProjectCategory Parent { get; set; }
-        [NotMapped]
-        public int? ParentId { get; set; }
-        [NotMapped]
-        public int Level { get; set; }
-        [NotMapped]
-        public bool HasChilds { get; set; }
-
-        public EntityCollection<ProjectCategory> Children
-        {
-            get
-            {
-                var entityCollection = new EntityCollection<ProjectCategory>();
-                if (SubCategories != null)
-                {
-                    foreach (var cat in SubCategories)
-                    {
-                        entityCollection.Add(cat);
-                    }
-                }
-                return entityCollection;
-            }
-            set { }
-        }
+        
     }
 
     public class Project : IVisibleEntity, ISortableEntity, IMetadataEntity
@@ -121,10 +94,8 @@ namespace KonigLabs.Models
         public int Sort { get; set; }
 
         public virtual ICollection<File> Files { get; set; }
-        
-        public int ProjectCategoryID { get; set; }
-        [NotMapped]
-        public virtual ProjectCategory Category { get; set; }
+
+        public virtual ICollection<ProjectCategory> ProjectCategory { get; set; }
     }
 
 
