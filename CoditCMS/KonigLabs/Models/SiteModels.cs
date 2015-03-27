@@ -28,7 +28,13 @@ namespace KonigLabs.Models
 
         public string GetAvatarPath()
         {
-            return Files.FirstOrDefault().Name;
+            var answer = "";
+            var file = Files.FirstOrDefault();
+            if(file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
         }
     }
 
@@ -96,6 +102,39 @@ namespace KonigLabs.Models
         public virtual ICollection<File> Files { get; set; }
 
         public virtual ICollection<ProjectCategory> ProjectCategory { get; set; }
+
+        public string GetImage()
+        {
+            var answer = "";
+            var file = Files.FirstOrDefault();
+            if (file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
+        }
+
+        internal string GetSmallImage()
+        {
+            var answer = "";
+            var file = Files.FirstOrDefault();
+            if (file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
+        }
+
+        internal string GetBigImage()
+        {
+            var answer = "";
+            var file = Files.Skip(1).FirstOrDefault();
+            if (file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
+        }
     }
 
 
@@ -117,7 +156,13 @@ namespace KonigLabs.Models
 
         public string GetAvatarPath()
         {
-            return Files.FirstOrDefault().Name;
+            var answer = "";
+            var file = Files.FirstOrDefault();
+            if (file != null)
+            {
+                answer = file.Name;
+            }
+            return answer;
         }
     }
 }

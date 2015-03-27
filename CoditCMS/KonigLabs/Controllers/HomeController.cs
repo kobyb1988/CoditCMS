@@ -17,24 +17,39 @@ namespace KonigLabs.Controllers
             using (var db = ApplicationDbContext.Create())
             {
 
-                var p = db.Projects.FirstOrDefault();
-                
-                p.ProjectCategory.Clear();
+               
+                var landing = new LandingPage() 
+                { 
+                    Members = new List<ViewMember>(),
+                    Projects=new List<ViewProject>(),
+                    Categories = new List<ViewCategory>()
+                };
 
-                //var type = TypeHelpers.GetPropertyType(p, "ProjectCategory");
-                var properety = TypeHelpers.GetPropertyValue(p, "ProjectCategory");
-                var type = properety.GetType();
-                MethodInfo methodInfo = type.GetMethod("Clear");
-                //try
-                //{
-                //    MethodInfo methodInfo = type.GetMethod("Clear");
-
-                
-                var landing = new LandingPage() { Members = new List<ViewMember>() };
                 foreach(var member in db.CrewMembers.Include("Files").ToList())
                 {
                     landing.Members.Add(new ViewMember(member));
                 }
+                
+                var cats = new Dictionary<string, ViewCategory>();
+
+                foreach (var project in db.Projects.Include("ProjectCategory").Include("Files").ToArray())
+                {
+                    var viewProject = new ViewProject(project);
+                    landing.Projects.Add(viewProject);
+                    foreach (var vc in viewProject.Categories)
+                    {
+                        if (!cats.ContainsKey(vc.Token))
+                        {
+                            cats.Add(vc.Token, vc);
+                        }
+                        else
+                        {
+                            vc.Count += 1;
+                        }
+                    }
+
+                }
+                landing.Categories = cats.Values.ToList();
                 return View( landing);
             }
         }
