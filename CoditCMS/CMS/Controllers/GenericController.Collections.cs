@@ -329,23 +329,6 @@ namespace CMS.Controllers
                 clear.Invoke(properety, parametersArray);
 
 
-                //try
-                //{
-                //    MethodInfo methodInfo = type.GetMethod("Clear");
-                //    object[] parametersArray = new object[] { };
-                //    methodInfo.Invoke(properety, parametersArray);
-                //}
-                //catch (Exception exception)
-                //{
-                //    var property = Activator.CreateInstance(type);
-                //    PropertyInfo prop = entity.GetType().GetProperty(item.Name, BindingFlags.Public | BindingFlags.Instance);
-                //    if (null != prop && prop.CanWrite)
-                //    {
-                //        prop.SetValue(entity, property, null);
-                //    }
-                //}
-                
-
                 //var value = (IListSource) TypeHelpers. GetPropertyValue(entity, item.Name);
                 //var list = value.GetList();
                 var type = TypeHelpers.GetPropertyType(entity, item.Name);

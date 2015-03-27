@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <settings xmlns="urn:settings" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="urn:settings Settings.xsd">
-	<list orderAsc="Sort" levels="true">
+	<list orderAsc="Sort">
 		<!--selectRowProperty="IsDefault"-->
 
 		<global>
@@ -15,7 +15,7 @@
 		</actions>
 
 		<cols>
-			<string name="Name" title="Название" levels="true"/>			
+			<string name="Name" title="Название" />			
 		</cols>
 
 	</list>
@@ -23,10 +23,6 @@
 	<form>
 		<tab name="General">
 			<string name="Name" title="Название" />		
-
-			<select name="ProjectCategoryID" title="Родительская категория" reference="Parent" optionTitle="Name" optionValue="Id" levels="true" localizable="true">
-				<option>Нет</option>
-			</select>
 			<wysiwyg name="Description" title="Описание" />
 		</tab>		
 		<tab name="Metadata">		
