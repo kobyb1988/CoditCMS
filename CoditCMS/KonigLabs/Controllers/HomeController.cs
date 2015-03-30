@@ -13,25 +13,25 @@ namespace KonigLabs.Controllers
     {
         public virtual ActionResult Index()
         {
-            
+
             using (var db = ApplicationDbContext.Create())
             {
 
-               
-                var landing = new LandingPage() 
-                { 
+
+                var landing = new LandingPage()
+                {
                     Members = new List<ViewMember>(),
-                    Projects=new List<ViewProject>(),
+                    Projects = new List<ViewProject>(),
                     Categories = new List<ViewCategory>(),
                     Clients = new List<ViewClient>(),
                     Articles = new List<ViewArticle>()
                 };
 
-                foreach(var member in db.CrewMembers.Include("Files").ToList())
+                foreach (var member in db.CrewMembers.Include("Files").ToList())
                 {
                     landing.Members.Add(new ViewMember(member));
                 }
-                
+
                 var cats = new Dictionary<string, ViewCategory>();
 
                 foreach (var project in db.Projects.Include("ProjectCategory").Include("Files").ToArray())
@@ -63,9 +63,42 @@ namespace KonigLabs.Controllers
                 {
                     landing.Articles.Add(new ViewArticle(ar));
                 }
+                landing.Contact = new ViewContact();
 
-                return View( landing);
+                return View(landing);
             }
+
+        }
+
+        [HttpPost]
+        public virtual ActionResult Contact(ViewContact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var db = ApplicationDbContext.Create())
+                {
+                    var dbContact = new Contact();
+                    dbContact.Date = DateTime.Now;
+                    dbContact.Name = contact.Name;
+                    dbContact.Email = contact.Email;
+                    dbContact.Phone = contact.Phone;
+                    dbContact.Text = contact.Text;
+                    db.Contacts.Add(dbContact);
+                    db.SaveChanges();
+                }
+
+                contact.Status = "Спасибо за ваше сообщение, мы обязательно свяжемся с вами!";
+                contact.Name = "";
+                contact.Email = "";
+                contact.Phone = "";
+                contact.Text = "";
+
+            }
+            else
+            {
+                contact.Status = "Что-то пошло не так :(";
+            }
+            return View(contact);
         }
     }
 }

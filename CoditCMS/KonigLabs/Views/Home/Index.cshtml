@@ -388,10 +388,10 @@
                         <div class="owl-wrapper-outer">
                             <div class="owl-wrapper" style="width: 4448px; left: -278px; display: block;">
 
-                               @foreach (var client in Model.Clients)
-                               {
-                                   Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
-                               }                                                                   
+                                @foreach (var client in Model.Clients)
+                                {
+                                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
+                                }
                             </div>
                         </div>
 
@@ -484,17 +484,11 @@
 
                         <div class="col-sm-6 col-lg-6  wow fadeInUp" data-wow-offset="80" data-wow-duration="2s" style="visibility: hidden; -webkit-animation-duration: 2s; -webkit-animation-name: none;">
                             <div class="contact_form">
-                                <div id="note"></div>
+                                @*<div id="note"></div>*@
                                 <div id="fields">
-                                    <form id="ajax-contact-form">
-                                        <input class="col-xs-12 col-md-12" type="text" name="name" value="" placeholder="Ваше имя">
-                                        <input class="col-xs-12 col-md-12" type="text" name="email" value="" placeholder="Email">
-                                        <input class="col-xs-12 col-md-12" type="text" name="telephone" value="" placeholder="Телефон">
-                                        <textarea name="message" id="message" class="col-xs-12  col-md-12" placeholder="Ваше сообщение"></textarea>
-                                        <div class="clear"></div>
-                                        <input type="submit" class="btn marg-right10" value="отправить">
-                                        <div class="clear"></div>
-                                    </form>
+                                  @{                                      
+                                      Html.RenderPartial("~/Views/Home/Contact.cshtml", Model.Contact);
+                                   }
                                 </div>
                             </div>
                             <!-- // End FORM -->

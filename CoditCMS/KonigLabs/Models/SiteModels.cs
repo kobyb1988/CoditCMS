@@ -208,4 +208,24 @@ namespace KonigLabs.Models
             return answer;
         }
     }
+
+    public class Contact: IVisibleEntity, ISortableEntity
+    {
+        public int Id { get; set; }
+
+        public string Name{ get; set; }
+
+        public string Email{ get; set; }
+
+        public string Text { get; set; }
+
+        public string Phone { get; set; }
+
+        public bool Visibility { get; set; }
+
+        public int Sort { get; set; }
+
+        public DateTime Date { get; set; }
+
+    }
 }

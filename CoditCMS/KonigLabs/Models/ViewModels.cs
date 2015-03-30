@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -12,7 +13,8 @@ namespace KonigLabs.Models
         public List<ViewCategory> Categories { get; set; }
         public List<ViewProject> Projects { get; set; }
         public List<ViewClient> Clients { get; set; }
-        public List<ViewArticle> Articles { get; set; }    
+        public List<ViewArticle> Articles { get; set; }
+        public ViewContact Contact { get; set; }
     }
 
     public class ViewCategory
@@ -105,7 +107,27 @@ namespace KonigLabs.Models
             Date = article.Date.ToString("d MMMM yyyy");
         }
 
-        
     }
 
+    public class ViewContact
+    {
+        
+        [Required]
+        [Display(Name="Имя")]
+        public string Name { get; set; }
+
+        [Required]
+        [EmailAddress(ErrorMessage = "Неверный Email адрес")]
+        public string Email{ get; set; }
+
+        [Required]
+        [Display(Name = "Телефон")]
+        public string Phone{ get; set; }
+
+        [Required]
+        [Display(Name = "Сообщение")]
+        public string Text{ get; set; }
+        
+        public string Status { get; set; }
+    }
 }
