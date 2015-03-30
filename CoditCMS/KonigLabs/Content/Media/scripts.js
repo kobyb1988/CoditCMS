@@ -23,7 +23,7 @@ $(document).ready(function () {
                     var fields = $('#fields').html(result);
                     if(fields.find('span').first().text().match('Спасибо')){
                         fields.find(':input').each(function(i, el){
-                            console.log(el.type);
+                            //console.log(el.type);
                             if(el.type.toLowerCase()!='submit'){
                                 $(el).val('');
                             }

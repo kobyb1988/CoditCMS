@@ -34,7 +34,7 @@ namespace CMS.Areas.Admin.Controllers
                 if (model.DeliveryMethod == SmtpDeliveryMethod.Network)
                 {
                     settings.Smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    settings.Smtp.Network.ClientDomain = model.Network.ClientDomain;
+                    settings.Smtp.Network.ClientDomain = model.Network.ClientDomain;                    
                     settings.Smtp.Network.DefaultCredentials = model.Network.DefaultCredentials;
                     settings.Smtp.Network.EnableSsl = model.Network.EnableSsl;
                     settings.Smtp.Network.Host = model.Network.Host;
