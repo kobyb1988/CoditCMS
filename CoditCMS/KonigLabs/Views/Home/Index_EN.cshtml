@@ -301,14 +301,10 @@
         <div class="container">
             <div class="wow fadeIn col-lg-12 pad45" data-wow-offset="80">
                 <div id="clients">
-                    <div class="item"><img src="img/clients/logo1.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo2.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo3.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo4.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo5.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo6.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo7.png" alt=""></div>
-                    <div class="item"><img src="img/clients/logo8.png" alt=""></div>
+                    @foreach (var client in Model.Clients)
+                    {
+                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
+                    }
                 </div>
             </div>
         </div>
