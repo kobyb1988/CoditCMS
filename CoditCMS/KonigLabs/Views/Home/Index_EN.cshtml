@@ -319,79 +319,10 @@
 
                 <div id="grid-container2" class="cbp-l-grid-blog pad90">
                     <ul>
-                        <li class="cbp-item">
-                            <a href="#" class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="img/blog/a1.jpg" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-text">ЧИТАТЬ</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="cbp-l-grid-blog-title">История о парне в противогазе</a>
-                            <div class="cbp-l-grid-blog-date">1 апреля 2015</div>
-                            <div class="cbp-l-grid-blog-split">|</div>
-                            <a href="#" class="cbp-l-grid-blog-comments">10 комментариев</a>
-                        </li>
-                        <li class="cbp-item">
-                            <a href="#" class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="img/blog/a2.jpg" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-text">СМОТРЕТЬ</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="cbp-l-grid-blog-title">О том, как девушка в скайп влюбилась</a>
-                            <div class="cbp-l-grid-blog-date">2 апреля 2015</div>
-                            <div class="cbp-l-grid-blog-split">|</div>
-                            <a href="#" class="cbp-l-grid-blog-comments">120 комментариев</a>
-                        </li>
-                        <li class="cbp-item">
-                            <a href="#" class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="img/blog/a3.jpg" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-text">ЛИЦЕЗРЕТЬ</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="cbp-l-grid-blog-title">Как маки в астрал уводят</a>
-                            <div class="cbp-l-grid-blog-date">3 апреля 2015</div>
-                            <div class="cbp-l-grid-blog-split">|</div>
-                            <a href="#" class="cbp-l-grid-blog-comments">1 комментарий</a>
-
-                        </li>
-                        <li class="cbp-item">
-                            <a href="#" class="cbp-caption">
-                                <div class="cbp-caption-defaultWrap">
-                                    <img src="img/blog/a4.jpg" alt="">
-                                </div>
-                                <div class="cbp-caption-activeWrap">
-                                    <div class="cbp-l-caption-alignCenter">
-                                        <div class="cbp-l-caption-body">
-                                            <div class="cbp-l-caption-text">...</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="cbp-l-grid-blog-title">Фото онлайн бесплатно и без регистрации</a>
-                            <div class="cbp-l-grid-blog-date">4 апреля 2015</div>
-                            <div class="cbp-l-grid-blog-split">|</div>
-                            <a href="#" class="cbp-l-grid-blog-comments">121 комментарий</a>
-                        </li>
+                        @foreach (var article in Model.Articles)
+                        {
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
+                        }
                     </ul>
                 </div>
             </div>
