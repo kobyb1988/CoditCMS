@@ -1,19 +1,18 @@
 ﻿@model KonigLabs.Models.ViewProject
 
-<li class="cbp-item @Model.GetFilterClasses()" style="width: 270px; height: 271px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
-    <div class="cbp-item-wrapper">
-        <div class="cbp-caption">
-            <div class="cbp-caption-defaultWrap">
-                <img src="@Url.Content(Model.SmallImage)" alt="">
-            </div>
-            <div class="cbp-caption-activeWrap">
-                <div class="cbp-l-caption-alignCenter">
-                    <div class="cbp-l-caption-body">
-                        <a href="http://7eshko.myjino.ru/koniglabs/ajax/project@(Model.Id).html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
-                        <a href="@Url.Content(Model.BigImage)" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="@Model.Name">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                    </div>
+<li class="cbp-item @Model.GetFilterClasses()">
+    <div class="cbp-caption">
+        <div class="cbp-caption-defaultWrap">
+            <img src="@Url.Content(Model.SmallImage)" alt="" />
+        </div>
+        <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
+                    <a href="ajax/project1.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                    <a href="@Url.Content(Model.BigImage)" class="cbp-lightbox cbp-l-caption-buttonRight"
+                       data-title="@Model.Name">
+                        <i class="fa fa-eye"></i>
+                    </a>
                 </div>
             </div>
         </div>
