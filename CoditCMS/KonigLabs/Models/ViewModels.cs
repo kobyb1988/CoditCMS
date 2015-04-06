@@ -9,19 +9,93 @@ namespace KonigLabs.Models
 {
     public class LandingPage
     {
+        private string language;
+        private ApplicationDbContext db;
+
+        public LandingPage(string language, ApplicationDbContext db)
+        {
+            // TODO: Complete member initialization
+            this.language = language;
+
+
+            Members = new List<ViewMember>();
+            Projects = new List<ViewProject>();
+            Categories = new List<ViewCategory>();
+            Clients = new List<ViewClient>();
+            Articles = new List<ViewArticle>();
+
+            foreach (var member in CrewMember.GetMembers(language, db))
+            {
+                var me = new ViewMember(member);
+                if (String.IsNullOrEmpty(me.Avatar))
+                {
+                    continue;
+                }
+                Members.Add(me);
+            }
+
+            var cats = new Dictionary<string, ViewCategory>();
+
+            foreach (Project project in Project.GetProjects(language, db))
+            {
+                var viewProject = new ViewProject(project);
+                if (String.IsNullOrEmpty(viewProject.SmallImage) || String.IsNullOrEmpty(viewProject.BigImage))
+                {
+                    continue;
+                }
+                Projects.Add(viewProject);
+                foreach (var vc in viewProject.Categories)
+                {
+                    if (!cats.ContainsKey(vc.Token))
+                    {
+                        cats.Add(vc.Token, vc);
+                    }
+                    else
+                    {
+                        vc.Count += 1;
+                    }
+                }
+
+            }
+            Categories = cats.Values.ToList();
+
+            foreach (Client cl in Client.GetClients(language, db))
+            {
+                
+                var vc = new ViewClient(cl);
+                if (String.IsNullOrEmpty(vc.Logo))
+                {
+                    continue;
+                }
+                Clients.Add(vc);
+            }
+
+
+            foreach (Article ar in Article.GetArticles(language, db))
+            {
+                var va = new ViewArticle(ar);
+                if (String.IsNullOrEmpty(va.Image))
+                {
+                    continue;
+                }
+                Articles.Add(va);
+            }
+            Contact = new ViewContact();
+        }
         public List<ViewMember> Members { get; set; }
         public List<ViewCategory> Categories { get; set; }
         public List<ViewProject> Projects { get; set; }
         public List<ViewClient> Clients { get; set; }
         public List<ViewArticle> Articles { get; set; }
         public ViewContact Contact { get; set; }
+
     }
 
     public class ViewCategory
     {
-        
-        public string Token {get;set;}
-        public string Name {get;set;}
+
+        public string Token { get; set; }
+        public string Name { get; set; }
         public int Count { get; set; }
 
         public ViewCategory(ProjectCategory category)
@@ -51,7 +125,7 @@ namespace KonigLabs.Models
             BigImage = project.GetBigImage();
             Categories = new List<ViewCategory>();
             Name = project.Name;
-            foreach(var cat in project.ProjectCategory.ToArray())
+            foreach (var cat in project.ProjectCategory.ToArray())
             {
                 Categories.Add(new ViewCategory(cat));
             }
@@ -79,12 +153,13 @@ namespace KonigLabs.Models
         {
             Avatar = member.GetAvatarPath();
             Title = member.Title;
+            Name = member.FirstName + " " + member.LastName;
         }
     }
 
     public class ViewClient
     {
-        public string Logo { get; set;}
+        public string Logo { get; set; }
         public string Title { get; set; }
 
         public ViewClient(Client client)
@@ -111,23 +186,23 @@ namespace KonigLabs.Models
 
     public class ViewContact
     {
-        
+
         [Required]
-        [Display(Name="Имя")]
+        [Display(Name = "Имя")]
         public string Name { get; set; }
 
         [Required]
         [EmailAddress(ErrorMessage = "Неверный Email адрес")]
-        public string Email{ get; set; }
+        public string Email { get; set; }
 
         [Required]
         [Display(Name = "Телефон")]
-        public string Phone{ get; set; }
+        public string Phone { get; set; }
 
         [Required]
         [Display(Name = "Сообщение")]
-        public string Text{ get; set; }
-        
+        public string Text { get; set; }
+
         public string Status { get; set; }
     }
 }

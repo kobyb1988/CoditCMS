@@ -58,6 +58,18 @@ namespace KonigLabs.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Index()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Contact()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC.Home; } }
@@ -75,15 +87,33 @@ namespace KonigLabs.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string Contact = "Contact";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string Contact = "Contact";
         }
 
 
+        static readonly ActionParamsClass_Index s_params_Index = new ActionParamsClass_Index();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Index
+        {
+            public readonly string lang = "lang";
+        }
+        static readonly ActionParamsClass_Contact s_params_Contact = new ActionParamsClass_Contact();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Contact ContactParams { get { return s_params_Contact; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Contact
+        {
+            public readonly string contact = "contact";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -94,16 +124,11 @@ namespace KonigLabs.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Contact = "Contact";
                 public readonly string Index = "Index";
             }
+            public readonly string Contact = "~/Views/Home/Contact.cshtml";
             public readonly string Index = "~/Views/Home/Index.cshtml";
-            static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
-            public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public partial class _DisplayTemplatesClass
-            {
-                public readonly string Member = "Member";
-            }
         }
     }
 
@@ -113,13 +138,26 @@ namespace KonigLabs.Controllers
         public T4MVC_HomeController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string lang);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult Index(string lang)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "lang", lang);
+            IndexOverride(callInfo, lang);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ContactOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, KonigLabs.Models.ViewContact contact);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Contact(KonigLabs.Models.ViewContact contact)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "contact", contact);
+            ContactOverride(callInfo, contact);
             return callInfo;
         }
 

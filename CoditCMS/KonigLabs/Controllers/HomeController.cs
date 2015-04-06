@@ -13,63 +13,17 @@ namespace KonigLabs.Controllers
 {
     public partial class HomeController : Controller
     {
-        public virtual ActionResult Index()
+        public virtual ActionResult Index(string language)
         {
-
-            using (var db = ApplicationDbContext.Create())
+            if (String.IsNullOrEmpty(language))
             {
-
-
-                var landing = new LandingPage()
-                {
-                    Members = new List<ViewMember>(),
-                    Projects = new List<ViewProject>(),
-                    Categories = new List<ViewCategory>(),
-                    Clients = new List<ViewClient>(),
-                    Articles = new List<ViewArticle>()
-                };
-
-                foreach (var member in db.CrewMembers.Include("Files").ToList())
-                {
-                    landing.Members.Add(new ViewMember(member));
-                }
-
-                var cats = new Dictionary<string, ViewCategory>();
-
-                foreach (var project in db.Projects.Include("ProjectCategory").Include("Files").ToArray())
-                {
-                    var viewProject = new ViewProject(project);
-                    landing.Projects.Add(viewProject);
-                    foreach (var vc in viewProject.Categories)
-                    {
-                        if (!cats.ContainsKey(vc.Token))
-                        {
-                            cats.Add(vc.Token, vc);
-                        }
-                        else
-                        {
-                            vc.Count += 1;
-                        }
-                    }
-
-                }
-                landing.Categories = cats.Values.ToList();
-
-                foreach (var cl in db.Clients.Include("Files").ToArray())
-                {
-                    landing.Clients.Add(new ViewClient(cl));
-                }
-
-
-                foreach (var ar in db.Articles.Include("Files").ToArray())
-                {
-                    landing.Articles.Add(new ViewArticle(ar));
-                }
-                landing.Contact = new ViewContact();
-
+                language = LocalEntity.RU;
+            }
+            using (var db = ApplicationDbContext.Create())
+            {                
+                var landing = new LandingPage(language, db);
                 return View(landing);
             }
-
         }
 
         [HttpPost]

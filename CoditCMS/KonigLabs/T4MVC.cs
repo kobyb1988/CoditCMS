@@ -27,10 +27,15 @@ using T4MVC;
 public static partial class MVC
 {
     public static KonigLabs.Controllers.AccountController Account = new KonigLabs.Controllers.T4MVC_AccountController();
+    public static CMS.Areas.Admin.Controllers.ArticleController Article = new CMS.Areas.Admin.Controllers.T4MVC_ArticleController();
+    public static CMS.Areas.Admin.Controllers.CategoryController Category = new CMS.Areas.Admin.Controllers.T4MVC_CategoryController();
+    public static CMS.Areas.Admin.Controllers.ClientController Client = new CMS.Areas.Admin.Controllers.T4MVC_ClientController();
+    public static CMS.Areas.Admin.Controllers.ContactController Contact = new CMS.Areas.Admin.Controllers.T4MVC_ContactController();
     public static CMS.Areas.Admin.Controllers.CrewController Crew = new CMS.Areas.Admin.Controllers.T4MVC_CrewController();
     public static KonigLabs.Controllers.DefaultController Default = new KonigLabs.Controllers.T4MVC_DefaultController();
     public static KonigLabs.Controllers.HomeController Home = new KonigLabs.Controllers.T4MVC_HomeController();
     public static KonigLabs.Controllers.ManageController Manage = new KonigLabs.Controllers.T4MVC_ManageController();
+    public static CMS.Areas.Admin.Controllers.ProjectController Project = new CMS.Areas.Admin.Controllers.T4MVC_ProjectController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

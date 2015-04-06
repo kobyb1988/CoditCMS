@@ -21,8 +21,8 @@ namespace KonigLabs
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{language}",
+                defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
             );
 
         }

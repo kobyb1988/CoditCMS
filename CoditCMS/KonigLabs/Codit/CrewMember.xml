@@ -30,7 +30,7 @@
 
       <select name="Language" title="Язык">
         <option value="ru">ru</option>
-        <option value="ru">en</option>
+        <option value="en">en</option>
       </select>
       
       <wysiwyg name="Bio" title="БИО" />
