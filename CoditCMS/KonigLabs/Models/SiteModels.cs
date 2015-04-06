@@ -1,6 +1,7 @@
 ﻿using DB.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Core.Objects.DataClasses;
 using System.Linq;
@@ -8,7 +9,15 @@ using System.Web;
 
 namespace KonigLabs.Models
 {
-    public class CrewMember: IVisibleEntity, ISortableEntity, IMetadataEntity
+
+    public class LocalEntity
+    {
+        [MaxLength(2)]
+        [Index("Language")]
+        public string Language { get; set; }
+    }
+
+    public class CrewMember : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -68,7 +77,7 @@ namespace KonigLabs.Models
 
     }
 
-    public class ProjectCategory : IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class ProjectCategory : LocalEntity,IVisibleEntity, ISortableEntity, IMetadataEntity
     {
 
         public int Id { get; set; }
@@ -138,7 +147,7 @@ namespace KonigLabs.Models
     }
 
 
-    public class Client : IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class Client : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
 
@@ -177,7 +186,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class Article : IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class Article : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
 
