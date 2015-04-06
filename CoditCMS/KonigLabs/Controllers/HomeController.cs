@@ -15,14 +15,29 @@ namespace KonigLabs.Controllers
     {
         public virtual ActionResult Index(string language)
         {
+            
             if (String.IsNullOrEmpty(language))
             {
                 language = LocalEntity.RU;
             }
+            var viewPath = "~/Views/Home/Index_{0}.cshtml";
+            string view;
+            switch (language)
+            {
+                case LocalEntity.RU:
+                    view = String.Format(viewPath, language);
+                    break;
+                case LocalEntity.EN:
+                    view = String.Format(viewPath, language);
+                    break;
+                default:
+                    view = String.Format(viewPath, LocalEntity.RU);
+                    break;                    
+            }
             using (var db = ApplicationDbContext.Create())
             {                
                 var landing = new LandingPage(language, db);
-                return View("~/Views/Home/Index_EN.cshtml", landing);
+                return View(view, landing);
             }
         }
 
