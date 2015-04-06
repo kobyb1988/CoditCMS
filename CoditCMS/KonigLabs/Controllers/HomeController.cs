@@ -22,7 +22,7 @@ namespace KonigLabs.Controllers
             using (var db = ApplicationDbContext.Create())
             {                
                 var landing = new LandingPage(language, db);
-                return View(landing);
+                return View("~/Views/Home/Index_EN.cshtml", landing);
             }
         }
 
