@@ -17,6 +17,7 @@
 		<cols>
 			<string name="FirstName" title="Имя"/>
 			<string name="Title" title="Должность"/>
+      <string name="Language" title="Язык"/>
 		</cols>
 
 	</list>
@@ -25,8 +26,14 @@
 		<tab name="General">
 			<string name="FirstName" title="Имя" />
 			<string name="LastName" title="Фамилия" />
-      <string name="Title" title="Должность" />			
-			<wysiwyg name="Bio" title="БИО" />
+      <string name="Title" title="Должность" />
+
+      <select name="Language" title="Язык">
+        <option value="ru">ru</option>
+        <option value="ru">en</option>
+      </select>
+      
+      <wysiwyg name="Bio" title="БИО" />
 		</tab>
     <tab name="Images">
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />

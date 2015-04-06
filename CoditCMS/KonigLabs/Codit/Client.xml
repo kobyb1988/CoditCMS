@@ -16,13 +16,19 @@
 
 		<cols>			
 			<string name="Title" title="Название"/>
+      <string name="Language" title="Язык"/>
 		</cols>
 
 	</list>
 
 	<form>
 		<tab name="General">
-			<string name="Title" title="Название" />			
+			<string name="Title" title="Название" />
+      <select name="Language" title="Язык">
+        <option value="ru">ru</option>
+        <option value="en">en</option>
+      </select>
+      
 		</tab>
     <tab name="Images">
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />

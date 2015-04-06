@@ -15,14 +15,19 @@
 		</actions>
 
 		<cols>
-			<string name="Name" title="Название" />			
+			<string name="Name" title="Название" />
+      <string name="Language" title="Язык"/>
 		</cols>
 
 	</list>
 
 	<form>
 		<tab name="General">
-			<string name="Name" title="Название" />		
+			<string name="Name" title="Название" />
+      <select name="Language" title="Язык">
+        <option value="ru">ru</option>
+        <option value="en">en</option>
+      </select>
 			<wysiwyg name="Description" title="Описание" />
 		</tab>		
 		<tab name="Metadata">		

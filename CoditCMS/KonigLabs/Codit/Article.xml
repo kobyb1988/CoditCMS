@@ -16,7 +16,7 @@
 
 		<cols>			
 			<string name="Title" title="Название"/>
-			<string name="Title" title="Language"/>
+			<string name="Language" title="Язык"/>
     </cols>
 
 	</list>
@@ -25,6 +25,10 @@
 		<tab name="General">
 			<string name="Title" title="Название" />			
 		  <date name="Date"   title="Дата"/>
+      <select name="Language" title="Язык">
+        <option value="ru">ru</option>
+        <option value="en">en</option>
+      </select>
     <wysiwyg name="Content" title="Контент" />
     </tab>
     <tab name="Images">
