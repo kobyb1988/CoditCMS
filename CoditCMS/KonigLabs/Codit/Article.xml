@@ -16,7 +16,8 @@
 
 		<cols>			
 			<string name="Title" title="Название"/>
-		</cols>
+			<string name="Title" title="Language"/>
+    </cols>
 
 	</list>
 

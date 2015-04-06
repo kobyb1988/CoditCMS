@@ -2,15 +2,15 @@ namespace KonigLabs.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-    
-    public partial class Localisation : DbMigration
+    using KonigLabs.Models;
+    public partial class Localization : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Articles", "Language", c => c.String(maxLength: 2));
-            AddColumn("dbo.Clients", "Language", c => c.String(maxLength: 2));
-            AddColumn("dbo.CrewMembers", "Language", c => c.String(maxLength: 2));
-            AddColumn("dbo.ProjectCategories", "Language", c => c.String(maxLength: 2));
+            AddColumn("dbo.Articles", "Language", c => c.String(maxLength: 2, defaultValue: LocalEntity.RU, nullable: false));
+            AddColumn("dbo.Clients", "Language", c => c.String(maxLength: 2, defaultValue: LocalEntity.RU, nullable: false));
+            AddColumn("dbo.CrewMembers", "Language", c => c.String(maxLength: 2, defaultValue: LocalEntity.RU, nullable: false));
+            AddColumn("dbo.ProjectCategories", "Language", c => c.String(maxLength: 2, defaultValue: LocalEntity.RU, nullable: false));
             CreateIndex("dbo.Articles", "Language", name: "Language");
             CreateIndex("dbo.Clients", "Language", name: "Language");
             CreateIndex("dbo.CrewMembers", "Language", name: "Language");

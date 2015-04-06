@@ -12,8 +12,11 @@ namespace KonigLabs.Models
 
     public class LocalEntity
     {
+        public const string RU = "ru";
+        public const string EN = "en";
+
         [MaxLength(2)]
-        [Index("Language")]
+        [Index("Language")]              
         public string Language { get; set; }
     }
 

@@ -7,13 +7,13 @@ namespace KonigLabs.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Localisation : IMigrationMetadata
+    public sealed partial class Localization : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Localisation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Localization));
         
         string IMigrationMetadata.Id
         {
-            get { return "201504061834346_Localisation"; }
+            get { return "201504061844295_Localization"; }
         }
         
         string IMigrationMetadata.Source
