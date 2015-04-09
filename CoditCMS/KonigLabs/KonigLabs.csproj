@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201504061844295_Localization.Designer.cs">
       <DependentUpon>201504061844295_Localization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504090830400_AdminRoleDeploy.cs" />
+    <Compile Include="Migrations\201504090830400_AdminRoleDeploy.Designer.cs">
+      <DependentUpon>201504090830400_AdminRoleDeploy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -558,6 +562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504061844295_Localization.resx">
       <DependentUpon>201504061844295_Localization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504090830400_AdminRoleDeploy.resx">
+      <DependentUpon>201504090830400_AdminRoleDeploy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
