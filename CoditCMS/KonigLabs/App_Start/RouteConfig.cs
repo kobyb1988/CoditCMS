@@ -24,7 +24,10 @@ namespace KonigLabs
                 url: "{language}",
                 defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
             );
-
+            routes.MapRoute(
+              name: "Accounts",
+              url: "{controller}/{action}"
+          );
         }
     }
 }
