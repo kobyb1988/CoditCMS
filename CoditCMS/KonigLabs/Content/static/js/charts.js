@@ -2,7 +2,7 @@ $(function() {
 jQuery('.chart1').appear(function() {
     //create instance
     $('.chart1').easyPieChart({
-        animate: 1500, barColor:"#eee", trackColor:false, scaleColor:false, lineWidth:"14",
+        animate: 1500, barColor:"#00f1eb", trackColor:false, scaleColor:false, lineWidth:"14",
 	});
 setTimeout(function() {
         $('.chart1').data('easyPieChart').update(80);
@@ -12,7 +12,7 @@ setTimeout(function() {
 jQuery('.chart2').appear(function() {
     //create instance
     $('.chart2').easyPieChart({
-        animate: 1500, barColor:"#777", trackColor:false, scaleColor:false, lineWidth:"14",
+        animate: 1500, barColor:"#b9f4fa", trackColor:false, scaleColor:false, lineWidth:"14",
 });
     setTimeout(function() {
         $('.chart2').data('easyPieChart').update(75);
@@ -22,7 +22,7 @@ jQuery('.chart2').appear(function() {
 jQuery('.chart3').appear(function() {
     //create instance
     $('.chart3').easyPieChart({
-        animate: 1500, barColor:"#eee", trackColor:false, scaleColor:false, lineWidth:"14",
+        animate: 1500, barColor:"#00f1eb", trackColor:false, scaleColor:false, lineWidth:"14",
 });
     setTimeout(function() {
         $('.chart3').data('easyPieChart').update(60);

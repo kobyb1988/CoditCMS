@@ -2,9 +2,9 @@ body {
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	line-height: 24px;
-	color: #555!important;
+	color: #44412c!important;
 	font-weight: 400;
-	background:#F0F0F0;
+	background:#fdf697;
 	margin: 0;
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -52,8 +52,14 @@ a {
 .marg-top0 { margin-top: 0px; }
 .marg-top-minus25 { margin-top: -25px; }
 
- #about, #team, #work, #price, #contact { padding-top: 80px; background:#F0F0F0; }
-section { background:#F0F0F0; }
+ #about, #team, #work, #price, #contact { padding-top: 80px; background:#fdf697; }
+ #team{background:#02e5de; }
+ 
+ #blog {
+	background: #fff; 
+ }
+ 
+section { background:#fdf697; }
 
 .btn {
 	padding: 20px 25px;
@@ -63,16 +69,17 @@ section { background:#F0F0F0; }
 	text-align: center;
 	display: inline-block;
 	overflow: hidden;
-	color: #fff;
+	color: #44412c;
 	border-radius:0px;
 	margin-bottom:15px;
 	letter-spacing: 2px;
 	font-weight: 700;
 }
+
 .btn:hover {
-	background-color: #2E3138!important; 
+	background-color: #00f1eb!important; 
 	cursor: pointer;
-	color: #f0f0f0;
+	color: #44412c;
 	-webkit-transition: all 0.3s ease-in-out;
 	drop-shadow:none!important;
     -moz-transition: all 0.3s ease-in-out;
@@ -97,7 +104,7 @@ blockquote.testimonial_blockquote i.fa-quote-right { padding-right:0px; padding-
 blockquote.testimonial_blockquote p { 
 	font-size:20px;
 	line-height:32px;
-	color:#888;
+	color:#4d4a31;
 	font-family:'Lato', sans-serif;
 	font-weight:300;
 }
@@ -121,14 +128,14 @@ blockquote.testimonial_blockquote p {
 	height: 100%;
 }
 
-h1, h2, h3,h4,h5,h6 { font-family: 'Fira Sans', sans-serif; color:#555; }
+h1, h2, h3,h4,h5,h6 { font-family: 'Fira Sans', sans-serif; color:#44412c; }
 h1 {
 	font-weight: 700;
 	font-size: 130px;
 	line-height:125px;
 	position: relative;
 	letter-spacing:-3px!important;
-	color: #222!important;
+	color: #fff!important;
 	margin: 0px 0px 30px;
 	text-transform: lowercase;
 }
@@ -144,7 +151,7 @@ h6 { font-size: 16px; }
 	font-weight: 300;
 	line-height: 45px;
 	margin-bottom: 45px;
-	color:#666;
+	color:#44412c;
 }
 
 p { margin-bottom: 20px; }
@@ -152,7 +159,7 @@ p { margin-bottom: 20px; }
 #single h1 {
 	font-family: 'Fira Sans', sans-serif;
 	font-weight: 700;
-	font-size: 60px;
+	font-size: 100px;
 	line-height: 70px;
 	position: relative;
 	letter-spacing: -1px!important; 
@@ -169,7 +176,25 @@ p { margin-bottom: 20px; }
 	text-align: center;
 	line-height: 40px;
 	margin-bottom: 35px;
-	color: #696f77;
+	color: #0ec9c0;
+}
+
+#single a {
+    color: #0ec9c0;
+}
+
+#single a:hover {
+    color: #44412c;
+}
+
+#single .hi-icon2 {
+    font-size: 60px;
+    color: #fff;
+}
+
+#single .hi-icon-effect-a .hi-icon2 {
+    padding-top: 60px;
+    box-shadow: none !important;
 }
 
 #about h6{ margin:20px 0; font-weight:500; }
@@ -230,13 +255,13 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	position: fixed;
 	top: -80px;
 	width: 100%;
-	background-color: #f0f0f0;
+	background-color: #fff;
 	max-height: 80px;
 	min-height: 80px;
 	z-index: 999!important;
 	transition: all .2s ease;
 	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;opacity:0.95;
+	-moz-transition: all .2s ease;
 	overflow: hidden;
 }
 
@@ -378,7 +403,7 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	transition: all .3s ease-in-out;
 }
 .service i{
-	color:#fff;
+	color:#44412c;
 	line-height: 120px;
 	margin :0 auto;
 	position: relative;
@@ -391,15 +416,15 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	transition: transform 0.5s;
 	transform: scale(1.0);
 }
-.service:hover { background: #2E3138!important; }
-.service i:hover { color: #f5f5f5; }
+.service:hover { background: #44412c!important; }
+.service i:hover { color: #fdf04a; }
 
 .like { min-height:180px; font-size:80px!important; line-height:60px; margin:60px 0 20px; color: #222!important; }
 .ticker{  
 	font-family: 'Lato', sans-serif;
 	font-size: 52px; 
 	font-weight: 400;
-	color: #777;
+	color: #b9f4fa;
 	line-height: 0px;
 	letter-spacing: 0px;
 	text-transform: lowercase;
@@ -420,7 +445,7 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	display: inline-block;
 	margin: 0px auto;
 	z-index: 2;
-	color: #f0f0f0;
+	color: #fdf04a;
 	left: 40%;
 	top: 40%;
 	font-weight: 700;
@@ -445,7 +470,7 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	letter-spacing: 2px!important;
 	text-align: center;
 	text-transform: uppercase;
-	color: #bbb!important;
+	color: #b9f4fa!important;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.3); 
 }
 
@@ -556,7 +581,7 @@ input { outline:none; }
 
 #ajax-contact-form input.btn{
 	padding: 15px 25px;
-	background-color: #2E3138!important;
+	background-color: #44412c!important;
 	color: #f0f0f0;
 	cursor: pointer;
 	font-family: 'Fira Sans', sans-serif;
@@ -603,21 +628,21 @@ input { outline:none; }
 	clear:both; 	
 }
 #contact h2 { color:#f0f0f0; line-height:40px;}
-#contact a { color:#444; }
+#contact a { color:#44412c; }
 #contact a:hover { color:#f0f0f0; }
-.inverse { color:#444; }
+.inverse { color:#44412c; }
 
 .social-icons { font-size: 40px; list-style-type: none!important; margin: 20px 0px 25px -38px;}
 .social-icons li { list-style-type: none!important; float: left; margin:20px 15px 25px 0px; }
 .social-icons ul li:last-child { margin-right: 0px; }
 .social-icons li a { color: #f0f0f0!important; }
-.social-icons li a:hover { color: #2E3138!important;  }
+.social-icons li a:hover { color: #44412c!important;  }
 
 /*-----------------------------------------------------------------------------------*/
 /*	08: FOOTER SECTION
 /*-----------------------------------------------------------------------------------*/
 .footer {
-	background: #2E3138;
+	background: #44412c;
 	margin: 0px auto;
     padding: 50px 0;
     text-align: center;
