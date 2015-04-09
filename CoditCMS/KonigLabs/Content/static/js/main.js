@@ -32,18 +32,17 @@
         singlePageCallback: function (url, element) {
 
             // to update singlePage content use the following method: this.updateSinglePage(yourContent)
-            var t = this;
-
+            var t = this;                        
             $.ajax({
                 url: url,
                 type: 'GET',
                 dataType: 'html',
                 timeout: 5000
             })
-            .done(function(result) {
-                t.updateSinglePage(result);
+            .done(function(result) {                    
+                    t.updateSinglePage(result);
             })
-            .fail(function() {
+            .fail(function () {                
                 t.updateSinglePage("Страница в разрабоке...");
             });
 
@@ -87,7 +86,7 @@
 
             // to update singlePage content use the following method: this.updateSinglePage(yourContent)
             var t = this;
-
+            
             $.ajax({
                 url: url,
                 type: 'GET',
@@ -95,9 +94,11 @@
                 timeout: 5000
             })
             .done(function(result) {
+                
                 t.updateSinglePage(result);
             })
-            .fail(function() {
+            .fail(function () {
+                
                 t.updateSinglePage("Error! Please refresh the page!");
             });
 

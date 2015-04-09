@@ -146,14 +146,20 @@ namespace KonigLabs.Models
     public class ViewMember
     {
         public string Avatar { get; set; }
+        public string FirstName { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }
+        public int Id { get; set; }
+        public string Bio { get; set; }
 
         public ViewMember(CrewMember member)
         {
             Avatar = member.GetAvatarPath();
             Title = member.Title;
+            FirstName = member.FirstName;
             Name = member.FirstName + " " + member.LastName;
+            Bio = member.Bio;
+            Id = member.Id;
         }
     }
 

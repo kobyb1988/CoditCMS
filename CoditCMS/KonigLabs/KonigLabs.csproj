@@ -470,6 +470,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index_en.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MemberBio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

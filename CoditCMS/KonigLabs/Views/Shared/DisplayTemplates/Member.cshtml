@@ -2,7 +2,7 @@
 @model KonigLabs.Models.ViewMember
 
 <li class="cbp-item">
-    <a href="ajax/team1.html" class="cbp-caption cbp-singlePage">
+    <a href="/Home/member/?id=@Model.Id" class="cbp-caption cbp-singlePage">
         <div class="cbp-caption-defaultWrap">
             <img src="@Url.Content(Model.Avatar)" alt=" ">
         </div>

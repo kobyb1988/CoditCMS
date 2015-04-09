@@ -41,6 +41,21 @@ namespace KonigLabs.Controllers
             }
         }
 
+        
+        public virtual ActionResult Member(int id)
+        {
+            using (var db = ApplicationDbContext.Create())
+            {
+                var member = db.CrewMembers.Where(m => m.Id == id).FirstOrDefault();
+                if (member == null)
+                {
+                    throw new HttpException(404, "NotFound");
+                }
+                var vm = new ViewMember(member);
+                return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
+            }
+        }
+
         [HttpPost]
         public virtual ActionResult Contact(ViewContact contact)
         {

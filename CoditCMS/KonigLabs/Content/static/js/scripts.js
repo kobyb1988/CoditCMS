@@ -160,8 +160,8 @@ var isMobile = {
 	MILESTONE COUNTERS - ADD YOUR PERCENTAGES HERE
 ******************************************************************************/
 
-	jQuery('#counter-1').appear(function() {
-		$('#counter-1').countTo({
+	jQuery('#counter-1').appear(function() {		
+	    $('#counter-1').countTo({
 			from: 0,
 			to: 120,
 			speed: 4000,
