@@ -3,26 +3,61 @@ $(document).ready(function () {
 /*****************************************************************************
 	CONTACT FORM - you can change your notification message here
 *****************************************************************************/
-   	$("#ajax-contact-form").submit(function() {
-				var str = $(this).serialize();		
-				$.ajax({
-					type: "POST",
-					url: "contact_form/contact_process.php",
-					data: str,
-					success: function(msg) {
-						// Message Sent - Show the 'Thank You' message and hide the form
-						if(msg == 'OK') {
-							result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
-							$("#fields").hide();
-						} else {
-							result = msg;
-						}
-						$('#note').html(result);
-					}
-				});
-				return false;
-			});
+   	//$("#ajax-contact-form").submit(function() {
+	//			var str = $(this).serialize();		
+	//			$.ajax({
+	//				type: "POST",
+	//				url: "contact_form/contact_process.php",
+	//				data: str,
+	//				success: function(msg) {
+	//					// Message Sent - Show the 'Thank You' message and hide the form
+	//					if(msg == 'OK') {
+	//						result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+	//						$("#fields").hide();
+	//					} else {
+	//						result = msg;
+	//					}
+	//					$('#note').html(result);
+	//				}
+	//			});
+	//			return false;
+	//		});
 
+    var bindForm = function(){
+        
+        $("#ajax-contact-form").submit(function() {
+			
+            var str = $(this).serialize();				
+            $.ajax({
+                type: "POST",
+                url: "/home/contact/",
+                data: str,
+                success: function(msg) {
+                    // Message Sent - Show the 'Thank You' message and hide the form
+                    if(msg == 'OK') {
+                        result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+                        $("#fields").hide();
+                    } else {
+                        result = msg;
+                    }						
+                    var fields = $('#fields').html(result);
+                    if(fields.find('span').first().text().match('Спасибо')){
+                        fields.find(':input').each(function(i, el){
+                            //console.log(el.type);
+                            if(el.type.toLowerCase()!='submit'){
+                                $(el).val('');
+                            }
+                            
+                        })
+                    }
+                    bindForm()
+                    //$('#note').html(result);
+                }
+            });
+            return false;
+        });
+    }
+    bindForm()
 //tooltip 
 $("[rel=tooltip]").tooltip();
 $("[data-rel=tooltip]").tooltip();

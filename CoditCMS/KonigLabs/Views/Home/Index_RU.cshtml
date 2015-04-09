@@ -23,34 +23,43 @@
         </div>
     </div>
 </div>
-<section id="home" class="top_video">
-    <div id="overlay"></div>
-    <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
+@if (Request.Url.Host.Contains("localhost"))
+{
+    
+}
+else
+{
+    <section id="home" class="top_video">
+        <div id="overlay"></div>
+        <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
 
-    <div id="content">
-        <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
-            <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/static/img/face_logo.png"></div>
+        <div id="content">
+            <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
+                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/static/img/face_logo.png"></div>
+            </div>
+
+            <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
+                Мы разрабатываем сложные
+            </div>
+
+            <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
+                ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
+            </h1>
+
+            <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
+                живем в Калининграде, работаем по всему миру!
+            </div>
+
+            <div class="text-center pad30">
+                <a href="#about" class="scroll">
+                    <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
+                </a>
+            </div>
         </div>
+    </section>
+}
 
-        <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
-            Мы разрабатываем сложные
-        </div>
 
-        <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
-            ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
-        </h1>
-
-        <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
-            живем в Калининграде, работаем по всему миру!
-        </div>
-
-        <div class="text-center pad30">
-            <a href="#about" class="scroll">
-                <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
-            </a>
-        </div>
-    </div>
-</section>
 <section id="big_image"></section>
 <section id="about">
     <div class="container">
@@ -198,7 +207,7 @@
                         @foreach (var member in Model.Members)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
-                        }                       
+                        }
                     </ul>
                 </div>
 
@@ -288,7 +297,7 @@
                     @foreach (var client in Model.Clients)
                     {
                         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
-                    }                                        
+                    }
                 </div>
             </div>
         </div>
@@ -306,7 +315,7 @@
                         @foreach (var article in Model.Articles)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
-                        }                        
+                        }
                     </ul>
                 </div>
             </div>
