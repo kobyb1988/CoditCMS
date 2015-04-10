@@ -394,7 +394,14 @@ namespace KonigLabs.Controllers
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
+        
+        public virtual ActionResult LogOut()
+        {
+            AuthenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
 
+        
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]

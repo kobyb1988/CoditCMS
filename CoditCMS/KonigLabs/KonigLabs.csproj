@@ -252,6 +252,10 @@
     <Compile Include="Migrations\201504090830400_AdminRoleDeploy.Designer.cs">
       <DependentUpon>201504090830400_AdminRoleDeploy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504101059256_ResetPassword.cs" />
+    <Compile Include="Migrations\201504101059256_ResetPassword.Designer.cs">
+      <DependentUpon>201504101059256_ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -472,6 +476,7 @@
     <Content Include="Views\Home\Index_ru.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MemberBio.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArticleFull.cshtml" />
+    <Content Include="Views\Shared\_CoditLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -522,6 +527,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504090830400_AdminRoleDeploy.resx">
       <DependentUpon>201504090830400_AdminRoleDeploy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504101059256_ResetPassword.resx">
+      <DependentUpon>201504101059256_ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
