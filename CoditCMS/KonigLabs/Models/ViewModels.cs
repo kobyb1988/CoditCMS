@@ -108,6 +108,16 @@ namespace KonigLabs.Models
         {
             return String.Format("category-{0}", cat.Id);
         }
+
+        public string GetFilter()
+        {
+            var answer = Token;
+            if (answer != "*")
+            {
+                answer = "." + answer;
+            }
+            return answer;
+        }
     }
 
     public class ViewProject

@@ -259,11 +259,19 @@ else
                 </div>
 
                 <div id="filters-container" class="cbp-l-filters-button">
-                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все и сразу<span class="cbp-filter-counter"></span></button>
-                    <button data-filter=".identity" class="cbp-filter-item">Дизайн<span class="cbp-filter-counter"></span></button>
-                    <button data-filter=".web-design" class="cbp-filter-item">Просто сайты<span class="cbp-filter-counter"></span></button>
-                    <button data-filter=".graphic" class="cbp-filter-item">Стартапы<span class="cbp-filter-counter"></span></button>
-                    <button data-filter=".logo" class="cbp-filter-item">Неформат<span class="cbp-filter-counter"></span></button>
+                    
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+                        Все и сразу
+                        <span class="cbp-filter-counter"></span>
+                    </button>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
+                            @category.Name
+                            <span class="cbp-filter-counter"></span>
+                        </button>
+                    }
+                                        
                 </div>
 
                 <div class="cbp-l-grid-project">
