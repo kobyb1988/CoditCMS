@@ -206,22 +206,24 @@ namespace CMS.Controllers
 				// удаляем файлы
 				foreach (var field in Settings.FormSettings.Fields.Where(settings => settings is UploadFileSettings))
 				{
-					var value = TypeHelpers.GetPropertyValue(entity, field.Name);
-					if (value is IEnumerable)
-					{
-						var list = ((IListSource) value).GetList();
-						foreach (var file in list.Cast<IFileEntity>().ToList())
-						{
-							DefaultFileService.DeleteFile(file, HttpContext);
-                            ((IObjectContextAdapter)Repository.DataContext).ObjectContext.DeleteObject(file);
-						}
-						list.Clear();
-					}
-					else if (value != null)
-					{
-						DefaultFileService.DeleteFile((IFileEntity)value, HttpContext);
-						((IObjectContextAdapter)Repository.DataContext).ObjectContext.DeleteObject(value);
-					}
+                    // aganzha DIRTY HACK. DO NOT DELETE FILES NOW
+
+                    //var value = TypeHelpers.GetPropertyValue(entity, field.Name);
+                    //if (value is IEnumerable)
+                    //{
+                    //    var list = ((IListSource) value).GetList();
+                    //    foreach (var file in list.Cast<IFileEntity>().ToList())
+                    //    {
+                    //        DefaultFileService.DeleteFile(file, HttpContext);
+                    //        ((IObjectContextAdapter)Repository.DataContext).ObjectContext.DeleteObject(file);
+                    //    }
+                    //    list.Clear();
+                    //}
+                    //else if (value != null)
+                    //{
+                    //    DefaultFileService.DeleteFile((IFileEntity)value, HttpContext);
+                    //    ((IObjectContextAdapter)Repository.DataContext).ObjectContext.DeleteObject(value);
+                    //}
 				}
 				// удаляем элемент
 				Repository.Delete(entity);

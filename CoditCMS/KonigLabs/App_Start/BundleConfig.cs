@@ -26,6 +26,13 @@ namespace KonigLabs
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+                      "~/Content/static/js/*.js",                       
+                      "~/Content/static/js/youtube/*.js"));
+            bundles.Add(new ScriptBundle("~/bundles/css").Include(
+                      "~/Content/static/css/*.css"));
+
         }
     }
 }

@@ -390,9 +390,9 @@
     <Content Include="Content\static\js\count.js" />
     <Content Include="Content\static\js\custom.modernizr.js" />
     <Content Include="Content\static\js\gmap3.min.js" />
+    <Content Include="Content\static\js\jquery-1.11.2.min.js" />
     <Content Include="Content\static\js\jquery.appear.js" />
     <Content Include="Content\static\js\jquery.cubeportfolio.min.js" />
-    <Content Include="Content\static\js\jquery.js" />
     <Content Include="Content\static\js\main.js" />
     <Content Include="Content\static\js\owl.carousel.min.js" />
     <Content Include="Content\static\js\parallax.js" />
