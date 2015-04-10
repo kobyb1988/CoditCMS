@@ -471,6 +471,7 @@
     <Content Include="Views\Home\Index_en.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MemberBio.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArticleFull.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

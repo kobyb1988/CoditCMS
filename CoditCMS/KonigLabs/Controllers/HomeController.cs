@@ -56,6 +56,20 @@ namespace KonigLabs.Controllers
             }
         }
 
+        public virtual ActionResult Article(int id)
+        {
+            using (var db = ApplicationDbContext.Create())
+            {
+                var article = db .Articles.Where(m => m.Id == id).FirstOrDefault();
+                if (article == null)
+                {
+                    throw new HttpException(404, "NotFound");
+                }
+                var vm = new ViewArticle(article);
+                return View("~/Views/Shared/DisplayTemplates/ArticleFull.cshtml", vm);
+            }
+        }
+
         [HttpPost]
         public virtual ActionResult Contact(ViewContact contact)
         {

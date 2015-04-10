@@ -190,12 +190,16 @@ namespace KonigLabs.Models
         public string Image { get; set; }
         public string Title { get; set; }
         public string Date { get; set; }
+        public int Id { get; set; }
+        public string Content { get; set; }
 
         public ViewArticle(Article article)
         {
             Image = article.GetImage();
             Title = article.Title;
             Date = article.Date.ToString("d MMMM yyyy");
+            Id = article.Id;
+            Content = article.Content;
         }
 
     }
