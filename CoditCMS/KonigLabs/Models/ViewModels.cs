@@ -127,6 +127,9 @@ namespace KonigLabs.Models
         public string BigImage { get; set; }
         public string SmallImage { get; set; }
         public int Id { get; set; }
+        public string Description { get; set; }
+        public List<string> Gallery { get; set; }
+        
 
         public ViewProject(Project project)
         {
@@ -134,7 +137,9 @@ namespace KonigLabs.Models
             SmallImage = project.GetSmallImage();
             BigImage = project.GetBigImage();
             Categories = new List<ViewCategory>();
+            Gallery = project.GetImages();
             Name = project.Name;
+            Description = project.Description;
             foreach (var cat in project.ProjectCategory.ToArray())
             {
                 Categories.Add(new ViewCategory(cat));
@@ -151,6 +156,7 @@ namespace KonigLabs.Models
             }
             return sb.ToString();
         }
+
     }
 
     public class ViewMember

@@ -168,6 +168,16 @@ namespace KonigLabs.Models
             //db.Projects.Include("ProjectCategory").Include("Files").Where(p => p.ProjectCategory).ToArray();
             return projects;
         }
+
+        internal List<string> GetImages()
+        {
+            var answer = new List<string>();
+            foreach(var file in Files.Skip(1))
+            {
+                answer.Add(file.Name);
+            }
+            return answer; 
+        }
     }
 
 

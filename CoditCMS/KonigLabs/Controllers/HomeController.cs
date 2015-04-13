@@ -56,6 +56,20 @@ namespace KonigLabs.Controllers
             }
         }
 
+        public virtual ActionResult Project(int id)
+        {
+            using (var db = ApplicationDbContext.Create())
+            {
+                var project = db.Projects.Where(p => p.Id == id).FirstOrDefault();
+                if (project == null)
+                {
+                    throw new HttpException(404, "NotFound");
+                }
+                var vm = new ViewProject(project);
+                return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
+            }
+        }
+
         public virtual ActionResult Article(int id)
         {
             using (var db = ApplicationDbContext.Create())
