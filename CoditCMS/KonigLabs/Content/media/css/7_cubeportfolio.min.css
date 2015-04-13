@@ -9,7 +9,6 @@
  *
  */
 
-
 /*  ---------------------------------------------------------------
     Default style for plugin. Please change them carefully!
     --------------------------------------------------------------- */
@@ -203,7 +202,7 @@
     border-radius: 2px;
     color: #fdf697;
     cursor: pointer;
-    font: 400 12px/29px "Lato", sans-serif;
+    font: 400 12px/29px 'Open Sans', sans-serif;
     margin: 10px 10px 0 0;
     overflow: visible;
     padding: 0 17px;
@@ -280,11 +279,11 @@
     clear: both;
     text-decoration: none;
 }
-.cbp-l-grid-blog-date, .cbp-l-grid-blog-comments { font: 400 12px/18px "Lato", sans-serif; float: left; }
+.cbp-l-grid-blog-date, .cbp-l-grid-blog-comments { font: 400 12px/18px 'Open Sans', sans-serif; float: left; }
 .cbp-l-grid-blog-split {
   	float: left;
     margin: 0px 8px;
-    font: 13px/16px "Lato", sans-serif;
+    font: 13px/16px 'Open Sans', sans-serif;
     color: #bbb;
 }
 
@@ -328,7 +327,7 @@ background:transparent!important;
 .cbp-popup-singlePage-counter {
 	display: none;
     color: #bbb!important;
-    font:  14px/104px 'Lato',sans-serif;
+    font:  14px/104px 'Open Sans', sans-serif;
     position: absolute;
     right: 50px;
     top: 0;
@@ -349,13 +348,13 @@ background:transparent!important;
     padding: inherit;
     color: #44412c;
     display: block;
-    font: 400 16px/40px "Lato", sans-serif;
+    font: 400 16px/40px 'Open Sans', sans-serif;
 	list-style-type:none; 
 }
 .cbp-popup-singlePage .cbp-l-project-details-list strong {
    	display: inline-block;
     color: #4d4a31;
-    font: 16px/40px "Lato", sans-serif;
+    font: 16px/40px 'Open Sans', sans-serif;
     min-width: 90px;
 	margin-left:-40px;
 }

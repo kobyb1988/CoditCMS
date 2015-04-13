@@ -1,8 +1,8 @@
 .colour {color:#fdf04a; } 
 .white {color:#fafafa; } 
  
-a {color: #02e5de;}
-a:hover {color:#333;}
+a {color: #0ec9c0;}
+a:hover {color:#44412c;}
 
 ::selection { background: #00f1eb; color: #fff; }
 ::-moz-selection { background: #00f1eb; color: #fff; }

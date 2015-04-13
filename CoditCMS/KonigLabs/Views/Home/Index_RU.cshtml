@@ -8,14 +8,17 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/static/img/logo.png" alt="" /></a>
+                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
                 <li><a class="scroll" href="#home">Главная</a></li>
                 <li><a class="scroll" href="#about">Услуги</a></li>
                 <li><a class="scroll" href="#team">Команда</a></li>
                 <li><a class="scroll" href="#work">Наши работы</a></li>
+                <li><a class="scroll" href="blog.html">Блог</a></li>
                 <li><a class="scroll" href="#contact">Контакты</a></li>
+                <li><a class="lang active" href="#">Ru</a></li>
+                <li><a class="lang" href="#">En</a></li>
             </ul>
             <div id="nav-toggle">
                 <i class="fa fa-bars"></i>
@@ -23,42 +26,42 @@
         </div>
     </div>
 </div>
+
 @if (Request.Url.Host.Contains("localhost"))
 {
-    
+
 }
 else
 {
-    <section id="home" class="top_video">
-        <div id="overlay"></div>
-        <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
+<section id="home" class="top_video">
+    <div id="overlay"></div>
+    <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
 
-        <div id="content">
-            <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
-                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/static/img/face_logo.png"></div>
-            </div>
-
-            <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
-                Мы разрабатываем сложные
-            </div>
-
-            <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
-                ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
-            </h1>
-
-            <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
-                живем в Калининграде, работаем по всему миру!
-            </div>
-
-            <div class="text-center pad30">
-                <a href="#about" class="scroll">
-                    <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
-                </a>
-            </div>
+    <div id="content">
+        <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
+            <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/media/img/face_logo.png"></div>
         </div>
-    </section>
-}
 
+        <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
+            Мы разрабатываем сложные
+        </div>
+
+        <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
+            ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
+        </h1>
+
+        <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
+            живем в Калининграде, работаем по всему миру!
+        </div>
+
+        <div class="text-center pad30">
+            <a href="#about" class="scroll">
+                <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
+            </a>
+        </div>
+    </div>
+</section>
+}
 
 <section id="big_image"></section>
 <section id="about">
@@ -137,6 +140,7 @@ else
     </div>
 </section>
 
+
 <section id="charts">
     <div class="well">
         <div class="dark_overlay">
@@ -204,10 +208,70 @@ else
 
                 <div id="grid-container" class="cbp-l-grid-team">
                     <ul class="cbp-l-grid-team">
-                        @foreach (var member in Model.Members)
-                        {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
-                        }
+                        <li class="cbp-item">
+                            <a href="ajax/team1.html" class="cbp-caption cbp-singlePage">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/team/1.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">МАША</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="ajax/team1.html" class="cbp-singlePage cbp-l-grid-team-name">Маша Ложникова</a>
+                            <div class="cbp-l-grid-team-position">Дизайнер/Иллюстратор</div>
+                        </li>
+                        <li class="cbp-item">
+                            <a href="ajax/team2.html" class="cbp-caption cbp-singlePage">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/team/2.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">АРТУР</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="ajax/team2.html" class="cbp-singlePage cbp-l-grid-team-name">Артур Семешко</a>
+                            <div class="cbp-l-grid-team-position">Мыслитель-новатор </div>
+                        </li>
+                        <li class="cbp-item">
+                            <a href="ajax/team3.html" class="cbp-caption cbp-singlePage">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/team/3.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">АЛЕКСЕЙ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="ajax/team3.html" class="cbp-singlePage cbp-l-grid-team-name">Алексей Палаткин</a>
+                            <div class="cbp-l-grid-team-position">Нужный человек</div>
+                        </li>
+                        <li class="cbp-item">
+                            <a href="ajax/team4.html" class="cbp-caption cbp-singlePage">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/team/4.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">НИКОЛАЙ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="ajax/team4.html" class="cbp-singlePage cbp-l-grid-team-name">Николай Пасько</a>
+                            <div class="cbp-l-grid-team-position">Смотрящий</div>
+                        </li>
                     </ul>
                 </div>
 
@@ -259,28 +323,162 @@ else
                 </div>
 
                 <div id="filters-container" class="cbp-l-filters-button">
-                    
-                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">
-                        Все и сразу
-                        <span class="cbp-filter-counter"></span>
-                    </button>
-                    @foreach (var category in Model.Categories)
-                    {
-                        <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
-                            @category.Name
-                            <span class="cbp-filter-counter"></span>
-                        </button>
-                    }
-                                        
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все и сразу<span class="cbp-filter-counter"></span></button>
+                    <button data-filter=".identity" class="cbp-filter-item">Дизайн<span class="cbp-filter-counter"></span></button>
+                    <button data-filter=".web-design" class="cbp-filter-item">Просто сайты<span class="cbp-filter-counter"></span></button>
+                    <button data-filter=".graphic" class="cbp-filter-item">Стартапы<span class="cbp-filter-counter"></span></button>
+                    <button data-filter=".logo" class="cbp-filter-item">Неформат<span class="cbp-filter-counter"></span></button>
                 </div>
 
                 <div class="cbp-l-grid-project">
                     <div id="grid-container3" class="cbp-l-grid-projects">
                         <ul>
-                            @foreach (var project in Model.Projects)
-                            {
-                                Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
-                            }
+                            <li class="cbp-item graphic">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/1.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project1.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="/Content/media/img/gallery/1big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="cbp-item web-design logo">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/2.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project2.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="/Content/media/img/gallery/2big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cbp-item graphic logo">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/3.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project3.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="http://vimeo.com/14912890" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-film"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cbp-item web-design graphic">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/4.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project4.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="/Content/media/img/gallery/3big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cbp-item identity web-design">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/5.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project5.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="/Content/media/img/gallery/4big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cbp-item identity web-design">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/6.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project6.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="/Content/media/img/gallery/5big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cbp-item graphic logo">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/7.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project7.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="/Content/media/img/gallery/6big.jpg" class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cbp-item identity graphic">
+                                <div class="cbp-caption">
+                                    <div class="cbp-caption-defaultWrap">
+                                        <img src="/Content/media/img/gallery/thumb/8.jpg" alt="" />
+                                    </div>
+                                    <div class="cbp-caption-activeWrap">
+                                        <div class="cbp-l-caption-alignCenter">
+                                            <div class="cbp-l-caption-body">
+                                                <a href="ajax/project8.html" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                                                <a href="https://www.youtube.com/watch?v=IbWOQWw1wkM"
+                                                   class="cbp-lightbox cbp-l-caption-buttonRight"
+                                                   data-title="Название проекта">
+                                                    <i class="fa fa-film"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
@@ -302,10 +500,14 @@ else
         <div class="container">
             <div class="wow fadeIn col-lg-12 pad45" data-wow-offset="80">
                 <div id="clients">
-                    @foreach (var client in Model.Clients)
-                    {
-                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
-                    }
+                    <div class="item"><img src="/Content/media/img/clients/logo1.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo2.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo3.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo4.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo5.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo6.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo7.png" alt=""></div>
+                    <div class="item"><img src="/Content/media/img/clients/logo8.png" alt=""></div>
                 </div>
             </div>
         </div>
@@ -320,10 +522,79 @@ else
 
                 <div id="grid-container2" class="cbp-l-grid-blog pad90">
                     <ul>
-                        @foreach (var article in Model.Articles)
-                        {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
-                        }
+                        <li class="cbp-item">
+                            <a href="#" class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/blog/a1.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">ЧИТАТЬ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="cbp-l-grid-blog-title">История о парне в противогазе</a>
+                            <div class="cbp-l-grid-blog-date">1 апреля 2015</div>
+                            <div class="cbp-l-grid-blog-split">|</div>
+                            <a href="#" class="cbp-l-grid-blog-comments">10 комментариев</a>
+                        </li>
+                        <li class="cbp-item">
+                            <a href="#" class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/blog/a2.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">СМОТРЕТЬ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="cbp-l-grid-blog-title">О том, как девушка в скайп влюбилась</a>
+                            <div class="cbp-l-grid-blog-date">2 апреля 2015</div>
+                            <div class="cbp-l-grid-blog-split">|</div>
+                            <a href="#" class="cbp-l-grid-blog-comments">120 комментариев</a>
+                        </li>
+                        <li class="cbp-item">
+                            <a href="#" class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/blog/a3.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">ЛИЦЕЗРЕТЬ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="cbp-l-grid-blog-title">Как маки в астрал уводят</a>
+                            <div class="cbp-l-grid-blog-date">3 апреля 2015</div>
+                            <div class="cbp-l-grid-blog-split">|</div>
+                            <a href="#" class="cbp-l-grid-blog-comments">1 комментарий</a>
+
+                        </li>
+                        <li class="cbp-item">
+                            <a href="#" class="cbp-caption">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="/Content/media/img/blog/a4.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <div class="cbp-l-caption-text">...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="cbp-l-grid-blog-title">Фото онлайн бесплатно и без регистрации</a>
+                            <div class="cbp-l-grid-blog-date">4 апреля 2015</div>
+                            <div class="cbp-l-grid-blog-split">|</div>
+                            <a href="#" class="cbp-l-grid-blog-comments">121 комментарий</a>
+                        </li>
                     </ul>
                 </div>
             </div>

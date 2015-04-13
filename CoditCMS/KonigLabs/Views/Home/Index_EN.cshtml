@@ -8,10 +8,10 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="img/logo.png" alt="" /></a>
+                <a class="scroll" href="#home"><img src="/Content/static/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="#home">Главная EN</a></li>
+                <li><a class="scroll" href="#home">Главная</a></li>
                 <li><a class="scroll" href="#about">Услуги</a></li>
                 <li><a class="scroll" href="#team">Команда</a></li>
                 <li><a class="scroll" href="#work">Наши работы</a></li>
@@ -23,45 +23,54 @@
         </div>
     </div>
 </div>
-<section id="home" class="top_video">
-    <div id="overlay"></div>
-    <div id="BigVideo" class="player" data-property="{videoURL:'http://youtube.com/watch?v=PnwNOtG06Dg', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
+@if (Request.Url.Host.Contains("localhost"))
+{
 
-    <div id="content">
-        <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
-            <div class="heart wow pulse" data-wow-iteration="infinite"><img src="img/face_logo.png"></div>
+}
+else
+{
+    <section id="home" class="top_video">
+        <div id="overlay"></div>
+        <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
+
+        <div id="content">
+            <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
+                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/static/img/face_logo.png"></div>
+            </div>
+
+            <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
+                Мы разрабатываем сложные
+            </div>
+
+            <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
+                ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
+            </h1>
+
+            <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
+                живем в Калининграде, работаем по всему миру!
+            </div>
+
+            <div class="text-center pad30">
+                <a href="#about" class="scroll">
+                    <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
+                </a>
+            </div>
         </div>
+    </section>
+}
 
-        <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
-            Мы разрабатываем сложные
-        </div>
 
-        <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
-            ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
-        </h1>
-
-        <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
-            живем в Калининграде, работаем по всему миру!
-        </div>
-
-        <div class="text-center pad30">
-            <a href="#about" class="scroll">
-                <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
-            </a>
-        </div>
-    </div>
-</section>
 <section id="big_image"></section>
 <section id="about">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12">
-                <h1 class="wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
+                <h1 class="wow fadeInRightBig text-center embo" data-wow-offset="80" data-wow-duration="2s">
                     Что мы творим...
                 </h1>
 
                 <div class="lead wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
-                    Наша команда способна на что угодно!<br /> Именно за это <span class="colour"><strong>нас любят</strong></span> наши клиенты.
+                    Наша команда способна на что угодно!<br /> Именно за это <span class="white embo"><strong>нас любят</strong></span> наши клиенты.
                 </div>
 
                 <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
@@ -128,18 +137,6 @@
     </div>
 </section>
 
-<section id="ticker">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="like wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    А еще<br>
-                    <span class="ticker"></span>
-                </h1>
-            </div>
-        </div>
-    </div>
-</section>
 <section id="charts">
     <div class="well">
         <div class="dark_overlay">
@@ -175,12 +172,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12">
-                <h1 class="wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
                     эбаутус
                 </h1>
 
                 <div class="lead  wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Наша <strong><span class="colour">команда</span></strong> собрана по крупицам со всего СНГ.
+                    Наша <strong><span class="white">команда</span></strong> собрана по крупицам со всего СНГ.
                 </div>
             </div>
 
@@ -211,7 +208,6 @@
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
                         }
-                        
                     </ul>
                 </div>
 
@@ -255,7 +251,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12">
-                <h1 class="wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
                     из насущного
                 </h1>
                 <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
@@ -263,23 +259,28 @@
                 </div>
 
                 <div id="filters-container" class="cbp-l-filters-button">
+
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">
+                        Все и сразу
+                        <span class="cbp-filter-counter"></span>
+                    </button>
                     @foreach (var category in Model.Categories)
                     {
-                        <button data-filter="@category.Token" class="cbp-filter-item-active cbp-filter-item">
+                        <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
                             @category.Name
-                            <span class="cbp-filter-counter">@category.Count</span>
+                            <span class="cbp-filter-counter"></span>
                         </button>
-                    }                    
+                    }
+
                 </div>
 
                 <div class="cbp-l-grid-project">
                     <div id="grid-container3" class="cbp-l-grid-projects">
-                        <ul>              
+                        <ul>
                             @foreach (var project in Model.Projects)
                             {
                                 Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
                             }
-                            
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
@@ -310,7 +311,7 @@
         </div>
     </div>
 </section>
-<section>
+<section id="blog">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12 pad30  wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
@@ -336,7 +337,7 @@
         <div class="row">
             <div class="col-sm-12 col-lg-12 ">
 
-                <h1 class="wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
                     контактус
                 </h1>
 
@@ -425,4 +426,3 @@
         </div>
     </div>
 </footer>
-
