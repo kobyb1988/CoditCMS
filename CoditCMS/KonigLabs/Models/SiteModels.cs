@@ -51,7 +51,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
-            return db.CrewMembers.Include("Files").Where(m => m.Language == language).ToList();
+            return db.CrewMembers.Include("Files").Where(m => m.Language == language && m.Visibility).ToList();
         }
     }
 
@@ -156,9 +156,9 @@ namespace KonigLabs.Models
         internal static IEnumerable<Project> GetProjects(string language, ApplicationDbContext db)
         {
             var projects = new List<Project>();
-            foreach (var pc in db.ProjectCategories.Include("Projects").Include("Projects.Files").Where(pc => pc.Language == language))
+            foreach (var pc in db.ProjectCategories.Include("Projects").Include("Projects.Files").Where(pc => pc.Language == language && pc.Visibility))
             {
-                foreach (var pro in pc.Projects)
+                foreach (var pro in pc.Projects.Where(p=>p.Visibility))
                 {
                     projects.Add(pro);
                 }
@@ -221,7 +221,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Client> GetClients(string language, ApplicationDbContext db)
         {
-            return db.Clients.Include("Files").Where(cl=>cl.Language==language).ToArray();
+            return db.Clients.Include("Files").Where(cl=>cl.Language==language && cl.Visibility).ToArray();
         }
     }
 
@@ -258,7 +258,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
         {
-            return db.Articles.Include("Files").Where(a=>a.Language==language).ToArray();
+            return db.Articles.Include("Files").Where(a=>a.Language==language && a.Visibility).ToArray();
         }
     }
 
