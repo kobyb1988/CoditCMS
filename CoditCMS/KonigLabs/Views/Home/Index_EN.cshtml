@@ -8,14 +8,17 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/static/img/logo.png" alt="" /></a>
+                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
                 <li><a class="scroll" href="#home">Главная</a></li>
                 <li><a class="scroll" href="#about">Услуги</a></li>
                 <li><a class="scroll" href="#team">Команда</a></li>
                 <li><a class="scroll" href="#work">Наши работы</a></li>
+                <li><a class="scroll" href="blog.html">Блог</a></li>
                 <li><a class="scroll" href="#contact">Контакты</a></li>
+                <li><a class="lang" href="/">Ru</a></li>
+                <li><a class="lang active" href="/en/">En</a></li>
             </ul>
             <div id="nav-toggle">
                 <i class="fa fa-bars"></i>
@@ -23,6 +26,7 @@
         </div>
     </div>
 </div>
+
 @if (Request.Url.Host.Contains("localhost"))
 {
 
@@ -35,7 +39,7 @@ else
 
         <div id="content">
             <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
-                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/static/img/face_logo.png"></div>
+                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/media/img/face_logo.png"></div>
             </div>
 
             <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
@@ -58,7 +62,6 @@ else
         </div>
     </section>
 }
-
 
 <section id="big_image"></section>
 <section id="about">
@@ -136,6 +139,7 @@ else
         </div>
     </div>
 </section>
+
 
 <section id="charts">
     <div class="well">
@@ -259,11 +263,7 @@ else
                 </div>
 
                 <div id="filters-container" class="cbp-l-filters-button">
-
-                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">
-                        Все и сразу
-                        <span class="cbp-filter-counter"></span>
-                    </button>
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все и сразу<span class="cbp-filter-counter"></span></button>
                     @foreach (var category in Model.Categories)
                     {
                         <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
@@ -277,10 +277,12 @@ else
                 <div class="cbp-l-grid-project">
                     <div id="grid-container3" class="cbp-l-grid-projects">
                         <ul>
+
                             @foreach (var project in Model.Projects)
                             {
                                 Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
                             }
+
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
@@ -306,6 +308,7 @@ else
                     {
                         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
                     }
+
                 </div>
             </div>
         </div>
@@ -324,6 +327,7 @@ else
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
                         }
+
                     </ul>
                 </div>
             </div>
