@@ -15,7 +15,7 @@ namespace KonigLabs.Controllers
     {
         public virtual ActionResult Index(string language)
         {
-            
+
             if (String.IsNullOrEmpty(language))
             {
                 language = LocalEntity.RU;
@@ -32,16 +32,16 @@ namespace KonigLabs.Controllers
                     break;
                 default:
                     view = String.Format(viewPath, LocalEntity.RU);
-                    break;                    
+                    break;
             }
             using (var db = ApplicationDbContext.Create())
-            {                
+            {
                 var landing = new LandingPage(language, db);
                 return View(view, landing);
             }
         }
 
-        
+
         public virtual ActionResult Member(int id)
         {
             using (var db = ApplicationDbContext.Create())
@@ -74,7 +74,7 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db .Articles.Where(m => m.Id == id).FirstOrDefault();
+                var article = db.Articles.Where(m => m.Id == id).FirstOrDefault();
                 if (article == null)
                 {
                     throw new HttpException(404, "NotFound");
@@ -84,9 +84,16 @@ namespace KonigLabs.Controllers
             }
         }
 
-        public ActionResult Projects()
+        public ActionResult Projects(string language)
         {
-            return View("~/Views/Shared/DisplayTemplates/MoreProjects.cshtml");
+            if (String.IsNullOrEmpty(language))
+            {
+                language = LocalEntity.RU;
+            }
+            using (var db = ApplicationDbContext.Create())
+            {
+                return View("~/Views/Shared/DisplayTemplates/MoreProjects.cshtml", new ViewProjects(language, db));
+            }
         }
 
         [HttpPost]
@@ -94,7 +101,7 @@ namespace KonigLabs.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
                 using (var db = ApplicationDbContext.Create())
                 {
                     var dbContact = new Contact();
@@ -104,10 +111,10 @@ namespace KonigLabs.Controllers
                     dbContact.Phone = contact.Phone;
                     dbContact.Text = contact.Text;
                     db.Contacts.Add(dbContact);
-                    db.SaveChanges();                    
+                    db.SaveChanges();
                 }
                 contact.Status = "Спасибо за ваше сообщение, мы обязательно свяжемся с вами!";
-                
+
                 var message = new MailMessage();
                 var toEmail = "aganzha@yandex.ru";
 
@@ -141,7 +148,7 @@ namespace KonigLabs.Controllers
                 }
                 catch (Exception exc)
                 {
-                    
+
                 }
 
             }

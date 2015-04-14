@@ -45,18 +45,28 @@ namespace KonigLabs.Models
                 {
                     continue;
                 }
-                Projects.Add(viewProject);
+                //Projects.Add(viewProject);
+                var includeProject = false;
                 foreach (var vc in viewProject.Categories)
                 {
                     if (!cats.ContainsKey(vc.Token))
                     {
                         cats.Add(vc.Token, vc);
+                        includeProject = true;
                     }
                     else
                     {
                         vc.Count += 1;
+                        if (vc.Count <= MaxProjectInCategory)
+                        {                            
+                            includeProject = true;
+                        }
                     }
                 }
+                if (includeProject)
+                {
+                    Projects.Add(viewProject);
+                }                
             }
             Categories = cats.Values.ToList();
 
@@ -70,7 +80,6 @@ namespace KonigLabs.Models
                 }
                 Clients.Add(vc);
             }
-
 
             foreach (Article ar in Article.GetArticles(language, db))
             {
@@ -162,10 +171,44 @@ namespace KonigLabs.Models
 
     public class ViewProjects
     {
-        public List<ViewProjects> Projects { get; set; }
-        public ViewProjects()
+        public List<ViewProject> Projects { get; set; }
+        
+        public ViewProjects(string language, ApplicationDbContext db)
         {
+            Projects = new List<ViewProject>();
 
+            var cats = new Dictionary<string, ViewCategory>();
+
+            foreach (Project project in Project.GetProjects(language, db))
+            {
+                var viewProject = new ViewProject(project);
+                if (String.IsNullOrEmpty(viewProject.SmallImage) || String.IsNullOrEmpty(viewProject.BigImage))
+                {
+                    continue;
+                }
+                //Projects.Add(viewProject);
+                var includeProject = false;
+                foreach (var vc in viewProject.Categories)
+                {
+                    if (!cats.ContainsKey(vc.Token))
+                    {
+                        cats.Add(vc.Token, vc);
+                        includeProject = true;
+                    }
+                    else
+                    {
+                        vc.Count += 1;
+                        if (vc.Count <= LandingPage.MaxProjectInCategory)
+                        {
+                            includeProject = true;
+                        }
+                    }
+                }
+                if (!includeProject)
+                {
+                    Projects.Add(viewProject);
+                }
+            }
         }
     }
 

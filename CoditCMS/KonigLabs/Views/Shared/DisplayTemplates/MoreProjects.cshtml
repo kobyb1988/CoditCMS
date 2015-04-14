@@ -2,10 +2,11 @@
 
 <div class="cbp-loadMore-block1">
 
-    @foreach (var project in ViewProjects.Projects)
+    @foreach (var project in Model.Projects)
     {
         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
     }
+
     @*<li class="cbp-item web-design logo">
         <div class="cbp-caption">
             <div class="cbp-caption-defaultWrap">

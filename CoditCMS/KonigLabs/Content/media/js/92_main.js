@@ -184,7 +184,12 @@
                     });
 
                     if (itemsNext.length === 0) {
-                        me.text('..END');
+                        if(document.location.pathname.match('en')){
+                            me.text('..END');
+                        }
+                        else {
+                            me.text('..ВСЕ');
+                        }
                         me.addClass('cbp-l-loadMore-button-stop');
                     }
 
