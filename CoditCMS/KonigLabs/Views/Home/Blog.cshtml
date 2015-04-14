@@ -141,10 +141,18 @@
             </div>
 
             
-            @Html.PagedListPager(Model, page => Url.Action("Blog", new { page }), new PagedListRenderOptions { ContainerDivClasses = "pagination clearfix" })
+            @Html.PagedListPager(Model, page => Url.Action("Blog", new { page }),
+            new PagedListRenderOptions
+            {
+                ContainerDivClasses = new[] { "pagination", "clearfix" },
+                UlElementClasses = Enumerable.Empty<string>(),
+                LiElementClasses = Enumerable.Empty<string>(),
+                LinkToNextPageFormat = "<i class='fa fa-arrow-circle-o-right fa-2x'></i>",
+                LinkToPreviousPageFormat = "<i class='fa fa-arrow-circle-o-left fa-2x'></i>"
+            })
             
 
-            <div class="pagination clearfix">
+            @*<div class="pagination clearfix">
                 <ul>
                     <li><a href="#"><i class="fa fa-arrow-circle-o-left fa-2x"></i></a></li>
                     <li class="active"><a href="#">1</a></li>
@@ -153,7 +161,7 @@
                     <li><a href="#">4</a></li>
                     <li><a href="#"><i class="fa fa-arrow-circle-o-right fa-2x"></i></a></li>
                 </ul>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>
