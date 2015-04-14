@@ -480,6 +480,7 @@
     <Content Include="Views\Shared\_CoditLayout.cshtml" />
     <Content Include="Views\Shared\old_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ProjectDescr.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MoreProjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

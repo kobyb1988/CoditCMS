@@ -12,6 +12,8 @@ namespace KonigLabs.Models
         private string language;
         private ApplicationDbContext db;
 
+        public const int MaxProjectInCategory = 2;
+
         public LandingPage(string language, ApplicationDbContext db)
         {
             // TODO: Complete member initialization
@@ -55,7 +57,6 @@ namespace KonigLabs.Models
                         vc.Count += 1;
                     }
                 }
-
             }
             Categories = cats.Values.ToList();
 
@@ -157,6 +158,15 @@ namespace KonigLabs.Models
             return sb.ToString();
         }
 
+    }
+
+    public class ViewProjects
+    {
+        public List<ViewProjects> Projects { get; set; }
+        public ViewProjects()
+        {
+
+        }
     }
 
     public class ViewMember

@@ -84,6 +84,11 @@ namespace KonigLabs.Controllers
             }
         }
 
+        public ActionResult Projects()
+        {
+            return View("~/Views/Shared/DisplayTemplates/MoreProjects.cshtml");
+        }
+
         [HttpPost]
         public virtual ActionResult Contact(ViewContact contact)
         {

@@ -159,7 +159,7 @@
         // set loading status
         oMsg = me.text();
         me.text('Загрузка...');
-
+        
         // perform ajax request
         $.ajax({
             url: me.attr('href'),
@@ -167,8 +167,7 @@
             dataType: 'HTML'
         })
         .done( function (result) {
-            var items, itemsNext;
-
+            var items, itemsNext;            
             // find current container
             items = $(result).filter( function () {
                 return $(this).is('div' + '.cbp-loadMore-block' + clicks);
