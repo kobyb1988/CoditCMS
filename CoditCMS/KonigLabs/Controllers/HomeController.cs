@@ -172,8 +172,9 @@ namespace KonigLabs.Controllers
             using (var db = ApplicationDbContext.Create())
             {
 
-                var articles = KonigLabs.Models.Article.GetArticles(language, db);                
-                return View(articles.ToPagedList(pageNumber, pageSize));
+                var articles = KonigLabs.Models.Article.GetArticles(language, db);
+                var list = articles.ToPagedList(pageNumber, pageSize);                
+                return View(list);
             }
         }
     }

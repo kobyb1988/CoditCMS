@@ -23,13 +23,24 @@
 
 	<form>
 		<tab name="General">
-			<string name="Title" title="Название" />			
+		  <string name="Title" title="Название" />			
 		  <date name="Date"   title="Дата"/>
       <select name="Language" title="Язык">
         <option value="ru">ru</option>
         <option value="en">en</option>
       </select>
-    <wysiwyg name="Content" title="Контент" />
+
+			<select name="Categories" title="Категории" reference="Categories" optionTitle="Name" optionValue="Id" multiple="true" localizable="true">
+				<option>Нет</option>
+			</select>
+
+			<select name="Tags" title="Теги" reference="Tags" optionTitle="Name" optionValue="Id" multiple="true" localizable="true">
+				<option>Нет</option>
+			</select>
+			
+			<checkbox name="ShowInMenu" title="Показывать в меню" />
+			
+			<wysiwyg name="Content" title="Контент" />
     </tab>
     <tab name="Images">
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />

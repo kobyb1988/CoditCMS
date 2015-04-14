@@ -1,4 +1,5 @@
 ﻿using DB.Entities;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,6 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Core.Objects.DataClasses;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace KonigLabs.Models
@@ -266,7 +268,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
         {
-            return db.Articles.Include("Files").Where(a=>a.Language==language && a.Visibility).ToArray();
+            return db.Articles.Include("Files").Include("Categories").Include("Tags").Where(a => a.Language == language && a.Visibility).ToArray();
         }
 
         public bool HasImageForBlog()
@@ -294,6 +296,24 @@ namespace KonigLabs.Models
                 ci = "en-US";
             }
             return Date.ToString("M", new CultureInfo(ci)); 
+        }
+
+        
+        public string GetSpoiler()
+        {
+            var sb = new StringBuilder();
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(String.Format(@"<html><body>{0}</html>", Content));
+            foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//text()"))
+            {
+                sb.Append(node.InnerText);                
+            }
+            var le = 180;
+            if (sb.Length < 180)
+            {
+                le = sb.Length - 1;                
+            }
+            return sb.ToString().Substring(0, le);
         }
     }
 

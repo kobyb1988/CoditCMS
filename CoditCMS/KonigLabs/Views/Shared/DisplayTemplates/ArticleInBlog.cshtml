@@ -4,13 +4,27 @@
 {
     <img src="@Url.Content(Model.GetBlogImage())" alt="" />
 }
-<h1 class="blog-title"><a href="/blog/@Model.Id">зачем ограничивать рост компании?</a></h1>
+<h1 class="blog-title"><a href="/article/@Model.Id">@Model.Title</a></h1>
 <h6>
-    @Model.GetDisplayDate()  - <a href="#">почитать</a>, <a href="#">бизнесмену</a>
+    @Model.GetDisplayDate()
+    @if (Model.Categories.Count > 0)
+    {
+        var i = 0;
+        <text>-</text>
+        foreach (var category in Model.Categories)
+        {
+            if (i >= 1)
+            {
+                <text>, </text>
+            }
+            <a href="/blog/?cat=@category.Id">@category.Name</a>
+            i += 1;
+        }
+    }    
 </h6>
 <p>
-    Автор книги «Великие, а не большие» на своем опыте убедился в том, что рост компании можно и нужно ограничивать, в противном случае вы потеряете способность производить качественный продукт.
+    @Model.GetSpoiler()&hellip;
 </p>
 
-<a href="blog_post.html">подробнее</a> &rarr;
+<a href="article/@Model.Id">подробнее</a> &rarr;
 <div class="pad45"></div>
