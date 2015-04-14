@@ -183,6 +183,7 @@ namespace KonigLabs.Controllers
 
                 var articles = KonigLabs.Models.Article.GetArticles(language, db);
                 var list = articles.ToPagedList(pageNumber, pageSize);                
+                ViewBag.BlogMeta = new BlogMeta(db);
                 return View(list);
             }
         }
