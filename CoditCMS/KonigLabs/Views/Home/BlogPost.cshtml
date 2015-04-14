@@ -3,29 +3,9 @@
     ViewBag.Title = "BlogPost";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div id="header">
-    <div class="col-sm-12 col-lg-12">
-        <div class="row">
-            <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
-            </div>
-            <ul id="menu">
-                <li><a class="scroll" href="/">Главная</a></li>
-                <li><a class="scroll" href="/#about">Услуги</a></li>
-                <li><a class="scroll" href="/#team">Команда</a></li>
-                <li><a class="scroll" href="/#work">Наши работы</a></li>
-                <li><a class="scroll" href="blog.html">Блог</a></li>
-                <li><a class="scroll" href="/#contact">Контакты</a></li>
-                <li><a class="lang active" href="#">Ru</a></li>
-                <li><a class="lang" href="#">En</a></li>
-            </ul>
-            <div id="nav-toggle">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </div>
-</div>
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader.cshtml");
+}
 
 <div class="pad90"></div>
 <div class="container">

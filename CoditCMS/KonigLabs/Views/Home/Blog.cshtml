@@ -5,28 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="header">
-    <div class="col-sm-12 col-lg-12">
-        <div class="row">
-            <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
-            </div>
-            <ul id="menu">
-                <li><a class="scroll" href="/">Главная</a></li>
-                <li><a class="scroll" href="/#about">Услуги</a></li>
-                <li><a class="scroll" href="/#team">Команда</a></li>
-                <li><a class="scroll" href="/#work">Наши работы</a></li>
-                <li><a class="scroll" href="blog.html">Блог</a></li>
-                <li><a class="scroll" href="/#contact">Контакты</a></li>
-                <li><a class="lang active" href="#">Ru</a></li>
-                <li><a class="lang" href="#">En</a></li>
-            </ul>
-            <div id="nav-toggle">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </div>
-</div>
+@{
+
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader.cshtml");
+}
 
 <div class="pad90"></div>
 <div class="container">
@@ -100,47 +82,50 @@
                 </div>
 
                 <!-- правая колонка -->
+                @{
+                    var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
+                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane.cshtml", meta);
+                }
+                @*<div class="col-md-3 col-md-offset-1">
+                        <aside>
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Поиск по блогу" name="s" id="s" type="text">
+                            </div>
 
-                <div class="col-md-3 col-md-offset-1">
-                    <aside>
-                        <div class="input-group">
-                            <input class="form-control" placeholder="Поиск по блогу" name="s" id="s" type="text">
-                        </div>
+                            <div class="pad30"></div>
+                            <h6>О чем этот блог</h6>
+                            <p>
+                                Реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+                            </p>
 
-                        <div class="pad30"></div>
-                        <h6>О чем этот блог</h6>
-                        <p>
-                            Реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
-                        </p>
+                            <div class="pad10"></div>
 
-                        <div class="pad10"></div>
+                            <h6>Категории</h6>
 
-                        <h6>Категории</h6>
+                            <ul class="fa-ul categories">
+                                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Стартаперам</a></li>
+                                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Бизнесмену</a></li>
+                                <li><i class="fa-li fa fa-angle-right"></i><a href="#">Интервью</a></li>
+                                <li><i class="fa-li fa fa-angle-right"></i><a href="#">SEO</a></li>
+                                <li><i class="fa-li fa fa-angle-right"></i><a href="#">SMM</a></li>
+                            </ul>
 
-                        <ul class="fa-ul categories">
-                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">Стартаперам</a></li>
-                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">Бизнесмену</a></li>
-                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">Интервью</a></li>
-                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">SEO</a></li>
-                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">SMM</a></li>
-                        </ul>
+                            <div class="pad25"></div>
 
-                        <div class="pad25"></div>
+                            <h6 class="pad25">Тэги / Метки / Зарубки</h6>
 
-                        <h6 class="pad25">Тэги / Метки / Зарубки</h6>
-
-                        <span class="badge"><a href="#">деньги</a> 20</span>
-                        <span class="badge"><a href="#">бизнес</a> 26</span>
-                        <span class="badge"><a href="#">идеи</a> 29</span>
-                        <span class="badge"><a href="#">новости</a> 75</span>
-                        <span class="badge"><a href="#">технологии</a> 46</span>
-                        <span class="badge"><a href="#">реклама</a> 17</span>
-                        <span class="badge"><a href="#">техника</a> 3</span>
-                    </aside>
-                </div>
+                            <span class="badge"><a href="#">деньги</a> 20</span>
+                            <span class="badge"><a href="#">бизнес</a> 26</span>
+                            <span class="badge"><a href="#">идеи</a> 29</span>
+                            <span class="badge"><a href="#">новости</a> 75</span>
+                            <span class="badge"><a href="#">технологии</a> 46</span>
+                            <span class="badge"><a href="#">реклама</a> 17</span>
+                            <span class="badge"><a href="#">техника</a> 3</span>
+                        </aside>
+                    </div>*@
             </div>
 
-            
+
             @Html.PagedListPager(Model, page => Url.Action("Blog", new { page }),
             new PagedListRenderOptions
             {
@@ -150,18 +135,18 @@
                 LinkToNextPageFormat = "<i class='fa fa-arrow-circle-o-right fa-2x'></i>",
                 LinkToPreviousPageFormat = "<i class='fa fa-arrow-circle-o-left fa-2x'></i>"
             })
-            
+
 
             @*<div class="pagination clearfix">
-                <ul>
-                    <li><a href="#"><i class="fa fa-arrow-circle-o-left fa-2x"></i></a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#"><i class="fa fa-arrow-circle-o-right fa-2x"></i></a></li>
-                </ul>
-            </div>*@
+                    <ul>
+                        <li><a href="#"><i class="fa fa-arrow-circle-o-left fa-2x"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#"><i class="fa fa-arrow-circle-o-right fa-2x"></i></a></li>
+                    </ul>
+                </div>*@
         </div>
     </div>
 </div>

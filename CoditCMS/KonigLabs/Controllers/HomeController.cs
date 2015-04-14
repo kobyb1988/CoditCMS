@@ -165,6 +165,7 @@ namespace KonigLabs.Controllers
             using (var db = ApplicationDbContext.Create())
             {
                 var article = db.Articles.Include("Files").Include("Tags").Include("Categories").Where(a => a.Id == id).FirstOrDefault();
+                ViewBag.BlogMeta = new BlogMeta(db);                
                 return View(article);
             }
         }

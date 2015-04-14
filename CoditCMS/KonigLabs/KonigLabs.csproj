@@ -507,6 +507,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ArticleInBlog.cshtml" />
     <Content Include="Views\Home\BlogPost.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BlogPane.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
