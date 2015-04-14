@@ -160,6 +160,15 @@ namespace KonigLabs.Controllers
             return View(contact);
         }
 
+        public virtual ActionResult BlogPost(int id)
+        {
+            using (var db = ApplicationDbContext.Create())
+            {
+                var article = db.Articles.Include("Files").Include("Tags").Include("Categories").Where(a => a.Id == id).FirstOrDefault();
+                return View(article);
+            }
+        }
+
         public virtual ActionResult Blog(string language, int? page)
         {
             int pageSize = 3;

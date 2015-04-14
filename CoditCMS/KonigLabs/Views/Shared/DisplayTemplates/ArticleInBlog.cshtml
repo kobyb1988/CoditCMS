@@ -4,7 +4,7 @@
 {
     <img src="@Url.Content(Model.GetBlogImage())" alt="" />
 }
-<h1 class="blog-title"><a href="/article/@Model.Id">@Model.Title</a></h1>
+<h1 class="blog-title"><a href="/BlogPost/@Model.Id">@Model.Title</a></h1>
 <h6>
     @Model.GetDisplayDate()
     @if (Model.Categories.Count > 0)
@@ -17,14 +17,14 @@
             {
                 <text>, </text>
             }
-            <a href="/blog/?cat=@category.Id">@category.Name</a>
+            <a href="/Blog/?cat=@category.Id">@category.Name</a>
             i += 1;
         }
-    }    
+    }
 </h6>
 <p>
     @Model.GetSpoiler()&hellip;
 </p>
 
-<a href="article/@Model.Id">подробнее</a> &rarr;
+<a href="/BlogPost/@Model.Id">подробнее</a> &rarr;
 <div class="pad45"></div>

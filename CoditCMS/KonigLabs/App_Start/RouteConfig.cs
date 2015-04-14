@@ -27,6 +27,12 @@ namespace KonigLabs
             );
 
             routes.MapRoute(
+               name: "Article",
+               url: "BlogPost/{id}",
+               defaults: new { controller = "Home", action = "BlogPost" }
+           );
+            
+            routes.MapRoute(
                 name: "Default",
                 url: "{language}",
                 defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
