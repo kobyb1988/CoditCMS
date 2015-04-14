@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace KonigLabs.Controllers
 {
@@ -158,5 +159,23 @@ namespace KonigLabs.Controllers
             }
             return View(contact);
         }
+
+        public virtual ActionResult Blog(string language, int? page)
+        {
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            //return View(students.ToPagedList(pageNumber, pageSize));
+            if (String.IsNullOrEmpty(language))
+            {
+                language = LocalEntity.RU;
+            }
+            using (var db = ApplicationDbContext.Create())
+            {
+
+                var articles = KonigLabs.Models.Article.GetArticles(language, db);                
+                return View(articles.ToPagedList(pageNumber, pageSize));
+            }
+        }
     }
+
 }

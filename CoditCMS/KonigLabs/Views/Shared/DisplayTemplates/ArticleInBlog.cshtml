@@ -1,0 +1,16 @@
+﻿@model KonigLabs.Models.Article
+
+@if (Model.HasImageForBlog())
+{
+    <img src="@Url.Content(Model.GetBlogImage())" alt="" />
+}
+<h1 class="blog-title"><a href="/blog/@Model.Id">зачем ограничивать рост компании?</a></h1>
+<h6>
+    @Model.GetDisplayDate()  - <a href="#">почитать</a>, <a href="#">бизнесмену</a>
+</h6>
+<p>
+    Автор книги «Великие, а не большие» на своем опыте убедился в том, что рост компании можно и нужно ограничивать, в противном случае вы потеряете способность производить качественный продукт.
+</p>
+
+<a href="blog_post.html">подробнее</a> &rarr;
+<div class="pad45"></div>

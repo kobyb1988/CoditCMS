@@ -38,5 +38,9 @@ namespace KonigLabs.Models
         public virtual DbSet<Article> Articles { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
 
+        public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<ArticleCategory> ArticleCategories { get; set; }
+
+
     }
 }

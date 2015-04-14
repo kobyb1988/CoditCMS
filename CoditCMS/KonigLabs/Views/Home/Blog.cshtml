@@ -1,0 +1,170 @@
+﻿@model PagedList.IPagedList<KonigLabs.Models.Article>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header">
+    <div class="col-sm-12 col-lg-12">
+        <div class="row">
+            <div id="logo">
+                <a class="scroll" href="#home"><img src="img/logo.png" alt="" /></a>
+            </div>
+            <ul id="menu">
+                <li><a class="scroll" href="/">Главная</a></li>
+                <li><a class="scroll" href="/#about">Услуги</a></li>
+                <li><a class="scroll" href="/#team">Команда</a></li>
+                <li><a class="scroll" href="/#work">Наши работы</a></li>
+                <li><a class="scroll" href="blog.html">Блог</a></li>
+                <li><a class="scroll" href="/#contact">Контакты</a></li>
+                <li><a class="lang active" href="#">Ru</a></li>
+                <li><a class="lang" href="#">En</a></li>
+            </ul>
+            <div id="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pad90"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <h1 class="embo wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
+                Наш блог
+            </h1>
+            <div class="lead wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
+                Полезная информация <strong class="white embo">для клиентов</strong>
+            </div>
+
+            <div class="row">
+                <div class="pad30"></div>
+                <div class="col-md-8">
+
+                    <!-- 1-->
+
+                    <div id="big" class="owl-carousel blog-carousel-bottom">
+                        <div class="item">
+                            <img src="img/blog/1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="img/blog/2.jpg" alt="">
+                        </div>
+                    </div>
+
+                    @foreach (var item in Model)
+                    {
+                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/ArticleInBlog.cshtml", item);
+                    }
+
+                    @*<h1 class="blog-title"><a href="blog_post.html">Ситуативный маркетинг: новое оружие SMM-щиков </a></h1>
+                        <h6>
+                            1 апреля - <a href="#">стартаперам</a>, <a href="#">SEO</a>, <a href="#">SMM</a>
+                        </h6>
+                        <p>
+                            Каннская слава Oreo в социальных сетях вдохновила большие диджитал-агентства продавать клиентам ситуативный контент. И если в прошлые годы он был приятным исключением из правил, то после черно-синего платья и солнечного затмения стал обязательным SMM-инструментом.
+                        </p>
+
+                        <a href="blog_post.html">подробнее</a> &rarr;
+                        <div class="pad45"></div>*@
+
+                    <!-- 2 -->
+                    @*<img src="img/blog/3.jpg" alt="" />
+                        <h1 class="blog-title"><a href="blog_post.html">зачем ограничивать рост компании?</a></h1>
+                        <h6>
+                            1 апреля  - <a href="#">почитать</a>, <a href="#">бизнесмену</a>
+                        </h6>
+                        <p>
+                            Автор книги «Великие, а не большие» на своем опыте убедился в том, что рост компании можно и нужно ограничивать, в противном случае вы потеряете способность производить качественный продукт.
+                        </p>
+
+                        <a href="blog_post.html">подробнее</a> &rarr;
+                        <div class="pad45"></div>*@
+
+                    <!-- 3 -->
+                    @*<div class="vendor">
+                            <iframe src="https://www.youtube.com/embed/tYKqkRE3qzY" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <h1 class="blog-title"><a href="blog_post.html">Как Обама стал звездой YouTube</a></h1>
+                        <h6>
+                            1 апреля - <a href="#">интервью</a>
+                        </h6>
+                        <p>
+                            Недавно на «Медиуме» вышло интервью с гуру связей с общественностью Белого Дома Деном Файфером, в котором он раскрывает секреты своей стратегии и делится взглядами на будущее политического пиара в эру социальных медиа. Cossa.ru публикует сокращенный перевод — все, что вам необходимо узнать из этого текста.
+                        </p>
+
+                        <a href="blog_post.html">Подробнее</a> &rarr;
+                        <div class="pad30"></div>*@
+                </div>
+
+                <!-- правая колонка -->
+
+                <div class="col-md-3 col-md-offset-1">
+                    <aside>
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Поиск по блогу" name="s" id="s" type="text">
+                        </div>
+
+                        <div class="pad30"></div>
+                        <h6>О чем этот блог</h6>
+                        <p>
+                            Реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+                        </p>
+
+                        <div class="pad10"></div>
+
+                        <h6>Категории</h6>
+
+                        <ul class="fa-ul categories">
+                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">Стартаперам</a></li>
+                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">Бизнесмену</a></li>
+                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">Интервью</a></li>
+                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">SEO</a></li>
+                            <li><i class="fa-li fa fa-angle-right"></i><a href="#">SMM</a></li>
+                        </ul>
+
+                        <div class="pad25"></div>
+
+                        <h6 class="pad25">Тэги / Метки / Зарубки</h6>
+
+                        <span class="badge"><a href="#">деньги</a> 20</span>
+                        <span class="badge"><a href="#">бизнес</a> 26</span>
+                        <span class="badge"><a href="#">идеи</a> 29</span>
+                        <span class="badge"><a href="#">новости</a> 75</span>
+                        <span class="badge"><a href="#">технологии</a> 46</span>
+                        <span class="badge"><a href="#">реклама</a> 17</span>
+                        <span class="badge"><a href="#">техника</a> 3</span>
+                    </aside>
+                </div>
+            </div>
+
+            <div class="pagination clearfix">
+                <ul>
+                    <li><a href="#"><i class="fa fa-arrow-circle-o-left fa-2x"></i></a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#"><i class="fa fa-arrow-circle-o-right fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="center footer">
+    <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
+        <a href="#home" class=" scroll">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x "></i>
+                <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </div>
+
+    <div id="copyright" class="wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+        &copy; 2015 KonigLabs
+    </div>
+</div>
+

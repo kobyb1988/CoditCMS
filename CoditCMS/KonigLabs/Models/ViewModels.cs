@@ -254,7 +254,7 @@ namespace KonigLabs.Models
 
         public ViewArticle(Article article)
         {
-            Image = article.GetImage();
+            Image = article.GetSmallImage();
             Title = article.Title;
             Date = article.Date.ToString("d MMMM yyyy");
             Id = article.Id;
