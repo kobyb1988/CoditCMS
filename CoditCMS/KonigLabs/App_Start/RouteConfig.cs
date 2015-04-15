@@ -19,11 +19,27 @@ namespace KonigLabs
                         new { location = new LocationConstraints() });
             route.DataTokens["RouteName"] = "locations";
 
+
+            routes.MapRoute(
+                name: "Blog",
+                url: "Blog/{language}",
+                defaults: new { controller = "Home", action = "Blog", language = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+               name: "Article",
+               url: "BlogPost/{id}",
+               defaults: new { controller = "Home", action = "BlogPost" }
+           );
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{language}",
                 defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
             );
+
+            
+
             routes.MapRoute(
               name: "Accounts",
               url: "{controller}/{action}"

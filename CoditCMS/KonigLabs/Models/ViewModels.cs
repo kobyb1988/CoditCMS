@@ -254,7 +254,7 @@ namespace KonigLabs.Models
 
         public ViewArticle(Article article)
         {
-            Image = article.GetImage();
+            Image = article.GetSmallImage();
             Title = article.Title;
             Date = article.Date.ToString("d MMMM yyyy");
             Id = article.Id;
@@ -283,5 +283,53 @@ namespace KonigLabs.Models
         public string Text { get; set; }
 
         public string Status { get; set; }
+    }
+
+    public class ViewTag
+    {
+        public int Id {get;set;}
+        public int Count {get;set;}
+        public string Name {get;set;}
+        public ViewTag(Tag tag)
+        {
+            Id = tag.Id;
+            Name = tag.Name;
+            Count = tag.Articles.Count;
+        }
+    }
+
+    public class ViewArticleCategory
+    {
+        public int Id {get;set;}        
+        public string Name {get;set;}
+        public int Count { get; set; }
+        public ViewArticleCategory(ArticleCategory category)
+        {
+            Id = category.Id;
+            Name = category.Name;
+            Count = category.Articles.Count;
+        }
+    }
+
+    public class BlogMeta
+    {
+        public List<ViewTag> Tags { get; set; }
+        public List<ViewArticleCategory> Categories { get; set; }
+        public string SearchValue { get; set; }
+
+        public BlogMeta(ApplicationDbContext db)
+        {
+            SearchValue = "";
+            Tags = new List<ViewTag>();
+            foreach(var tag in db.Tags.Include("Articles"))
+            {
+                Tags.Add(new ViewTag(tag));
+            }
+            Categories = new List<ViewArticleCategory>();
+            foreach (var tag in db.ArticleCategories.Include("Articles"))
+            {
+                Categories.Add(new ViewArticleCategory(tag));
+            }
+        }
     }
 }
