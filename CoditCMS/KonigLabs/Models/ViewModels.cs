@@ -13,6 +13,7 @@ namespace KonigLabs.Models
         private ApplicationDbContext db;
 
         public const int MaxProjectInCategory = 2;
+        public List<int> ShownProjects { get; set; }
 
         public LandingPage(string language, ApplicationDbContext db)
         {
@@ -25,6 +26,7 @@ namespace KonigLabs.Models
             Categories = new List<ViewCategory>();
             Clients = new List<ViewClient>();
             Articles = new List<ViewArticle>();
+            ShownProjects = new List<int>();
 
             foreach (var member in CrewMember.GetMembers(language, db))
             {
@@ -45,8 +47,9 @@ namespace KonigLabs.Models
                 {
                     continue;
                 }
-                //Projects.Add(viewProject);
+               
                 var includeProject = false;
+                
                 foreach (var vc in viewProject.Categories)
                 {
                     if (!cats.ContainsKey(vc.Token))
@@ -56,16 +59,17 @@ namespace KonigLabs.Models
                     }
                     else
                     {
-                        vc.Count += 1;
-                        if (vc.Count <= MaxProjectInCategory)
+                        cats[vc.Token].Count += 1;
+                        if (cats[vc.Token].Count <= MaxProjectInCategory)
                         {                            
                             includeProject = true;
                         }
                     }
                 }
-                if (includeProject)
+                if (includeProject && !ShownProjects.Contains(viewProject.Id))
                 {
                     Projects.Add(viewProject);
+                    ShownProjects.Add(viewProject.Id);
                 }                
             }
             Categories = cats.Values.ToList();
@@ -172,43 +176,28 @@ namespace KonigLabs.Models
     public class ViewProjects
     {
         public List<ViewProject> Projects { get; set; }
-        
+        public List<int> ShownProjects { get; set; }
+
         public ViewProjects(string language, ApplicationDbContext db)
         {
             Projects = new List<ViewProject>();
-
-            var cats = new Dictionary<string, ViewCategory>();
+            var landing = new LandingPage(language, db);            
 
             foreach (Project project in Project.GetProjects(language, db))
             {
-                var viewProject = new ViewProject(project);
-                if (String.IsNullOrEmpty(viewProject.SmallImage) || String.IsNullOrEmpty(viewProject.BigImage))
+
+                var vp = new ViewProject(project);
+                if (String.IsNullOrEmpty(vp.SmallImage) || String.IsNullOrEmpty(vp.BigImage))
                 {
                     continue;
                 }
-                //Projects.Add(viewProject);
-                var includeProject = false;
-                foreach (var vc in viewProject.Categories)
+                if (landing.ShownProjects.Contains(project.Id))
                 {
-                    if (!cats.ContainsKey(vc.Token))
-                    {
-                        cats.Add(vc.Token, vc);
-                        includeProject = true;
-                    }
-                    else
-                    {
-                        vc.Count += 1;
-                        if (vc.Count <= LandingPage.MaxProjectInCategory)
-                        {
-                            includeProject = true;
-                        }
-                    }
+                    continue;
                 }
-                if (!includeProject)
-                {
-                    Projects.Add(viewProject);
-                }
+                Projects.Add(vp);
             }
+            
         }
     }
 

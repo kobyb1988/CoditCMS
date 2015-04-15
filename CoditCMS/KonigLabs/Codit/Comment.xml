@@ -14,8 +14,8 @@
 		</actions>
 
 		<cols>			
-		<string name="Article.Name" title="Статья"/>
-	
+		<string name="ArticleId" title="Пост"/>
+			
 			
 		</cols>
 
@@ -23,7 +23,7 @@
 
 	<form>
 		<tab name="General">
-
+			<date name="Date"   title="Дата"/>
 			<select name="ArticleId" title="Пост" reference="Article" optionTitle="Title" optionValue="Id" multiple="false" localizable="true">
 			</select>
 

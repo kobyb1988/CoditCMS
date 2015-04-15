@@ -377,6 +377,9 @@ namespace KonigLabs.Models
     public class Comment: IVisibleEntity
     {
         public int Id { get; set; }
+        
+        public DateTime Date { get; set; }
+
         public string Content { get; set; }
         
         public string Name { get; set; }
