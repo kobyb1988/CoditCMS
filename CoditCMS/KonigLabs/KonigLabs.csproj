@@ -176,6 +176,7 @@
     <Compile Include="AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Codit\CommentController.cs" />
     <Compile Include="Codit\TagController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Codit\ArticleCategoryController.cs" />
@@ -280,6 +281,10 @@
     <Compile Include="Migrations\201504151827055_Authors.Designer.cs">
       <DependentUpon>201504151827055_Authors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504151926596_Comments.cs" />
+    <Compile Include="Migrations\201504151926596_Comments.Designer.cs">
+      <DependentUpon>201504151926596_Comments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -301,6 +306,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Codit\Comment.xml" />
     <Content Include="Codit\Tag.xml" />
     <Content Include="Codit\ArticleCategory.xml" />
     <Content Include="Codit\Contact.xml" />
@@ -575,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504151827055_Authors.resx">
       <DependentUpon>201504151827055_Authors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504151926596_Comments.resx">
+      <DependentUpon>201504151926596_Comments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

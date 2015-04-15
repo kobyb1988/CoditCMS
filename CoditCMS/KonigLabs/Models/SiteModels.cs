@@ -43,6 +43,7 @@ namespace KonigLabs.Models
         public virtual ICollection<File> Files { get; set; }
 
         public virtual ICollection<Article> Articles { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
 
         public string GetAvatarPath()
         {
@@ -257,11 +258,14 @@ namespace KonigLabs.Models
 
         public virtual CrewMember CrewMember{ get; set; }
         public int? CrewMemberId { get; set; }
-        
+
+        public virtual ICollection<Comment> Comments { get; set; }
+
         public virtual ICollection<File> Files { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
         public virtual ICollection<ArticleCategory> Categories { get; set; }
+
 
       
 
@@ -368,5 +372,26 @@ namespace KonigLabs.Models
         public virtual ICollection<Article> Articles { get; set; }
 
 
+    }
+
+    public class Comment: IVisibleEntity
+    {
+        public int Id { get; set; }
+        public string Content { get; set; }
+        
+        public string Name { get; set; }
+        public string Email { get; set; }
+
+        public bool Visibility { get; set; }
+
+        public virtual Article Article { get; set; }
+        public int ArticleId { get; set; }
+
+        public virtual CrewMember CrewMember { get; set; }
+        public int? CrewMemberId { get; set; }
+
+        public int? ParentId { get; set; }
+        public virtual Comment Parent { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; } 
     }
 }

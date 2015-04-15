@@ -43,7 +43,7 @@
 				<option>Нет</option>
 			</select>
 			
-			<checkbox name="ShowInMenu" title="Показывать в меню" />
+			<checkbox name="ShowOnHomePage" title="Показывать в меню" />
 			
 			<wysiwyg name="Content" title="Контент" />
     </tab>
