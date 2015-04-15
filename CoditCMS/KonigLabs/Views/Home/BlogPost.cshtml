@@ -44,14 +44,14 @@
                         @if (Model.Categories.Count > 0)
                         {
                             var i = 0;
-                        <text>-</text>
+                            <text>-</text>
                             foreach (var category in Model.Categories)
                             {
                                 if (i >= 1)
                                 {
-                        <text>, </text>
+                                    <text>, </text>
                                 }
-                        <a href="/Blog/?cat=@category.Id">@category.Name</a>
+                                <a href="/Blog/?cat=@category.Id">@category.Name</a>
                                 i += 1;
                             }
                         }
@@ -61,7 +61,7 @@
                             @Html.Raw(@Model.Content)
                         </p>
 
-                        @if (Model.CrewMember !=null)
+                        @if (Model.CrewMember != null)
                         {
                             <div class="author-block">
                                 <div class="author-thumb">
@@ -73,13 +73,43 @@
                                 </p>
                             </div>
                         }
+                        @if (Model.Comments.Count > 0)
+                        {
+                            <div class="comments">
+                                <h5>Комментарии <a href="#">3</a></h5>
+                                <ul class="comments">
+                                    @foreach (var comment in Model.Comments)
+                                    {
+                                        if (comment.Parent != null)
+                                        {
+                                            continue;
 
+                                        }
+                                        <li>
+                                            <div class="comment">
+                                                <div class="avatar">
+                                                    <img src="img/blog/avatar1.jpg" alt="">
+                                                </div>
+                                                <div class="comment-quote">
+                                                    <div class="pointer"></div>
+                                                    <h6>
+                                                        Николай Пасько
+                                                        <span class="pull-right reply">
+                                                            <a href="#"><i class="fa fa-share"></i> Ответить</a>
+                                                        </span>
+                                                    </h6>
 
+                                                    <p>Вот теперь понятно, почему тормозится рост нашей компании))).</p>
+
+                                                    <span class="date pull-right">1 апреля, 2015</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        }
                     </div>
-
-
-
-
                     <div class="pad45"></div>
 
 
