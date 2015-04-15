@@ -170,7 +170,7 @@ namespace KonigLabs.Controllers
             }
         }
 
-        public virtual ActionResult Blog(string language, int? page)
+        public virtual ActionResult Blog(string language, int? page, int? tag, int? cat)
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
@@ -183,6 +183,24 @@ namespace KonigLabs.Controllers
             {
 
                 var articles = KonigLabs.Models.Article.GetArticles(language, db);
+                if (cat.HasValue)
+                {
+                    var category = db.ArticleCategories.Where(c => c.Id == cat.Value).FirstOrDefault();
+                    if (category != null)
+                    {
+                        var ids = category.Articles.Select(a => a.Id).ToList();
+                        articles = articles.Where(a => ids.Contains(a.Id));
+                    }
+                }
+                if (tag.HasValue)
+                {
+                    var _tag = db.Tags.Where(t => t.Id == tag.Value).FirstOrDefault();
+                    if (_tag != null)
+                    {
+                        var ids = _tag.Articles.Select(a => a.Id).ToList();
+                        articles = articles.Where(a => ids.Contains(a.Id));
+                    }
+                }
                 var list = articles.ToPagedList(pageNumber, pageSize);                
                 ViewBag.BlogMeta = new BlogMeta(db);
                 return View(list);
