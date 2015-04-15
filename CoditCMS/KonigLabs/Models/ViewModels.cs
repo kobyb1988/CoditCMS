@@ -12,7 +12,7 @@ namespace KonigLabs.Models
         private string language;
         private ApplicationDbContext db;
 
-        public const int MaxProjectInCategory = 2;
+        public const int MaxProjectInCategory = 8;
         public List<int> ShownProjects { get; set; }
 
         public LandingPage(string language, ApplicationDbContext db)
