@@ -9,6 +9,8 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.Data.Entity;
+
 
 namespace KonigLabs.Controllers
 {
@@ -164,7 +166,9 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Include("Files").Include("Tags").Include("Categories").Where(a => a.Id == id).FirstOrDefault();
+                var article = db.Articles.Include(a=>a.Files).Include(a=>a.Tags).Include(a=>a.Categories).Include(a=>a.CrewMember)
+                    .Include(a => a.CrewMember.Files)
+                    .Where(a => a.Id == id).FirstOrDefault();
                 ViewBag.BlogMeta = new BlogMeta(db);                
                 return View(article);
             }

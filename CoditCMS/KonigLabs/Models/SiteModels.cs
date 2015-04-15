@@ -278,7 +278,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
         {
-            return db.Articles.Include(a=>a.Files).Include(a=>a.Categories).Include(a=>a.Tags)
+            return db.Articles.Include(a=>a.Files).Include(a=>a.Categories).Include(a=>a.Tags).Include(a=>a.CrewMember)
                 .Where(a => a.Language == language && a.Visibility).ToArray();
         }
 

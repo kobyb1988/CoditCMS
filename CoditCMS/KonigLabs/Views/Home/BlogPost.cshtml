@@ -44,21 +44,41 @@
                         @if (Model.Categories.Count > 0)
                         {
                             var i = 0;
-                            <text>-</text>
+                        <text>-</text>
                             foreach (var category in Model.Categories)
                             {
                                 if (i >= 1)
                                 {
-                                    <text>, </text>
+                        <text>, </text>
                                 }
-                                <a href="/Blog/?cat=@category.Id">@category.Name</a>
+                        <a href="/Blog/?cat=@category.Id">@category.Name</a>
                                 i += 1;
                             }
                         }
                     </h6>
-                    <p>
-                        @Html.Raw(@Model.Content)
-                    </p>
+                    <div class="post">
+                        <p>
+                            @Html.Raw(@Model.Content)
+                        </p>
+
+                        @if (Model.CrewMember !=null)
+                        {
+                            <div class="author-block">
+                                <div class="author-thumb">
+                                    <img width="80" src="@Url.Content(Model.CrewMember.GetAvatarPath())" alt="">
+                                </div>
+                                <h6 class="pad5"><a href="#">@Model.CrewMember.FirstName+@Model.CrewMember.LastName</a></h6>
+                                <p>
+                                    Пишу только о том, что знаю и понимаю. Если нахожу статьи, которые считаю крайне полезными, то без зазрения совести, делаю их достоянием общественности, а авторские права... это права автора;)
+                                </p>
+                            </div>
+                        }
+
+
+                    </div>
+
+
+
 
                     <div class="pad45"></div>
 
