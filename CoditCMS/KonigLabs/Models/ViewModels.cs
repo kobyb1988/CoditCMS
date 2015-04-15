@@ -315,9 +315,11 @@ namespace KonigLabs.Models
     {
         public List<ViewTag> Tags { get; set; }
         public List<ViewArticleCategory> Categories { get; set; }
+        public string SearchValue { get; set; }
 
         public BlogMeta(ApplicationDbContext db)
         {
+            SearchValue = "";
             Tags = new List<ViewTag>();
             foreach(var tag in db.Tags.Include("Articles"))
             {

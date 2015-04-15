@@ -3,7 +3,10 @@
 <div class="col-md-3 col-md-offset-1">
     <aside>
         <div class="input-group">
-            <input class="form-control" placeholder="Поиск по блогу" name="s" id="s" type="text">
+            <form action="/blog">
+                <input class="form-control" placeholder="Поиск по блогу" name="search" id="s" type="text" value="@Model.SearchValue">
+                <button style="margin-top:5px;">Искать</button>
+            </form>
         </div>
 
         <div class="pad30"></div>

@@ -401,6 +401,7 @@
     <Content Include="Content\media\img\milestones.jpg" />
     <Content Include="Content\media\img\overlay.png" />
     <Content Include="Content\media\img\overlay2.png" />
+    <Content Include="Content\media\img\search-512.png" />
     <Content Include="Content\media\img\team\1.jpg" />
     <Content Include="Content\media\img\team\2.jpg" />
     <Content Include="Content\media\img\team\3.jpg" />
