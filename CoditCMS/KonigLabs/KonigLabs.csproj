@@ -276,6 +276,10 @@
     <Compile Include="Migrations\201504141814324_ArticleFiles.Designer.cs">
       <DependentUpon>201504141814324_ArticleFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504151827055_Authors.cs" />
+    <Compile Include="Migrations\201504151827055_Authors.Designer.cs">
+      <DependentUpon>201504151827055_Authors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -568,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504141814324_ArticleFiles.resx">
       <DependentUpon>201504141814324_ArticleFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504151827055_Authors.resx">
+      <DependentUpon>201504151827055_Authors.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

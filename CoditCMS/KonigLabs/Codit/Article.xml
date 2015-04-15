@@ -30,6 +30,11 @@
         <option value="en">en</option>
       </select>
 
+
+			<select name="CrewMemberId" title="Авторы" reference="CrewMember" optionTitle="FirstName" optionValue="Id" multiple="false" localizable="true">
+				<option>Нет</option>
+			</select>
+			
 			<select name="Categories" title="Категории" reference="Categories" optionTitle="Name" optionValue="Id" multiple="true" localizable="true">
 				<option>Нет</option>
 			</select>

@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Data.Entity;
 
 namespace KonigLabs.Models
 {
@@ -41,6 +42,8 @@ namespace KonigLabs.Models
 
         public virtual ICollection<File> Files { get; set; }
 
+        public virtual ICollection<Article> Articles { get; set; }
+
         public string GetAvatarPath()
         {
             var answer = "";
@@ -54,7 +57,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
-            return db.CrewMembers.Include("Files").Where(m => m.Language == language && m.Visibility).ToList();
+            return db.CrewMembers.Include(m=>m.Files).Where(m => m.Language == language && m.Visibility).ToList();
         }
     }
 
@@ -160,7 +163,9 @@ namespace KonigLabs.Models
         internal static IEnumerable<Project> GetProjects(string language, ApplicationDbContext db)
         {
             var projects = new List<Project>();
-            foreach (var pc in db.ProjectCategories.Include("Projects").Include("Projects.Files").Where(pc => pc.Language == language && pc.Visibility))
+            foreach (var pc in db.ProjectCategories.Include(p=>p.Projects)
+                                                    .Include(p=>p.Projects.Select(ip=>ip.Files))
+                                                    .Where(pc => pc.Language == language && pc.Visibility))
             {
                 foreach (var pro in pc.Projects.Where(p=>p.Visibility))
                 {
@@ -225,7 +230,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Client> GetClients(string language, ApplicationDbContext db)
         {
-            return db.Clients.Include("Files").Where(cl=>cl.Language==language && cl.Visibility).ToArray();
+            return db.Clients.Include(cl=>cl.Files).Where(cl=>cl.Language==language && cl.Visibility).ToArray();
         }
     }
 
@@ -249,11 +254,16 @@ namespace KonigLabs.Models
 
         public int Sort { get; set; }
 
+
+        public virtual CrewMember CrewMember{ get; set; }
+        public int? CrewMemberId { get; set; }
+        
         public virtual ICollection<File> Files { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
         public virtual ICollection<ArticleCategory> Categories { get; set; }
 
+      
 
         internal string GetSmallImage()
         {
@@ -268,7 +278,8 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
         {
-            return db.Articles.Include("Files").Include("Categories").Include("Tags").Where(a => a.Language == language && a.Visibility).ToArray();
+            return db.Articles.Include(a=>a.Files).Include(a=>a.Categories).Include(a=>a.Tags)
+                .Where(a => a.Language == language && a.Visibility).ToArray();
         }
 
         public bool HasImageForBlog()
