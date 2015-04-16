@@ -78,7 +78,7 @@
                             <div class="comments">
                                 <h5>Комментарии <a href="#">3</a></h5>
                                 <ul class="comments">
-                                    @foreach (var comment in Model.Comments)
+                                    @foreach (var comment in Model.Comments.Where(c=>c.Visibility))
                                     {
                                         if (comment.Parent != null)
                                         {

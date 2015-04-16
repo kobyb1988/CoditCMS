@@ -166,14 +166,14 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Include(a=>a.Files).Include(a=>a.Tags).Include(a=>a.Categories).Include(a=>a.CrewMember)
-                    .Include(a => a.CrewMember.Files).Include(a=>a.Comments).Include(a=>a.Comments.Select(c=>c.CrewMember))
+                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags).Include(a => a.Categories).Include(a => a.CrewMember)
+                    .Include(a => a.CrewMember.Files).Include(a => a.Comments).Include(a => a.Comments.Select(c => c.CrewMember))
                     .Where(a => a.Id == id).FirstOrDefault();
-                foreach (var comment in article.Comments.Where(c=>c.Parent==null))
+                foreach (var comment in article.Comments.Where(c => c.Parent == null))
                 {
                     comment.WalkDawn(1);
                 }
-                ViewBag.BlogMeta = new BlogMeta(db);                
+                ViewBag.BlogMeta = new BlogMeta(db);
                 return View(article);
             }
         }
@@ -237,10 +237,45 @@ namespace KonigLabs.Controllers
             }
         }
 
-        
+
         public virtual ActionResult Comment(string name, string email, string text, int? commentId, int? postId)
         {
-            return Content("ok");
+
+            using (var db = ApplicationDbContext.Create())
+            {
+                Article article = null;
+                Comment comment = null;
+                if (postId.HasValue)
+                {
+                    article = db.Articles.Where(a=>a.Id == postId.Value).FirstOrDefault();
+                }
+                else
+                {
+                    if (commentId.HasValue)
+                    {
+                        comment = db.Comments.Where(c => c.Id == commentId.Value).FirstOrDefault();
+                        if (comment != null)
+                        {
+                            article = comment.Article;
+                        }
+                    }
+                }
+                if (article != null)
+                {
+                    var c = new Comment();
+                    c.Name = name;
+                    c.Email = email;
+                    c.Article = article;
+                    c.Date = DateTime.Now;
+                    if (comment != null)
+                    {
+                        c.Parent = comment;
+                    }
+                    db.Comments.Add(c);
+                    db.SaveChanges();
+                }
+                return Content("ok");
+            }
         }
 
 

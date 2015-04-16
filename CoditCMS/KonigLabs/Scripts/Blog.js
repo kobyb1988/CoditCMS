@@ -105,8 +105,10 @@ for (var i = 0; i < replies.length; i++) {
         setUpReplyForm(e.target);
     }
 }
-var re = new RegExp('st\/([0-2]+)')
+
+var re = new RegExp('st\/([0-9]+)')
 var match = re.exec(document.location.pathname)
-if(match.length == 2){
+if (match && match.length == 2) {
+
     bindCommentForm(document.querySelector('form'), null, parseInt(match[1]));
 }

@@ -21,7 +21,7 @@
     @if (Model.Comments.Count > 0)
     {
         <ul class="comments">
-            @foreach (var comment in Model.Comments)
+            @foreach (var comment in Model.Comments.Where(c=>c.Visibility))
             {               
                 Html.RenderPartial("~/Views/Shared/DisplayTemplates/Comment.cshtml", comment);
             }
