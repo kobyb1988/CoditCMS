@@ -12,7 +12,7 @@ namespace KonigLabs.Models
         private string language;
         private ApplicationDbContext db;
 
-        public const int MaxProjectInCategory = 2;
+        public const int MaxProjectInCategory = 8;
         public List<int> ShownProjects { get; set; }
 
         public LandingPage(string language, ApplicationDbContext db)
@@ -212,7 +212,7 @@ namespace KonigLabs.Models
 
         public ViewMember(CrewMember member)
         {
-            Avatar = member.GetAvatarPath();
+            Avatar = member.GetAvatar();
             Title = member.Title;
             FirstName = member.FirstName;
             Name = member.FirstName + " " + member.LastName;

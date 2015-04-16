@@ -8,9 +8,12 @@
   <siteMapNode title="Клиенты" controller="Client" action="" />
   <siteMapNode title="Статьи" controller="Article" action="" />
   <siteMapNode title="Contact" controller="Contact" action="" />
+
 	
   <siteMapNode title="Категории статей" controller="ArticleCategory" action="" />
   <siteMapNode title="Теги статей" controller="Tag" action="" />
+	
+	<siteMapNode title="Комментарии" controller="Comment" action="" />
 	
 </siteMapNode>
 <!--<siteMapNode title="Обратная связь">

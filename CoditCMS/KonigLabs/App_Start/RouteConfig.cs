@@ -20,6 +20,13 @@ namespace KonigLabs
             route.DataTokens["RouteName"] = "locations";
 
 
+
+            routes.MapRoute(
+                name: "Comment",
+                url: "Comment",
+                defaults: new { controller = "Home", action = "Comment" }
+            );
+
             routes.MapRoute(
                 name: "Blog",
                 url: "Blog/{language}",

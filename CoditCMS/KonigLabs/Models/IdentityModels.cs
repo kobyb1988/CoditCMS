@@ -36,10 +36,13 @@ namespace KonigLabs.Models
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Article> Articles { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<ArticleCategory> ArticleCategories { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
+
         public virtual DbSet<Contact> Contacts { get; set; }
 
-        public virtual DbSet<Tag> Tags { get; set; }
-        public virtual DbSet<ArticleCategory> ArticleCategories { get; set; }
+        
 
 
     }
