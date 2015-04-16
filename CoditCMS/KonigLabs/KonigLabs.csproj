@@ -401,6 +401,7 @@
     <Content Include="Content\media\img\loader.gif" />
     <Content Include="Content\media\img\logo%402x.png" />
     <Content Include="Content\media\img\logo.png" />
+    <Content Include="Content\media\img\logo_site2.png" />
     <Content Include="Content\media\img\marker.png" />
     <Content Include="Content\media\img\milestones.jpg" />
     <Content Include="Content\media\img\overlay.png" />
