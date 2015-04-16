@@ -9,8 +9,8 @@ var validateEmail = function (email) {
 };
 
 
-function bindCommentForm() {
-    var form = document.querySelector('.comments .contact_form')    
+function bindCommentForm(form, commentId, postId) {
+    //var form = document.querySelector('.comments .contact_form')    
     form.querySelector('.btn').onclick = function (e) {
         e.stopPropagation();
         e.preventDefault();
@@ -43,7 +43,7 @@ function bindCommentForm() {
         else {
             text_input.style['border'] = '';
         }
-        
+
 
 
         if (!valid) {
@@ -57,9 +57,16 @@ function bindCommentForm() {
                     var d = document.createElement('div')
                     d.innerHTML = 'Спасибо за ваш комментарий!';
                     d.id = 'thanks';
-                    form.parentNode.insertBefore(d,form);
-                    form.remove();
-                    console.log(form.parentNode, form);
+                    form.parentNode.insertBefore(d, form);
+                    if (commentId) {
+                        form.remove();
+                    }
+                    if (postId) {
+                        name_input.value = '';
+                        email_input.value = '';
+                        text_input.value = '';
+                    }
+                    //console.log(form.parentNode, form);
                     setTimeout(function () {
                         var tha = document.querySelector("#thanks");
                         tha.remove();
@@ -67,10 +74,11 @@ function bindCommentForm() {
                 }
             }
         }
-        //xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
         xmlhttp.open("POST", "/Comment", true);
-        xmlhttp.send("name=" + name + "&email=" + email + "&text=" + text)
-        
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send("name=" + name + "&email=" + email + "&text=" + text + "&commentId=" + commentId + "&postId=" + postId)
+
     }
 }
 
@@ -83,17 +91,22 @@ function setUpReplyForm(link) {
     var block = link.parentNode.parentNode.parentNode;
     var form = document.querySelector('.contact_form')
     var clone = form.cloneNode('deep');
-    clone.id = '';    
+    clone.id = '';
     insertAfter(clone, block);
-    bindCommentForm(clone);
+    bindCommentForm(clone, link.dataset.id, null);
 }
 
 for (var i = 0; i < replies.length; i++) {
-    var link = replies[i];    
+    var link = replies[i];
     link.onclick = function (e) {
         console.log(e)
         e.stopPropagation();
         e.preventDefault();
         setUpReplyForm(e.target);
     }
+}
+var re = new RegExp('st\/([0-2]+)')
+var match = re.exec(document.location.pathname)
+if(match.length == 2){
+    bindCommentForm(document.querySelector('form'), null, parseInt(match[1]));
 }

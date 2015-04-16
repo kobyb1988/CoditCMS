@@ -236,6 +236,14 @@ namespace KonigLabs.Controllers
                 return View(list);
             }
         }
+
+        
+        public virtual ActionResult Comment(string name, string email, string text, int? commentId, int? postId)
+        {
+            return Content("ok");
+        }
+
+
     }
 
 }

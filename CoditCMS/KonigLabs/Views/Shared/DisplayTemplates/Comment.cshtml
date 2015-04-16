@@ -10,7 +10,7 @@
             <h6>
                 @Model.GetName()
                 <span class="pull-right reply">
-                    <a class="reply" href="#"><i class="fa fa-share"></i> @Model.GetReplyWord()</a>
+                    <a data-id="@Model.Id" class="reply" href="#"><i class="fa fa-share"></i> @Model.GetReplyWord()</a>
                 </span>
             </h6>
             <p>@Html.Raw(Model.Content)</p>
