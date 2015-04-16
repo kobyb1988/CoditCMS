@@ -45,10 +45,10 @@ namespace KonigLabs.Models
         public virtual ICollection<Article> Articles { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
 
-        public string GetAvatarPath()
+        public string GetAvatar()
         {
             var answer = "";
-            var file = Files.OrderBy(f=>f.Sort).FirstOrDefault();
+            var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
             if (file != null)
             {
                 answer = file.Name;
@@ -58,7 +58,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
-            return db.CrewMembers.Include(m=>m.Files).Where(m => m.Language == language && m.Visibility).ToList();
+            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).ToList();
         }
     }
 
@@ -142,7 +142,7 @@ namespace KonigLabs.Models
         internal string GetSmallImage()
         {
             var answer = "";
-            var file = Files.OrderBy(f=>f.Sort).FirstOrDefault();
+            var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
             if (file != null)
             {
                 answer = file.Name;
@@ -153,7 +153,7 @@ namespace KonigLabs.Models
         internal string GetBigImage()
         {
             var answer = "";
-            var file = Files.OrderBy(f=>f.Sort).Skip(1).FirstOrDefault();
+            var file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
             if (file != null)
             {
                 answer = file.Name;
@@ -164,11 +164,11 @@ namespace KonigLabs.Models
         internal static IEnumerable<Project> GetProjects(string language, ApplicationDbContext db)
         {
             var projects = new List<Project>();
-            foreach (var pc in db.ProjectCategories.Include(p=>p.Projects)
-                                                    .Include(p=>p.Projects.Select(ip=>ip.Files))
+            foreach (var pc in db.ProjectCategories.Include(p => p.Projects)
+                                                    .Include(p => p.Projects.Select(ip => ip.Files))
                                                     .Where(pc => pc.Language == language && pc.Visibility))
             {
-                foreach (var pro in pc.Projects.Where(p=>p.Visibility))
+                foreach (var pro in pc.Projects.Where(p => p.Visibility))
                 {
                     projects.Add(pro);
                 }
@@ -186,7 +186,7 @@ namespace KonigLabs.Models
             {
                 answer.Add(file.Name);
             }
-            return answer; 
+            return answer;
         }
     }
 
@@ -231,7 +231,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Client> GetClients(string language, ApplicationDbContext db)
         {
-            return db.Clients.Include(cl=>cl.Files).Where(cl=>cl.Language==language && cl.Visibility).ToArray();
+            return db.Clients.Include(cl => cl.Files).Where(cl => cl.Language == language && cl.Visibility).ToArray();
         }
     }
 
@@ -256,7 +256,7 @@ namespace KonigLabs.Models
         public int Sort { get; set; }
 
 
-        public virtual CrewMember CrewMember{ get; set; }
+        public virtual CrewMember CrewMember { get; set; }
         public int? CrewMemberId { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
@@ -267,12 +267,12 @@ namespace KonigLabs.Models
         public virtual ICollection<ArticleCategory> Categories { get; set; }
 
 
-      
+
 
         internal string GetSmallImage()
         {
             var answer = "";
-            var file = Files.OrderBy(f=>f.Sort).FirstOrDefault();
+            var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
             if (file != null)
             {
                 answer = file.Name;
@@ -282,7 +282,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
         {
-            return db.Articles.Include(a=>a.Files).Include(a=>a.Categories).Include(a=>a.Tags).Include(a=>a.CrewMember)
+            return db.Articles.Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
                 .Where(a => a.Language == language && a.Visibility).ToArray();
         }
 
@@ -304,16 +304,16 @@ namespace KonigLabs.Models
 
         public string GetDisplayDate()
         {
-            
+
             var ci = "ru-RU";
             if (Language == LocalEntity.EN)
             {
                 ci = "en-US";
             }
-            return Date.ToString("M", new CultureInfo(ci)); 
+            return Date.ToString("M", new CultureInfo(ci));
         }
 
-        
+
         public string GetSpoiler()
         {
             var sb = new StringBuilder();
@@ -321,12 +321,12 @@ namespace KonigLabs.Models
             doc.LoadHtml(String.Format(@"<html><body>{0}</html>", Content));
             foreach (HtmlNode node in doc.DocumentNode.SelectNodes("//text()"))
             {
-                sb.Append(node.InnerText);                
+                sb.Append(node.InnerText);
             }
             var le = 180;
             if (sb.Length < 180)
             {
-                le = sb.Length - 1;                
+                le = sb.Length - 1;
             }
             return sb.ToString().Substring(0, le);
         }
@@ -374,14 +374,14 @@ namespace KonigLabs.Models
 
     }
 
-    public class Comment: IVisibleEntity
+    public class Comment : IVisibleEntity
     {
         public int Id { get; set; }
-        
+
         public DateTime Date { get; set; }
 
         public string Content { get; set; }
-        
+
         public string Name { get; set; }
         public string Email { get; set; }
 
@@ -395,6 +395,79 @@ namespace KonigLabs.Models
 
         public int? ParentId { get; set; }
         public virtual Comment Parent { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; } 
+        public virtual ICollection<Comment> Comments { get; set; }
+
+        public const string EmptyAvatar = "~/Content/media/img/avatar.png";
+
+        [NotMapped]
+        public string AdminName
+        {
+            get
+            {
+
+                var title = Article.Title;
+                if (Parent != null)
+                {
+                    title += String.Format("  <-  ...   {0} <- {1}", Parent.GetName(), GetName());
+                }
+                else
+                {
+                    title += "  <-  " + GetName();
+                }
+                return title;
+            }
+        }
+
+        public string GetAvatar()
+        {
+            var answer = EmptyAvatar;
+            if (CrewMember != null)
+            {
+                answer = CrewMember.GetAvatar();
+            }
+            return answer;
+        }
+
+        public string GetReplyWord()
+        {
+            var answer = "ответить";
+            if (Article.Language == LocalEntity.EN)
+            {
+                answer = "reply";
+            }
+            return answer;
+        }
+
+        public string GetName()
+        {
+            var name = Name;
+            if (CrewMember != null)
+            {
+                name = CrewMember.FirstName + " " + CrewMember.LastName;
+            }
+            return name;
+        }
+
+        public string GetDate()
+        {
+            var ci = "ru-RU";
+            if (Article.Language == LocalEntity.EN)
+            {
+                ci = "en-US";
+            }
+            return Date.ToString("M", new CultureInfo(ci));
+        }
+
+        [NotMapped]
+        public int Level { get; set; }
+
+        internal void WalkDawn(int level)
+        {
+            Level = level;
+            foreach (var c in Comments)
+            {
+                c.WalkDawn(level + 1);
+            }
+        }
     }
 }

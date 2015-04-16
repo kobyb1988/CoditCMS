@@ -169,6 +169,10 @@ namespace KonigLabs.Controllers
                 var article = db.Articles.Include(a=>a.Files).Include(a=>a.Tags).Include(a=>a.Categories).Include(a=>a.CrewMember)
                     .Include(a => a.CrewMember.Files).Include(a=>a.Comments).Include(a=>a.Comments.Select(c=>c.CrewMember))
                     .Where(a => a.Id == id).FirstOrDefault();
+                foreach (var comment in article.Comments.Where(c=>c.Parent==null))
+                {
+                    comment.WalkDawn(1);
+                }
                 ViewBag.BlogMeta = new BlogMeta(db);                
                 return View(article);
             }

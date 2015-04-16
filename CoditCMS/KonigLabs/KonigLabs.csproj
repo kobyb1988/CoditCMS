@@ -310,7 +310,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Codit\Comment.xml" />
+    <Content Include="Codit\Comment.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Codit\Tag.xml" />
     <Content Include="Codit\ArticleCategory.xml" />
     <Content Include="Codit\Contact.xml" />
@@ -349,6 +351,7 @@
     <Content Include="Content\media\font\fontawesome-webfont.svg" />
     <Content Include="Content\media\img\arrow-left-light.png" />
     <Content Include="Content\media\img\arrow-right-light.png" />
+    <Content Include="Content\media\img\avatar.png" />
     <Content Include="Content\media\img\big_image.jpg" />
     <Content Include="Content\media\img\blog\1.jpg" />
     <Content Include="Content\media\img\blog\2.jpg" />
@@ -523,6 +526,7 @@
     <Content Include="Views\Home\BlogPost.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BlogPane.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BlogHeader.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Comment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

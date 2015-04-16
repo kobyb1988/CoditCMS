@@ -14,8 +14,8 @@
 		</actions>
 
 		<cols>			
-		<string name="ArticleId" title="Пост"/>
-			
+		<string name="AdminName" title="Пост"/>
+		
 			
 		</cols>
 
@@ -35,7 +35,7 @@
 				<option>Нет</option>
 			</select>
 
-			<select name="ParentId" title="Комент" reference="Parent" optionTitle="Id" optionValue="Id" multiple="false" localizable="true">
+			<select name="ParentId" title="Комент" reference="Parent" optionTitle="AdminName" optionValue="Id" multiple="false" localizable="true">
 				<option>Нет</option>
 			</select>
 

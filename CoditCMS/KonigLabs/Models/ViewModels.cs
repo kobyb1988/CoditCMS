@@ -212,7 +212,7 @@ namespace KonigLabs.Models
 
         public ViewMember(CrewMember member)
         {
-            Avatar = member.GetAvatarPath();
+            Avatar = member.GetAvatar();
             Title = member.Title;
             FirstName = member.FirstName;
             Name = member.FirstName + " " + member.LastName;

@@ -65,7 +65,7 @@
                         {
                             <div class="author-block">
                                 <div class="author-thumb">
-                                    <img width="80" src="@Url.Content(Model.CrewMember.GetAvatarPath())" alt="">
+                                    <img width="80" src="@Url.Content(Model.CrewMember.GetAvatar())" alt="">
                                 </div>
                                 <h6 class="pad5"><a href="#">@Model.CrewMember.FirstName+@Model.CrewMember.LastName</a></h6>
                                 <p>
@@ -85,26 +85,7 @@
                                             continue;
 
                                         }
-                                        <li>
-                                            <div class="comment">
-                                                <div class="avatar">
-                                                    <img src="img/blog/avatar1.jpg" alt="">
-                                                </div>
-                                                <div class="comment-quote">
-                                                    <div class="pointer"></div>
-                                                    <h6>
-                                                        Николай Пасько
-                                                        <span class="pull-right reply">
-                                                            <a href="#"><i class="fa fa-share"></i> Ответить</a>
-                                                        </span>
-                                                    </h6>
-
-                                                    <p>Вот теперь понятно, почему тормозится рост нашей компании))).</p>
-
-                                                    <span class="date pull-right">1 апреля, 2015</span>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Comment.cshtml", comment);                                    
                                     }
                                 </ul>
                             </div>
