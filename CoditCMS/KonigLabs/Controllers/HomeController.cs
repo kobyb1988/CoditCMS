@@ -273,6 +273,44 @@ namespace KonigLabs.Controllers
                     }
                     db.Comments.Add(c);
                     db.SaveChanges();
+
+
+
+                    var message = new MailMessage();
+                    var toEmail = "aganzha@yandex.ru";
+
+                    message.To.Add(new MailAddress(toEmail));
+                    message.BodyEncoding = System.Text.Encoding.UTF8;
+                    message.IsBodyHtml = true;
+                    message.Subject = "New comment";
+
+                    var sb = new StringBuilder();
+                    sb.AppendFormat("<p>{0}</p>", c.Name);
+                    sb.AppendFormat("<p>{0}</p>", c.Content);
+                    sb.AppendFormat("<p>{0}</p>", c.Email);                    
+
+                    message.Body = sb.ToString();
+
+                    var client = new SmtpClient();
+                    if (client.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
+                    {
+                        client.EnableSsl = false;
+                    }
+
+                    try
+                    {
+                        client.Send(message);
+                        client.SendCompleted += (s, e) =>
+                        {
+                            message.Dispose();
+                            client.Dispose();
+                        };
+                    }
+                    catch (Exception exc)
+                    {
+
+                    }
+
                 }
                 return Content("ok");
             }
