@@ -355,6 +355,7 @@
     <Content Include="Content\media\css\6_owl.carousel.css" />
     <Content Include="Content\media\css\2_style.css" />
     <Content Include="Content\media\font\fontawesome-webfont.svg" />
+    <Content Include="Content\media\img\404_3.jpg" />
     <Content Include="Content\media\img\arrow-left-light.png" />
     <Content Include="Content\media\img\arrow-right-light.png" />
     <Content Include="Content\media\img\avatar.png" />

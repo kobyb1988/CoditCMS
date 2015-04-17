@@ -288,6 +288,14 @@ namespace KonigLabs.Models
                 .Where(a => a.Language == language && a.Visibility).ToArray();
         }
 
+
+        internal static IEnumerable<Article> GetArticlesForMainPage(string language, ApplicationDbContext db)
+        {
+            return db.Articles.Where(a=>a.ShowOnHomePage).Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
+                .Where(a => a.Language == language && a.Visibility).ToArray();
+        }
+
+
         public bool HasImageForBlog()
         {
             return Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault() != null;

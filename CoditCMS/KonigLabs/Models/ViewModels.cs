@@ -85,13 +85,13 @@ namespace KonigLabs.Models
                 Clients.Add(vc);
             }
 
-            foreach (Article ar in Article.GetArticles(language, db))
-            {
+            foreach (Article ar in Article.GetArticlesForMainPage(language, db))
+            {                
                 var va = new ViewArticle(ar);
                 if (String.IsNullOrEmpty(va.Image))
                 {
                     continue;
-                }
+                }                
                 Articles.Add(va);
             }
             Contact = new ViewContact();
