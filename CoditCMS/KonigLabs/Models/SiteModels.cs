@@ -32,6 +32,8 @@ namespace KonigLabs.Models
         public string Title { get; set; }
         public string Bio { get; set; }
 
+        public string Signature { get; set; }
+
         public string MetaTitle { get; set; }
         public string MetaDescription { get; set; }
         public string MetaKeywords { get; set; }

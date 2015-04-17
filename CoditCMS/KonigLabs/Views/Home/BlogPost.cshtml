@@ -67,10 +67,13 @@
                                 <div class="author-thumb">
                                     <img width="80" src="@Url.Content(Model.CrewMember.GetAvatar())" alt="">
                                 </div>
-                                <h6 class="pad5"><a href="#">@Model.CrewMember.FirstName+@Model.CrewMember.LastName</a></h6>
+                                <h6 class="pad5"><a href="#">@Model.CrewMember.FirstName @Model.CrewMember.LastName</a></h6>
                                 <p>
-                                    Пишу только о том, что знаю и понимаю. Если нахожу статьи, которые считаю крайне полезными, то без зазрения совести, делаю их достоянием общественности, а авторские права... это права автора;)
+                                    @Html.Raw(Model.CrewMember.Signature)
                                 </p>
+                                    @*<p>
+                                    Пишу только о том, что знаю и понимаю. Если нахожу статьи, которые считаю крайне полезными, то без зазрения совести, делаю их достоянием общественности, а авторские права... это права автора;)
+                                </p>*@
                             </div>
                         }
                         @if (Model.Comments.Count > 0)

@@ -98,8 +98,7 @@ function setUpReplyForm(link) {
 
 for (var i = 0; i < replies.length; i++) {
     var link = replies[i];
-    link.onclick = function (e) {
-        console.log(e)
+    link.onclick = function (e) {        
         e.stopPropagation();
         e.preventDefault();
         setUpReplyForm(e.target);

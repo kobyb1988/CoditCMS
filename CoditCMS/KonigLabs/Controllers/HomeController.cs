@@ -266,6 +266,7 @@ namespace KonigLabs.Controllers
                     c.Name = name;
                     c.Email = email;
                     c.Article = article;
+                    c.Content = text;
                     c.Date = DateTime.Now;
                     if (comment != null)
                     {
