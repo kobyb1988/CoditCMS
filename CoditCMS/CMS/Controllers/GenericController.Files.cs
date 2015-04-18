@@ -141,19 +141,29 @@ namespace CMS.Controllers
 				var entitySetName = TypeHelpers.GetEntitySetName(type, db);
 				var key = new EntityKey(entitySetName, "Id", model.Id);
 				var file = (IFileEntity)((IObjectContextAdapter)db).ObjectContext.GetObjectByKey(key);
+                // aganzha
+                //var type = value.GetType();
+                var propValue = TypeHelpers.GetPropertyValue(entity, model.PropName);
+                var propType = propValue.GetType();
 
-				DefaultFileService.DeleteFile(file, ControllerContext.HttpContext);
-				var propValue = TypeHelpers.GetPropertyValue(entity, model.PropName);
-				if (propValue is IEnumerable)
-				{
-					var list = ((IListSource)propValue).GetList();
-					list.Remove(file);
-				}
-				else
-				{
-					TypeHelpers.SetPropertyValue(entity, model.PropName, null);
-				}
-                ((IObjectContextAdapter)db).ObjectContext.DeleteObject(file);
+                MethodInfo methodInfo = propType.GetMethod("Remove");
+                object[] parametersArray = new object[] { file };                
+                methodInfo.Invoke(propValue, parametersArray);
+
+                ((IObjectContextAdapter)Repository.DataContext).ObjectContext.DeleteObject(file);
+
+                //DefaultFileService.DeleteFile(file, ControllerContext.HttpContext);
+                //var propValue = TypeHelpers.GetPropertyValue(entity, model.PropName);
+                //if (propValue is IEnumerable)
+                //{
+                //    var list = ((IListSource)propValue).GetList();
+                //    list.Remove(file);
+                //}
+                //else
+                //{
+                //    TypeHelpers.SetPropertyValue(entity, model.PropName, null);
+                //}
+                //((IObjectContextAdapter)db).ObjectContext.DeleteObject(file);
 				db.SaveChanges();
 				return Json(new { success = true });
 			}

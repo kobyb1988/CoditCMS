@@ -25,7 +25,7 @@ namespace KonigLabs.Models
     }
 
 
-
+    
     public class CrewMember : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
@@ -48,6 +48,11 @@ namespace KonigLabs.Models
 
         public virtual ICollection<Article> Articles { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public override string ToString()
+        {
+            return "Участник команды";
+        }
 
         public string GetAvatar()
         {
@@ -111,6 +116,11 @@ namespace KonigLabs.Models
         public int Sort { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
 
+        public override string ToString()
+        {
+            return "Категория проекта";
+        }
+
     }
 
     public class Project : IVisibleEntity, ISortableEntity, IMetadataEntity
@@ -132,6 +142,10 @@ namespace KonigLabs.Models
 
         public virtual ICollection<ProjectCategory> ProjectCategory { get; set; }
 
+        public override string ToString()
+        {
+            return "Проект";
+        }
         public string GetImage()
         {
             var answer = "";
@@ -211,6 +225,11 @@ namespace KonigLabs.Models
 
         public virtual ICollection<File> Files { get; set; }
 
+        public override string ToString()
+        {
+            return "Клиент";
+        }
+
         public string GetAvatarPath()
         {
             var answer = "";
@@ -270,7 +289,10 @@ namespace KonigLabs.Models
         public virtual ICollection<Tag> Tags { get; set; }
         public virtual ICollection<ArticleCategory> Categories { get; set; }
 
-
+        public override string ToString()
+        {
+            return "Статья/Пост в блог";
+        }
 
 
         internal string GetSmallImage()
@@ -362,6 +384,10 @@ namespace KonigLabs.Models
 
         public DateTime Date { get; set; }
 
+        public override string ToString()
+        {
+            return "Входящий контакт";
+        }
     }
 
     public class Tag : IVisibleEntity, ISortableEntity
@@ -372,6 +398,11 @@ namespace KonigLabs.Models
 
         public int Sort { get; set; }
         public virtual ICollection<Article> Articles { get; set; }
+
+        public override string ToString()
+        {
+            return "Тег";
+        }
     }
 
     public class ArticleCategory : IVisibleEntity, ISortableEntity
@@ -383,7 +414,10 @@ namespace KonigLabs.Models
         public int Sort { get; set; }
         public virtual ICollection<Article> Articles { get; set; }
 
-
+        public override string ToString()
+        {
+            return "Категория статей/постов";
+        }
     }
 
     public class Comment : IVisibleEntity
@@ -411,6 +445,10 @@ namespace KonigLabs.Models
 
         public const string EmptyAvatar = "~/Content/media/img/avatar.png";
 
+        public override string ToString()
+        {
+            return "Комментарий";
+        }
         [NotMapped]
         public string AdminName
         {
