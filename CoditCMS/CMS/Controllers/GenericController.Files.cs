@@ -141,8 +141,7 @@ namespace CMS.Controllers
 				var entitySetName = TypeHelpers.GetEntitySetName(type, db);
 				var key = new EntityKey(entitySetName, "Id", model.Id);
 				var file = (IFileEntity)((IObjectContextAdapter)db).ObjectContext.GetObjectByKey(key);
-                // aganzha
-                //var type = value.GetType();
+                // aganzha                
                 var propValue = TypeHelpers.GetPropertyValue(entity, model.PropName);
                 var propType = propValue.GetType();
 
