@@ -38,19 +38,30 @@ namespace KonigLabs
                url: "BlogPost/{id}",
                defaults: new { controller = "Home", action = "BlogPost" }
            );
-            
+
             routes.MapRoute(
                 name: "Default",
                 url: "{language}",
                 defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
             );
 
-            
+
 
             routes.MapRoute(
               name: "Accounts",
               url: "{controller}/{action}"
           );
+
+
+
+            routes.MapRoute(
+                "404-PageNotFound",
+                "{*url}",
+                new { controller = "Home", action = "PageNotFound" }
+                );
+
+
+
         }
     }
 }

@@ -23,6 +23,10 @@ namespace KonigLabs.Controllers
             {
                 language = LocalEntity.RU;
             }
+            if (language != LocalEntity.RU && language != LocalEntity.EN)
+            {
+                return View("NotFound");
+            }
             var viewPath = "~/Views/Home/Index_{0}.cshtml";
             string view;
             switch (language)
@@ -315,6 +319,12 @@ namespace KonigLabs.Controllers
                 }
                 return Content("ok");
             }
+        }
+
+
+        public ActionResult PageNotFound()
+        {
+            return View("NotFound");
         }
 
 

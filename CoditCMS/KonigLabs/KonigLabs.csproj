@@ -536,6 +536,7 @@
     <Content Include="Views\Shared\DisplayTemplates\BlogPane.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BlogHeader.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Comment.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
