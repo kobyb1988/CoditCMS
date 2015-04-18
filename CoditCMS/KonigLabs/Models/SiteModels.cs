@@ -24,6 +24,8 @@ namespace KonigLabs.Models
         public string Language { get; set; }
     }
 
+
+
     public class CrewMember : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
