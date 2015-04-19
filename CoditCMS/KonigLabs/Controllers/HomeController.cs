@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using System.Data.Entity;
+using Hangfire;
 
 
 namespace KonigLabs.Controllers
@@ -122,42 +123,13 @@ namespace KonigLabs.Controllers
                 }
                 contact.Status = "Спасибо за ваше сообщение, мы обязательно свяжемся с вами!";
 
-                var message = new MailMessage();
-                var toEmail = "aganzha@yandex.ru";
-
-                message.To.Add(new MailAddress(toEmail));
-                message.BodyEncoding = System.Text.Encoding.UTF8;
-                message.IsBodyHtml = true;
-                message.Subject = "New message";
-
                 var sb = new StringBuilder();
                 sb.AppendFormat("<p>{0}</p>", contact.Name);
                 sb.AppendFormat("<p>{0}</p>", contact.Text);
                 sb.AppendFormat("<p>{0}</p>", contact.Email);
                 sb.AppendFormat("<p>{0}</p>", contact.Phone);
 
-                message.Body = sb.ToString();
-
-                var client = new SmtpClient();
-                if (client.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
-                {
-                    client.EnableSsl = false;
-                }
-
-                try
-                {
-                    client.Send(message);
-                    client.SendCompleted += (s, e) =>
-                    {
-                        message.Dispose();
-                        client.Dispose();
-                    };
-                }
-                catch (Exception exc)
-                {
-
-                }
-
+                BackgroundJob.Schedule(() => Tasks.SendEmailToAdmin(sb.ToString()), TimeSpan.FromSeconds(1));
             }
             else
             {
@@ -178,8 +150,8 @@ namespace KonigLabs.Controllers
                 int commentCount = 0;
                 foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
                 {
-                    comment.WalkDawn(1);                    
-                    commentCount += comment.CommentCount+1;
+                    comment.WalkDawn(1);
+                    commentCount += comment.CommentCount + 1;
                 }
                 ViewBag.BlogMeta = new BlogMeta(db);
                 ViewBag.CommentCount = commentCount;
@@ -256,7 +228,7 @@ namespace KonigLabs.Controllers
                 Comment comment = null;
                 if (postId.HasValue)
                 {
-                    article = db.Articles.Where(a=>a.Id == postId.Value).FirstOrDefault();
+                    article = db.Articles.Where(a => a.Id == postId.Value).FirstOrDefault();
                 }
                 else
                 {
@@ -284,42 +256,13 @@ namespace KonigLabs.Controllers
                     db.Comments.Add(c);
                     db.SaveChanges();
 
-
-
-                    var message = new MailMessage();
-                    var toEmail = "aganzha@yandex.ru";
-
-                    message.To.Add(new MailAddress(toEmail));
-                    message.BodyEncoding = System.Text.Encoding.UTF8;
-                    message.IsBodyHtml = true;
-                    message.Subject = "New comment";
-
                     var sb = new StringBuilder();
                     sb.AppendFormat("<p>{0}</p>", c.Name);
                     sb.AppendFormat("<p>{0}</p>", c.Content);
-                    sb.AppendFormat("<p>{0}</p>", c.Email);                    
+                    sb.AppendFormat("<p>{0}</p>", c.Email);
 
-                    message.Body = sb.ToString();
+                    BackgroundJob.Schedule(() => Tasks.SendEmailToAdmin(sb.ToString()), TimeSpan.FromSeconds(1));
 
-                    var client = new SmtpClient();
-                    if (client.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
-                    {
-                        client.EnableSsl = false;
-                    }
-
-                    try
-                    {
-                        client.Send(message);
-                        client.SendCompleted += (s, e) =>
-                        {
-                            message.Dispose();
-                            client.Dispose();
-                        };
-                    }
-                    catch (Exception exc)
-                    {
-
-                    }
 
                 }
                 return Content("ok");
