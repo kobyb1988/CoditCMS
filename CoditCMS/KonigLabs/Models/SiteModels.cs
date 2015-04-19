@@ -25,7 +25,7 @@ namespace KonigLabs.Models
     }
 
 
-    
+
     public class CrewMember : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
@@ -315,7 +315,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<Article> GetArticlesForMainPage(string language, ApplicationDbContext db)
         {
-            return db.Articles.Where(a=>a.ShowOnHomePage).Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
+            return db.Articles.Where(a => a.ShowOnHomePage).Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
                 .Where(a => a.Language == language && a.Visibility).ToArray();
         }
 
@@ -364,6 +364,8 @@ namespace KonigLabs.Models
             }
             return sb.ToString().Substring(0, le);
         }
+
+        public object CommentsCount { get; set; }
     }
 
     public class Contact : IVisibleEntity, ISortableEntity
@@ -510,14 +512,20 @@ namespace KonigLabs.Models
 
         [NotMapped]
         public int Level { get; set; }
+        [NotMapped]
+        public int CommentCount { get; set; }
+
 
         internal void WalkDawn(int level)
         {
             Level = level;
-            foreach (var c in Comments)
+            CommentCount = 0;
+            foreach (var c in Comments.Where(c => c.Visibility))
             {
                 c.WalkDawn(level + 1);
-            }
+                CommentCount += c.CommentCount + 1;
+
+            }            
         }
     }
 }

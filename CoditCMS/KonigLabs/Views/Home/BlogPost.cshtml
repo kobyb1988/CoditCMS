@@ -26,10 +26,10 @@
 
                     <div id="big" class="owl-carousel blog-carousel-bottom">
                         <div class="item">
-                            <img src="img/blog/1.jpg" alt="">
+                            <img src="/Content/media/img/blog/1.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img src="img/blog/2.jpg" alt="">
+                            <img src="/Content/media/img/blog/2.jpg" alt="">
                         </div>
                     </div>
 
@@ -79,7 +79,10 @@
                         @if (Model.Comments.Count > 0)
                         {
                             <div class="comments">
-                                <h5>Комментарии <a href="#">3</a></h5>
+                                @if(ViewBag.CommentCount>0)
+                                {
+                                <h5>Комментарии <a href="#">@ViewBag.CommentCount</a></h5>
+                                }
                                 <ul class="comments">
                                     @foreach (var comment in Model.Comments.Where(c=>c.Visibility))
                                     {

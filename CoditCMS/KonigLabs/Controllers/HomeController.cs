@@ -170,14 +170,19 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags).Include(a => a.Categories).Include(a => a.CrewMember)
-                    .Include(a => a.CrewMember.Files).Include(a => a.Comments).Include(a => a.Comments.Select(c => c.CrewMember))
+                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags).Include(a => a.Categories)
+                    .Include(a => a.CrewMember)
+                    .Include(a => a.CrewMember.Files).Include(a => a.Comments)
+                    .Include(a => a.Comments.Select(c => c.CrewMember))
                     .Where(a => a.Id == id).FirstOrDefault();
-                foreach (var comment in article.Comments.Where(c => c.Parent == null))
+                int commentCount = 0;
+                foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
                 {
-                    comment.WalkDawn(1);
+                    comment.WalkDawn(1);                    
+                    commentCount += comment.CommentCount+1;
                 }
                 ViewBag.BlogMeta = new BlogMeta(db);
+                ViewBag.CommentCount = commentCount;
                 return View(article);
             }
         }
