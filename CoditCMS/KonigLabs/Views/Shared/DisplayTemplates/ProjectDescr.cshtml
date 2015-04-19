@@ -32,7 +32,11 @@
             </div>*@
         </div>
         <!--//END-->
-
+        @if (!String.IsNullOrEmpty(Model.Url))
+        {
+            <a target="_blank" href="@Model.Url" style="background: none repeat scroll 0% 0% #00F1EB;margin:10px 0 10px 0;display:inline-block;color:white;padding:5px;">Сайт проекта</a>
+        }
+        
         <div class="row pad30">
             @Html.Raw(@Model.Description)
             @*<div class="col-sm-12 col-md-8">
@@ -76,7 +80,7 @@
 
 
         </div>
-    </div>
+    </a>
 </div>
 <div class="pad90"></div>
 

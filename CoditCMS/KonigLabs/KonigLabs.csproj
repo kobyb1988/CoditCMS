@@ -295,6 +295,10 @@
     <Compile Include="Migrations\201504171330102_AuthorSignature.Designer.cs">
       <DependentUpon>201504171330102_AuthorSignature.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504191000409_ProjectUrl.cs" />
+    <Compile Include="Migrations\201504191000409_ProjectUrl.Designer.cs">
+      <DependentUpon>201504191000409_ProjectUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -608,6 +612,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504171330102_AuthorSignature.resx">
       <DependentUpon>201504171330102_AuthorSignature.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504191000409_ProjectUrl.resx">
+      <DependentUpon>201504191000409_ProjectUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

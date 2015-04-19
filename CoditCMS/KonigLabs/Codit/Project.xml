@@ -23,6 +23,7 @@
 	<form>
 		<tab name="General">
 			<string name="Name" title="Название" />
+				<string name="Url" title="Ссылка" />
       <select name="ProjectCategory" title="Категории" reference="ProjectCategory" optionTitle="Name" optionValue="Id" multiple="true" localizable="true">
         <option>Нет</option>
       </select>

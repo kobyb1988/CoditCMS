@@ -143,7 +143,7 @@ namespace KonigLabs.Models
         public int Id { get; set; }
         public string Description { get; set; }
         public List<string> Gallery { get; set; }
-        
+        public string Url { get; set; }
 
         public ViewProject(Project project)
         {
@@ -154,6 +154,7 @@ namespace KonigLabs.Models
             Gallery = project.GetImages();
             Name = project.Name;
             Description = project.Description;
+            Url = project.Url;
             foreach (var cat in project.ProjectCategory.ToArray())
             {
                 Categories.Add(new ViewCategory(cat));
@@ -171,6 +172,8 @@ namespace KonigLabs.Models
             return sb.ToString();
         }
 
+
+        
     }
 
     public class ViewProjects
