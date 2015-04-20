@@ -20,6 +20,13 @@ namespace KonigLabs
             route.DataTokens["RouteName"] = "locations";
 
 
+
+            routes.MapRoute(
+                name: "Comment",
+                url: "Comment",
+                defaults: new { controller = "Home", action = "Comment" }
+            );
+
             routes.MapRoute(
                 name: "Blog",
                 url: "Blog/{language}",
@@ -31,19 +38,30 @@ namespace KonigLabs
                url: "BlogPost/{id}",
                defaults: new { controller = "Home", action = "BlogPost" }
            );
-            
+
             routes.MapRoute(
                 name: "Default",
                 url: "{language}",
                 defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
             );
 
-            
+
 
             routes.MapRoute(
               name: "Accounts",
               url: "{controller}/{action}"
           );
+
+
+
+            routes.MapRoute(
+                "404-PageNotFound",
+                "{*url}",
+                new { controller = "Home", action = "PageNotFound" }
+                );
+
+
+
         }
     }
 }

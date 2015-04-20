@@ -12,7 +12,7 @@ namespace KonigLabs.Models
         private string language;
         private ApplicationDbContext db;
 
-        public const int MaxProjectInCategory = 2;
+        public const int MaxProjectInCategory = 8;
         public List<int> ShownProjects { get; set; }
 
         public LandingPage(string language, ApplicationDbContext db)
@@ -85,13 +85,13 @@ namespace KonigLabs.Models
                 Clients.Add(vc);
             }
 
-            foreach (Article ar in Article.GetArticles(language, db))
-            {
+            foreach (Article ar in Article.GetArticlesForMainPage(language, db))
+            {                
                 var va = new ViewArticle(ar);
                 if (String.IsNullOrEmpty(va.Image))
                 {
                     continue;
-                }
+                }                
                 Articles.Add(va);
             }
             Contact = new ViewContact();
@@ -143,7 +143,7 @@ namespace KonigLabs.Models
         public int Id { get; set; }
         public string Description { get; set; }
         public List<string> Gallery { get; set; }
-        
+        public string Url { get; set; }
 
         public ViewProject(Project project)
         {
@@ -154,6 +154,7 @@ namespace KonigLabs.Models
             Gallery = project.GetImages();
             Name = project.Name;
             Description = project.Description;
+            Url = project.Url;
             foreach (var cat in project.ProjectCategory.ToArray())
             {
                 Categories.Add(new ViewCategory(cat));
@@ -171,6 +172,8 @@ namespace KonigLabs.Models
             return sb.ToString();
         }
 
+
+        
     }
 
     public class ViewProjects
@@ -212,7 +215,7 @@ namespace KonigLabs.Models
 
         public ViewMember(CrewMember member)
         {
-            Avatar = member.GetAvatarPath();
+            Avatar = member.GetAvatar();
             Title = member.Title;
             FirstName = member.FirstName;
             Name = member.FirstName + " " + member.LastName;

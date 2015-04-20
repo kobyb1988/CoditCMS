@@ -1,0 +1,30 @@
+﻿@model KonigLabs.Models.Comment
+
+<li @(Model.Level>3 ? "style=padding-left:0;" : "") data-level="@Model.Level">
+    <div class="comment">
+        <div class="avatar">
+            <img width="80" src="@Url.Content(Model.GetAvatar())" alt="">
+        </div>
+        <div class="comment-quote">
+            <div class="pointer"></div>
+            <h6>
+                @Model.GetName()
+                <span class="pull-right reply">
+                    <a data-id="@Model.Id" class="reply" href="#"><i class="fa fa-share"></i> @Model.GetReplyWord()</a>
+                </span>
+            </h6>
+            <p>@Html.Raw(Model.Content)</p>
+            <span class="date pull-right">@Model.GetDate()</span>
+        </div>
+    </div>
+
+    @if (Model.Comments.Count > 0)
+    {
+        <ul class="comments">
+            @foreach (var comment in Model.Comments.Where(c=>c.Visibility))
+            {               
+                Html.RenderPartial("~/Views/Shared/DisplayTemplates/Comment.cshtml", comment);
+            }
+        </ul>
+    }
+</li>

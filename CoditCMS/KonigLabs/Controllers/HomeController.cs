@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using System.Data.Entity;
+using Hangfire;
 
 
 namespace KonigLabs.Controllers
@@ -22,6 +23,10 @@ namespace KonigLabs.Controllers
             if (String.IsNullOrEmpty(language))
             {
                 language = LocalEntity.RU;
+            }
+            if (language != LocalEntity.RU && language != LocalEntity.EN)
+            {
+                return View("NotFound");
             }
             var viewPath = "~/Views/Home/Index_{0}.cshtml";
             string view;
@@ -118,42 +123,13 @@ namespace KonigLabs.Controllers
                 }
                 contact.Status = "Спасибо за ваше сообщение, мы обязательно свяжемся с вами!";
 
-                var message = new MailMessage();
-                var toEmail = "aganzha@yandex.ru";
-
-                message.To.Add(new MailAddress(toEmail));
-                message.BodyEncoding = System.Text.Encoding.UTF8;
-                message.IsBodyHtml = true;
-                message.Subject = "New message";
-
                 var sb = new StringBuilder();
                 sb.AppendFormat("<p>{0}</p>", contact.Name);
                 sb.AppendFormat("<p>{0}</p>", contact.Text);
                 sb.AppendFormat("<p>{0}</p>", contact.Email);
                 sb.AppendFormat("<p>{0}</p>", contact.Phone);
 
-                message.Body = sb.ToString();
-
-                var client = new SmtpClient();
-                if (client.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
-                {
-                    client.EnableSsl = false;
-                }
-
-                try
-                {
-                    client.Send(message);
-                    client.SendCompleted += (s, e) =>
-                    {
-                        message.Dispose();
-                        client.Dispose();
-                    };
-                }
-                catch (Exception exc)
-                {
-
-                }
-
+                BackgroundJob.Schedule(() => Tasks.SendEmailToAdmin(sb.ToString()), TimeSpan.FromSeconds(1));
             }
             else
             {
@@ -166,10 +142,19 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Include(a=>a.Files).Include(a=>a.Tags).Include(a=>a.Categories).Include(a=>a.CrewMember)
-                    .Include(a => a.CrewMember.Files)
+                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags).Include(a => a.Categories)
+                    .Include(a => a.CrewMember)
+                    .Include(a => a.CrewMember.Files).Include(a => a.Comments)
+                    .Include(a => a.Comments.Select(c => c.CrewMember))
                     .Where(a => a.Id == id).FirstOrDefault();
-                ViewBag.BlogMeta = new BlogMeta(db);                
+                int commentCount = 0;
+                foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
+                {
+                    comment.WalkDawn(1);
+                    commentCount += comment.CommentCount + 1;
+                }
+                ViewBag.BlogMeta = new BlogMeta(db);
+                ViewBag.CommentCount = commentCount;
                 return View(article);
             }
         }
@@ -232,6 +217,65 @@ namespace KonigLabs.Controllers
                 return View(list);
             }
         }
+
+
+        public virtual ActionResult Comment(string name, string email, string text, int? commentId, int? postId)
+        {
+
+            using (var db = ApplicationDbContext.Create())
+            {
+                Article article = null;
+                Comment comment = null;
+                if (postId.HasValue)
+                {
+                    article = db.Articles.Where(a => a.Id == postId.Value).FirstOrDefault();
+                }
+                else
+                {
+                    if (commentId.HasValue)
+                    {
+                        comment = db.Comments.Where(c => c.Id == commentId.Value).FirstOrDefault();
+                        if (comment != null)
+                        {
+                            article = comment.Article;
+                        }
+                    }
+                }
+                if (article != null)
+                {
+                    var c = new Comment();
+                    c.Name = name;
+                    c.Email = email;
+                    c.Article = article;
+                    c.Content = text;
+                    c.Date = DateTime.Now;
+                    if (comment != null)
+                    {
+                        c.Parent = comment;
+                    }
+                    db.Comments.Add(c);
+                    db.SaveChanges();
+
+                    var sb = new StringBuilder();
+                    sb.AppendFormat("<p>{0}</p>", c.Name);
+                    sb.AppendFormat("<p>{0}</p>", c.Content);
+                    sb.AppendFormat("<p>{0}</p>", c.Email);
+
+                    BackgroundJob.Schedule(() => Tasks.SendEmailToAdmin(sb.ToString()), TimeSpan.FromSeconds(1));
+
+
+                }
+                return Content("ok");
+            }
+        }
+
+
+        public ActionResult PageNotFound()
+        {
+            return View("NotFound");
+        }
+
+
     }
 
 }
