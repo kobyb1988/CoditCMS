@@ -184,10 +184,10 @@
     <Compile Include="AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Codit\CommentController.cs" />
-    <Compile Include="Codit\TagController.cs" />
+    <Compile Include="Codit\Controllers\CommentController.cs" />
+    <Compile Include="Codit\Controllers\TagController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Codit\ArticleCategoryController.cs" />
+    <Compile Include="Codit\Controllers\ArticleCategoryController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -205,15 +205,15 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Codit\ArticleController.cs" />
-    <Compile Include="Codit\CategoryController.cs" />
-    <Compile Include="Codit\ClientController.cs" />
-    <Compile Include="Codit\ContactController.cs" />
-    <Compile Include="Codit\CrewController.cs" />
+    <Compile Include="Codit\Controllers\ArticleController.cs" />
+    <Compile Include="Codit\Controllers\CategoryController.cs" />
+    <Compile Include="Codit\Controllers\ClientController.cs" />
+    <Compile Include="Codit\Controllers\ContactController.cs" />
+    <Compile Include="Codit\Controllers\CrewController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Codit\ProjectController.cs" />
+    <Compile Include="Codit\Controllers\ProjectController.cs" />
     <Compile Include="CrewController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -327,19 +327,19 @@
     <Compile Include="Tasks.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Codit\Comment.xml">
+    <Content Include="Codit\XMLViews\Comment.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Codit\Tag.xml" />
-    <Content Include="Codit\ArticleCategory.xml" />
-    <Content Include="Codit\Contact.xml" />
-    <Content Include="Codit\Article.xml">
+    <Content Include="Codit\XMLViews\Tag.xml" />
+    <Content Include="Codit\XMLViews\ArticleCategory.xml" />
+    <Content Include="Codit\XMLViews\Contact.xml" />
+    <Content Include="Codit\XMLViews\Article.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Codit\Client.xml" />
-    <Content Include="Codit\Project.xml" />
-    <Content Include="Codit\ProjectCategory.xml" />
-    <Content Include="Codit\Location.xml" />
+    <Content Include="Codit\XMLViews\Client.xml" />
+    <Content Include="Codit\XMLViews\Project.xml" />
+    <Content Include="Codit\XMLViews\ProjectCategory.xml" />
+    <Content Include="Codit\XMLViews\Location.xml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\media\ajax\loadMore.html" />
@@ -468,11 +468,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Codit\CrewMember.xml" />
+    <Content Include="Codit\XMLViews\CrewMember.xml" />
     <Content Include="Scripts\Blog.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Codit\Modules.sitemap" />
+    <Content Include="Codit\XMLViews\Modules.sitemap" />
     <Content Include="Content\media\font\fontawesome-webfont.eot" />
     <Content Include="Content\media\font\fontawesome-webfont.ttf" />
     <Content Include="Content\media\font\fontawesome-webfont.woff" />

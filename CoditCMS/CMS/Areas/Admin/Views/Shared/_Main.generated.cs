@@ -751,7 +751,7 @@ WriteLiteral("                    ");
 
             
             #line 84 "..\..\Areas\Admin\Views\Shared\_Main.cshtml"
-               Write(RenderModulesTree(new Sitemap(@Url.Content(CMS.PagesSettings.Settings.SettingsFolderPath+"/Modules.sitemap")).SitemapList));
+               Write(RenderModulesTree(new Sitemap(@Url.Content(CMS.PagesSettings.Settings.CoditXMLViewsFolderPath+"/Modules.sitemap")).SitemapList));
 
             
             #line default

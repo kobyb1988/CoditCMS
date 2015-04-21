@@ -11,9 +11,22 @@ namespace KonigLabs
         public static void SendEmailToAdmin(string text)
         {
             var message = new MailMessage();
-            var toEmail = "aganzha@yandex.ru";
 
-            message.To.Add(new MailAddress(toEmail));
+            using (var db = DB.DAL.ApplicationDbContext.Create())
+            {
+                var adminEmails = db.SiteSettings.Where(s => s.Name == "AdminEmails").FirstOrDefault();
+                var emailList = "aganzha@yandex.ru";
+                if (adminEmails != null)
+                {
+                    emailList = adminEmails.Value;
+                }
+                foreach (var email in emailList.Split(','))
+                {
+                    message.To.Add(new MailAddress(email.Trim()));
+                }
+            }
+
+            
             message.BodyEncoding = System.Text.Encoding.UTF8;
             message.IsBodyHtml = true;
             message.Subject = "New comment";

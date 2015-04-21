@@ -20,7 +20,7 @@ namespace CMS.PagesSettings
 
         public const string AdminRole = "admin";
 
-        public const string SettingsFolderPath = "~/Codit";
+        public const string CoditXMLViewsFolderPath = "~/Codit/XMLViews";
         public const string MediaRoot = "http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS";/*"http://kobyb1988.github.io/CoditCMS/CoditCMS/CMS" "http://localhost:8000" */
 		private XDocument XDoc
 		{
@@ -88,7 +88,7 @@ namespace CMS.PagesSettings
 
 		public Settings(string entityTypeName)
 		{
-			string path = System.Web.HttpContext.Current.Server.MapPath(Path.Combine(SettingsFolderPath, entityTypeName + ".xml"));
+			string path = System.Web.HttpContext.Current.Server.MapPath(Path.Combine(CoditXMLViewsFolderPath, entityTypeName + ".xml"));
 			//TODO отловить ошибки
 			XDoc = XDocument.Load(path);
 			XDoc.Root.Attributes("xmlns").Remove();
