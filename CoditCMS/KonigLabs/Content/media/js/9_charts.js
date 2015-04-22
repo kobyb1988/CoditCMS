@@ -5,7 +5,7 @@ jQuery('.chart1').appear(function() {
         animate: 1500, barColor:"#00f1eb", trackColor:false, scaleColor:false, lineWidth:"14",
 	});
 setTimeout(function() {
-        $('.chart1').data('easyPieChart').update(80);
+        $('.chart1').data('easyPieChart').update(50);
     }, 80);
 });
 
@@ -15,7 +15,7 @@ jQuery('.chart2').appear(function() {
         animate: 1500, barColor:"#b9f4fa", trackColor:false, scaleColor:false, lineWidth:"14",
 });
     setTimeout(function() {
-        $('.chart2').data('easyPieChart').update(75);
+        $('.chart2').data('easyPieChart').update(20);
     }, 1000);
 });
 
@@ -25,7 +25,7 @@ jQuery('.chart3').appear(function() {
         animate: 1500, barColor:"#00f1eb", trackColor:false, scaleColor:false, lineWidth:"14",
 });
     setTimeout(function() {
-        $('.chart3').data('easyPieChart').update(60);
+        $('.chart3').data('easyPieChart').update(30);
     }, 1500);
 	});
 });
