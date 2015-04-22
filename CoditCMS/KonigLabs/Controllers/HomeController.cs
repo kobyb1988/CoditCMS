@@ -26,8 +26,7 @@ namespace KonigLabs.Controllers
             }
             if (language != LocalEntity.RU && language != LocalEntity.EN)
             {
-                Response.StatusCode = 404;
-                return View(MVC.Shared.Views.NotFound);
+                return View("NotFound");
             }
             var viewPath = "~/Views/Home/Index_{0}.cshtml";
             string view;
@@ -58,11 +57,10 @@ namespace KonigLabs.Controllers
                 var member = db.CrewMembers.Where(m => m.Id == id).FirstOrDefault();
                 if (member == null)
                 {
-                    Response.StatusCode = 404;
-                    return View(MVC.Shared.Views.NotFound);
+                    throw new HttpException(404, "NotFound");
                 }
                 var vm = new ViewMember(member);
-                return View(MVC.Shared.Views.DisplayTemplates.MemberBio, vm);
+                return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
             }
         }
 
@@ -73,11 +71,10 @@ namespace KonigLabs.Controllers
                 var project = db.Projects.Where(p => p.Id == id).FirstOrDefault();
                 if (project == null)
                 {
-                    Response.StatusCode = 404;
-                    return View();
+                    throw new HttpException(404, "NotFound");
                 }
                 var vm = new ViewProject(project);
-                return View(MVC.Shared.Views.DisplayTemplates.ProjectDescr, vm);
+                return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
             }
         }
 
@@ -88,15 +85,14 @@ namespace KonigLabs.Controllers
                 var article = db.Articles.Where(m => m.Id == id).FirstOrDefault();
                 if (article == null)
                 {
-                    Response.StatusCode = 404;
-                    return View(MVC.Shared.Views.NotFound);
+                    throw new HttpException(404, "NotFound");
                 }
                 var vm = new ViewArticle(article);
-                return View(MVC.Shared.Views.DisplayTemplates.ArticleFull, vm);
+                return View("~/Views/Shared/DisplayTemplates/ArticleFull.cshtml", vm);
             }
         }
 
-        public virtual ActionResult Projects(string language)
+        public ActionResult Projects(string language)
         {
             if (String.IsNullOrEmpty(language))
             {
@@ -104,7 +100,7 @@ namespace KonigLabs.Controllers
             }
             using (var db = ApplicationDbContext.Create())
             {
-                return View(MVC.Shared.Views.DisplayTemplates.MoreProjects, new ViewProjects(language, db));
+                return View("~/Views/Shared/DisplayTemplates/MoreProjects.cshtml", new ViewProjects(language, db));
             }
         }
 
@@ -151,11 +147,6 @@ namespace KonigLabs.Controllers
                     .Include(a => a.CrewMember.Files).Include(a => a.Comments)
                     .Include(a => a.Comments.Select(c => c.CrewMember))
                     .Where(a => a.Id == id).FirstOrDefault();
-                if (article == null)
-                {
-                    Response.StatusCode = 404;
-                    return View(MVC.Shared.Views.NotFound);
-                }
                 int commentCount = 0;
                 foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
                 {
@@ -279,10 +270,9 @@ namespace KonigLabs.Controllers
         }
 
 
-        public virtual ActionResult PageNotFound()
+        public ActionResult PageNotFound()
         {
-            Response.StatusCode = 404;
-            return View(MVC.Shared.Views.NotFound);
+            return View("NotFound");
         }
 
 
