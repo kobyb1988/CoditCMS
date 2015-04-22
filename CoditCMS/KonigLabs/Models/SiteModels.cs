@@ -267,6 +267,8 @@ namespace KonigLabs.Models
 
         public string Title { get; set; }
 
+        public string EmbeddedMedia { get; set; }
+
         public string Content { get; set; }
 
         public DateTime Date { get; set; }
@@ -325,13 +327,22 @@ namespace KonigLabs.Models
 
         public bool HasImageForBlog()
         {
-            return Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault() != null;
+            var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
+            if(ShowOnHomePage)
+            {
+                file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
+            }
+            return file != null;
         }
 
         public string GetBlogImage()
         {
             var answer = "";
-            var file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
+            var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
+            if (ShowOnHomePage)
+            {
+                file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
+            }                       
             if (file != null)
             {
                 answer = file.Name;

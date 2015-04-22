@@ -24,7 +24,8 @@
 	<form>
 		<tab name="General">
 		  <string name="Title" title="Название" />			
-		  <date name="Date"   title="Дата"/>
+			<string name="EmbeddedMedia" title="HTML перед постом (видео)"/>
+					<date name="Date"   title="Дата"/>
       <select name="Language" title="Язык">
         <option value="ru">ru</option>
         <option value="en">en</option>

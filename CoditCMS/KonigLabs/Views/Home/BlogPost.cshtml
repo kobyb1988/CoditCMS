@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
-    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader.cshtml");
+    Html.RenderPartial(MVC.Shared.Views.DisplayTemplates.BlogHeader);
 }
 
 <div class="pad90"></div>
@@ -37,6 +37,10 @@
                     @if (Model.HasImageForBlog())
                     {
                         <img src="@Url.Content(Model.GetBlogImage())" alt="" />
+                    }
+                    @if (!String.IsNullOrEmpty(Model.EmbeddedMedia))
+                    {
+                        <div class="vendor">@Html.Raw(Model.EmbeddedMedia)</div>
                     }
                     <h1 class="blog-title"><a href="/BlogPost/@Model.Id">@Model.Title</a></h1>
                     <h6>
@@ -91,7 +95,7 @@
                                             continue;
 
                                         }
-                                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Comment.cshtml", comment);                                    
+                                        Html.RenderPartial(MVC.Shared.Views.DisplayTemplates.Comment, comment);                                    
                                     }
                                 </ul>
                             </div>
@@ -114,7 +118,7 @@
 
                 @{
                     var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
-                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane.cshtml", meta);
+                    Html.RenderPartial(MVC.Shared.Views.DisplayTemplates.BlogPane, meta);
                 }
 
             </div>

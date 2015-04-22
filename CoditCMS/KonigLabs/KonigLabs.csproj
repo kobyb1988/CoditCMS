@@ -214,9 +214,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Codit\Controllers\ProjectController.cs" />
-    <Compile Include="CrewController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="DefaultController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -304,6 +301,10 @@
     <Compile Include="Migrations\201504191000409_ProjectUrl.cs" />
     <Compile Include="Migrations\201504191000409_ProjectUrl.Designer.cs">
       <DependentUpon>201504191000409_ProjectUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504220821529_EmbeddedMediaForArticle.cs" />
+    <Compile Include="Migrations\201504220821529_EmbeddedMediaForArticle.Designer.cs">
+      <DependentUpon>201504220821529_EmbeddedMediaForArticle.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -622,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504191000409_ProjectUrl.resx">
       <DependentUpon>201504191000409_ProjectUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504220821529_EmbeddedMediaForArticle.resx">
+      <DependentUpon>201504220821529_EmbeddedMediaForArticle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
