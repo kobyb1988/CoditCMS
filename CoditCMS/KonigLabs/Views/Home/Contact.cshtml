@@ -1,7 +1,5 @@
 ﻿@model KonigLabs.Models.ViewContact
 
-<span>@Model.Status</span>
-
 <form id="ajax-contact-form">
     @Html.ValidationMessageFor(m => m.Name)<br />
     @Html.TextBoxFor(m => m.Name, new { placeholder = "Ваше имя", @class = "col-xs-12  col-md-12", autocomplete = "off" })<br/>

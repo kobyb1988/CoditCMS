@@ -27,15 +27,14 @@ using T4MVC;
 public static partial class MVC
 {
     public static KonigLabs.Controllers.AccountController Account = new KonigLabs.Controllers.T4MVC_AccountController();
-    public static CMS.Areas.Admin.Controllers.ArticleController Article = new CMS.Areas.Admin.Controllers.T4MVC_ArticleController();
-    public static CMS.Areas.Admin.Controllers.CategoryController Category = new CMS.Areas.Admin.Controllers.T4MVC_CategoryController();
-    public static CMS.Areas.Admin.Controllers.ClientController Client = new CMS.Areas.Admin.Controllers.T4MVC_ClientController();
-    public static CMS.Areas.Admin.Controllers.ContactController Contact = new CMS.Areas.Admin.Controllers.T4MVC_ContactController();
-    public static CMS.Areas.Admin.Controllers.CrewController Crew = new CMS.Areas.Admin.Controllers.T4MVC_CrewController();
     public static KonigLabs.Controllers.DefaultController Default = new KonigLabs.Controllers.T4MVC_DefaultController();
     public static KonigLabs.Controllers.HomeController Home = new KonigLabs.Controllers.T4MVC_HomeController();
     public static KonigLabs.Controllers.ManageController Manage = new KonigLabs.Controllers.T4MVC_ManageController();
-    public static CMS.Areas.Admin.Controllers.ProjectController Project = new CMS.Areas.Admin.Controllers.T4MVC_ProjectController();
+    public static T4MVC.ArticleController Article = new T4MVC.ArticleController();
+    public static T4MVC.CategoryController Category = new T4MVC.CategoryController();
+    public static T4MVC.ClientController Client = new T4MVC.ClientController();
+    public static T4MVC.ContactController Contact = new T4MVC.ContactController();
+    public static T4MVC.ProjectController Project = new T4MVC.ProjectController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -68,19 +67,6 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     public string Protocol { get; set; }
     public RouteValueDictionary RouteValueDictionary { get; set; }
 }
-[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-internal partial class T4MVC_CMS_ViewModels_FineUploaderResult : CMS.ViewModels.FineUploaderResult, IT4MVCActionResult
-{
-    public T4MVC_CMS_ViewModels_FineUploaderResult(string area, string controller, string action, string protocol = null): base(default(bool), null, null, null)
-    {
-        this.InitMVCT4Result(area, controller, action, protocol);
-    }
-    
-    public string Controller { get; set; }
-    public string Action { get; set; }
-    public string Protocol { get; set; }
-    public RouteValueDictionary RouteValueDictionary { get; set; }
-}
 
 
 
@@ -92,6 +78,7 @@ namespace Links
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
+        public static readonly string Blog_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Blog.min.js") ? Url("Blog.min.js") : Url("Blog.js");
         public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
         public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
         public static readonly string jquery_1_10_2_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.intellisense.min.js") ? Url("jquery-1.10.2.intellisense.min.js") : Url("jquery-1.10.2.intellisense.js");
@@ -117,106 +104,213 @@ namespace Links
              
         public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Media {
-            private const string URLPATH = "~/Content/Media";
+        public static class media {
+            private const string URLPATH = "~/Content/media";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string _1_1__jpg = Url("1(1).jpg");
-            public static readonly string _1_jpg = Url("1.jpg");
-            public static readonly string _2_1__jpg = Url("2(1).jpg");
-            public static readonly string _2_jpg = Url("2.jpg");
-            public static readonly string _3_1__jpg = Url("3(1).jpg");
-            public static readonly string _3_jpg = Url("3.jpg");
-            public static readonly string _4_1__jpg = Url("4(1).jpg");
-            public static readonly string _4_jpg = Url("4.jpg");
-            public static readonly string _5_jpg = Url("5.jpg");
-            public static readonly string _6_jpg = Url("6.jpg");
-            public static readonly string _7_jpg = Url("7.jpg");
-            public static readonly string _71ikiLcMrGYIGyvMYn7ZsljFfaS4wGaxf80_aqUxjBw_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/71ikiLcMrGYIGyvMYn7ZsljFfaS4wGaxf80-aqUxjBw.min.js") ? Url("71ikiLcMrGYIGyvMYn7ZsljFfaS4wGaxf80-aqUxjBw.min.js") : Url("71ikiLcMrGYIGyvMYn7ZsljFfaS4wGaxf80-aqUxjBw.js");
-            public static readonly string _8_jpg = Url("8.jpg");
-            public static readonly string a1_jpg = Url("a1.jpg");
-            public static readonly string a2_jpg = Url("a2.jpg");
-            public static readonly string a3_jpg = Url("a3.jpg");
-            public static readonly string a4_jpg = Url("a4.jpg");
-            public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
-            public static readonly string cb_scout2_png = Url("cb_scout2.png");
-            public static readonly string charts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/charts.min.js") ? Url("charts.min.js") : Url("charts.js");
-            public static readonly string common_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/common.min.js") ? Url("common.min.js") : Url("common.js");
-            public static readonly string controls_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/controls.min.js") ? Url("controls.min.js") : Url("controls.js");
-            public static readonly string count_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/count.min.js") ? Url("count.min.js") : Url("count.js");
-            public static readonly string css = Url("css");
-            public static readonly string css_1_ = Url("css(1)");
-            public static readonly string cubeportfolio_min_css = Url("cubeportfolio.min.css");
-            public static readonly string custom_modernizr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/custom.modernizr.min.js") ? Url("custom.modernizr.min.js") : Url("custom.modernizr.js");
-            public static readonly string face_logo_png = Url("face_logo.png");
-            public static readonly string geocoder_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/geocoder.min.js") ? Url("geocoder.min.js") : Url("geocoder.js");
-            public static readonly string gmap3_min_js = Url("gmap3.min.js");
-            public static readonly string google_white2_png = Url("google_white2.png");
-            public static readonly string html5player_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/html5player.min.js") ? Url("html5player.min.js") : Url("html5player.js");
-            public static readonly string imgs8_png = Url("imgs8.png");
-            public static readonly string jquery_appear_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.appear.min.js") ? Url("jquery.appear.min.js") : Url("jquery.appear.js");
-            public static readonly string jquery_cubeportfolio_min_js = Url("jquery.cubeportfolio.min.js");
-            public static readonly string jquery_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.min.js") ? Url("jquery.min.js") : Url("jquery.js");
-            public static readonly string js = Url("js");
-            public static readonly string logo_png = Url("logo.png");
-            public static readonly string logo1_png = Url("logo1.png");
-            public static readonly string logo2_png = Url("logo2.png");
-            public static readonly string logo3_png = Url("logo3.png");
-            public static readonly string logo4_png = Url("logo4.png");
-            public static readonly string logo5_png = Url("logo5.png");
-            public static readonly string logo6_png = Url("logo6.png");
-            public static readonly string logo7_png = Url("logo7.png");
-            public static readonly string logo8_png = Url("logo8.png");
-            public static readonly string main_1__js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/main(1).min.js") ? Url("main(1).min.js") : Url("main(1).js");
-            public static readonly string main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/main.min.js") ? Url("main.min.js") : Url("main.js");
-            public static readonly string map_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/map.min.js") ? Url("map.min.js") : Url("map.js");
-            public static readonly string mapcnt6_png = Url("mapcnt6.png");
-            public static readonly string marker_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/marker.min.js") ? Url("marker.min.js") : Url("marker.js");
-            public static readonly string onion_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/onion.min.js") ? Url("onion.min.js") : Url("onion.js");
-            public static readonly string owl_carousel_min_js = Url("owl.carousel.min.js");
-            public static readonly string parallax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/parallax.min.js") ? Url("parallax.min.js") : Url("parallax.js");
-            public static readonly string player_api = Url("player_api");
-            public static readonly string PnwNOtG06Dg_html = Url("PnwNOtG06Dg.html");
-            public static readonly string QuotaService_RecordEvent = Url("QuotaService.RecordEvent");
-            public static readonly string retina_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/retina.min.js") ? Url("retina.min.js") : Url("retina.js");
-            public static readonly string royal_preloader_min_js = Url("royal_preloader.min.js");
-            public static readonly string scripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/scripts.min.js") ? Url("scripts.min.js") : Url("scripts.js");
-            public static readonly string smooth_scroll_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/smooth-scroll.min.js") ? Url("smooth-scroll.min.js") : Url("smooth-scroll.js");
-            public static readonly string stats_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/stats.min.js") ? Url("stats.min.js") : Url("stats.js");
-            public static readonly string util_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/util.min.js") ? Url("util.min.js") : Url("util.js");
-            public static readonly string ViewportInfoService_GetViewportInfo = Url("ViewportInfoService.GetViewportInfo");
-            public static readonly string vt = Url("vt");
-            public static readonly string vt_1_ = Url("vt(1)");
-            public static readonly string vt_10_ = Url("vt(10)");
-            public static readonly string vt_11_ = Url("vt(11)");
-            public static readonly string vt_12_ = Url("vt(12)");
-            public static readonly string vt_13_ = Url("vt(13)");
-            public static readonly string vt_14_ = Url("vt(14)");
-            public static readonly string vt_15_ = Url("vt(15)");
-            public static readonly string vt_16_ = Url("vt(16)");
-            public static readonly string vt_17_ = Url("vt(17)");
-            public static readonly string vt_18_ = Url("vt(18)");
-            public static readonly string vt_19_ = Url("vt(19)");
-            public static readonly string vt_2_ = Url("vt(2)");
-            public static readonly string vt_20_ = Url("vt(20)");
-            public static readonly string vt_21_ = Url("vt(21)");
-            public static readonly string vt_22_ = Url("vt(22)");
-            public static readonly string vt_23_ = Url("vt(23)");
-            public static readonly string vt_24_ = Url("vt(24)");
-            public static readonly string vt_25_ = Url("vt(25)");
-            public static readonly string vt_3_ = Url("vt(3)");
-            public static readonly string vt_4_ = Url("vt(4)");
-            public static readonly string vt_5_ = Url("vt(5)");
-            public static readonly string vt_6_ = Url("vt(6)");
-            public static readonly string vt_7_ = Url("vt(7)");
-            public static readonly string vt_8_ = Url("vt(8)");
-            public static readonly string vt_9_ = Url("vt(9)");
-            public static readonly string wow_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/wow.min.js") ? Url("wow.min.js") : Url("wow.js");
-            public static readonly string www_embed_player_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/www-embed-player.min.js") ? Url("www-embed-player.min.js") : Url("www-embed-player.js");
-            public static readonly string www_widgetapi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/www-widgetapi.min.js") ? Url("www-widgetapi.min.js") : Url("www-widgetapi.js");
-            public static readonly string YTPlayer_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/YTPlayer.min.js") ? Url("YTPlayer.min.js") : Url("YTPlayer.js");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class ajax {
+                private const string URLPATH = "~/Content/media/ajax";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string loadMore_html = Url("loadMore.html");
+                public static readonly string project1_html = Url("project1.html");
+                public static readonly string project10_html = Url("project10.html");
+                public static readonly string project11_html = Url("project11.html");
+                public static readonly string project2_html = Url("project2.html");
+                public static readonly string project3_html = Url("project3.html");
+                public static readonly string project4_html = Url("project4.html");
+                public static readonly string project5_html = Url("project5.html");
+                public static readonly string project6_html = Url("project6.html");
+                public static readonly string project7_html = Url("project7.html");
+                public static readonly string project8_html = Url("project8.html");
+                public static readonly string project9_html = Url("project9.html");
+                public static readonly string team1_html = Url("team1.html");
+                public static readonly string team2_html = Url("team2.html");
+                public static readonly string team3_html = Url("team3.html");
+                public static readonly string team4_html = Url("team4.html");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class css {
+                private const string URLPATH = "~/Content/media/css";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _1_bootstrap_min_css = Url("1_bootstrap.min.css");
+                public static readonly string _2_style_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/2_style.min.css") ? Url("2_style.min.css") : Url("2_style.css");
+                     
+                public static readonly string _3_colour_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/3_colour.min.css") ? Url("3_colour.min.css") : Url("3_colour.css");
+                     
+                public static readonly string _4_animate_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/4_animate.min.css") ? Url("4_animate.min.css") : Url("4_animate.css");
+                     
+                public static readonly string _5_font_awesome_min_css = Url("5_font-awesome.min.css");
+                public static readonly string _6_owl_carousel_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/6_owl.carousel.min.css") ? Url("6_owl.carousel.min.css") : Url("6_owl.carousel.css");
+                     
+                public static readonly string _7_cubeportfolio_min_css = Url("7_cubeportfolio.min.css");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class font {
+                private const string URLPATH = "~/Content/media/font";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string fontawesome_webfont_eot = Url("fontawesome-webfont.eot");
+                public static readonly string fontawesome_webfont_svg = Url("fontawesome-webfont.svg");
+                public static readonly string fontawesome_webfont_ttf = Url("fontawesome-webfont.ttf");
+                public static readonly string fontawesome_webfont_woff = Url("fontawesome-webfont.woff");
+                public static readonly string FontAwesome_otf = Url("FontAwesome.otf");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class img {
+                private const string URLPATH = "~/Content/media/img";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _404_3_jpg = Url("404_3.jpg");
+                public static readonly string arrow_left_light_png = Url("arrow-left-light.png");
+                public static readonly string arrow_right_light_png = Url("arrow-right-light.png");
+                public static readonly string avatar_png = Url("avatar.png");
+                public static readonly string big_image_jpg = Url("big_image.jpg");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class blog {
+                    private const string URLPATH = "~/Content/media/img/blog";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string _1_jpg = Url("1.jpg");
+                    public static readonly string _2_jpg = Url("2.jpg");
+                    public static readonly string _3_jpg = Url("3.jpg");
+                    public static readonly string a1_jpg = Url("a1.jpg");
+                    public static readonly string a2_jpg = Url("a2.jpg");
+                    public static readonly string a3_jpg = Url("a3.jpg");
+                    public static readonly string a4_jpg = Url("a4.jpg");
+                    public static readonly string author_png = Url("author.png");
+                    public static readonly string avatar1_jpg = Url("avatar1.jpg");
+                    public static readonly string avatar2_jpg = Url("avatar2.jpg");
+                    public static readonly string avatar3_jpg = Url("avatar3.jpg");
+                }
+            
+                public static readonly string cbp_loading_popup_gif = Url("cbp-loading-popup.gif");
+                public static readonly string cbp_loading_gif = Url("cbp-loading.gif");
+                public static readonly string cbp_sprite_png = Url("cbp-sprite.png");
+                public static readonly string charts_jpg = Url("charts.jpg");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class clients {
+                    private const string URLPATH = "~/Content/media/img/clients";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string clients_bg_jpg = Url("clients_bg.jpg");
+                    public static readonly string logo1_png = Url("logo1.png");
+                    public static readonly string logo2_png = Url("logo2.png");
+                    public static readonly string logo3_png = Url("logo3.png");
+                    public static readonly string logo4_png = Url("logo4.png");
+                    public static readonly string logo5_png = Url("logo5.png");
+                    public static readonly string logo6_png = Url("logo6.png");
+                    public static readonly string logo7_png = Url("logo7.png");
+                    public static readonly string logo8_png = Url("logo8.png");
+                }
+            
+                public static readonly string face_logo_png = Url("face_logo.png");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class gallery {
+                    private const string URLPATH = "~/Content/media/img/gallery";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string _1big_jpg = Url("1big.jpg");
+                    public static readonly string _2big_jpg = Url("2big.jpg");
+                    public static readonly string _3big_jpg = Url("3big.jpg");
+                    public static readonly string _4big_jpg = Url("4big.jpg");
+                    public static readonly string _5big_jpg = Url("5big.jpg");
+                    public static readonly string _6big_jpg = Url("6big.jpg");
+                    public static readonly string _7big_jpg = Url("7big.jpg");
+                    public static readonly string _8big_jpg = Url("8big.jpg");
+                    public static readonly string p1_jpg = Url("p1.jpg");
+                    public static readonly string p1_png = Url("p1.png");
+                    public static readonly string p10_jpg = Url("p10.jpg");
+                    public static readonly string p11_jpg = Url("p11.jpg");
+                    public static readonly string p12_jpg = Url("p12.jpg");
+                    public static readonly string p13_jpg = Url("p13.jpg");
+                    public static readonly string p14_jpg = Url("p14.jpg");
+                    public static readonly string p2_jpg = Url("p2.jpg");
+                    public static readonly string p3_jpg = Url("p3.jpg");
+                    public static readonly string p4_jpg = Url("p4.jpg");
+                    public static readonly string p5_jpg = Url("p5.jpg");
+                    public static readonly string p6_jpg = Url("p6.jpg");
+                    public static readonly string p7_jpg = Url("p7.jpg");
+                    public static readonly string p8_jpg = Url("p8.jpg");
+                    public static readonly string p9_jpg = Url("p9.jpg");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class thumb {
+                        private const string URLPATH = "~/Content/media/img/gallery/thumb";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string _1_jpg = Url("1.jpg");
+                        public static readonly string _10_jpg = Url("10.jpg");
+                        public static readonly string _2_jpg = Url("2.jpg");
+                        public static readonly string _3_jpg = Url("3.jpg");
+                        public static readonly string _4_jpg = Url("4.jpg");
+                        public static readonly string _5_jpg = Url("5.jpg");
+                        public static readonly string _6_jpg = Url("6.jpg");
+                        public static readonly string _7_jpg = Url("7.jpg");
+                        public static readonly string _8_jpg = Url("8.jpg");
+                        public static readonly string _9_jpg = Url("9.jpg");
+                    }
+                
+                }
+            
+                public static readonly string loader_gif = Url("loader.gif");
+                public static readonly string logo_png = Url("logo.png");
+                public static readonly string logo_2x_png = Url("logo@2x.png");
+                public static readonly string logo_site2_png = Url("logo_site2.png");
+                public static readonly string marker_png = Url("marker.png");
+                public static readonly string milestones_jpg = Url("milestones.jpg");
+                public static readonly string overlay_png = Url("overlay.png");
+                public static readonly string overlay2_png = Url("overlay2.png");
+                public static readonly string search_512_png = Url("search-512.png");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class team {
+                    private const string URLPATH = "~/Content/media/img/team";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string _1_jpg = Url("1.jpg");
+                    public static readonly string _2_jpg = Url("2.jpg");
+                    public static readonly string _3_jpg = Url("3.jpg");
+                    public static readonly string _4_jpg = Url("4.jpg");
+                    public static readonly string alex_jpg = Url("alex.jpg");
+                    public static readonly string arthur_jpg = Url("arthur.jpg");
+                    public static readonly string kolya_jpg = Url("kolya.jpg");
+                }
+            
+                public static readonly string youtube_jpg = Url("youtube.jpg");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class js {
+                private const string URLPATH = "~/Content/media/js";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _1_jquery_1_11_2_min_js = Url("1_jquery-1.11.2.min.js");
+                public static readonly string _2_retina_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/2_retina.min.js") ? Url("2_retina.min.js") : Url("2_retina.js");
+                public static readonly string _21_bootstrap_min_js = Url("21_bootstrap.min.js");
+                public static readonly string _3_royal_preloader_min_js = Url("3_royal_preloader.min.js");
+                public static readonly string _4_smooth_scroll_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/4_smooth-scroll.min.js") ? Url("4_smooth-scroll.min.js") : Url("4_smooth-scroll.js");
+                public static readonly string _5_jquery_appear_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/5_jquery.appear.min.js") ? Url("5_jquery.appear.min.js") : Url("5_jquery.appear.js");
+                public static readonly string _6_parallax_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/6_parallax.min.js") ? Url("6_parallax.min.js") : Url("6_parallax.js");
+                public static readonly string _7_wow_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/7_wow.min.js") ? Url("7_wow.min.js") : Url("7_wow.js");
+                public static readonly string _8_count_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/8_count.min.js") ? Url("8_count.min.js") : Url("8_count.js");
+                public static readonly string _9_charts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/9_charts.min.js") ? Url("9_charts.min.js") : Url("9_charts.js");
+                public static readonly string _91_jquery_cubeportfolio_min_js = Url("91_jquery.cubeportfolio.min.js");
+                public static readonly string _92_main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/92_main.min.js") ? Url("92_main.min.js") : Url("92_main.js");
+                public static readonly string _93_gmap3_min_js = Url("93_gmap3.min.js");
+                public static readonly string _94_scripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/94_scripts.min.js") ? Url("94_scripts.min.js") : Url("94_scripts.js");
+                public static readonly string _95_owl_carousel_min_js = Url("95_owl.carousel.min.js");
+                public static readonly string _96_YTPlayer_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/96_YTPlayer.min.js") ? Url("96_YTPlayer.min.js") : Url("96_YTPlayer.js");
+                public static readonly string custom_modernizr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/custom.modernizr.min.js") ? Url("custom.modernizr.min.js") : Url("custom.modernizr.js");
+            }
+        
         }
     
+        public static readonly string PagedList_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PagedList.min.css") ? Url("PagedList.min.css") : Url("PagedList.css");
+             
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
              
     }
@@ -230,6 +324,7 @@ namespace Links
             public static class Assets
             {
                 public const string _references_js = "~/Scripts/_references.js"; 
+                public const string Blog_js = "~/Scripts/Blog.js"; 
                 public const string bootstrap_js = "~/Scripts/bootstrap.js"; 
                 public const string bootstrap_min_js = "~/Scripts/bootstrap.min.js"; 
                 public const string jquery_1_10_2_intellisense_js = "~/Scripts/jquery-1.10.2.intellisense.js"; 
@@ -246,47 +341,101 @@ namespace Links
         }
         public static partial class Content 
         {
-            public static partial class Media 
+            public static partial class media 
             {
+                public static partial class ajax 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class css 
+                {
+                    public static class Assets
+                    {
+                        public const string _1_bootstrap_min_css = "~/Content/media/css/1_bootstrap.min.css";
+                        public const string _2_style_css = "~/Content/media/css/2_style.css";
+                        public const string _3_colour_css = "~/Content/media/css/3_colour.css";
+                        public const string _4_animate_css = "~/Content/media/css/4_animate.css";
+                        public const string _5_font_awesome_min_css = "~/Content/media/css/5_font-awesome.min.css";
+                        public const string _6_owl_carousel_css = "~/Content/media/css/6_owl.carousel.css";
+                        public const string _7_cubeportfolio_min_css = "~/Content/media/css/7_cubeportfolio.min.css";
+                    }
+                }
+                public static partial class font 
+                {
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class img 
+                {
+                    public static partial class blog 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class clients 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class gallery 
+                    {
+                        public static partial class thumb 
+                        {
+                            public static class Assets
+                            {
+                            }
+                        }
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static partial class team 
+                    {
+                        public static class Assets
+                        {
+                        }
+                    }
+                    public static class Assets
+                    {
+                    }
+                }
+                public static partial class js 
+                {
+                    public static class Assets
+                    {
+                        public const string _1_jquery_1_11_2_min_js = "~/Content/media/js/1_jquery-1.11.2.min.js"; 
+                        public const string _2_retina_js = "~/Content/media/js/2_retina.js"; 
+                        public const string _21_bootstrap_min_js = "~/Content/media/js/21_bootstrap.min.js"; 
+                        public const string _3_royal_preloader_min_js = "~/Content/media/js/3_royal_preloader.min.js"; 
+                        public const string _4_smooth_scroll_js = "~/Content/media/js/4_smooth-scroll.js"; 
+                        public const string _5_jquery_appear_js = "~/Content/media/js/5_jquery.appear.js"; 
+                        public const string _6_parallax_js = "~/Content/media/js/6_parallax.js"; 
+                        public const string _7_wow_js = "~/Content/media/js/7_wow.js"; 
+                        public const string _8_count_js = "~/Content/media/js/8_count.js"; 
+                        public const string _9_charts_js = "~/Content/media/js/9_charts.js"; 
+                        public const string _91_jquery_cubeportfolio_min_js = "~/Content/media/js/91_jquery.cubeportfolio.min.js"; 
+                        public const string _92_main_js = "~/Content/media/js/92_main.js"; 
+                        public const string _93_gmap3_min_js = "~/Content/media/js/93_gmap3.min.js"; 
+                        public const string _94_scripts_js = "~/Content/media/js/94_scripts.js"; 
+                        public const string _95_owl_carousel_min_js = "~/Content/media/js/95_owl.carousel.min.js"; 
+                        public const string _96_YTPlayer_js = "~/Content/media/js/96_YTPlayer.js"; 
+                        public const string custom_modernizr_js = "~/Content/media/js/custom.modernizr.js"; 
+                    }
+                }
                 public static class Assets
                 {
-                    public const string _71ikiLcMrGYIGyvMYn7ZsljFfaS4wGaxf80_aqUxjBw_js = "~/Content/Media/71ikiLcMrGYIGyvMYn7ZsljFfaS4wGaxf80-aqUxjBw.js"; 
-                    public const string bootstrap_min_js = "~/Content/Media/bootstrap.min.js"; 
-                    public const string charts_js = "~/Content/Media/charts.js"; 
-                    public const string common_js = "~/Content/Media/common.js"; 
-                    public const string controls_js = "~/Content/Media/controls.js"; 
-                    public const string count_js = "~/Content/Media/count.js"; 
-                    public const string cubeportfolio_min_css = "~/Content/Media/cubeportfolio.min.css";
-                    public const string custom_modernizr_js = "~/Content/Media/custom.modernizr.js"; 
-                    public const string geocoder_js = "~/Content/Media/geocoder.js"; 
-                    public const string gmap3_min_js = "~/Content/Media/gmap3.min.js"; 
-                    public const string html5player_js = "~/Content/Media/html5player.js"; 
-                    public const string jquery_appear_js = "~/Content/Media/jquery.appear.js"; 
-                    public const string jquery_cubeportfolio_min_js = "~/Content/Media/jquery.cubeportfolio.min.js"; 
-                    public const string jquery_js = "~/Content/Media/jquery.js"; 
-                    public const string main_1__js = "~/Content/Media/main(1).js"; 
-                    public const string main_js = "~/Content/Media/main.js"; 
-                    public const string map_js = "~/Content/Media/map.js"; 
-                    public const string marker_js = "~/Content/Media/marker.js"; 
-                    public const string onion_js = "~/Content/Media/onion.js"; 
-                    public const string owl_carousel_min_js = "~/Content/Media/owl.carousel.min.js"; 
-                    public const string parallax_js = "~/Content/Media/parallax.js"; 
-                    public const string retina_js = "~/Content/Media/retina.js"; 
-                    public const string royal_preloader_min_js = "~/Content/Media/royal_preloader.min.js"; 
-                    public const string scripts_js = "~/Content/Media/scripts.js"; 
-                    public const string smooth_scroll_js = "~/Content/Media/smooth-scroll.js"; 
-                    public const string stats_js = "~/Content/Media/stats.js"; 
-                    public const string util_js = "~/Content/Media/util.js"; 
-                    public const string wow_js = "~/Content/Media/wow.js"; 
-                    public const string www_embed_player_js = "~/Content/Media/www-embed-player.js"; 
-                    public const string www_widgetapi_js = "~/Content/Media/www-widgetapi.js"; 
-                    public const string YTPlayer_js = "~/Content/Media/YTPlayer.js"; 
                 }
             }
             public static class Assets
             {
                 public const string bootstrap_css = "~/Content/bootstrap.css";
                 public const string bootstrap_min_css = "~/Content/bootstrap.min.css";
+                public const string PagedList_css = "~/Content/PagedList.css";
                 public const string Site_css = "~/Content/Site.css";
             }
         }

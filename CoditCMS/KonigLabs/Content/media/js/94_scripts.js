@@ -32,23 +32,23 @@ $(document).ready(function () {
                 type: "POST",
                 url: "/home/contact/",
                 data: str,
-                success: function(msg) {
+                success: function(msg, some, response) {
                     // Message Sent - Show the 'Thank You' message and hide the form
-                    if(msg == 'OK') {
-                        result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
-                        $("#fields").hide();
-                    } else {
-                        result = msg;
-                    }						
-                    var fields = $('#fields').html(result);
-                    if(fields.find('span').first().text().match('Спасибо')){
-                        fields.find(':input').each(function(i, el){
-                            //console.log(el.type);
+                    //if(msg == 'OK') {
+                    //    result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+                    //    $("#fields").hide();
+                    //} else {
+                    //    result = msg;
+                    //}						
+                    
+                    var fields = $('#fields').html(msg);
+                    if(response.status == 201){
+                        fields.find(':input').each(function(i, el){                            
                             if(el.type.toLowerCase()!='submit'){
                                 $(el).val('');
-                            }
-                            
+                            }                            
                         })
+                        toastr.info("Спасибо за ваше сообщение, мы обязательно свяжемся с вами!")
                     }
                     bindForm()
                     //$('#note').html(result);

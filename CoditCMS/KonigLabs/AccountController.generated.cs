@@ -137,6 +137,7 @@ namespace KonigLabs.Controllers
             public readonly string ExternalLoginCallback = "ExternalLoginCallback";
             public readonly string ExternalLoginConfirmation = "ExternalLoginConfirmation";
             public readonly string LogOff = "LogOff";
+            public readonly string LogOut = "LogOut";
             public readonly string ExternalLoginFailure = "ExternalLoginFailure";
         }
 
@@ -156,6 +157,7 @@ namespace KonigLabs.Controllers
             public const string ExternalLoginCallback = "ExternalLoginCallback";
             public const string ExternalLoginConfirmation = "ExternalLoginConfirmation";
             public const string LogOff = "LogOff";
+            public const string LogOut = "LogOut";
             public const string ExternalLoginFailure = "ExternalLoginFailure";
         }
 
@@ -520,6 +522,17 @@ namespace KonigLabs.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOff);
             LogOffOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void LogOutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult LogOut()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LogOut);
+            LogOutOverride(callInfo);
             return callInfo;
         }
 

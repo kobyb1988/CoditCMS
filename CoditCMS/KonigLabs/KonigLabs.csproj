@@ -366,6 +366,7 @@
     <Content Include="Content\media\css\5_font-awesome.min.css" />
     <Content Include="Content\media\css\6_owl.carousel.css" />
     <Content Include="Content\media\css\2_style.css" />
+    <Content Include="Content\media\css\8_toastr.css" />
     <Content Include="Content\media\font\fontawesome-webfont.svg" />
     <Content Include="Content\media\img\404_3.jpg" />
     <Content Include="Content\media\img\arrow-left-light.png" />
@@ -448,6 +449,7 @@
     <Content Include="Content\media\img\team\kolya.jpg" />
     <Content Include="Content\media\img\youtube.jpg" />
     <Content Include="Content\media\js\21_bootstrap.min.js" />
+    <Content Include="Content\media\js\921_toastr.js" />
     <Content Include="Content\media\js\9_charts.js" />
     <Content Include="Content\media\js\8_count.js" />
     <Content Include="Content\media\js\custom.modernizr.js" />

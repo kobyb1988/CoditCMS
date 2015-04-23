@@ -26,7 +26,8 @@ namespace KonigLabs.Controllers
             }
             if (language != LocalEntity.RU && language != LocalEntity.EN)
             {
-                return View("NotFound");
+                Response.StatusCode = 404;
+                return View("NotFound"); 
             }
             var viewPath = "~/Views/Home/Index_{0}.cshtml";
             string view;
@@ -57,7 +58,8 @@ namespace KonigLabs.Controllers
                 var member = db.CrewMembers.Where(m => m.Id == id).FirstOrDefault();
                 if (member == null)
                 {
-                    throw new HttpException(404, "NotFound");
+                    Response.StatusCode = 404;
+                    return View("NotFound"); 
                 }
                 var vm = new ViewMember(member);
                 return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
@@ -71,7 +73,8 @@ namespace KonigLabs.Controllers
                 var project = db.Projects.Where(p => p.Id == id).FirstOrDefault();
                 if (project == null)
                 {
-                    throw new HttpException(404, "NotFound");
+                     Response.StatusCode = 404;
+                    return View("NotFound"); 
                 }
                 var vm = new ViewProject(project);
                 return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
@@ -85,14 +88,15 @@ namespace KonigLabs.Controllers
                 var article = db.Articles.Where(m => m.Id == id).FirstOrDefault();
                 if (article == null)
                 {
-                    throw new HttpException(404, "NotFound");
+                    Response.StatusCode = 404;
+                    return View("NotFound");
                 }
                 var vm = new ViewArticle(article);
                 return View("~/Views/Shared/DisplayTemplates/ArticleFull.cshtml", vm);
             }
         }
 
-        public ActionResult Projects(string language)
+        public virtual ActionResult Projects(string language)
         {
             if (String.IsNullOrEmpty(language))
             {
@@ -122,6 +126,7 @@ namespace KonigLabs.Controllers
                     db.SaveChanges();
                 }
                 contact.Status = "Спасибо за ваше сообщение, мы обязательно свяжемся с вами!";
+                Response.StatusCode = 201;
 
                 var sb = new StringBuilder();
                 sb.AppendFormat("<p>{0}</p>", contact.Name);
@@ -147,6 +152,11 @@ namespace KonigLabs.Controllers
                     .Include(a => a.CrewMember.Files).Include(a => a.Comments)
                     .Include(a => a.Comments.Select(c => c.CrewMember))
                     .Where(a => a.Id == id).FirstOrDefault();
+                if (article == null)
+                {
+                    Response.StatusCode = 404;
+                    return View("NotFound"); 
+                }
                 int commentCount = 0;
                 foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
                 {
@@ -270,8 +280,9 @@ namespace KonigLabs.Controllers
         }
 
 
-        public ActionResult PageNotFound()
+        public virtual ActionResult PageNotFound()
         {
+            Response.StatusCode = 404;
             return View("NotFound");
         }
 

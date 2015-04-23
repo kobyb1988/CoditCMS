@@ -37,24 +37,38 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _CoditLayout = "_CoditLayout";
                 public readonly string _Layout = "_Layout";
                 public readonly string _LoginPartial = "_LoginPartial";
                 public readonly string Error = "Error";
                 public readonly string Lockout = "Lockout";
+                public readonly string NotFound = "NotFound";
+                public readonly string old_Layout = "old_Layout";
             }
+            public readonly string _CoditLayout = "~/Views/Shared/_CoditLayout.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _LoginPartial = "~/Views/Shared/_LoginPartial.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
             public readonly string Lockout = "~/Views/Shared/Lockout.cshtml";
+            public readonly string NotFound = "~/Views/Shared/NotFound.cshtml";
+            public readonly string old_Layout = "~/Views/Shared/old_Layout.cshtml";
             static readonly _DisplayTemplatesClass s_DisplayTemplates = new _DisplayTemplatesClass();
             public _DisplayTemplatesClass DisplayTemplates { get { return s_DisplayTemplates; } }
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public partial class _DisplayTemplatesClass
             {
                 public readonly string Article = "Article";
+                public readonly string ArticleFull = "ArticleFull";
+                public readonly string ArticleInBlog = "ArticleInBlog";
+                public readonly string BlogHeader = "BlogHeader";
+                public readonly string BlogPane = "BlogPane";
                 public readonly string Client = "Client";
+                public readonly string Comment = "Comment";
                 public readonly string Member = "Member";
+                public readonly string MemberBio = "MemberBio";
+                public readonly string MoreProjects = "MoreProjects";
                 public readonly string Project = "Project";
+                public readonly string ProjectDescr = "ProjectDescr";
             }
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
             public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
