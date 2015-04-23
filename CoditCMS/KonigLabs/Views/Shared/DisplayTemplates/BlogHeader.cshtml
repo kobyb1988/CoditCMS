@@ -2,10 +2,10 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a href="/"><img src="/Content/media/img/logo.png" alt="" /></a>
+                <a href="@(Request.Url.AbsoluteUri.ToLower().Contains("en") ? "/en":"/")"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a href="/">Главная</a></li>
+                <li><a href="@(Request.Url.AbsoluteUri.ToLower().Contains("en") ? "/en":"/")">Главная</a></li>
                 <li><a href="/#about">Услуги</a></li>
                 <li><a href="/#team">Команда</a></li>
                 <li><a href="/#work">Наши работы</a></li>
