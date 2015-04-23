@@ -54,10 +54,11 @@ function bindCommentForm(form, commentId, postId) {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4) {
                 if (xmlhttp.status == 200) {
-                    var d = document.createElement('div')
-                    d.innerHTML = 'Спасибо за ваш комментарий!';
-                    d.id = 'thanks';
-                    form.parentNode.insertBefore(d, form);
+                    //var d = document.createElement('div')
+                    //d.innerHTML = 'Спасибо за ваш комментарий!';
+                    //d.id = 'thanks';
+                    //form.parentNode.insertBefore(d, form);
+                    toastr.info("Спасибо за ваш комментарий. Он отправлен на модерацию.")                    
                     if (commentId) {
                         form.remove();
                     }
@@ -67,10 +68,10 @@ function bindCommentForm(form, commentId, postId) {
                         text_input.value = '';
                     }
                     //console.log(form.parentNode, form);
-                    setTimeout(function () {
-                        var tha = document.querySelector("#thanks");
-                        tha.remove();
-                    }, 3000)
+                    //setTimeout(function () {
+                    //    var tha = document.querySelector("#thanks");
+                    //    tha.remove();
+                    //}, 3000)
                 }
             }
         }
