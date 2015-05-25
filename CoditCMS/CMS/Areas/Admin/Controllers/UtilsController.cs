@@ -6,7 +6,7 @@ using IOFile = System.IO.File;
 
 namespace CMS.Areas.Admin.Controllers
 {
-    [OziAuthorize]
+    //[OziAuthorize]
     public partial class UtilsController : Controller
     {
         public virtual ActionResult ClearApplicationCache()

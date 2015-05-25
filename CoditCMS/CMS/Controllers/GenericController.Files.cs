@@ -18,7 +18,7 @@ using System.Reflection;
 
 namespace CMS.Controllers
 {
-    [Authorize(Roles = "admin, superadmin")]
+    //[Authorize(Roles = "admin, superadmin")]
     partial class GenericController<TEntity, TDbContext>
 	{
 		protected virtual UploadFileSettings GetFileSettings(string propName)

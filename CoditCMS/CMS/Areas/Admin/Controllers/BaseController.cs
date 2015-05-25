@@ -10,7 +10,7 @@ using DB.DAL;
 
 namespace CMS.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "admin, superadmin")]
+    //[Authorize(Roles = "admin, superadmin")]
     public class BaseController<T> : GenericController<T, ApplicationDbContext> where T : class, IEntity, new()
     {
     }

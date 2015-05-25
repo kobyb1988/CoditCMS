@@ -11,7 +11,7 @@ using DB.DAL;
 
 namespace CMS.Areas.Admin.Controllers
 {    
-    [Authorize(Roles = "admin, superadmin")]
+    //[Authorize(Roles = "admin, superadmin")]
     public partial class SiteSettingsController : OziController
     {
         const string PathTemplate = "~/App_Data/{0}.xml";
