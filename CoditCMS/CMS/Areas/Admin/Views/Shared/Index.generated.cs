@@ -213,7 +213,7 @@ WriteLiteral(" type=\"text/ecmascript\"");
 WriteAttribute("src", Tuple.Create(" src=\"", 319), Tuple.Create("\"", 378)
             
             #line 13 "..\..\Areas\Admin\Views\Shared\Index.cshtml"
-, Tuple.Create(Tuple.Create("", 325), Tuple.Create<System.Object, System.Int32>(Url.Content("~/Areas/Admin/Scripts/Default/List.js")
+, Tuple.Create(Tuple.Create("", 325), Tuple.Create<System.Object, System.Int32>(Url.Content(CMS.PagesSettings.Settings.MediaRoot+"/Areas/Admin/Scripts/Default/List.js")
             
             #line default
             #line hidden

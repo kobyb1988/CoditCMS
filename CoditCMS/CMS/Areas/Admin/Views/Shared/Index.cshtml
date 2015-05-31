@@ -10,7 +10,7 @@
 <script type="text/javascript">
     _sorlListActionUrl = '@Url.Action(Constants.SortListAction)';
 </script>
-<script type="text/ecmascript" src="@Url.Content("~/Areas/Admin/Scripts/Default/List.js")"></script>
+<script type="text/ecmascript" src="@Url.Content(CMS.PagesSettings.Settings.MediaRoot+"/Areas/Admin/Scripts/Default/List.js")"></script>
 
 <div class="global-actions">
     @foreach (GlobalActionSettings globalAction in Model.Settings.ListSettings.GlobalActions)
