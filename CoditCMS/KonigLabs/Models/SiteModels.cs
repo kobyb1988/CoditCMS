@@ -67,7 +67,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
-            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).ToList();
+            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).OrderBy(c=>c.Sort).ToList();
         }
     }
 
