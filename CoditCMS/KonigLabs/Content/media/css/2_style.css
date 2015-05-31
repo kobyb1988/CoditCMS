@@ -53,7 +53,15 @@ a {
 .marg-top-minus25 { margin-top: -25px; }
 
  #about, #team, #work, #price, #contact { padding-top: 80px; background:#fdf697; }
- #team{background:#02e5de; }
+ #team{background:#fdf697;}
+ 
+ .eye{
+	width:250px !important;
+	height:250px !important;
+	background-size: 2750px 750px; /*2000px;*/
+	background-image:url(../img/team.jpg);
+	margin: 0 auto;
+}
  
  #blog {
 	background: #fff; 

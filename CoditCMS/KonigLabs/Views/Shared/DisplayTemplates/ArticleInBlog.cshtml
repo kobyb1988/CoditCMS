@@ -4,6 +4,10 @@
 {
     <img src="@Url.Content(Model.GetBlogImage())" alt="" />
 }
+@if (!String.IsNullOrEmpty(Model.EmbeddedMedia)) 
+{ 
+    <div class="vendor">@Html.Raw(Model.EmbeddedMedia)</div>
+}
 <h1 class="blog-title"><a href="/BlogPost/@Model.Id">@Model.Title</a></h1>
 <h6>
     @Model.GetDisplayDate()

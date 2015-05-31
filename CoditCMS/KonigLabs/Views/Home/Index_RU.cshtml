@@ -188,7 +188,7 @@ else
                 </h1>
 
                 <div class="lead  wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Наша <strong><span class="white">команда</span></strong> собрана из профессионалов разных направлений
+                    Наша <strong>команда</strong> собрана из профессионалов разных направлений
                 </div>
             </div>
 
@@ -210,11 +210,19 @@ else
         <div class="row">
             <div class="col-sm-12 col-lg-12 pad15">
                 <a href="#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
-                <a href="#work" class="scroll btn wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
+                <a href="#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
+				<a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
+					<div class="vacancy collapse">
+						<div class="pad30"></div>
+						<div class="row">
+						 <h2>Здесь будет инфа о вакансиях...</h2>
+						</div>
+					</div>
+							
                 <div class="pad45"></div>
 
                 <div id="grid-container" class="cbp-l-grid-team">
-                    <ul class="cbp-l-grid-team">
+                    <ul class="cbp-l-grid-team team-grid the-team">
                         @foreach (var member in Model.Members)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);

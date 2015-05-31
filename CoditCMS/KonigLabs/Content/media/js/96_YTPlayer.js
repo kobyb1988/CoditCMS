@@ -94,6 +94,7 @@ function onYouTubePlayerAPIReady() {
 		}else{
 			movieURL = url
 		}
+		console.log('rrrrrrrrrrrrrrr', movieURL)
 		return movieURL;
 	};
 

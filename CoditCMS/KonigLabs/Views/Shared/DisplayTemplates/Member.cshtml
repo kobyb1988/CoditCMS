@@ -3,16 +3,7 @@
 
 <li class="cbp-item">
     <a href="/Home/member/?id=@Model.Id" class="cbp-caption cbp-singlePage">
-        <div class="cbp-caption-defaultWrap">
-            <img src="@Url.Content(Model.Avatar)" alt=" ">
-        </div>
-        <div class="cbp-caption-activeWrap">
-            <div class="cbp-l-caption-alignCenter">
-                <div class="cbp-l-caption-body">
-                    <div class="cbp-l-caption-text">@Model.Name</div> @*TODO! firstname!*@
-                </div>
-            </div>
-        </div>
+		<figure class="eye"></figure>
     </a>
     <a href="/Home/member/?id=@Model.Id" class="cbp-singlePage cbp-l-grid-team-name">@Model.Name</a>
     <div class="cbp-l-grid-team-position">@Model.Title</div>
