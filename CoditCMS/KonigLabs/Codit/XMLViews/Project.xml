@@ -15,7 +15,8 @@
 		</actions>
 
 		<cols>
-			<string name="Name" title="Название"/>			
+			<string name="Name" title="Название"/>
+      <string name="Language" title="Язык"/>
 		</cols>
 
 	</list>
@@ -24,6 +25,10 @@
 		<tab name="General">
 			<string name="Name" title="Название" />
 				<string name="Url" title="Ссылка" />
+      <select name="Language" title="Язык">
+        <option value="ru">ru</option>
+        <option value="en">en</option>
+      </select>
       <select name="ProjectCategory" title="Категории" reference="ProjectCategory" optionTitle="Name" optionValue="Id" multiple="true" localizable="true">
         <option>Нет</option>
       </select>

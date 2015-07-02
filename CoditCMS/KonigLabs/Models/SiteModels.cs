@@ -123,7 +123,7 @@ namespace KonigLabs.Models
 
     }
 
-    public class Project : IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class Project :LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
 
@@ -187,7 +187,7 @@ namespace KonigLabs.Models
                                                     .Include(p => p.Projects.Select(ip => ip.Files))
                                                     .Where(pc => pc.Language == language && pc.Visibility))
             {
-                foreach (var pro in pc.Projects.Where(p => p.Visibility))
+                foreach (var pro in pc.Projects.Where(p =>p.Language==language && p.Visibility))
                 {
                     projects.Add(pro);
                 }
