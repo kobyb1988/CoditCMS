@@ -406,7 +406,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class Tag : IVisibleEntity, ISortableEntity
+    public class Tag :LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -421,7 +421,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class ArticleCategory : IVisibleEntity, ISortableEntity
+    public class ArticleCategory :LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

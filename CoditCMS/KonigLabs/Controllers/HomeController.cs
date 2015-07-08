@@ -37,7 +37,7 @@ namespace KonigLabs.Controllers
                 if (member == null)
                 {
                     Response.StatusCode = 404;
-                    return View("NotFound"); 
+                    return View("NotFound");
                 }
                 var vm = new ViewMember(member);
                 return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
@@ -51,8 +51,8 @@ namespace KonigLabs.Controllers
                 var project = db.Projects.Where(p => p.Id == id).FirstOrDefault();
                 if (project == null)
                 {
-                     Response.StatusCode = 404;
-                    return View("NotFound"); 
+                    Response.StatusCode = 404;
+                    return View("NotFound");
                 }
                 var vm = new ViewProject(project);
                 return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
@@ -133,7 +133,7 @@ namespace KonigLabs.Controllers
                 if (article == null)
                 {
                     Response.StatusCode = 404;
-                    return View("NotFound"); 
+                    return View("NotFound");
                 }
                 int commentCount = 0;
                 foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
@@ -141,7 +141,7 @@ namespace KonigLabs.Controllers
                     comment.WalkDawn(1);
                     commentCount += comment.CommentCount + 1;
                 }
-                ViewBag.BlogMeta = new BlogMeta(db);
+                ViewBag.BlogMeta = new BlogMeta(db, _lang.GetLanguageName());
                 ViewBag.CommentCount = commentCount;
                 return LocalizableView("~/Views/Home/BlogPost_{0}.cshtml", article);
             }
@@ -172,7 +172,9 @@ namespace KonigLabs.Controllers
                 var articles = KonigLabs.Models.Article.GetArticles(language, db);
                 if (cat.HasValue)
                 {
-                    var category = db.ArticleCategories.Where(c => c.Id == cat.Value).FirstOrDefault();
+                    var category = db.ArticleCategories.FirstOrDefault(c => c.Id == cat.Value
+                                                                            && c.Visibility
+                                                                            && c.Language.ToLower() == language.ToLower());
                     if (category != null)
                     {
                         var ids = category.Articles.Select(a => a.Id).ToList();
@@ -181,7 +183,9 @@ namespace KonigLabs.Controllers
                 }
                 if (tag.HasValue)
                 {
-                    var _tag = db.Tags.Where(t => t.Id == tag.Value).FirstOrDefault();
+                    var _tag = db.Tags.FirstOrDefault(t => t.Id == tag.Value
+                                                        && t.Visibility
+                                                        && t.Language.ToLower() == language.ToLower());
                     if (_tag != null)
                     {
                         var ids = _tag.Articles.Select(a => a.Id).ToList();
@@ -196,7 +200,7 @@ namespace KonigLabs.Controllers
                     }
                 }
                 var list = articles.ToPagedList(pageNumber, pageSize);
-                var bm = new BlogMeta(db) {SearchValue = search};
+                var bm = new BlogMeta(db,language) { SearchValue = search };
                 ViewBag.BlogMeta = bm;
                 return LocalizableView("~/Views/Home/Blog_{0}.cshtml", list);
             }

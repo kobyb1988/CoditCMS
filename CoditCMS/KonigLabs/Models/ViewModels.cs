@@ -308,19 +308,25 @@ namespace KonigLabs.Models
         public List<ViewArticleCategory> Categories { get; set; }
         public string SearchValue { get; set; }
 
-        public BlogMeta(ApplicationDbContext db)
+        public BlogMeta(ApplicationDbContext db, string language)
         {
+            string[] langugaes = GetAccessableLanguagesFortags(language);
             SearchValue = "";
             Tags = new List<ViewTag>();
-            foreach (var tag in db.Tags.Include("Articles"))
+            foreach (var tag in db.Tags.Include("Articles").Where(x => x.Visibility && langugaes.Contains(x.Language)).OrderBy(x => x.Sort))
             {
                 Tags.Add(new ViewTag(tag));
             }
             Categories = new List<ViewArticleCategory>();
-            foreach (var tag in db.ArticleCategories.Include("Articles"))
+            foreach (var tag in db.ArticleCategories.Include("Articles").Where(x => x.Visibility && x.Language == language).OrderBy(x => x.Sort))
             {
                 Categories.Add(new ViewArticleCategory(tag));
             }
+        }
+
+        private string[] GetAccessableLanguagesFortags(string language)
+        {
+            return LocalEntity.EN == language ? new[] { LocalEntity.EN } : new[] { LocalEntity.EN, language };
         }
     }
 }
