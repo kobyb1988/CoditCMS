@@ -1,0 +1,43 @@
+﻿@using KonigLabs.Models
+@using Libs
+<div id="header">
+    <div class="col-sm-12 col-lg-12">
+        <div class="row">
+            <div id="logo">
+                <a href="@Url.Action(MVC.Home.Index())">
+                    <img src="/Content/media/img/logo.png" alt=""/>
+                </a>
+            </div>
+            <ul id="menu">
+                <li><a href="@Url.Action("Index","Home")">Главная</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                <li><a href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
+                @if (@Request.Url.AbsoluteUri.ToLower().Contains("post"))
+                {
+
+                }
+                else
+                {
+                    if (Request.Url.AbsoluteUri.ToLower().Contains("en"))
+                    {
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                    }
+                    @*<li><a class="@(Request.Url.AbsoluteUri.ToLower().Contains("en") ? "lang":"lang active")" href="@Url.Action(MVC.Home.Blog())">Ru</a></li>
+                    <li><a class="@(Request.Url.AbsoluteUri.ToLower().Contains("en") ? "lang active":"lang")" href="@Url.Action(MVC.Home.Blog())">En</a></li>*@               
+                }
+            </ul>
+            <div id="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>

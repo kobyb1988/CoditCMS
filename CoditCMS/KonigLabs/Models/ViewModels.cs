@@ -9,7 +9,8 @@ namespace KonigLabs.Models
 {
     public class LandingPage
     {
-        private string language;
+        public string Language { get; private set; }
+
         private ApplicationDbContext db;
 
         public const int MaxProjectInCategory = 8;
@@ -18,8 +19,7 @@ namespace KonigLabs.Models
         public LandingPage(string language, ApplicationDbContext db)
         {
             // TODO: Complete member initialization
-            this.language = language;
-
+            Language = language;
 
             Members = new List<ViewMember>();
             Projects = new List<ViewProject>();
@@ -28,7 +28,7 @@ namespace KonigLabs.Models
             Articles = new List<ViewArticle>();
             ShownProjects = new List<int>();
 
-            foreach (var member in CrewMember.GetMembers(language, db))
+            foreach (var member in CrewMember.GetMembers(Language, db))
             {
                 var me = new ViewMember(member);
                 if (String.IsNullOrEmpty(me.Avatar))
@@ -40,16 +40,16 @@ namespace KonigLabs.Models
 
             var cats = new Dictionary<string, ViewCategory>();
 
-            foreach (Project project in Project.GetProjects(language, db))
+            foreach (Project project in Project.GetProjects(Language, db))
             {
                 var viewProject = new ViewProject(project);
                 if (String.IsNullOrEmpty(viewProject.SmallImage) || String.IsNullOrEmpty(viewProject.BigImage))
                 {
                     continue;
                 }
-               
+
                 var includeProject = false;
-                
+
                 foreach (var vc in viewProject.Categories)
                 {
                     if (!cats.ContainsKey(vc.Token))
@@ -61,7 +61,7 @@ namespace KonigLabs.Models
                     {
                         cats[vc.Token].Count += 1;
                         if (cats[vc.Token].Count <= MaxProjectInCategory)
-                        {                            
+                        {
                             includeProject = true;
                         }
                     }
@@ -70,13 +70,13 @@ namespace KonigLabs.Models
                 {
                     Projects.Add(viewProject);
                     ShownProjects.Add(viewProject.Id);
-                }                
+                }
             }
             Categories = cats.Values.ToList();
 
-            foreach (Client cl in Client.GetClients(language, db))
+            foreach (Client cl in Client.GetClients(Language, db))
             {
-                
+
                 var vc = new ViewClient(cl);
                 if (String.IsNullOrEmpty(vc.Logo))
                 {
@@ -85,13 +85,13 @@ namespace KonigLabs.Models
                 Clients.Add(vc);
             }
 
-            foreach (Article ar in Article.GetArticlesForMainPage(language, db))
-            {                
+            foreach (Article ar in Article.GetArticlesForMainPage(Language, db))
+            {
                 var va = new ViewArticle(ar);
                 if (String.IsNullOrEmpty(va.Image))
                 {
                     continue;
-                }                
+                }
                 Articles.Add(va);
             }
             Contact = new ViewContact();
@@ -102,7 +102,6 @@ namespace KonigLabs.Models
         public List<ViewClient> Clients { get; set; }
         public List<ViewArticle> Articles { get; set; }
         public ViewContact Contact { get; set; }
-
     }
 
     public class ViewCategory
@@ -173,7 +172,7 @@ namespace KonigLabs.Models
         }
 
 
-        
+
     }
 
     public class ViewProjects
@@ -184,7 +183,7 @@ namespace KonigLabs.Models
         public ViewProjects(string language, ApplicationDbContext db)
         {
             Projects = new List<ViewProject>();
-            var landing = new LandingPage(language, db);            
+            var landing = new LandingPage(language, db);
 
             foreach (Project project in Project.GetProjects(language, db))
             {
@@ -200,7 +199,7 @@ namespace KonigLabs.Models
                 }
                 Projects.Add(vp);
             }
-            
+
         }
     }
 
@@ -279,9 +278,9 @@ namespace KonigLabs.Models
 
     public class ViewTag
     {
-        public int Id {get;set;}
-        public int Count {get;set;}
-        public string Name {get;set;}
+        public int Id { get; set; }
+        public int Count { get; set; }
+        public string Name { get; set; }
         public ViewTag(Tag tag)
         {
             Id = tag.Id;
@@ -292,8 +291,8 @@ namespace KonigLabs.Models
 
     public class ViewArticleCategory
     {
-        public int Id {get;set;}        
-        public string Name {get;set;}
+        public int Id { get; set; }
+        public string Name { get; set; }
         public int Count { get; set; }
         public ViewArticleCategory(ArticleCategory category)
         {
@@ -313,7 +312,7 @@ namespace KonigLabs.Models
         {
             SearchValue = "";
             Tags = new List<ViewTag>();
-            foreach(var tag in db.Tags.Include("Articles"))
+            foreach (var tag in db.Tags.Include("Articles"))
             {
                 Tags.Add(new ViewTag(tag));
             }

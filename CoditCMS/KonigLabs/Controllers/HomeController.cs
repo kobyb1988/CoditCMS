@@ -11,42 +11,20 @@ using System.Web.Mvc;
 using PagedList;
 using System.Data.Entity;
 using Hangfire;
+using KonigLabs.Core.ServiceProviderIml;
+using Libs.Services;
 
 
 namespace KonigLabs.Controllers
 {
-    public partial class HomeController : Controller
+    public partial class HomeController : BaseController
     {
-        public virtual ActionResult Index(string language)
+        public virtual ActionResult Index()
         {
-
-            if (String.IsNullOrEmpty(language))
-            {
-                language = LocalEntity.RU;
-            }
-            if (language != LocalEntity.RU && language != LocalEntity.EN)
-            {
-                Response.StatusCode = 404;
-                return View("NotFound"); 
-            }
-            var viewPath = "~/Views/Home/Index_{0}.cshtml";
-            string view;
-            switch (language)
-            {
-                case LocalEntity.RU:
-                    view = String.Format(viewPath, language);
-                    break;
-                case LocalEntity.EN:
-                    view = String.Format(viewPath, language);
-                    break;
-                default:
-                    view = String.Format(viewPath, LocalEntity.RU);
-                    break;
-            }
             using (var db = ApplicationDbContext.Create())
             {
-                var landing = new LandingPage(language, db);
-                return View(view, landing);
+                var landing = new LandingPage(_lang.GetLanguageName(), db);
+                return LocalizableView("~/Views/Home/Index_{0}.cshtml", landing);
             }
         }
 
@@ -165,7 +143,7 @@ namespace KonigLabs.Controllers
                 }
                 ViewBag.BlogMeta = new BlogMeta(db);
                 ViewBag.CommentCount = commentCount;
-                return View(article);
+                return LocalizableView("~/Views/Home/BlogPost_{0}.cshtml", article);
             }
         }
 
@@ -187,10 +165,7 @@ namespace KonigLabs.Controllers
             int pageSize = 3;
             int pageNumber = (page ?? 1);
             //return View(students.ToPagedList(pageNumber, pageSize));
-            if (String.IsNullOrEmpty(language))
-            {
-                language = LocalEntity.RU;
-            }
+            language = _lang.GetLanguageName();
             using (var db = ApplicationDbContext.Create())
             {
 
@@ -221,10 +196,9 @@ namespace KonigLabs.Controllers
                     }
                 }
                 var list = articles.ToPagedList(pageNumber, pageSize);
-                var bm = new BlogMeta(db);
-                bm.SearchValue = search;
+                var bm = new BlogMeta(db) {SearchValue = search};
                 ViewBag.BlogMeta = bm;
-                return View(list);
+                return LocalizableView("~/Views/Home/Blog_{0}.cshtml", list);
             }
         }
 

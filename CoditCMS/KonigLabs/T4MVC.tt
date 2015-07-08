@@ -67,8 +67,9 @@ using <#=settings.T4MVCNamespace #>;
 using <#=referencedNamespace #>;
 <#} #>
 <#manager.EndBlock(); #>
-
-[<#= GeneratedCode #>, DebuggerNonUserCode]
+namespace KonigLabs
+{
+  [<#= GeneratedCode #>, DebuggerNonUserCode]
 public static partial class <#=settings.HelpersPrefix #>
 {
 <#if (settings.IncludeAreasToken) { #>
@@ -86,7 +87,7 @@ public static class Areas
     public static <#=controller.FullClassName #> <#=controller.Name #> = new <#=controller.FullDerivedClassName #>();
 <#} #>
 }
-
+}
 namespace <#=settings.T4MVCNamespace #>
 {
 <#foreach (var area in Areas.Where(a => !string.IsNullOrEmpty(a.Name))) { #>

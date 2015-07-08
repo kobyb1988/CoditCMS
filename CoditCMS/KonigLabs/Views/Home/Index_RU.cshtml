@@ -1,4 +1,6 @@
-﻿@model KonigLabs.Models.LandingPage
+﻿@using KonigLabs.Models
+@using KonigLabs.Core
+@model KonigLabs.Models.LandingPage
 @{
     ViewBag.Title = "Index_EN";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,14 +13,23 @@
                 <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="#home">Главная</a></li>
-                <li><a class="scroll" href="#about">Услуги</a></li>
-                <li><a class="scroll" href="#team">Команда</a></li>
-                <li><a class="scroll" href="#work">Наши работы</ga></li>
-                <li><a class="scroll" href="/blog/">Блог</a></li>
-                <li><a class="scroll" href="#contact">Контакты</a></li>
-                <li><a class="lang active" href="/">Ru</a></li>
-                <li><a class="lang" href="/en/">En</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
+                @switch (Model.Language)
+                {
+                    case LocalEntity.EN:
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                    case LocalEntity.RU:
+                    <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                    <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                }
             </ul>
             <div id="nav-toggle">
                 <i class="fa fa-bars"></i>
@@ -55,7 +66,7 @@ else
         </div>
 
         <div class="text-center pad30">
-            <a href="#about" class="scroll">
+            <a href="@Url.Action(MVC.Home.Index())#about" class="scroll">
                 <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
             </a>
         </div>
@@ -209,9 +220,9 @@ else
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12 pad15">
-                <a href="#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
-                <a href="#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
-				<a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
+                <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
+                <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
+                <a href="@Url.Action(MVC.Home.Index())#vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
 					<div class="vacancy collapse">
 						<div class="pad30"></div>
 						<div class="row">
@@ -301,7 +312,7 @@ else
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
-                        <a href="/Home/Projects" class="cbp-l-loadMore-button-link">
+                        <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
                             <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="Еще"></i>
                         </a>
                     </div>
@@ -433,7 +444,7 @@ else
 
     <div class="center footer">
         <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
-            <a href="#home" class=" scroll">
+            <a href="@Url.Action(MVC.Home.Index())#home" class=" scroll">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x "></i>
                     <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>

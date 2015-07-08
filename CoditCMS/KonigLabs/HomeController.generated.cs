@@ -60,12 +60,6 @@ namespace KonigLabs.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Index()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult Member()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Member);
@@ -156,14 +150,6 @@ namespace KonigLabs.Controllers
         }
 
 
-        static readonly ActionParamsClass_Index s_params_Index = new ActionParamsClass_Index();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Index
-        {
-            public readonly string language = "language";
-        }
         static readonly ActionParamsClass_Member s_params_Member = new ActionParamsClass_Member();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_Member MemberParams { get { return s_params_Member; } }
@@ -246,14 +232,18 @@ namespace KonigLabs.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Blog = "Blog";
-                public readonly string BlogPost = "BlogPost";
+                public readonly string Blog_en = "Blog_en";
+                public readonly string Blog_ru = "Blog_ru";
+                public readonly string BlogPost_en = "BlogPost_en";
+                public readonly string BlogPost_ru = "BlogPost_ru";
                 public readonly string Contact = "Contact";
                 public readonly string Index_en = "Index_en";
                 public readonly string Index_ru = "Index_ru";
             }
-            public readonly string Blog = "~/Views/Home/Blog.cshtml";
-            public readonly string BlogPost = "~/Views/Home/BlogPost.cshtml";
+            public readonly string Blog_en = "~/Views/Home/Blog_en.cshtml";
+            public readonly string Blog_ru = "~/Views/Home/Blog_ru.cshtml";
+            public readonly string BlogPost_en = "~/Views/Home/BlogPost_en.cshtml";
+            public readonly string BlogPost_ru = "~/Views/Home/BlogPost_ru.cshtml";
             public readonly string Contact = "~/Views/Home/Contact.cshtml";
             public readonly string Index_en = "~/Views/Home/Index_en.cshtml";
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
@@ -266,14 +256,13 @@ namespace KonigLabs.Controllers
         public T4MVC_HomeController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string language);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index(string language)
+        public override System.Web.Mvc.ActionResult Index()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "language", language);
-            IndexOverride(callInfo, language);
+            IndexOverride(callInfo);
             return callInfo;
         }
 

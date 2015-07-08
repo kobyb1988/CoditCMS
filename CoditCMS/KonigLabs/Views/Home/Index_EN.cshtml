@@ -1,4 +1,6 @@
-﻿@model KonigLabs.Models.LandingPage
+﻿@using KonigLabs.Core
+@using KonigLabs.Models
+@model LandingPage
 @{
     ViewBag.Title = "Index_EN";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,21 +10,29 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
+                <a class="scroll" href="@Url.Action(MVC.Home.Index())#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="#home">Home</a></li>
-                <li><a class="scroll" href="#about">Services</a></li>
-                <li><a class="scroll" href="#team">Team</a></li>
-                <li><a class="scroll" href="#work">Our projects</ga></li>
-                <li><a class="scroll" href="/blog/">Blog</a></li>
-                <li><a class="scroll" href="#contact">Details</a></li>
-                <li><a class="lang active" href="/">Ru</a></li>
-                <li><a class="lang" href="/en/">En</a></li>
-            </ul>
-            <div id="nav-toggle">
-                <i class="fa fa-bars"></i>
-            </div>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Home</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Services</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Team</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Blog</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Details</a></li>
+                @switch (Model.Language)
+                {
+                    case LocalEntity.EN:
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                    case LocalEntity.RU:
+                    <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                    <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                }
+                <div id="nav-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
         </div>
     </div>
 </div>
@@ -33,34 +43,34 @@
 }
 else
 {
-<section id="home" class="top_video">
-    <div id="overlay"></div>
-    <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
+    <section id="home" class="top_video">
+        <div id="overlay"></div>
+        <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
 
-    <div id="content">
-        <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
-            <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/media/img/logo_site2.png"></div>
+        <div id="content">
+            <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
+                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/media/img/logo_site2.png"></div>
+            </div>
+
+            <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
+                We develop complex
+            </div>
+
+            <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
+                TURNKEY SOFTWARE SOLUTIONS
+            </h1>
+
+            <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
+                residing in Kaliningrad, working worldwide!
+            </div>
+
+            <div class="text-center pad30">
+                <a href="@Url.Action(MVC.Home.Index())#about" class="scroll">
+                    <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
+                </a>
+            </div>
         </div>
-
-        <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
-            We develop complex
-        </div>
-
-        <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
-            TURNKEY SOFTWARE SOLUTIONS
-        </h1>
-
-        <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
-            residing in Kaliningrad, working worldwide!
-        </div>
-
-        <div class="text-center pad30">
-            <a href="#about" class="scroll">
-                <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 }
 
 <section id="big_image"></section>
@@ -83,7 +93,7 @@ else
                         </div>
                         <h6>Interface design</h6>
                         <p>
-                        Our team will create the exquisite design for your website, portal, mobile or web-based application. Design development includes the adaptive layout that will perfectly fit any type of screen.
+                            Our team will create the exquisite design for your website, portal, mobile or web-based application. Design development includes the adaptive layout that will perfectly fit any type of screen.
                         </p>
                     </div>
 
@@ -114,9 +124,9 @@ else
                         <div class="service">
                             <i class="fa fa-cloud"></i>
                         </div>
-                    <h6>Websites, web-based applications, portals</h6>
+                        <h6>Websites, web-based applications, portals</h6>
                         <p>
-                        Easily scalable architecture, carefully designed and developed by our team helps to achieve reliability and flexibility of your software solutions.
+                            Easily scalable architecture, carefully designed and developed by our team helps to achieve reliability and flexibility of your software solutions.
                         </p>
                     </div>
 
@@ -124,7 +134,7 @@ else
                         <div class="service">
                             <i class="fa fa-cogs"></i>
                         </div>
-                    <h6>Desktop applications and services</h6>
+                        <h6>Desktop applications and services</h6>
                         <p>
                             Developing highly complex applications for Windows-based operating systems, we pay great attention to quality of code and architecture.
                         </p>
@@ -209,16 +219,16 @@ else
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12 pad15">
-                <a href="#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
-                <a href="#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
-				<a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
-					<div class="vacancy collapse">
-						<div class="pad30"></div>
-						<div class="row">
-						 <h2>Jobs information will be here soon</h2>
-						</div>
-					</div>
-							
+                <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
+                <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
+                <a href="@Url.Action(MVC.Home.Index())#vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
+                <div class="vacancy collapse">
+                    <div class="pad30"></div>
+                    <div class="row">
+                        <h2>Jobs information will be here soon</h2>
+                    </div>
+                </div>
+
                 <div class="pad45"></div>
 
                 <div id="grid-container" class="cbp-l-grid-team">
@@ -226,7 +236,7 @@ else
                         @foreach (var member in Model.Members)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
-                        }                      
+                        }
                     </ul>
                 </div>
 
@@ -286,22 +296,22 @@ else
                             <span class="cbp-filter-counter"></span>
                         </button>
                     }
-                
+
                 </div>
 
                 <div class="cbp-l-grid-project">
                     <div id="grid-container3" class="cbp-l-grid-projects">
                         <ul>
-                           
+
                             @foreach (var project in Model.Projects)
                             {
                                 Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
                             }
-                            
+
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
-                        <a href="/Home/Projects" class="cbp-l-loadMore-button-link">
+                        <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
                             <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="More"></i>
                         </a>
                     </div>
@@ -323,7 +333,7 @@ else
                     {
                         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
                     }
-                   
+
                 </div>
             </div>
         </div>
@@ -341,8 +351,8 @@ else
                         @foreach (var article in Model.Articles)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
-                        }                        
-                       
+                        }
+
                     </ul>
                 </div>
             </div>
@@ -433,7 +443,7 @@ else
 
     <div class="center footer">
         <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
-            <a href="#home" class=" scroll">
+            <a href="@Url.Action(MVC.Home.Index())#home" class=" scroll">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x "></i>
                     <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>

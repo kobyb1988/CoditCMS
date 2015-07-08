@@ -24,13 +24,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace KonigLabs.Controllers
 {
-    public partial class DefaultController
+    public partial class BaseController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public DefaultController() { }
+        public BaseController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected DefaultController(Dummy d) { }
+        protected BaseController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -60,13 +60,13 @@ namespace KonigLabs.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public DefaultController Actions { get { return MVC.Default; } }
+        public BaseController Actions { get { return MVC.Base; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Default";
+        public readonly string Name = "Base";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Default";
+        public const string NameConst = "Base";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -74,15 +74,11 @@ namespace KonigLabs.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
-            public readonly string Page = "Page";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
-            public const string Page = "Page";
         }
 
 
@@ -96,38 +92,14 @@ namespace KonigLabs.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Page = "Page";
             }
-            public readonly string Page = "~/Views/Default/Page.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_DefaultController : KonigLabs.Controllers.DefaultController
+    public partial class T4MVC_BaseController : KonigLabs.Controllers.BaseController
     {
-        public T4MVC_DefaultController() : base(Dummy.Instance) { }
-
-        [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void PageOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Page()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Page);
-            PageOverride(callInfo);
-            return callInfo;
-        }
+        public T4MVC_BaseController() : base(Dummy.Instance) { }
 
     }
 }

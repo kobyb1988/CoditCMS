@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
-    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader.cshtml");
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader_ru.cshtml");
 }
 
 <div class="pad90"></div>
@@ -118,7 +118,7 @@
 
                 @{
                     var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
-                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane.cshtml", meta);
+                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane_ru.cshtml", meta);
                 }
 
             </div>
