@@ -216,13 +216,13 @@ namespace KonigLabs.Controllers
                 Comment comment = null;
                 if (postId.HasValue)
                 {
-                    article = db.Articles.Where(a => a.Id == postId.Value).FirstOrDefault();
+                    article = db.Articles.FirstOrDefault(a => a.Id == postId.Value);
                 }
                 else
                 {
                     if (commentId.HasValue)
                     {
-                        comment = db.Comments.Where(c => c.Id == commentId.Value).FirstOrDefault();
+                        comment = db.Comments.FirstOrDefault(c => c.Id == commentId.Value);
                         if (comment != null)
                         {
                             article = comment.Article;

@@ -15,13 +15,7 @@
                 <li><a href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
                 <li><a href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
                 <li><a href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
-                @if (@Request.Url.AbsoluteUri.ToLower().Contains("post"))
-                {
-
-                }
-                else
-                {
-                    if (Request.Url.AbsoluteUri.ToLower().Contains("en"))
+                    @if (Request.Url.AbsoluteUri.ToLower().Contains("en"))
                     {
                         <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
                         <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
@@ -31,9 +25,6 @@
                         <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
                         <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
                     }
-                    @*<li><a class="@(Request.Url.AbsoluteUri.ToLower().Contains("en") ? "lang":"lang active")" href="@Url.Action(MVC.Home.Blog())">Ru</a></li>
-                    <li><a class="@(Request.Url.AbsoluteUri.ToLower().Contains("en") ? "lang active":"lang")" href="@Url.Action(MVC.Home.Blog())">En</a></li>*@               
-                }
             </ul>
             <div id="nav-toggle">
                 <i class="fa fa-bars"></i>
