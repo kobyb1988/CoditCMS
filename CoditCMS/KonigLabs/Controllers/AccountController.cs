@@ -52,6 +52,31 @@ namespace KonigLabs.Controllers
             }
         }
 
+        //public virtual ActionResult Login()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public virtual ActionResult Login(LogOnModel model, string returnUrl)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (MembershipService.ValidateUser(model.UserName, model.Password))
+        //        {
+        //            FormsService.SignIn(model.UserName, model.RememberMe);
+        //            if (!String.IsNullOrEmpty(returnUrl))
+        //            {
+        //                return Redirect(returnUrl);
+        //            }
+        //            return RedirectToAction(MVC.Admin.Locations.Index());
+        //        }
+        //        ModelState.AddModelError(string.Empty, "Неправильный логин или пароль");
+        //    }
+
+        //    return View(model);
+        //}
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

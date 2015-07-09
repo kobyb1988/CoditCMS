@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Routing;
-using KonigLabs.Models;
 
-namespace KonigLabs.Core.Constraints
+namespace CMS.Areas.Admin.Mvc.Constraints
 {
     public class LanguageConstraints : IRouteConstraint
     {
@@ -25,9 +21,9 @@ namespace KonigLabs.Core.Constraints
                     return true;
                 switch (lang)
                 {
-                    case LocalEntity.RU:
+                    case "ru":
                         return true;
-                    case LocalEntity.EN:
+                    case "en":
                         return true;
                     default:
                         return false;

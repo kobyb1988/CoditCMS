@@ -56,6 +56,14 @@ namespace KonigLabs
             routes.MapRouteLang("Comment","Comment",MVC.Home.Comment(),"Comment");
             routes.MapRouteLang("Blog","Blog",MVC.Home.Blog(), "Blog");
             routes.MapRouteLang("Article","BlogPost/{id}",MVC.Home.BlogPost(), "Article");
+            routes.MapRouteLang("login", "Account/login", MVC.Account.Login(), "");
+            routes.MapRouteLang("logout", "Account/logout", MVC.Account.LogOut(), "");
+            routes.MapRouteLang("members", "Home/member", MVC.Home.Member(), "");
+            routes.MapRouteLang("member", "Home/member/{id}", MVC.Home.Member(), "");
+            routes.MapRouteLang("projects", "Home/project", MVC.Home.Project(), "");
+            routes.MapRouteLang("project", "Home/member/{id}", MVC.Home.Project(), "");
+            routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact(), "");
+
 
             var route = routes.MapRoute("static-pages-lang", "{lang}/{*location}", MVC.Home.Index(),
                 new { localizationRedirectRouteName = "homepage" },

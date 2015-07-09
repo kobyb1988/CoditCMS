@@ -158,6 +158,8 @@
     <Compile Include="Areas\Admin\Controllers\UtilsController.cs" />
     <Compile Include="Areas\Admin\Models\CommentViewModel.cs" />
     <Compile Include="Areas\Admin\Mvc\Constants.cs" />
+    <Compile Include="Areas\Admin\Mvc\Constraints\LanguageConstraints.cs" />
+    <Compile Include="Areas\Admin\Mvc\Constraints\LanguageRouteHandler.cs" />
     <Compile Include="Areas\Admin\Mvc\DefaultSettingsProvider.cs" />
     <Compile Include="Areas\Admin\ViewModels\Accounts\ChangePasswordModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\Accounts\CreateModel.cs" />

@@ -33,7 +33,7 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var member = db.CrewMembers.Where(m => m.Id == id).FirstOrDefault();
+                var member = db.CrewMembers.FirstOrDefault(m => m.Id == id);
                 if (member == null)
                 {
                     Response.StatusCode = 404;
