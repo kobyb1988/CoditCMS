@@ -540,7 +540,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Member.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Project.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Article.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Article_en.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index_en.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
@@ -562,6 +562,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ArticleInBlog_en.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BlogPane_en.cshtml" />
     <Content Include="Views\Home\BlogPost_en.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Article_ru.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

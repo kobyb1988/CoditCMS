@@ -48,7 +48,7 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var project = db.Projects.Where(p => p.Id == id).FirstOrDefault();
+                var project = db.Projects.FirstOrDefault(p => p.Id == id);
                 if (project == null)
                 {
                     Response.StatusCode = 404;
@@ -63,7 +63,7 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Where(m => m.Id == id).FirstOrDefault();
+                var article = db.Articles.FirstOrDefault(m => m.Id == id);
                 if (article == null)
                 {
                     Response.StatusCode = 404;
@@ -125,11 +125,11 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags).Include(a => a.Categories)
-                    .Include(a => a.CrewMember)
-                    .Include(a => a.CrewMember.Files).Include(a => a.Comments)
-                    .Include(a => a.Comments.Select(c => c.CrewMember))
-                    .Where(a => a.Id == id).FirstOrDefault();
+                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags)
+                    .Include(a => a.Categories)
+                    .Include(a => a.CrewMember).Include(a => a.CrewMember.Files)
+                    .Include(a => a.Comments)
+                    .Include(a => a.Comments.Select(c => c.CrewMember)).FirstOrDefault(a => a.Id == id);
                 if (article == null)
                 {
                     Response.StatusCode = 404;
@@ -164,12 +164,11 @@ namespace KonigLabs.Controllers
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            //return View(students.ToPagedList(pageNumber, pageSize));
             language = _lang.GetLanguageName();
             using (var db = ApplicationDbContext.Create())
             {
 
-                var articles = KonigLabs.Models.Article.GetArticles(language, db);
+                var articles = Models.Article.GetArticles(language, db);
                 if (cat.HasValue)
                 {
                     var category = db.ArticleCategories.FirstOrDefault(c => c.Id == cat.Value
