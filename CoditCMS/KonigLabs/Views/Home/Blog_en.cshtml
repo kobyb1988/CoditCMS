@@ -17,7 +17,7 @@
                 Our Blog
             </h1>
             <div class="lead wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
-                Полезная информация <strong class="white embo">для клиентов</strong>
+                Information of interest <strong class="white embo">for our clients</strong>
             </div>
 
             <div class="row">
@@ -38,7 +38,7 @@
                     {
                         if(!String.IsNullOrEmpty(Request.QueryString.Get("search")) || !String.IsNullOrEmpty(Request.QueryString.Get("Search")))
                         {
-                            <h4>Статей по вашему запросу не найдено!</h4>
+                            <h4>Found no articles matching your request!</h4>
                         }
                     }
                     @foreach (var item in Model)
