@@ -1,46 +1,16 @@
 $(document).ready(function () {
 
 /*****************************************************************************
-	CONTACT FORM - you can change your notification message here
+	CONTACT FORM
 *****************************************************************************/
-    //$("#ajax-contact-form").submit(function() {
-    //			var str = $(this).serialize();		
-    //			$.ajax({
-    //				type: "POST",
-    //				url: "contact_form/contact_process.php",
-    //				data: str,
-    //				success: function(msg) {
-    //					// Message Sent - Show the 'Thank You' message and hide the form
-    //					if(msg == 'OK') {
-    //						result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
-    //						$("#fields").hide();
-    //					} else {
-    //						result = msg;
-    //					}
-    //					$('#note').html(result);
-    //				}
-    //			});
-    //			return false;
-    //		});
-
     var bindForm = function(){
-        
         $("#ajax-contact-form").submit(function() {
-			
             var str = $(this).serialize();				
             $.ajax({
                 type: "POST",
                 url: "/home/contact/",
                 data: str,
                 success: function(msg, some, response) {
-                    // Message Sent - Show the 'Thank You' message and hide the form
-                    //if(msg == 'OK') {
-                    //    result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
-                    //    $("#fields").hide();
-                    //} else {
-                    //    result = msg;
-                    //}						
-                    
                     var fields = $('#fields').html(msg);
                     if(response.status == 201){
                         fields.find(':input').each(function(i, el){                            
@@ -51,7 +21,6 @@ $(document).ready(function () {
                         toastr.info("Спасибо за ваше сообщение, мы обязательно свяжемся с вами!")
                     }
                     bindForm()
-                    //$('#note').html(result);
                 }
             });
             return false;
@@ -112,7 +81,7 @@ $(function() {
     });
 
 /*****************************************************************************
-	ADD YOU PARALLAX IMAGES HERE
+PARALLAX
 *****************************************************************************/	
 
 ( function ( $ ) {
@@ -158,7 +127,7 @@ var isMobile = {
 }( jQuery ));
 
 /*****************************************************************************
-	MILESTONE COUNTERS - ADD YOUR PERCENTAGES HERE
+COUNTERS
 ******************************************************************************/
 
 	jQuery('#counter-1').appear(function() {
@@ -195,13 +164,3 @@ var isMobile = {
 			});
 		});	
 	});
-
-/*****************************************************************************
-	TICKER - ADD YOUR TEXT HERE
-******************************************************************************/
-
-(function(a){a.fn.airport=function(g,n){var b=a.extend({transition_speed:1000,loop:true,fill_space:false,colors:null},n),m=a(this),j=["а","б","в","г","д","е","ё"," ","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ь","ъ","э","ю","я","-","!"],h,c,d=0,i=g.length,f=g.length;function e(p,o){return p+new Array(o-p.length+1).join(" ")}m.empty();while(i--){if(g[i].length>d){d=g[i].length}}while(f--){g[f]=e(g[f],d)}h=d;while(h--){var k=document.createElement("span");k.className="c"+h;m.prepend(k)}if(b.colors){c=b.colors.replace(/\s+/g,"").split(",")}function l(x,w,v,u){var q=m.find(".c"+x),r=g[v]?g[v].substring(u,u+1):null,p,s,o=g[v]?a.trim(g[v]).length:null,t=g[v-1]?a.trim(g[v-1]).length:a.trim(g[0]).length;if(v>=g.length){if(!b.loop){clearTimeout(p);return}p=setTimeout(function(){l(0,0,0,0)},10)}else{if(u>=d){p=setTimeout(function(){if(b.colors){s=c[~~(Math.random()*c.length)];m.css("color",s.substring(0,1)==="#"?s:"#"+s)}l(0,0,v+1,0)},b.transition_speed)}else{q.html((j[w]===" ")?"&nbsp;":j[w]);p=setTimeout(function(){if(w>j.length){l(x+1,0,v,u+1)}else{if(j[w]!==r.toLowerCase()){l(x,w+1,v,u)}else{q.html((r===" "&&b.fill_space)?"&nbsp;":r);if(o<t){if(x>o){for(x;x<t;x++){m.find(".c"+x).html("")}u=d}}l(x+1,0,v,u+1)}}},10)}}}l(0,0,0,0)}})(jQuery);
-
-//<!--TICKER - add your text here -->
-
-//$(".ticker").airport(["любим пиво!","едим рульку!","пробовали строганину!"]);

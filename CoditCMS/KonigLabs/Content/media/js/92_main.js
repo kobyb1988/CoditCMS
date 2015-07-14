@@ -3,19 +3,12 @@
     var gridContainer = $('#grid-container,#grid-container2')
     // init cubeportfolio
     gridContainer.cubeportfolio({
-
         animationType: 'sequentially',
-
         gapHorizontal: 0,
-
         gapVertical:10,
-
         gridAdjustment: 'responsive',
-
         caption: 'zoom',
-
         displayType: 'sequentially ',
-
         displayTypeSpeed: 100,
 
         // lightbox
@@ -98,7 +91,7 @@
                 t.updateSinglePage(result);
             })
             .fail(function() {
-                t.updateSinglePage("Error! Please refresh the page!");
+                t.updateSinglePage("Ошибка! Пожалуйста, обновите страницу.");
             });
 
         }

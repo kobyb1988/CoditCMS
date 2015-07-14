@@ -1,0 +1,39 @@
+﻿@model KonigLabs.Models.ViewArticle
+
+@*<li class="cbp-item">
+    <a href="#" class="cbp-caption">
+        <div class="cbp-caption-defaultWrap">
+            <img src="/Content/media/img/blog/a1.jpg" alt="">
+        </div>
+        <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-text">ЧИТАТЬ</div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="#" class="cbp-l-grid-blog-title">История о парне в противогазе</a>
+    <div class="cbp-l-grid-blog-date">1 апреля 2015</div>
+    <div class="cbp-l-grid-blog-split">|</div>
+    <a href="#" class="cbp-l-grid-blog-comments">10 комментариев</a>
+</li>*@
+
+<li class="cbp-item">
+    <a href="/BlogPost/@Model.Id" class="cbp-caption">  @*cbp-singlePage*@
+        <div class="cbp-caption-defaultWrap">
+            <img src="@Url.Content(Model.Image)" alt="">
+        </div>
+        <div class="cbp-caption-activeWrap">
+            <div class="cbp-l-caption-alignCenter">
+                <div class="cbp-l-caption-body">
+                    <div class="cbp-l-caption-text">ЧИТАТЬ</div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a href="/BlogPost/@Model.Id" class="cbp-l-grid-blog-title">@Model.Title</a>
+    <div class="cbp-l-grid-blog-date">@Model.Date</div>
+    <div style="display:none;" class="cbp-l-grid-blog-split">|</div>
+    <a style="display:none;" href="#" class="cbp-l-grid-blog-comments">10 комментариев</a>
+</li>
