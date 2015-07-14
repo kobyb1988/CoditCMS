@@ -1,0 +1,34 @@
+﻿@using KonigLabs.Models
+@using Libs
+<div id="header">
+    <div class="col-sm-12 col-lg-12">
+        <div class="row">
+            <div id="logo">
+                <a href="@Url.Action(MVC.Home.Index())">
+                    <img src="/Content/media/img/logo.png" alt="" />
+                </a>
+            </div>
+            <ul id="menu">
+                <li><a href="@Url.Action(MVC.Home.Index())">Home</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#about">Services</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#team">Team</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
+                <li><a href="@Url.Action(MVC.Home.Blog())">Blog</a></li>
+                <li><a href="@Url.Action(MVC.Home.Index())#contact">Details</a></li>
+                    @if (Request.Url.AbsoluteUri.ToLower().Contains("en"))
+                    {
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                    }
+                    else
+                    {
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                    }
+            </ul>
+            <div id="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>

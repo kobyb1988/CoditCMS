@@ -1,67 +1,82 @@
-﻿using CMS.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using CMS.Mvc;
+using KonigLabs.Core;
+using KonigLabs.Core.Constraints;
 
 namespace KonigLabs
 {
-    public class RouteConfig
+    public static class RouteConfig
     {
+        private const string Namespace = "KonigLabs.Controllers";
+
+        private static readonly LanguageConstraints LanguageConstraint = new LanguageConstraints();
+        private static readonly LanguageRouteHandler LanguageHandler = new LanguageRouteHandler();
+
+        private static void MapRouteLang(this RouteCollection routes, string name, string url, ActionResult action, string page, string localizationRedirectRouteName = "homepage", object constraints = null, object handler = null)
+        {
+            var constraintsValues = new RouteValueDictionary(constraints) { { "lang", LanguageConstraint } };
+            var route = CreateRoute(name, "{lang}/" + url, action, new { location = page, localizationRedirectRouteName }, constraintsValues, new[] { Namespace });
+            var directRoute = CreateRoute(name, url, action, new { location = page, localizationRedirectRouteName }, constraints, new[] { Namespace });
+            directRoute.RouteHandler = LanguageHandler;
+            routes.Add(name + "-lang", route);
+            routes.Add(name, directRoute);
+        }
+
+        private static KonigLabsRoute CreateRoute(string routeName, string url, ActionResult result, object defaults, object constraints, string[] namespaces)
+        {
+            var defaultsValues = new RouteValueDictionary(defaults);
+            foreach (var pair in result.GetRouteValueDictionary())
+            {
+                defaultsValues.Add(pair.Key, pair.Value);
+            }
+            var constraintsValues = constraints as RouteValueDictionary;
+
+            if (constraintsValues == null)
+            {
+                constraintsValues = new RouteValueDictionary(constraints);
+            }
+            var route = new KonigLabsRoute(url, defaultsValues, constraintsValues, new MvcRouteHandler())
+            {
+                DataTokens = new RouteValueDictionary()
+            };
+            if ((namespaces != null) && (namespaces.Length > 0))
+            {
+                route.DataTokens["Namespaces"] = namespaces;
+            }
+            route.DataTokens["RouteName"] = routeName;
+            return route;
+        }
+
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            var route = routes.MapRoute("locations", "{*location}", MVC.Default.Page(),
-                        new { localizationRedirectRouteName = "homepage" },
-                        new { location = new LocationConstraints() });
-            route.DataTokens["RouteName"] = "locations";
+            routes.MapRouteLang("homepage", "", MVC.Home.Index(), "home");
+            routes.MapRouteLang("Comment","Comment",MVC.Home.Comment(),"Comment");
+            routes.MapRouteLang("Blog","Blog",MVC.Home.Blog(), "Blog");
+            routes.MapRouteLang("Article","BlogPost/{id}",MVC.Home.BlogPost(), "Article");
+            routes.MapRouteLang("login", "Account/login", MVC.Account.Login(), "");
+            routes.MapRouteLang("logout", "Account/logout", MVC.Account.LogOut(), "");
+            routes.MapRouteLang("members", "Home/member", MVC.Home.Member(), "");
+            routes.MapRouteLang("member", "Home/member/{id}", MVC.Home.Member(), "");
+            routes.MapRouteLang("projects", "Home/project", MVC.Home.Project(), "");
+            routes.MapRouteLang("project", "Home/member/{id}", MVC.Home.Project(), "");
+            routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact(), "");
 
 
+            var route = routes.MapRoute("static-pages-lang", "{lang}/{*location}", MVC.Home.Index(),
+                new { localizationRedirectRouteName = "homepage" },
+                new { lang = LanguageConstraint }, null);
+            route.DataTokens["RouteName"] = "static-pages-lang";
 
-            routes.MapRoute(
-                name: "Comment",
-                url: "Comment",
-                defaults: new { controller = "Home", action = "Comment" }
-            );
+            route = routes.MapRoute("static-pages", "{*location}", MVC.Home.Index(),
+                new { localizationRedirectRouteName = "homepage" });
+            route.DataTokens["RouteName"] = "static-pages";
 
-            routes.MapRoute(
-                name: "Blog",
-                url: "Blog/{language}",
-                defaults: new { controller = "Home", action = "Blog", language = UrlParameter.Optional }
-            );
-
-            routes.MapRoute(
-               name: "Article",
-               url: "BlogPost/{id}",
-               defaults: new { controller = "Home", action = "BlogPost" }
-           );
-
-            routes.MapRoute(
-                name: "Default",
-                url: "{language}",
-                defaults: new { controller = "Home", action = "Index", language = UrlParameter.Optional }
-            );
-
-
-
-            routes.MapRoute(
-              name: "Accounts",
-              url: "{controller}/{action}"
-          );
-
-
-
-            routes.MapRoute(
-                "404-PageNotFound",
-                "{*url}",
-                new { controller = "Home", action = "PageNotFound" }
-                );
-
-
-
+            routes.MapRoute("default-t4", "{controller}/{action}", MVC.Home.Index());
+            routes.MapRoute("default", "{controller}/{action}/{id}", MVC.Home.Index());
+            routes.MapRoute("default-aliased", "{controller}/{action}/{alias}", MVC.Home.Index());
         }
     }
 }

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
-    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader.cshtml");
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader_en.cshtml");
 }
 
 <div class="pad90"></div>
@@ -12,10 +12,10 @@
     <div class="row">
         <div class="col-sm-12 col-lg-12">
             <h1 class="embo wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
-                Наш блог
+                Our blog
             </h1>
             <div class="lead wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
-                Полезная информация <strong class="white embo">для клиентов</strong>
+                Information of interest <strong class="white embo">for our clients</strong>
             </div>
 
             <div class="row">
@@ -76,7 +76,7 @@
                                     @Html.Raw(Model.CrewMember.Signature)
                                 </p>
                                     @*<p>
-                                    Пишу только о том, что знаю и понимаю. Если нахожу статьи, которые считаю крайне полезными, то без зазрения совести, делаю их достоянием общественности, а авторские права... это права автора;)
+                                    I write purely from experience. I share the articles that I consider particularly useful with no scruples, and the copyright.. well, it's the author's right ;)
                                 </p>*@
                             </div>
                         }
@@ -85,7 +85,7 @@
                             <div class="comments">
                                 @if(ViewBag.CommentCount>0)
                                 {
-                                <h5>Комментарии <a href="#">@ViewBag.CommentCount</a></h5>
+                                <h5>Comments <a href="#">@ViewBag.CommentCount</a></h5>
                                 }
                                 <ul class="comments">
                                     @foreach (var comment in Model.Comments.Where(c=>c.Visibility))
@@ -101,14 +101,14 @@
                             </div>
                         }
                     </div>                    
-                    <h5 class="pad60">Ваш комментарий очень важен для нас</h5>
+                    <h5 class="pad60">Your comment is very important for us(from english)</h5>
                     <div class="contact_form pad15">
                         <form class="ajax-contact-form2">
-                            <input class="col-xs-12 col-md-5 marg-right10" type="text" name="name" value="" placeholder="Имя" required>
+                            <input class="col-xs-12 col-md-5 marg-right10" type="text" name="name" value="" placeholder="Name" required>
                             <input class="col-xs-12 col-md-5" type="email" name="email" value="" placeholder="Email" required>
-                            <textarea name="message"  class="col-xs-12  col-md-12" placeholder="Комментарий" required></textarea>
+                            <textarea name="message"  class="col-xs-12  col-md-12" placeholder="Comment" required></textarea>
                             <div class="clear"></div>
-                            <a href="javascript:void(0)" class="btn">ОТПРАВИТЬ</a>
+                            <a href="javascript:void(0)" class="btn">SEND</a>
                         </form>
                     </div>
 
@@ -118,7 +118,7 @@
 
                 @{
                     var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
-                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane.cshtml", meta);
+                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane_en.cshtml", meta);
                 }
 
             </div>

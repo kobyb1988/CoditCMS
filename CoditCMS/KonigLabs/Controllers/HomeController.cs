@@ -11,42 +11,20 @@ using System.Web.Mvc;
 using PagedList;
 using System.Data.Entity;
 using Hangfire;
+using KonigLabs.Core.ServiceProviderIml;
+using Libs.Services;
 
 
 namespace KonigLabs.Controllers
 {
-    public partial class HomeController : Controller
+    public partial class HomeController : BaseController
     {
-        public virtual ActionResult Index(string language)
+        public virtual ActionResult Index()
         {
-
-            if (String.IsNullOrEmpty(language))
-            {
-                language = LocalEntity.RU;
-            }
-            if (language != LocalEntity.RU && language != LocalEntity.EN)
-            {
-                Response.StatusCode = 404;
-                return View("NotFound"); 
-            }
-            var viewPath = "~/Views/Home/Index_{0}.cshtml";
-            string view;
-            switch (language)
-            {
-                case LocalEntity.RU:
-                    view = String.Format(viewPath, language);
-                    break;
-                case LocalEntity.EN:
-                    view = String.Format(viewPath, language);
-                    break;
-                default:
-                    view = String.Format(viewPath, LocalEntity.RU);
-                    break;
-            }
             using (var db = ApplicationDbContext.Create())
             {
-                var landing = new LandingPage(language, db);
-                return View(view, landing);
+                var landing = new LandingPage(_lang.GetLanguageName(), db);
+                return LocalizableView("~/Views/Home/Index_{0}.cshtml", landing);
             }
         }
 
@@ -55,11 +33,11 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var member = db.CrewMembers.Where(m => m.Id == id).FirstOrDefault();
+                var member = db.CrewMembers.FirstOrDefault(m => m.Id == id);
                 if (member == null)
                 {
                     Response.StatusCode = 404;
-                    return View("NotFound"); 
+                    return View("NotFound");
                 }
                 var vm = new ViewMember(member);
                 return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
@@ -70,11 +48,11 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var project = db.Projects.Where(p => p.Id == id).FirstOrDefault();
+                var project = db.Projects.FirstOrDefault(p => p.Id == id);
                 if (project == null)
                 {
-                     Response.StatusCode = 404;
-                    return View("NotFound"); 
+                    Response.StatusCode = 404;
+                    return View("NotFound");
                 }
                 var vm = new ViewProject(project);
                 return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
@@ -85,7 +63,7 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Where(m => m.Id == id).FirstOrDefault();
+                var article = db.Articles.FirstOrDefault(m => m.Id == id);
                 if (article == null)
                 {
                     Response.StatusCode = 404;
@@ -147,15 +125,15 @@ namespace KonigLabs.Controllers
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags).Include(a => a.Categories)
-                    .Include(a => a.CrewMember)
-                    .Include(a => a.CrewMember.Files).Include(a => a.Comments)
-                    .Include(a => a.Comments.Select(c => c.CrewMember))
-                    .Where(a => a.Id == id).FirstOrDefault();
+                var article = db.Articles.Include(a => a.Files).Include(a => a.Tags)
+                    .Include(a => a.Categories)
+                    .Include(a => a.CrewMember).Include(a => a.CrewMember.Files)
+                    .Include(a => a.Comments)
+                    .Include(a => a.Comments.Select(c => c.CrewMember)).FirstOrDefault(a => a.Id == id);
                 if (article == null)
                 {
                     Response.StatusCode = 404;
-                    return View("NotFound"); 
+                    return View("NotFound");
                 }
                 int commentCount = 0;
                 foreach (var comment in article.Comments.Where(c => c.Parent == null && c.Visibility))
@@ -163,9 +141,9 @@ namespace KonigLabs.Controllers
                     comment.WalkDawn(1);
                     commentCount += comment.CommentCount + 1;
                 }
-                ViewBag.BlogMeta = new BlogMeta(db);
+                ViewBag.BlogMeta = new BlogMeta(db, _lang.GetLanguageName());
                 ViewBag.CommentCount = commentCount;
-                return View(article);
+                return LocalizableView("~/Views/Home/BlogPost_{0}.cshtml", article);
             }
         }
 
@@ -186,18 +164,16 @@ namespace KonigLabs.Controllers
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            //return View(students.ToPagedList(pageNumber, pageSize));
-            if (String.IsNullOrEmpty(language))
-            {
-                language = LocalEntity.RU;
-            }
+            language = _lang.GetLanguageName();
             using (var db = ApplicationDbContext.Create())
             {
 
-                var articles = KonigLabs.Models.Article.GetArticles(language, db);
+                var articles = Models.Article.GetArticles(language, db);
                 if (cat.HasValue)
                 {
-                    var category = db.ArticleCategories.Where(c => c.Id == cat.Value).FirstOrDefault();
+                    var category = db.ArticleCategories.FirstOrDefault(c => c.Id == cat.Value
+                                                                            && c.Visibility
+                                                                            && c.Language.ToLower() == language.ToLower());
                     if (category != null)
                     {
                         var ids = category.Articles.Select(a => a.Id).ToList();
@@ -206,7 +182,9 @@ namespace KonigLabs.Controllers
                 }
                 if (tag.HasValue)
                 {
-                    var _tag = db.Tags.Where(t => t.Id == tag.Value).FirstOrDefault();
+                    var _tag = db.Tags.FirstOrDefault(t => t.Id == tag.Value
+                                                        && t.Visibility
+                                                        && t.Language.ToLower() == language.ToLower());
                     if (_tag != null)
                     {
                         var ids = _tag.Articles.Select(a => a.Id).ToList();
@@ -221,10 +199,9 @@ namespace KonigLabs.Controllers
                     }
                 }
                 var list = articles.ToPagedList(pageNumber, pageSize);
-                var bm = new BlogMeta(db);
-                bm.SearchValue = search;
+                var bm = new BlogMeta(db,language) { SearchValue = search };
                 ViewBag.BlogMeta = bm;
-                return View(list);
+                return LocalizableView("~/Views/Home/Blog_{0}.cshtml", list);
             }
         }
 
@@ -238,13 +215,13 @@ namespace KonigLabs.Controllers
                 Comment comment = null;
                 if (postId.HasValue)
                 {
-                    article = db.Articles.Where(a => a.Id == postId.Value).FirstOrDefault();
+                    article = db.Articles.FirstOrDefault(a => a.Id == postId.Value);
                 }
                 else
                 {
                     if (commentId.HasValue)
                     {
-                        comment = db.Comments.Where(c => c.Id == commentId.Value).FirstOrDefault();
+                        comment = db.Comments.FirstOrDefault(c => c.Id == commentId.Value);
                         if (comment != null)
                         {
                             article = comment.Article;

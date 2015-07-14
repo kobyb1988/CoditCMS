@@ -16,13 +16,18 @@
 
 		<cols>
 			<string name="Name" title="Название" />
+      <string name="Language" title="Язык"/>
 		</cols>
 
 	</list>
 
 	<form>
 		<tab name="General">
-			<string name="Name" title="Название" />		
+			<string name="Name" title="Название" />
+      <select name="Language" title="Язык">
+        <option value="ru">ru</option>
+        <option value="en">en</option>
+      </select>		
 		</tab>		
 		<tab name="Metadata">		
 			<string name="MetaTitle" title="MetaTitle" />

@@ -1,0 +1,86 @@
+﻿@model PagedList.IPagedList<KonigLabs.Models.Article>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader_en.cshtml");
+}
+
+<div class="pad90"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <h1 class="embo wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
+                Our Blog
+            </h1>
+            <div class="lead wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
+                Information of interest <strong class="white embo">for our clients</strong>
+            </div>
+
+            <div class="row">
+                <div class="pad30"></div>
+                <div class="col-md-8">
+
+                    <!-- 1-->
+
+                    <div id="big" class="owl-carousel blog-carousel-bottom">
+                        <div class="item">
+                            <img src="/Content/media/img/blog/1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="/Content/media/img/blog/2.jpg" alt="">
+                        </div>
+                    </div>
+                    @if (Model.Count == 0)
+                    {
+                        if(!String.IsNullOrEmpty(Request.QueryString.Get("search")) || !String.IsNullOrEmpty(Request.QueryString.Get("Search")))
+                        {
+                            <h4>Found no articles matching your request!</h4>
+                        }
+                    }
+                    @foreach (var item in Model)
+                    {
+                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/ArticleInBlog_en.cshtml", item);
+                    }
+
+                    
+                </div>
+
+                <!-- правая колонка -->
+                @{
+                    var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
+                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane_en.cshtml", meta);
+                }
+            </div>
+
+
+            @Html.PagedListPager(Model, page => Url.Action("Blog", new { page }),
+            new PagedListRenderOptions
+            {
+                ContainerDivClasses = new[] { "pagination", "clearfix" },
+                UlElementClasses = Enumerable.Empty<string>(),
+                LiElementClasses = Enumerable.Empty<string>(),
+                LinkToNextPageFormat = "<i class='fa fa-arrow-circle-o-right fa-2x'></i>",
+                LinkToPreviousPageFormat = "<i class='fa fa-arrow-circle-o-left fa-2x'></i>"
+            })
+        </div>
+    </div>
+</div>
+<div class="center footer">
+    <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
+        <a href="#home" class=" scroll">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x "></i>
+                <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </div>
+
+    <div id="copyright" class="wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+        &copy; 2015 KonigLabs
+    </div>
+</div>
+

@@ -184,6 +184,9 @@
     <Compile Include="AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="BaseController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Codit\Controllers\CommentController.cs" />
     <Compile Include="Codit\Controllers\TagController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -210,13 +213,15 @@
     <Compile Include="Codit\Controllers\ClientController.cs" />
     <Compile Include="Codit\Controllers\ContactController.cs" />
     <Compile Include="Codit\Controllers\CrewController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Codit\Controllers\ProjectController.cs" />
-    <Compile Include="DefaultController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Core\Constraints\LanguageConstraints.cs" />
+    <Compile Include="Core\KonigLabsRoute.cs" />
+    <Compile Include="Core\LanguageRouteHandler.cs" />
+    <Compile Include="Core\ServiceProviderIml\Lang.cs" />
+    <Compile Include="Core\UriHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -493,7 +498,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <None Include="T4MVC.tt.settings.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -530,11 +537,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
-    <Content Include="Views\Default\Page.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Member.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Project.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Article.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Article_en.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index_en.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
@@ -544,17 +550,25 @@
     <Content Include="Views\Shared\old_Layout.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ProjectDescr.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MoreProjects.cshtml" />
-    <Content Include="Views\Home\Blog.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\ArticleInBlog.cshtml" />
-    <Content Include="Views\Home\BlogPost.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\BlogPane.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\BlogHeader.cshtml" />
+    <Content Include="Views\Home\Blog_ru.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArticleInBlog_ru.cshtml" />
+    <Content Include="Views\Home\BlogPost_ru.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogPane_ru.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogHeader_ru.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Comment.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\Home\Blog_en.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogHeader_en.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArticleInBlog_en.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogPane_en.cshtml" />
+    <Content Include="Views\Home\BlogPost_en.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Article_ru.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Core\Abstract\" />
     <Folder Include="Views\Article\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Views\Client\" />
     <Folder Include="Views\Contact\" />

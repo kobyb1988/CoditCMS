@@ -22,12 +22,13 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-
-[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+namespace KonigLabs
+{
+  [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
     public static KonigLabs.Controllers.AccountController Account = new KonigLabs.Controllers.T4MVC_AccountController();
-    public static KonigLabs.Controllers.DefaultController Default = new KonigLabs.Controllers.T4MVC_DefaultController();
+    public static KonigLabs.Controllers.BaseController Base = new KonigLabs.Controllers.T4MVC_BaseController();
     public static KonigLabs.Controllers.HomeController Home = new KonigLabs.Controllers.T4MVC_HomeController();
     public static KonigLabs.Controllers.ManageController Manage = new KonigLabs.Controllers.T4MVC_ManageController();
     public static T4MVC.ArticleController Article = new T4MVC.ArticleController();
@@ -37,7 +38,7 @@ public static partial class MVC
     public static T4MVC.ProjectController Project = new T4MVC.ProjectController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
-
+}
 namespace T4MVC
 {
 }
@@ -147,6 +148,8 @@ namespace Links
                 public static readonly string _6_owl_carousel_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/6_owl.carousel.min.css") ? Url("6_owl.carousel.min.css") : Url("6_owl.carousel.css");
                      
                 public static readonly string _7_cubeportfolio_min_css = Url("7_cubeportfolio.min.css");
+                public static readonly string _8_toastr_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/8_toastr.min.css") ? Url("8_toastr.min.css") : Url("8_toastr.css");
+                     
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -300,6 +303,7 @@ namespace Links
                 public static readonly string _9_charts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/9_charts.min.js") ? Url("9_charts.min.js") : Url("9_charts.js");
                 public static readonly string _91_jquery_cubeportfolio_min_js = Url("91_jquery.cubeportfolio.min.js");
                 public static readonly string _92_main_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/92_main.min.js") ? Url("92_main.min.js") : Url("92_main.js");
+                public static readonly string _921_toastr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/921_toastr.min.js") ? Url("921_toastr.min.js") : Url("921_toastr.js");
                 public static readonly string _93_gmap3_min_js = Url("93_gmap3.min.js");
                 public static readonly string _94_scripts_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/94_scripts.min.js") ? Url("94_scripts.min.js") : Url("94_scripts.js");
                 public static readonly string _95_owl_carousel_min_js = Url("95_owl.carousel.min.js");
@@ -360,6 +364,7 @@ namespace Links
                         public const string _5_font_awesome_min_css = "~/Content/media/css/5_font-awesome.min.css";
                         public const string _6_owl_carousel_css = "~/Content/media/css/6_owl.carousel.css";
                         public const string _7_cubeportfolio_min_css = "~/Content/media/css/7_cubeportfolio.min.css";
+                        public const string _8_toastr_css = "~/Content/media/css/8_toastr.css";
                     }
                 }
                 public static partial class font 
@@ -420,6 +425,7 @@ namespace Links
                         public const string _9_charts_js = "~/Content/media/js/9_charts.js"; 
                         public const string _91_jquery_cubeportfolio_min_js = "~/Content/media/js/91_jquery.cubeportfolio.min.js"; 
                         public const string _92_main_js = "~/Content/media/js/92_main.js"; 
+                        public const string _921_toastr_js = "~/Content/media/js/921_toastr.js"; 
                         public const string _93_gmap3_min_js = "~/Content/media/js/93_gmap3.min.js"; 
                         public const string _94_scripts_js = "~/Content/media/js/94_scripts.js"; 
                         public const string _95_owl_carousel_min_js = "~/Content/media/js/95_owl.carousel.min.js"; 

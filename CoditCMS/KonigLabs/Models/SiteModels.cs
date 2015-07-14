@@ -123,7 +123,7 @@ namespace KonigLabs.Models
 
     }
 
-    public class Project : IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class Project :LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
 
@@ -187,7 +187,7 @@ namespace KonigLabs.Models
                                                     .Include(p => p.Projects.Select(ip => ip.Files))
                                                     .Where(pc => pc.Language == language && pc.Visibility))
             {
-                foreach (var pro in pc.Projects.Where(p => p.Visibility))
+                foreach (var pro in pc.Projects.Where(p =>p.Language==language && p.Visibility))
                 {
                     projects.Add(pro);
                 }
@@ -314,7 +314,7 @@ namespace KonigLabs.Models
         internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
         {
             return db.Articles.Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
-                .Where(a => a.Language == language && a.Visibility).ToArray();
+                .Where(a => a.Language == language && a.Visibility).OrderByDescending(x=>x.Date).ToArray();
         }
 
 
@@ -406,7 +406,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class Tag : IVisibleEntity, ISortableEntity
+    public class Tag :LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -421,7 +421,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class ArticleCategory : IVisibleEntity, ISortableEntity
+    public class ArticleCategory :LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

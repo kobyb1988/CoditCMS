@@ -1,4 +1,6 @@
-﻿@model KonigLabs.Models.LandingPage
+﻿@using KonigLabs.Models
+@using KonigLabs.Core
+@model KonigLabs.Models.LandingPage
 @{
     ViewBag.Title = "Index_EN";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,14 +13,23 @@
                 <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="#home">Главная</a></li>
-                <li><a class="scroll" href="#about">Услуги</a></li>
-                <li><a class="scroll" href="#team">Команда</a></li>
-                <li><a class="scroll" href="#work">Наши работы</ga></li>
-                <li><a class="scroll" href="/blog/">Блог</a></li>
-                <li><a class="scroll" href="#contact">Контакты</a></li>
-                <li><a class="lang active" href="/">Ru</a></li>
-                <li><a class="lang" href="/en/">En</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
+                @switch (Model.Language)
+                {
+                    case LocalEntity.EN:
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                    case LocalEntity.RU:
+                    <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                    <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                }
             </ul>
             <div id="nav-toggle">
                 <i class="fa fa-bars"></i>
@@ -51,11 +62,11 @@ else
         </h1>
 
         <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
-            живем в Калининграде, работаем по всему миру!
+            живем в Калининграде, работаем со всем миром!
         </div>
 
         <div class="text-center pad30">
-            <a href="#about" class="scroll">
+            <a href="@Url.Action(MVC.Home.Index())#about" class="scroll">
                 <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
             </a>
         </div>
@@ -73,7 +84,7 @@ else
                 </h1>
 
                 <div class="lead wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
-                    Наши специалисты проживают жизнь каждого проекта!<br /> Именно за это <span class="white embo"><strong>нас ценят</strong></span> наши клиенты.
+                    Наши специалисты проживают жизнь каждого проекта.<br /> Именно за это <span class="white embo"><strong>нас ценят</strong></span> наши клиенты.
                 </div>
 
                 <div>
@@ -83,7 +94,7 @@ else
                         </div>
                         <h6>Дизайн интерфейсов</h6>
                         <p>
-                        Наши специалисты разработают эксклюзивный дизайн для вашего сайта, портала, мобильного или веб-приложения. При разработке дизайна проектируются интерфейсы, адаптивные под любые виды экранов.
+                        Наши специалисты разработают эксклюзивный дизайн для вашего сайта, портала, мобильного или веб-приложения. При разработке дизайна проектируются адаптивные интерфейсы для любых видов экранов.
                         </p>
                     </div>
 
@@ -93,7 +104,7 @@ else
                         </div>
                         <h6>Графический дизайн</h6>
                         <p>
-                            Мы разрабатываем фирменный стиль, логотипы, визитки, рекламы. Наши специалисты воплощают идеи с помощью линий, вдыхая в них жизнь. И, да, мы делам качественный и красивый дизайн!
+                            Мы создаем фирменный стиль, логотипы, визитные карточки, рекламные материалы. Наши специалисты воплощают идеи с помощью линий, вдыхая в них жизнь. И...да, мы делам качественный и красивый дизайн!
                         </p>
                     </div>
 
@@ -116,7 +127,7 @@ else
                         </div>
                     <h6>Веб-сайты, веб-приложения, порталы</h6>
                         <p>
-                        Тщательно проектируя и разрабатывая легко масштабируемую архитектуру, мы добиваемся надёжности и гибкости программных решений.
+                        Тщательно проектируя и разрабатывая легко масштабируемую архитектуру, мы добиваемся надёжности и гибкости ваших программных решений.
                         </p>
                     </div>
 
@@ -194,13 +205,13 @@ else
 
             <div class="col-sm-12 col-lg-6">
                 <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Наша команда - это люди, фанатеющие от IT-инноваций и сложных алгоритмов. Мы объеденились, чтобы упрощать жизнь нашим клиентам. Мы всегда открыты для диалога.
+                    Наша команда - это люди, фанатеющие от IT-инноваций и сложных алгоритмов. Мы объединились, чтобы упрощать жизнь нашим клиентам. Мы всегда открыты для диалога.
                 </p>
             </div>
 
             <div class="col-sm-12 col-lg-6">
                 <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Качественно выстроенные бизнес-процессы и всокий профессионализм позволяют нам решать проблемы клиентов наилучшим образом. Именно поэтому мы регулярно участвуем в профильных тренингах и конференциях. Наши специалисты постоянно совершенствуют свои навыки, общаясь с лучшими профессионалами своей области по всему миру.
+                    Качественно выстроенные бизнес-процессы и высокий профессионализм позволяют нам решать проблемы наших клиентов наилучшим образом. Именно поэтому мы регулярно участвуем в профильных тренингах и конференциях. Наши специалисты постоянно совершенствуют свои навыки, общаясь с лучшими профессионалами в своей области со всего мира.
                 </p>
             </div>
         </div>
@@ -209,13 +220,13 @@ else
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12 pad15">
-                <a href="#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
-                <a href="#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
-				<a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
+                <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
+                <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
+                <a href="@Url.Action(MVC.Home.Index())#vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
 					<div class="vacancy collapse">
 						<div class="pad30"></div>
 						<div class="row">
-						 <h2>Здесь будет инфа о вакансиях...</h2>
+						 <h2>Здесь в будущем будет информация о вакансиях</h2>
 						</div>
 					</div>
 							
@@ -240,7 +251,7 @@ else
         <div class="dark_overlay">
             <div class="container">
                 <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Сухая статистка
+                    Немного статистики
                 </h1>
                 <div class="pad45"></div>
 
@@ -274,11 +285,11 @@ else
                     из насущного
                 </h1>
                 <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Последние проекты, выполненные нашей командой.
+                    Последние проекты, выполненные нашей командой:
                 </div>
 
                 <div id="filters-container" class="cbp-l-filters-button">
-                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все и сразу<span class="cbp-filter-counter"></span></button>
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все<span class="cbp-filter-counter"></span></button>
                     @foreach (var category in Model.Categories)
                     {
                         <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
@@ -301,7 +312,7 @@ else
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
-                        <a href="/Home/Projects" class="cbp-l-loadMore-button-link">
+                        <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
                             <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="Еще"></i>
                         </a>
                     </div>
@@ -340,7 +351,7 @@ else
                     <ul>
                         @foreach (var article in Model.Articles)
                         {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_ru.cshtml", article);
                         }                        
                        
                     </ul>
@@ -362,7 +373,7 @@ else
 
                 <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
                     Вам требуется <strong>уникальное приложение</strong> или инновационный <strong>стартап</strong>?<br />
-                    Или же ваш <strong>бизнес</strong> нуждается в <strong>автоматизации</strong> ?<br />
+                    Ваш <strong>бизнес</strong> нуждается в <strong>автоматизации</strong> ?<br />
                     Свяжитесь с нами!
                 </div>
 
@@ -433,7 +444,7 @@ else
 
     <div class="center footer">
         <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
-            <a href="#home" class=" scroll">
+            <a href="@Url.Action(MVC.Home.Index())#home" class=" scroll">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x "></i>
                     <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>

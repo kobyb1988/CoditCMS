@@ -1,0 +1,37 @@
+﻿@model KonigLabs.Models.BlogMeta
+
+<div class="col-md-3 col-md-offset-1">
+    <aside>
+        <div class="input-group">
+            <form action="@Url.Action(MVC.Home.Blog())">
+                <input class="form-control" placeholder="Search in blog" name="search" id="s" type="text" value="@Model.SearchValue">
+                <button style="margin-top:5px;">Search</button>
+            </form>
+        </div>
+
+        <div class="pad30"></div>
+        <h6>What this blog is for</h6>
+        <p>
+            Here we post information and articles that may be interesting or useful for us or our clients. The IT-related facts that we find amusing or educational make it to our blog as well.
+        </p>
+
+        <div class="pad10"></div>
+
+        <h6>Categories</h6>
+
+        <ul class="fa-ul categories">
+            @foreach (var cat in Model.Categories)
+            {
+                <li><i class="fa-li fa fa-angle-right"></i><a href="@Url.Action(MVC.Home.Blog(string.Empty, null, null, cat.Id, string.Empty))">@cat.Name</a></li>
+            }
+        </ul>
+
+        <div class="pad25"></div>
+
+        <h6 class="pad25">Tags / Labels / Marks</h6>
+        @foreach (var tag in Model.Tags)
+        {
+            <span class="badge"><a href="@Url.Action(MVC.Home.Blog(string.Empty, null, tag.Id, null,string.Empty))">@tag.Name</a> @tag.Count</span>
+        }
+    </aside>
+</div>

@@ -59,9 +59,12 @@ namespace T4MVC
             {
                 public readonly string Article = "Article";
                 public readonly string ArticleFull = "ArticleFull";
-                public readonly string ArticleInBlog = "ArticleInBlog";
-                public readonly string BlogHeader = "BlogHeader";
-                public readonly string BlogPane = "BlogPane";
+                public readonly string ArticleInBlog_en = "ArticleInBlog_en";
+                public readonly string ArticleInBlog_ru = "ArticleInBlog_ru";
+                public readonly string BlogHeader_en = "BlogHeader_en";
+                public readonly string BlogHeader_ru = "BlogHeader_ru";
+                public readonly string BlogPane_en = "BlogPane_en";
+                public readonly string BlogPane_ru = "BlogPane_ru";
                 public readonly string Client = "Client";
                 public readonly string Comment = "Comment";
                 public readonly string Member = "Member";

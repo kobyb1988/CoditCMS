@@ -1,28 +1,38 @@
-﻿@model KonigLabs.Models.LandingPage
+﻿@using KonigLabs.Core
+@using KonigLabs.Models
+@model LandingPage
 @{
-ViewBag.Title="Index_EN";
-Layout="~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index_EN";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<span data-reason="check1"></span>
+
 <div id="header">
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
+                <a class="scroll" href="@Url.Action(MVC.Home.Index())#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="#home">Home</a></li>
-                <li><a class="scroll" href="#about">Services</a></li>
-                <li><a class="scroll" href="#team">Team</a></li>
-                <li><a class="scroll" href="#work">Portfolio</ga></li>
-                <li><a class="scroll" href="/blog/en">Blog</a></li>
-                <li><a class="scroll" href="#contact">Details</a></li>
-                <li><a class="lang active" href="/">Ru</a></li>
-                <li><a class="lang" href="/en/">En</a></li>
-            </ul>
-            <div id="nav-toggle">
-                <i class="fa fa-bars"></i>
-            </div>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Home</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Services</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Team</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Blog</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Details</a></li>
+                @switch (Model.Language)
+                {
+                    case LocalEntity.EN:
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                    case LocalEntity.RU:
+                    <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                    <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                }
+                <div id="nav-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
         </div>
     </div>
 </div>
@@ -33,34 +43,34 @@ Layout="~/Views/Shared/_Layout.cshtml";
 }
 else
 {
-<section id="home" class="top_video">
-    <div id="overlay"></div>
-    <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
+    <section id="home" class="top_video">
+        <div id="overlay"></div>
+        <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
 
-    <div id="content">
-        <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
-            <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/media/img/logo_site2.png"></div>
+        <div id="content">
+            <div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="6s">
+                <div class="heart wow pulse" data-wow-iteration="infinite"><img src="/Content/media/img/logo_site2.png"></div>
+            </div>
+
+            <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
+                We develop complex
+            </div>
+
+            <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
+                TURNKEY SOFTWARE SOLUTIONS
+            </h1>
+
+            <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
+                residing in Kaliningrad, working worldwide!
+            </div>
+
+            <div class="text-center pad30">
+                <a href="@Url.Action(MVC.Home.Index())#about" class="scroll">
+                    <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
+                </a>
+            </div>
         </div>
-
-        <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
-            We develop complex
-        </div>
-
-        <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
-            SOFTWARE SOLUTIONS
-        </h1>
-
-        <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
-            residing in Kaliningrad, working worldwide
-        </div>
-
-        <div class="text-center pad30">
-            <a href="#about" class="scroll">
-                <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 }
 
 <section id="big_image"></section>
@@ -73,71 +83,74 @@ else
                 </h1>
 
                 <div class="lead wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
-                    Our professionals live through the entire lifespan of every project.<br /> That is just what our customers <span class="white embo"><strong>appreciate</strong></span>!
+                    Our professionals get through the entire lifespan of each project.<br /> That is just what <span class="white embo"><strong>our customers</strong></span> appreciate.
+                </div>
+
+                <div>
+                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
+                        <div class="service">
+                            <i class="fa fa-laptop"></i>
+                        </div>
+                        <h6>Interface design</h6>
+                        <p>
+                            Our team will create the exquisite design for your website, portal, mobile or web-based application. Design development includes the adaptive layout that will perfectly fit any type of screen.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                        <div class="service">
+                            <i class="fa fa-magic"></i>
+                        </div>
+                        <h6>Visual design</h6>
+                        <p>
+                            We develop corporate style, logos, visiting cards, advertising materials. Our professionals shape the ideas with lines and bring them to life. And… yes, we create smooth and clean design!
+                        </p>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                        <div class="service">
+                            <i class="fa fa-tasks"></i>
+                        </div>
+                        <h6>Website promotion</h6>
+                        <p>
+                            By drawing new visitors to your website, we boost the number of your potential customers.
+                        </p>
+                    </div>
+
+                    <div style="clear:both;"></div>
                 </div>
                 <div>
-                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
-                    <div class="service">
-                        <i class="fa fa-laptop"></i>
+                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
+                        <div class="service">
+                            <i class="fa fa-cloud"></i>
+                        </div>
+                        <h6>Websites, web-based applications, portals</h6>
+                        <p>
+                            Easily scalable architecture, carefully designed and developed by our team helps to achieve reliability and flexibility of your software solutions.
+                        </p>
                     </div>
-                    <h6>UI design</h6>
-                    <p>
-                        Our team of professionals will create the exquisite design for your website, portal, mobile or web-based application. Design development includes the adaptive layout that will perfectly fit any type of screen.
-                    </p>
-                </div>
 
-                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
-                    <div class="service">
-                        <i class="fa fa-magic"></i>
+                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                        <div class="service">
+                            <i class="fa fa-cogs"></i>
+                        </div>
+                        <h6>Desktop applications and services</h6>
+                        <p>
+                            Developing highly complex applications for Windows-based operating systems, we pay great attention to quality of code and architecture.
+                        </p>
                     </div>
-                    <h6>Visual design</h6>
-                    <p>
-                        We design corporate style, logos, visiting cards, ads. Our professionals shape the ideas with lines and bring them to life. And… yes, we create smooth and clean design!
-                    </p>
-                </div>
 
-                <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
-                    <div class="service">
-                        <i class="fa fa-tasks"></i>
+                    <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                        <div class="service">
+                            <i class="fa fa-wrench"></i>
+                        </div>
+                        <h6>Mobile and cloud-based applications</h6>
+                        <p>
+                            Cross-platform applications (Android, iOS, Windows Phone), cloud-based applications (AWS, Azure) – that’s what you come to us for.
+                        </p>
                     </div>
-                    <h6>Website promotion</h6>
-                    <p>
-                        By drawing new visitors to your website we boost the number of your potential customers.
-                    </p>
-                </div>
-                <div style=clear:both;""></div>
-                </div>
-                <div>
-                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
-                    <div class="service">
-                        <i class="fa fa-cloud"></i>
-                    </div>
-                    <h6>Websites, web-based applications, portals</h6>
-                    <p>
-                        ТEasily scalable architecture, carefully designed and developed by our team helps to achieve reliability and flexibility of your software solutions.
-                    </p>
-                </div>
 
-                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
-                    <div class="service">
-                        <i class="fa fa-cogs"></i>
-                    </div>
-                    <h6>Desktop applications and services</h6>
-                    <p>
-                        Developing highly complex applications for Windows-based operating systems, we pay great attention to quality of code and architecture.
-                    </p>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
-                    <div class="service">
-                        <i class="fa fa-wrench"></i>
-                    </div>
-                    <h6>Mobile and cloud-based applications</h6>
-                    <p>
-                        Cross-platform applications (Android, iOS, Windows Phone), cloud-based applications (AWS, Azure) – that’s what you come to us for.
-                    </p>
-                </div>
-                <div style=clear:both;""></div>
+                    <div style="clear:both;"></div>
                 </div>
             </div>
         </div>
@@ -153,19 +166,19 @@ else
                     Application domain of our projects:
                 </h1>
 
-                <div class="col-sm-4 col-lg-4 text-center  pie wow bounceIn" data-wow-delay="1s">
+                <div class="col-sm-4 col-lg-4 text-center  pie wow bounceIn" data-wow-delay="2s">
                     <span class="chart1">
                         <span class="percent">50%</span>
                     </span>
                     <p class="center">Global online services</p>
                 </div>
-                <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.5s">
+                <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="0.8s">
                     <span class="chart2">
                         <span class="percent">20%</span>
                     </span>
                     <p class="center">Complex cloud-based databases</p>
                 </div>
-                <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.8s">
+                <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.2s">
                     <span class="chart3">
                         <span class="percent">30%</span>
                     </span>
@@ -185,7 +198,7 @@ else
                 </h1>
 
                 <div class="lead  wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Our <strong><span class="white">team</span></strong> combines professionals with different skills
+                    Our <strong>team</strong> combines professionals with different skills
                 </div>
             </div>
 
@@ -197,7 +210,7 @@ else
 
             <div class="col-sm-12 col-lg-6">
                 <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Wisely organized business-process and high professionalism make it possible for us to handle the problems of our customers in the best possible way. That is precisely why we regularly participate in the profession-oriented trainings and conferences. Our specialists constantly develop their skills while interacting with the best professionals in their fields from around the world.
+                    Wisely organized business process and high professionalism make it possible for us to handle the problems of our customers in the best possible way. That is precisely why we regularly participate in the profession-oriented trainings and conferences. Our specialists constantly develop their skills while interacting with the best professionals in their fields from around the world.
                 </p>
             </div>
         </div>
@@ -206,16 +219,24 @@ else
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-12 pad15">
-                <a href="#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
-                <a href="#work" class="scroll btn wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
+                <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
+                <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
+                <a href="@Url.Action(MVC.Home.Index())#vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
+                <div class="vacancy collapse">
+                    <div class="pad30"></div>
+                    <div class="row">
+                        <h2>Jobs information will be here soon</h2>
+                    </div>
+                </div>
+
                 <div class="pad45"></div>
 
                 <div id="grid-container" class="cbp-l-grid-team">
-                    <ul class="cbp-l-grid-team">
+                    <ul class="cbp-l-grid-team team-grid the-team">
                         @foreach (var member in Model.Members)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
-                        }                      
+                        }
                     </ul>
                 </div>
 
@@ -260,14 +281,14 @@ else
         <div class="row">
             <div class="col-sm-12 col-lg-12">
                 <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
-                    some everyday activity
+                    our everyday activity
                 </h1>
                 <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Our recent projects.
+                    Our recent projects:
                 </div>
 
                 <div id="filters-container" class="cbp-l-filters-button">
-                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">All at once<span class="cbp-filter-counter"></span></button>
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">All<span class="cbp-filter-counter"></span></button>
                     @foreach (var category in Model.Categories)
                     {
                         <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
@@ -275,22 +296,22 @@ else
                             <span class="cbp-filter-counter"></span>
                         </button>
                     }
-                
+
                 </div>
 
                 <div class="cbp-l-grid-project">
                     <div id="grid-container3" class="cbp-l-grid-projects">
                         <ul>
-                           
+
                             @foreach (var project in Model.Projects)
                             {
                                 Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
                             }
-                            
+
                         </ul>
                     </div>
                     <div class="cbp-l-loadMore-button">
-                        <a href="/Home/Projects" class="cbp-l-loadMore-button-link">
+                        <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
                             <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="More"></i>
                         </a>
                     </div>
@@ -312,7 +333,7 @@ else
                     {
                         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
                     }
-                   
+
                 </div>
             </div>
         </div>
@@ -329,9 +350,9 @@ else
                     <ul>
                         @foreach (var article in Model.Articles)
                         {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
-                        }                        
-                       
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_en.cshtml", article);
+                        }
+
                     </ul>
                 </div>
             </div>
@@ -350,8 +371,8 @@ else
                 </h1>
 
                 <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Do you need the <strong>unique application</strong>  or innovative <strong>start-up</strong>?<br />
-                    Or your <strong>business</strong> cries for <strong>automation</strong>?<br />
+                    Do you need <strong>the unique application</strong> or innovative <strong>start-up</strong>?<br />
+                    Or your <strong>business</strong> cries for <strong>automation</strong> ?<br />
                     Get in touch with us!
                 </div>
 
@@ -361,8 +382,8 @@ else
                         <h2>Care to meet us?</h2>
 
                         <p>
-                            Russian Federation, Kaliningrad<br>
-                            Litovsky Val St., <br />д. 47а
+                            Russian Federation, Kaliningrad,<br>
+                            Litovsky Val st., <br />47a
                         </p>
 
                         <ul class="fa-ul">
@@ -422,7 +443,7 @@ else
 
     <div class="center footer">
         <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
-            <a href="#home" class=" scroll">
+            <a href="@Url.Action(MVC.Home.Index())#home" class=" scroll">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x "></i>
                     <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>
