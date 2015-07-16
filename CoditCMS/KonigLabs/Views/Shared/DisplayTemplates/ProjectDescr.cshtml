@@ -5,6 +5,11 @@
     <div class="col-sm-12 col-lg-12">
 
         <h1 class="embo">@Model.Name</h1>
+
+        @*<div class="lead">
+            @Model.Description;
+        </div>*@
+
         <!-- CAROUSEL-->
         <div id="carousel" class="owl-carousel pad5">
             @foreach(var img in Model.Gallery)
@@ -13,16 +18,67 @@
                     <img class="lazyOwl" data-src="@Url.Content(img)" alt="Image 2">
                 </div>
             }
-            
+            @*<div class="item">
+                <img class="lazyOwl" data-src="img/gallery/p8.jpg" alt="Image 1">
+            </div>
+            <div class="item">
+                <img class="lazyOwl" data-src="img/gallery/p9.jpg" alt="Image 2">
+            </div>
+            <div class="item">
+                <img class="lazyOwl" data-src="img/gallery/p10.jpg" alt="Image 3">
+            </div>
+            <div class="item">
+                <img class="lazyOwl" data-src="img/gallery/p11.jpg" alt="Image 4">
+            </div>*@
         </div>
         <!--//END-->
         @if (!String.IsNullOrEmpty(Model.Url))
         {
-            <a target="_blank" href="@Model.Url" style="background: none repeat scroll 0% 0% #00F1EB;margin:10px 0 10px 0;display:inline-block;color:white;padding:5px;">Сайт1 проекта</a>
+            <a target="_blank" href="@Model.Url" style="background: none repeat scroll 0% 0% #00F1EB;margin:10px 0 10px 0;display:inline-block;color:white;padding:5px;">Сайт проекта</a>
         }
         
         <div class="row pad30">
             @Html.Raw(@Model.Description)
+            @*<div class="col-sm-12 col-md-8">
+
+                <h4>Описание проекта</h4>
+
+                <p class="pad25">
+                    Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий способствует подготовки и реализации системы обучения кадров,
+                    соответствует насущным потребностям. С другой стороны постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке форм развития.
+                </p>
+
+                <blockquote class="testimonial_blockquote">
+                    <p>
+                        <i class="fa fa-comments-o inverse"></i>
+                        <em>Здесь краткий отзыв клиента, о том, как офигительно ему забабахали проект...</em>
+                    </p>
+                </blockquote>
+
+                <p>
+                    Идейные соображения высшего порядка, а также реализация намеченных плановых заданий позволяет выполнять
+                    важные задания по разработке направлений прогрессивного развития. Идейные соображения высшего порядка, а
+                    также реализация намеченных плановых заданий играет важную роль в формировании систем массового участия.
+                </p>
+                <div class="pad15"></div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+
+                <h4>Детали</h4>
+                <div class="pad15"></div>
+                <ul class="cbp-l-project-details-list ">
+                    <li><strong>Заказчик</strong> ООО "Заказчик ЛТД"</li>
+                    <li><strong>Дата сдачи</strong>1 апреля 2015</li>
+                    <li><strong>Сфера деятельности</strong>Торговля</li>
+                </ul>
+
+                <div class="pad25"></div>
+                <a href="#" class="btn">сайт проекта</a>
+                <div class="pad25"></div>
+            </div>*@
+
+
         </div>
     </a>
 </div>

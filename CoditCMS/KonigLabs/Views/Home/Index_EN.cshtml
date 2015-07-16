@@ -221,12 +221,10 @@ else
             <div class="col-sm-12 col-lg-12 pad15">
                 <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
                 <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
-                <a href="@Url.Action(MVC.Home.Index())#vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
+                <a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
                 <div class="vacancy collapse">
                     <div class="pad30"></div>
-                    <div class="row">
                         <h2>Jobs information will be here soon</h2>
-                    </div>
                 </div>
 
                 <div class="pad45"></div>
@@ -256,20 +254,20 @@ else
 
                 <div class="col-sm-4 col-lg-4 text-center">
                     <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+                        <p class="light">years of experience<br /> in total for all team members</p>
                         <div id="counter-1"></div>
-                        <p class="light">years of experience in total for all team members</p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-lg-4 text-center">
                     <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+                        <p class="light">projects<br /> developed</p>
                         <div id="counter-2"></div>
-                        <p class="light">projects developed</p>
                     </div>
                 </div>
                 <div class="col-sm-4 col-lg-4 text-center ">
                     <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
-                        <div id="counter-3"></div>
-                        <p class="light">industry certificates and awards</p>
+                        <p class="light">industry certificates<br /> and awards</p>
+						<div id="counter-3"></div>
                     </div>
                 </div>
             </div>
@@ -350,7 +348,7 @@ else
                     <ul>
                         @foreach (var article in Model.Articles)
                         {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_en.cshtml", article);
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
                         }
 
                     </ul>

@@ -58,7 +58,7 @@ a {
  .eye{
 	width:250px !important;
 	height:250px !important;
-	background-size: 2750px 750px; /*2000px;*/
+	background-size: 2750px 2000px;
 	background-image:url(../img/team.jpg);
 	margin: 0 auto;
 }
@@ -147,7 +147,7 @@ h1 {
 	letter-spacing:-3px!important;
 	color: #fff!important;
 	margin: 0px 0px 30px;
-	text-transform: lowercase;
+	/*text-transform: lowercase;*/
 }
 h2 { font-size: 28px; }
 h3 { font-size: 24px; }
@@ -505,14 +505,14 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	font-weight: 400!important;
 	line-height: 60px;
 	letter-spacing: 2px!important;
-	color: #bbb!important;
+	color: #eee!important;
 	text-align: center;
 	text-transform: uppercase;
 	padding-top: 90px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.3); 
 }
 .counter { 
-	padding: 10px 0 0;
+	padding-bottom: 20px;
 	font-size: 70px;
 	font-weight: 700!important;
 	line-height: 80px;
@@ -521,11 +521,13 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 }
 .light { 
 	font-family: 'Open Sans', sans-serif; 
-	padding: 20px 0 120px;
+	/*padding: 20px 0 120px;*/
+	display: block;
+	min-height: 40px;
 	font-size: 18px;
 	font-weight: 400!important;
 	line-height: 25px;
-	color: #bbb;
+	color: #eee;
 	margin: 0 auto;
 	letter-spacing: 1px;
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.3); 
@@ -851,7 +853,7 @@ div.tabs ul.nav-tabs a:active, div.tabs ul.nav-tabs a:focus { border-bottom: 0!i
 }
 #menu li { float: none!important; margin:0px 0 10px 10px; }
 #header { background-color: rgba(255,255,255,1.0)!important; opacity:1.0;}
-#logo { padding:25px 0px 0 30px; overflow:hidden; float:left; }
+#logo { padding:2px 0px 0 30px; overflow:hidden; float:left; }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px){
@@ -863,24 +865,24 @@ div.tabs ul.nav-tabs a:active, div.tabs ul.nav-tabs a:focus { border-bottom: 0!i
 #menu li:first-child {  margin-top:-30px!important; }
 .like { line-height:40px; min-height:150px; font-size:60px!important; }
 .ticker { font-size:30px!important;   }
-h1  { font-size: 60px!important; line-height:55px; letter-spacing:-1px!important; }
+h1  { font-size: 30px!important; line-height:40px; letter-spacing:-1px!important; }
 .lead  { font-size: 28px!important;line-height:38px!important; }
-#single h1 { font-size:40px!important; line-height:40px!important; }
+#single h1 { font-size:30px!important; line-height:40px!important; }
 #single .lead { font-size:20px!important; line-height:30px!important; margin:0 0 20px; }
 .cbp-popup-singlePage-counter { display:none!important; }
 }
 
 @media screen and (max-width: 31.5em) {
-#section_video h2 { font-size:32px!important; line-height:40px; margin:50% auto 0; padding:0 0; width:100%; }
+#section_video h2 { font-size:28px!important; line-height:36px; margin:50% auto 0; padding:0 0; width:100%; }
 }
 
 @media all and (min-width: 321px) and (max-width: 568px) {
-#content h1 { font-size:40px!important; }
+#content h1 { font-size:28px!important; }
 .name { font-size: 12px; margin-top:-10px; }
 .byline { font-size: 12px; margin-bottom:8px }
 }
 
 @media all and (max-width: 320px) {
-#content h1 { font-size:40px!important; margin-bottom:-10px!important;}
+#content h1 { font-size:28px!important; margin-bottom:-10px!important;}
 .name, .byline { font-size:12px; }
 }
