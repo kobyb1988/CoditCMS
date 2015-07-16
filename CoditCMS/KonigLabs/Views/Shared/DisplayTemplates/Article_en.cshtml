@@ -13,8 +13,6 @@
             </div>
         </div>
     </a>
-    <a href="#" class="cbp-l-grid-blog-title">@Model.Title</a>
+    <a href="@Url.Action(MVC.Home.BlogPost(Model.Id))" class="cbp-l-grid-blog-title">@Model.Title</a>
     <div class="cbp-l-grid-blog-date">@Model.Date</div>
-    @*<div style="display:none;" class="cbp-l-grid-blog-split">|</div>
-    <a style="display:none;" href="#" class="cbp-l-grid-blog-comments">10 комментариев</a>*@
 </li>

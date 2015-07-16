@@ -281,11 +281,11 @@ namespace KonigLabs.Models
         public int Id { get; set; }
         public int Count { get; set; }
         public string Name { get; set; }
-        public ViewTag(Tag tag)
+        public ViewTag(Tag tag, int count)
         {
             Id = tag.Id;
             Name = tag.Name;
-            Count = tag.Articles.Count;
+            Count = count;
         }
     }
 
@@ -294,11 +294,11 @@ namespace KonigLabs.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Count { get; set; }
-        public ViewArticleCategory(ArticleCategory category)
+        public ViewArticleCategory(ArticleCategory category, int count)
         {
             Id = category.Id;
             Name = category.Name;
-            Count = category.Articles.Count;
+            Count = count;
         }
     }
 
@@ -308,23 +308,22 @@ namespace KonigLabs.Models
         public List<ViewArticleCategory> Categories { get; set; }
         public string SearchValue { get; set; }
 
-        public BlogMeta(ApplicationDbContext db, string language)
+        public BlogMeta(ApplicationDbContext db, string[] langugaes, string currentLang)
         {
-            string[] langugaes = GetAccessableLanguagesFortags(language);
             SearchValue = "";
             Tags = new List<ViewTag>();
             foreach (var tag in db.Tags.Include("Articles").Where(x => x.Visibility && langugaes.Contains(x.Language)).OrderBy(x => x.Sort))
             {
-                Tags.Add(new ViewTag(tag));
+                Tags.Add(new ViewTag(tag, tag.Articles.Count(x => x.Visibility && langugaes.Contains(x.Language))));
             }
             Categories = new List<ViewArticleCategory>();
-            foreach (var tag in db.ArticleCategories.Include("Articles").Where(x => x.Visibility && x.Language == language).OrderBy(x => x.Sort))
+            foreach (var cat in db.ArticleCategories.Include("Articles").Where(x => x.Visibility && currentLang == x.Language).OrderBy(x => x.Sort))
             {
-                Categories.Add(new ViewArticleCategory(tag));
+                Categories.Add(new ViewArticleCategory(cat, cat.Articles.Count(x => x.Visibility && langugaes.Contains(x.Language))));
             }
         }
 
-        private string[] GetAccessableLanguagesFortags(string language)
+        private string[] GetAccessableLanguagesForTags(string language)
         {
             return LocalEntity.EN == language ? new[] { LocalEntity.EN } : new[] { LocalEntity.EN, language };
         }

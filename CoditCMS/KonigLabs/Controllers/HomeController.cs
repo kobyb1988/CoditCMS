@@ -141,7 +141,7 @@ namespace KonigLabs.Controllers
                     comment.WalkDawn(1);
                     commentCount += comment.CommentCount + 1;
                 }
-                ViewBag.BlogMeta = new BlogMeta(db, _lang.GetLanguageName());
+                ViewBag.BlogMeta = new BlogMeta(db, AccessableLanguagesForTags,_lang.GetLanguageName());
                 ViewBag.CommentCount = commentCount;
                 return LocalizableView("~/Views/Home/BlogPost_{0}.cshtml", article);
             }
@@ -160,20 +160,19 @@ namespace KonigLabs.Controllers
             "хотя", "чего", "чей", "чем", "что", "чтобы", "ответ", "чье", "чья", "эта", "эти", "это", "я"
         };
 
-        public virtual ActionResult Blog(string language, int? page, int? tag, int? cat, string search)
+        public virtual ActionResult Blog(int? page, int? tag, int? cat, int? authorId, string search)
         {
             int pageSize = 3;
             int pageNumber = (page ?? 1);
-            language = _lang.GetLanguageName();
             using (var db = ApplicationDbContext.Create())
             {
 
-                var articles = Models.Article.GetArticles(language, db);
+                var articles = Models.Article.GetArticles(AccessableLanguagesForTags, db);
                 if (cat.HasValue)
                 {
                     var category = db.ArticleCategories.FirstOrDefault(c => c.Id == cat.Value
                                                                             && c.Visibility
-                                                                            && c.Language.ToLower() == language.ToLower());
+                                                                            && AccessableLanguagesForTags.Contains(c.Language));
                     if (category != null)
                     {
                         var ids = category.Articles.Select(a => a.Id).ToList();
@@ -184,28 +183,33 @@ namespace KonigLabs.Controllers
                 {
                     var _tag = db.Tags.FirstOrDefault(t => t.Id == tag.Value
                                                         && t.Visibility
-                                                        && t.Language.ToLower() == language.ToLower());
+                                                        && AccessableLanguagesForTags.Contains(t.Language));
                     if (_tag != null)
                     {
                         var ids = _tag.Articles.Select(a => a.Id).ToList();
                         articles = articles.Where(a => ids.Contains(a.Id));
                     }
                 }
+                if (authorId.HasValue)
+                    articles = articles.Where(x => x.CrewMemberId == authorId);
                 if (!String.IsNullOrEmpty(search))
                 {
                     if (!StopWords.Contains(search))
                     {
-                        articles = articles.Where(a => a.Content.ToLower().Contains(search.ToLower()));
+                        articles = articles.Where(a => a.Content.ToLower().Split(' ').ToList().
+                            Any(x => search.ToLower().Split(' ').Contains(x))
+                            || a.Title.ToLower().Split(' ').ToList().
+                            Any(x => search.ToLower().Split(' ').Contains(x)));
                     }
                 }
                 var list = articles.ToPagedList(pageNumber, pageSize);
-                var bm = new BlogMeta(db,language) { SearchValue = search };
+                var bm = new BlogMeta(db, AccessableLanguagesForTags,_lang.GetLanguageName()) { SearchValue = search };
                 ViewBag.BlogMeta = bm;
                 return LocalizableView("~/Views/Home/Blog_{0}.cshtml", list);
             }
         }
 
-
+       
         public virtual ActionResult Comment(string name, string email, string text, int? commentId, int? postId)
         {
 

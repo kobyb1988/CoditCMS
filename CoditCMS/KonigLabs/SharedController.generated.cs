@@ -57,7 +57,8 @@ namespace T4MVC
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
             public partial class _DisplayTemplatesClass
             {
-                public readonly string Article = "Article";
+                public readonly string Article_en = "Article_en";
+                public readonly string Article_ru = "Article_ru";
                 public readonly string ArticleFull = "ArticleFull";
                 public readonly string ArticleInBlog_en = "ArticleInBlog_en";
                 public readonly string ArticleInBlog_ru = "ArticleInBlog_ru";

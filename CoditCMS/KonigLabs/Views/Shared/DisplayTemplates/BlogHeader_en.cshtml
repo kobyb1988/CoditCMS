@@ -15,7 +15,7 @@
                 <li><a href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
                 <li><a href="@Url.Action(MVC.Home.Blog())">Blog</a></li>
                 <li><a href="@Url.Action(MVC.Home.Index())#contact">Details</a></li>
-                    @if (Request.Url.AbsoluteUri.ToLower().Contains("en"))
+                    @if (Request.Url.AbsoluteUri.ToLower().Contains("/en/"))
                     {
                         <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
                         <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>

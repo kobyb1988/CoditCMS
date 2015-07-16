@@ -11,6 +11,11 @@ namespace KonigLabs.Controllers
     public partial class BaseController : Controller
     {
         protected ILocalizationProvider _lang = new Lang();
+        public string CurentLang { get { return _lang.GetLanguageName(); } }
+        public string[]  AccessableLanguagesForTags {get
+        {
+            return GetAccessableLanguagesForTags(_lang.GetLanguageName());
+        }} 
 
         protected ViewResult LocalizableView(string viewPath,object model)
         {
@@ -30,6 +35,11 @@ namespace KonigLabs.Controllers
                     break;
             }
             return View(localizeViewPath,model);
+        }
+
+        private string[] GetAccessableLanguagesForTags(string language)
+        {
+            return LocalEntity.EN == language ? new[] { LocalEntity.EN } : new[] { LocalEntity.EN, language };
         }
 
         protected IQueryable<T> GetEntities<T>() where T : class

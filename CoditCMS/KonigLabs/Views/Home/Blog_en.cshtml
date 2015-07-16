@@ -36,7 +36,7 @@
                     </div>
                     @if (Model.Count == 0)
                     {
-                        if(!String.IsNullOrEmpty(Request.QueryString.Get("search")) || !String.IsNullOrEmpty(Request.QueryString.Get("Search")))
+                        if (!String.IsNullOrEmpty(Request.QueryString.Get("search")) || !String.IsNullOrEmpty(Request.QueryString.Get("Search")))
                         {
                             <h4>Found no articles matching your request!</h4>
                         }
@@ -46,26 +46,35 @@
                         Html.RenderPartial("~/Views/Shared/DisplayTemplates/ArticleInBlog_en.cshtml", item);
                     }
 
-                    
+
                 </div>
 
                 <!-- правая колонка -->
                 @{
                     var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
                     Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane_en.cshtml", meta);
+                    string catStr = Request.QueryString["cat"];
+                    int? cat = !string.IsNullOrEmpty(catStr) ? int.Parse(catStr) : (int?)null;
+                    string tagStr = Request.QueryString["tag"];
+                    int? tag = !string.IsNullOrEmpty(tagStr) ? int.Parse(tagStr) : (int?)null;
+                    string authorIdStr = Request.QueryString["authorId"];
+                    int? authorId = !string.IsNullOrEmpty(authorIdStr) ? int.Parse(authorIdStr) : (int?)null;
+                    string search = Request.QueryString["search"];
+
+                    var options = new PagedListRenderOptions
+                    {
+                        ContainerDivClasses = new[] { "pagination", "clearfix" },
+                        UlElementClasses = Enumerable.Empty<string>(),
+                        LiElementClasses = Enumerable.Empty<string>(),
+                        LinkToNextPageFormat = "<i class='fa fa-arrow-circle-o-right fa-2x'></i>",
+                        LinkToPreviousPageFormat = "<i class='fa fa-arrow-circle-o-left fa-2x'></i>",
+                    };
                 }
             </div>
 
 
-            @Html.PagedListPager(Model, page => Url.Action("Blog", new { page }),
-            new PagedListRenderOptions
-            {
-                ContainerDivClasses = new[] { "pagination", "clearfix" },
-                UlElementClasses = Enumerable.Empty<string>(),
-                LiElementClasses = Enumerable.Empty<string>(),
-                LinkToNextPageFormat = "<i class='fa fa-arrow-circle-o-right fa-2x'></i>",
-                LinkToPreviousPageFormat = "<i class='fa fa-arrow-circle-o-left fa-2x'></i>"
-            })
+            @Html.PagedListPager(Model, page => Url.Action(MVC.Home.Blog(page, tag, cat, authorId, search)), options)
+                
         </div>
     </div>
 </div>

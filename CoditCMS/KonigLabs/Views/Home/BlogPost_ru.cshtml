@@ -42,7 +42,7 @@
                     {
                         <div class="vendor">@Html.Raw(Model.EmbeddedMedia)</div>
                     }
-                    <h1 class="blog-title"><a href="/BlogPost/@Model.Id">@Model.Title</a></h1>
+                    <h1 class="blog-title"><a href="@Url.Action(MVC.Home.BlogPost(Model.Id))">@Model.Title</a></h1>
                     <h6>
                         @Model.GetDisplayDate()
                         @if (Model.Categories.Count > 0)
@@ -55,7 +55,7 @@
                                 {
                                     <text>, </text>
                                 }
-                                <a href="/Blog/?cat=@category.Id">@category.Name</a>
+                                <a href="@Url.Action(MVC.Home.Blog(null,null,category.Id,null,string.Empty))">@category.Name</a>
                                 i += 1;
                             }
                         }
@@ -71,7 +71,7 @@
                                 <div class="author-thumb">
                                     <img width="80" src="@Url.Content(Model.CrewMember.GetAvatar())" alt="">
                                 </div>
-                                <h6 class="pad5"><a href="#">@Model.CrewMember.FirstName @Model.CrewMember.LastName</a></h6>
+                                <h6 class="pad5"><a href="@Url.Action(MVC.Home.Blog(null, null, null, Model.CrewMember.Id,string.Empty))">@Model.CrewMember.FirstName @Model.CrewMember.LastName</a></h6>
                                 <p>
                                     @Html.Raw(Model.CrewMember.Signature)
                                 </p>
@@ -85,7 +85,7 @@
                             <div class="comments">
                                 @if(ViewBag.CommentCount>0)
                                 {
-                                <h5>Комментарии <a href="#">@ViewBag.CommentCount</a></h5>
+                                <h5>Комментарии @ViewBag.CommentCount</h5>
                                 }
                                 <ul class="comments">
                                     @foreach (var comment in Model.Comments.Where(c=>c.Visibility))

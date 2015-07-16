@@ -22,7 +22,7 @@
         <ul class="fa-ul categories">
             @foreach (var cat in Model.Categories)
             {
-                <li><i class="fa-li fa fa-angle-right"></i><a href="@Url.Action(MVC.Home.Blog(string.Empty, null, null, cat.Id, string.Empty))">@cat.Name</a></li>
+                <li><i class="fa-li fa fa-angle-right"></i><a href="@Url.Action(MVC.Home.Blog( null, null, cat.Id,null, string.Empty))">@cat.Name</a></li>
             }
         </ul>
 
@@ -31,7 +31,7 @@
         <h6 class="pad25">Tags / Labels / Marks</h6>
         @foreach (var tag in Model.Tags)
         {
-            <span class="badge"><a href="@Url.Action(MVC.Home.Blog(string.Empty, null, tag.Id, null,string.Empty))">@tag.Name</a> @tag.Count</span>
+            <span class="badge"><a href="@Url.Action(MVC.Home.Blog( null, tag.Id, null,null,string.Empty))">@tag.Name</a> @tag.Count</span>
         }
     </aside>
 </div>

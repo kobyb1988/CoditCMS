@@ -311,10 +311,10 @@ namespace KonigLabs.Models
             return answer;
         }
 
-        internal static IEnumerable<Article> GetArticles(string language, ApplicationDbContext db)
+        internal static IEnumerable<Article> GetArticles(string [] languages, ApplicationDbContext db)
         {
             return db.Articles.Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
-                .Where(a => a.Language == language && a.Visibility).OrderByDescending(x=>x.Date).ToArray();
+                .Where(a => languages.Contains(a.Language) && a.Visibility).OrderByDescending(x => x.Date).ToArray();
         }
 
 

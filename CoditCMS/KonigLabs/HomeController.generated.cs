@@ -204,10 +204,10 @@ namespace KonigLabs.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Blog
         {
-            public readonly string language = "language";
             public readonly string page = "page";
             public readonly string tag = "tag";
             public readonly string cat = "cat";
+            public readonly string authorId = "authorId";
             public readonly string search = "search";
         }
         static readonly ActionParamsClass_Comment s_params_Comment = new ActionParamsClass_Comment();
@@ -339,18 +339,18 @@ namespace KonigLabs.Controllers
         }
 
         [NonAction]
-        partial void BlogOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string language, int? page, int? tag, int? cat, string search);
+        partial void BlogOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? page, int? tag, int? cat, int? authorId, string search);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Blog(string language, int? page, int? tag, int? cat, string search)
+        public override System.Web.Mvc.ActionResult Blog(int? page, int? tag, int? cat, int? authorId, string search)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Blog);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "language", language);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "page", page);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "tag", tag);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "cat", cat);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "authorId", authorId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "search", search);
-            BlogOverride(callInfo, language, page, tag, cat, search);
+            BlogOverride(callInfo, page, tag, cat, authorId, search);
             return callInfo;
         }
 
