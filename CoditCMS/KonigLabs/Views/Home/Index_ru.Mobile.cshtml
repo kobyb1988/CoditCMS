@@ -1,0 +1,373 @@
+﻿@using KonigLabs.Models
+@using KonigLabs.Core
+@model KonigLabs.Models.LandingPage
+
+<div id="header">
+    <div class="col-sm-12 col-lg-12">
+        <div class="row">
+            <div id="logo">
+                <a class="scroll" href="#home"><img src="/Content/media.mobile/img/logo.png" alt="" /></a>
+            </div>
+            <ul id="menu">
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
+                @switch (Model.Language)
+                {
+                case LocalEntity.EN:
+                <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                break;
+                case LocalEntity.RU:
+                <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                break;
+                }
+            </ul>
+            <div id="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="home" class="top_video">
+
+    <div id="content">
+
+        <div class="byline wow slideInLeft pad45" data-wow-delay="6s">
+            Мы разрабатываем сложные
+        </div>
+
+        <h1 class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="4s">
+            ПРОГРАММНЫЕ РЕШЕНИЯ ПОД КЛЮЧ
+        </h1>
+
+        <div class="name wow bounceInDown" data-wow-duration="3s" data-wow-delay="2s">
+            живем в Калининграде, работаем со всем миром!
+        </div>
+
+        <div class="text-center pad30">
+            <a href="@Url.Action(MVC.Home.Index())#about" class="scroll">
+                <i class="fa fa-caret-down fa-3x fa-inverse wow rotateIn" data-wow-duration="1s" data-wow-delay="8s"></i>
+            </a>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="wow fadeInRightBig text-center embo" data-wow-offset="80" data-wow-duration="2s">
+                    чем мы занимаемся...
+                </h1>
+
+                <div class="lead wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
+                    Наши специалисты проживают жизнь каждого проекта.<br /> Именно за это <strong>нас любят</strong> наши клиенты.
+                </div>
+
+                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
+                    <div class="service">
+                        <i class="fa fa-laptop"></i>
+                    </div>
+                    <h6>Дизайн интерфейсов</h6>
+                    <p>
+                        Наши специалисты разработают эксклюзивный дизайн для вашего сайта, портала, мобильного или веб-приложения. При разработке дизайна проектируются адаптивные интерфейсы для любых видов экранов.
+                    </p>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                    <div class="service">
+                        <i class="fa fa-magic"></i>
+                    </div>
+                    <h6>Графический дизайн</h6>
+                    <p>
+                        Мы создаем фирменный стиль, логотипы, визитные карточки, рекламные материалы. Наши специалисты воплощают идеи с помощью линий, вдыхая в них жизнь. И...да, мы делам качественный и красивый дизайн!
+                    </p>
+                </div>
+                <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                    <div class="service">
+                        <i class="fa fa-tasks"></i>
+                    </div>
+                    <h6>Продвижение и раскрутка сайтов</h6>
+                    <p>
+                        Привлекая новых посетителей на Ваш сайт, мы способствуем росту количества потенциальных клиентов.
+                    </p>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="service">
+                    <i class="fa fa-cloud"></i>
+                </div>
+                <h6>Веб-сайты, веб-приложения, порталы</h6>
+                <p>
+                    Тщательно проектируя и разрабатывая легко масштабируемую архитектуру, мы добиваемся надёжности и гибкости ваших программных решений.
+                </p>
+            </div>
+            <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                <div class="service">
+                    <i class="fa fa-cogs"></i>
+                </div>
+                <h6>Настольные приложения и сервисы</h6>
+                <p>
+                    Разрабатывая приложения высокой сложности для операционных систем семейства Windows, мы уделяем большое внимание качеству кода и архитектуры.
+                </p>
+            </div>
+            <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                <div class="service">
+                    <i class="fa fa-wrench"></i>
+                </div>
+                <h6>Мобильные и облачные приложения</h6>
+                <p>
+                    Кросс-платформенные приложения (Android, iOS, Windows Phone), облачные приложения (AWS, Azure) - это к нам.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="charts">
+    <div class="well">
+        <div class="dark_overlay">
+            <div class="container">
+                <div class="row">
+                    <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                        ПРЕДМЕТНЫЕ ОБЛАСТИ НАШИХ ПРОЕКТОВ:
+                    </h1>
+
+                    <div class="col-xs-4 text-center  pie wow bounceIn" data-wow-delay="1s">
+                        <span class="chart1">
+                            <span class="percent">50%</span>
+                        </span>
+                        <p class="center">Масштабные онлайновые сервисы</p>
+                    </div>
+                    <div class="col-xs-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.5s">
+                        <span class="chart2">
+                            <span class="percent">20%</span>
+                        </span>
+                        <p class="center">Сложные базы данных с размещением в облаках</p>
+                    </div>
+                    <div class="col-xs-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.8s">
+                        <span class="chart3">
+                            <span class="percent">30%</span>
+                        </span>
+                        <p class="center">Стартапы</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pad30"></div>
+        </div>
+    </div>
+</section>
+
+<section id="team">
+    <div class="container">
+        <div class="col-sm-12 col-lg-12">
+            <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
+                о нас
+            </h1>
+
+            <div class="lead  wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                Наша <strong>команда</strong> собрана из профессионалов <strong>разных</strong> направлений
+            </div>
+        </div>
+
+        <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+            Наша команда - это люди, фанатеющие от IT-инноваций и сложных алгоритмов. Мы объединились, чтобы упрощать жизнь нашим клиентам. Мы всегда открыты для диалога.
+        </p>
+        <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+            Качественно выстроенные бизнес-процессы и высокий профессионализм позволяют нам решать проблемы наших клиентов наилучшим образом. Именно поэтому мы регулярно участвуем в профильных тренингах и конференциях. Наши специалисты постоянно совершенствуют свои навыки, общаясь с лучшими профессионалами в своей области со всего мира.
+        </p>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="pad15">
+                <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
+                <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
+                <a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
+                <div class="vacancy collapse">
+                    <div class="pad15"></div>
+                    <h2>Здесь скоро будет информация о вакансиях</h2>
+                    <div class="pad30"></div>
+                </div>
+                <div class="pad15"></div>
+
+                <div id="grid-container" class="cbp-l-grid-team">
+                    <ul class="cbp-l-grid-team">
+                        @foreach (var member in Model.Members)
+                        {
+                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
+                        }
+                    </ul>
+                </div>
+
+                <div class="pad60"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="milestones">
+    <div class="well">
+        <div class="dark_overlay">
+            <div class="container">
+                <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                    у нас
+                </h1>
+
+                <div class="col-xs-12 text-center">
+                    <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+                        <div id="counter-1"></div>
+                        <p class="light">лет опыта на всю команду</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="work">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
+                    из насущного
+                </h1>
+                <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                    Перед вами последние проекты, выполненные нашей командой.
+                </div>
+
+                <div id="filters-container" class="cbp-l-filters-button">
+                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все<span class="cbp-filter-counter"></span></button>
+                    @foreach (var category in Model.Categories)
+                    {
+                    <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
+                        @category.Name
+                        <span class="cbp-filter-counter"></span>
+                    </button>
+                    }
+
+                </div>
+
+                <div class="cbp-l-grid-project">
+                    <div id="grid-container3" class="cbp-l-grid-projects">
+                        <ul>
+
+                            @foreach (var project in Model.Projects)
+                            {
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
+                            }
+
+                        </ul>
+                    </div>
+                    <div class="cbp-l-loadMore-button">
+                        <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
+                            <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="Еще"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="pad45"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="pad30"></div>
+<section id="big_image"></section>
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12 pad30  wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                <h2>Любителям почитать</h2>
+                <div class="pad30"></div>
+
+                <div id="grid-container2" class="cbp-l-grid-blog pad90">
+                    <ul>
+                        @foreach (var article in Model.Articles)
+                        {
+                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_ru.cshtml", article);
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pad30"></div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 ">
+
+                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
+                    контакты
+                </h1>
+
+                <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                    Вам требуется <strong>уникальное приложение</strong> или инновационный <strong>стартап</strong>?...<br />
+                    Ваш <strong>бизнес</strong> нуждается в <strong>автоматизации</strong> ?<br />
+                    Свяжитесь с нами!
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6  wow fadeInUp" data-wow-offset="80" data-wow-duration="2s">
+                        <h2>Хотите встретиться?</h2>
+                        <p>
+                            Россия, г. Калининград,<br>
+                            ул. Ленина 123, офис 321,<br>
+                            Вход через булошную
+                        </p>
+
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-phone inverse"></i> <span class="inverse">+8 800 111 22 33</span></li>
+                            <li><i class="fa-li fa fa-envelope inverse"></i> <a href="mailto:#">info@koniglabs.com</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-xs-12  wow fadeInUp" data-wow-offset="80" data-wow-duration="2s">
+                        <div class="contact_form">
+                            <div id="note"></div>
+                            <div id="fields">
+                                <form id="ajax-contact-form">
+                                    <input class="col-xs-12" type="text" name="Name" value="" placeholder="Ваше имя" />
+                                    <input class="col-xs-12" type="text" name="Email" value="" placeholder="Email" />
+                                    <input class="col-xs-12" type="text" name="Phone" value="" placeholder="Телефон" />
+                                    <textarea name="Text" id="message" class="col-xs-12" placeholder="Ваше сообщение"></textarea>
+                                    <div class="clear"></div>
+                                    <input type="submit" class="btn" value="отправить" />
+                                    <div class="clear"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pad60"></div>
+</section>
+<footer>
+    <div class="center footer">
+        <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
+            <a href="@Url.Action(MVC.Home.Index())#home" class=" scroll">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x "></i>
+                    <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </div>
+
+        <div id="copyright" class="wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+            &copy; 2015 KonigLabs
+        </div>
+    </div>
+</footer>

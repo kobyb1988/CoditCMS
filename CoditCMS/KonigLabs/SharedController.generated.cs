@@ -39,6 +39,7 @@ namespace T4MVC
             {
                 public readonly string _CoditLayout = "_CoditLayout";
                 public readonly string _Layout = "_Layout";
+                public readonly string _Layout_Mobile = "_Layout.Mobile";
                 public readonly string _LoginPartial = "_LoginPartial";
                 public readonly string Error = "Error";
                 public readonly string Lockout = "Lockout";
@@ -47,6 +48,7 @@ namespace T4MVC
             }
             public readonly string _CoditLayout = "~/Views/Shared/_CoditLayout.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
+            public readonly string _Layout_Mobile = "~/Views/Shared/_Layout.Mobile.cshtml";
             public readonly string _LoginPartial = "~/Views/Shared/_LoginPartial.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
             public readonly string Lockout = "~/Views/Shared/Lockout.cshtml";
@@ -69,6 +71,7 @@ namespace T4MVC
                 public readonly string Client = "Client";
                 public readonly string Comment = "Comment";
                 public readonly string Member = "Member";
+                public readonly string Member_Mobile = "Member.Mobile";
                 public readonly string MemberBio = "MemberBio";
                 public readonly string MoreProjects = "MoreProjects";
                 public readonly string Project = "Project";

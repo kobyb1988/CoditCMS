@@ -1,0 +1,62 @@
+.colour {color:#fdf04a; } 
+.white {color:#fafafa; } 
+ 
+a {color: #02e5de;}
+a:hover {color:#333;}
+
+::selection { background: #00f1eb; color: #fff; }
+::-moz-selection { background: #00f1eb; color: #fff; }
+
+blockquote { border-left:4px solid #00f1eb!important;  }
+
+.btn { background-color: #fdf04a!important; }
+.btn-inverse:hover { background-color: #fdf04a!important;}
+
+#menu li a:hover,  #menu  a:focus { color:#00f1eb!important; background-color:transparent; }
+
+#contact { color:#fff!important; background:#0ec9c0!important;}
+#contact .lead, #contact h1 {color:#fff!important; }
+
+.footer a { color: #00f1eb!important;  }
+.footer a:hover { color: #fdf697!important; }
+
+.circle { background: #00f1eb!important; }
+.circle:hover {  background: #44412c!important; }
+
+.service { background: #fdf04a!important; color: #44412c!important; }
+.bars-wrapper .progress-bar { background:#00f1eb!important; }
+
+.hi-icon2 { color: #00f1eb!important; }
+.hi-icon-effect-a .hi-icon2 { box-shadow: 0 0 0 3px #00f1eb!important; }
+.no-touch .hi-icon-effect-a1 .hi-icon2:hover { color:#00f1eb!important;}
+.hi-icon-effect-a .hi-icon2:after { background: #00f1eb!important; color:#00f1eb!important; }
+
+.cbp-l-caption-buttonLeft:hover, .cbp-l-caption-buttonRight:hover {
+    color: #fff!important;
+	background-color: #00f1eb!important;
+}
+
+.cbp-l-filters-button .cbp-filter-item-active { background-color:#0ec9c0!important;  color: #fff !important; }
+.cbp-l-filters-button .cbp-filter-counter { background-color: #0ec9c0!important; color: #fff!important; }
+.cbp-l-filters-button .cbp-filter-counter:before { border-top: 4px solid #0ec9c0!important;}
+
+.nav-tabs .active a, .nav-tabs a:hover, .nav-tabs .active  a:focus { background-color:#00f1eb!important;}
+
+
+/*tricks*/
+
+.embo {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+

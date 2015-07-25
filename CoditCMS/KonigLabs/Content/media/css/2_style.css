@@ -58,7 +58,7 @@ a {
  .eye{
 	width:250px !important;
 	height:250px !important;
-	background-size: 2750px 2000px;
+	background-size: 2750px 1750px;
 	background-image:url(../img/team.jpg);
 	margin: 0 auto;
 }

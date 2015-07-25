@@ -238,7 +238,9 @@ namespace KonigLabs.Controllers
                 public readonly string BlogPost_ru = "BlogPost_ru";
                 public readonly string Contact = "Contact";
                 public readonly string Index_en = "Index_en";
+                public readonly string Index_en_Mobile = "Index_en.Mobile";
                 public readonly string Index_ru = "Index_ru";
+                public readonly string Index_ru_Mobile = "Index_ru.Mobile";
             }
             public readonly string Blog_en = "~/Views/Home/Blog_en.cshtml";
             public readonly string Blog_ru = "~/Views/Home/Blog_ru.cshtml";
@@ -246,7 +248,9 @@ namespace KonigLabs.Controllers
             public readonly string BlogPost_ru = "~/Views/Home/BlogPost_ru.cshtml";
             public readonly string Contact = "~/Views/Home/Contact.cshtml";
             public readonly string Index_en = "~/Views/Home/Index_en.cshtml";
+            public readonly string Index_en_Mobile = "~/Views/Home/Index_en.Mobile.cshtml";
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
+            public readonly string Index_ru_Mobile = "~/Views/Home/Index_ru.Mobile.cshtml";
         }
     }
 

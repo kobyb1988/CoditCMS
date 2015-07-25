@@ -10,14 +10,19 @@ namespace KonigLabs
         {
             
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
 
             //bundles.IgnoreList.Clear();
             bundles.Add(new ScriptBundle("~/Content/media/bundles/js").Include(
                       "~/Content/media/js/*.js"));
+            bundles.Add(new ScriptBundle("~/Content/media.mobile/bundles/js").Include(
+                      "~/Content/media.mobile/js/*.js"));
+
             bundles.Add(new StyleBundle("~/Content/media/bundles/css").Include(
                       "~/Content/media/css/*.css"));
+            bundles.Add(new StyleBundle("~/Content/media.mobile/bundles/css").Include(
+                      "~/Content/media.mobile/css/*.css"));
         }
     }
 }

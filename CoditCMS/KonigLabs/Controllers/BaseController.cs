@@ -25,10 +25,10 @@ namespace KonigLabs.Controllers
             switch (language)
             {
                 case LocalEntity.RU:
-                    localizeViewPath = String.Format(viewPath, language);
+                    localizeViewPath = String.Format(viewPath, Request.Browser.IsMobileDevice ? language + ".mobile" : language);
                     break;
                 case LocalEntity.EN:
-                    localizeViewPath = String.Format(viewPath, language);
+                    localizeViewPath = String.Format(viewPath, Request.Browser.IsMobileDevice ? language + ".mobile" : language);
                     break;
                 default:
                     localizeViewPath = String.Format(viewPath, LocalEntity.RU);

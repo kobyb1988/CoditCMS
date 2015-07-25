@@ -30,19 +30,13 @@
                     <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
                         break;
                 }
+            </ul>
                 <div id="nav-toggle">
                     <i class="fa fa-bars"></i>
                 </div>
         </div>
     </div>
 </div>
-
-@if (Request.Url.Host.Contains("localhost"))
-{
-
-}
-else
-{
     <section id="home" class="top_video">
         <div id="overlay"></div>
         <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
@@ -71,7 +65,6 @@ else
             </div>
         </div>
     </section>
-}
 
 <section id="big_image"></section>
 <section id="about">
@@ -348,7 +341,7 @@ else
                     <ul>
                         @foreach (var article in Model.Articles)
                         {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article.cshtml", article);
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_en.cshtml", article);
                         }
 
                     </ul>
