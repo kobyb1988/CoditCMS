@@ -1,0 +1,145 @@
+﻿@model KonigLabs.Models.Article
+@{
+    ViewBag.Title = "BlogPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogHeader_ru.cshtml");
+}
+
+<div class="pad90"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <h1 class="embo wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
+                Наш блог
+            </h1>
+            <div class="lead wow fadeInRightBig" data-wow-duration="2s" data-wow-delay="2s">
+                Полезная информация <strong class="white embo">для клиентов</strong>
+            </div>
+
+            <div class="row">
+                <div class="pad30"></div>
+                <div class="col-md-8">
+
+                    <!-- 1-->
+
+                    <div id="big" class="owl-carousel blog-carousel-bottom">
+                        <div class="item">
+                            <img src="/Content/media/img/blog/1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="/Content/media/img/blog/2.jpg" alt="">
+                        </div>
+                    </div>
+
+                    @*TODO! check that! they are almost the same!*@
+                    @if (Model.HasImageForBlog())
+                    {
+                        <img src="@Url.Content(Model.GetBlogImage())" alt="" />
+                    }
+                    @if (!String.IsNullOrEmpty(Model.EmbeddedMedia))
+                    {
+                        <div class="vendor">@Html.Raw(Model.EmbeddedMedia)</div>
+                    }
+                    <h1 class="blog-title"><a href="@Url.Action(MVC.Home.BlogPost(Model.Id))">@Model.Title</a></h1>
+                    <h6>
+                        @Model.GetDisplayDate()
+                        @if (Model.Categories.Count > 0)
+                        {
+                            var i = 0;
+                            <text>-</text>
+                            foreach (var category in Model.Categories)
+                            {
+                                if (i >= 1)
+                                {
+                                    <text>, </text>
+                                }
+                                <a href="@Url.Action(MVC.Home.Blog(null,null,category.Id,null,string.Empty))">@category.Name</a>
+                                i += 1;
+                            }
+                        }
+                    </h6>
+                    <div class="post">
+                        <p>
+                            @Html.Raw(@Model.Content)
+                        </p>
+
+                        @if (Model.CrewMember != null)
+                        {
+                            <div class="author-block">
+                                <div class="author-thumb">
+                                    <img width="80" src="@Url.Content(Model.CrewMember.GetAvatar())" alt="">
+                                </div>
+                                <h6 class="pad5"><a href="@Url.Action(MVC.Home.Blog(null, null, null, Model.CrewMember.Id,string.Empty))">@Model.CrewMember.FirstName @Model.CrewMember.LastName</a></h6>
+                                <p>
+                                    @Html.Raw(Model.CrewMember.Signature)
+                                </p>
+                                    @*<p>
+                                    Пишу только о том, что знаю и понимаю. Если нахожу статьи, которые считаю крайне полезными, то без зазрения совести, делаю их достоянием общественности, а авторские права... это права автора;)
+                                </p>*@
+                            </div>
+                        }
+                        @if (Model.Comments.Count > 0)
+                        {
+                            <div class="comments">
+                                @if(ViewBag.CommentCount>0)
+                                {
+                                <h5>Комментарии @ViewBag.CommentCount</h5>
+                                }
+                                <ul class="comments">
+                                    @foreach (var comment in Model.Comments.Where(c=>c.Visibility))
+                                    {
+                                        if (comment.Parent != null)
+                                        {
+                                            continue;
+
+                                        }
+                                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Comment.cshtml", comment);                                    
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </div>                    
+                    <h5 class="pad60">Ваш комментарий очень важен для нас</h5>
+                    <div class="contact_form pad15">
+                        <form class="ajax-contact-form2">
+                            <input class="col-xs-12 col-md-5 marg-right10" type="text" name="name" value="" placeholder="Имя" required>
+                            <input class="col-xs-12 col-md-5" type="email" name="email" value="" placeholder="Email" required>
+                            <textarea name="message"  class="col-xs-12  col-md-12" placeholder="Комментарий" required></textarea>
+                            <div class="clear"></div>
+                            <a href="javascript:void(0)" class="btn">ОТПРАВИТЬ</a>
+                        </form>
+                    </div>
+
+
+
+                </div>
+
+                @{
+                    var meta = (KonigLabs.Models.BlogMeta)ViewBag.BlogMeta;
+                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/BlogPane_ru.cshtml", meta);
+                }
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<div class="center footer">
+    <div class="wow bounce" data-wow-offset="80" data-wow-duration="2s">
+        <a href="#home" class=" scroll">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x "></i>
+                <i class="fa fa-angle-double-up fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </div>
+
+    <div id="copyright" class="wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+        &copy; 2015 KonigLabs
+    </div>
+</div>
+<script type="text/javascript" src="~/Scripts/Blog.js"></script>

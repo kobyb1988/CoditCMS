@@ -61,7 +61,7 @@ namespace KonigLabs
             routes.MapRouteLang("members", "Home/member", MVC.Home.Member(), "");
             routes.MapRouteLang("member", "Home/member/{id}", MVC.Home.Member(), "");
             routes.MapRouteLang("projects", "Home/project", MVC.Home.Project(), "");
-            routes.MapRouteLang("project", "Home/member/{id}", MVC.Home.Project(), "");
+            routes.MapRouteLang("project", "Home/project/{id}", MVC.Home.Project(), "");
             routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact(), "");
 
 

@@ -40,7 +40,7 @@ namespace KonigLabs.Controllers
                     return View("NotFound");
                 }
                 var vm = new ViewMember(member);
-                return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
+                return PartialView("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
             }
         }
 
@@ -55,7 +55,7 @@ namespace KonigLabs.Controllers
                     return View("NotFound");
                 }
                 var vm = new ViewProject(project);
-                return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
+                return PartialView("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
             }
         }
 
