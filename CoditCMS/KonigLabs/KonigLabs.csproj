@@ -639,6 +639,8 @@
     <Content Include="Views\Home\Index_ru.Mobile.cshtml" />
     <Content Include="Views\Home\Index_en.Mobile.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Member.Mobile.cshtml" />
+    <Content Include="Views\Home\Blog_en.Mobile.cshtml" />
+    <Content Include="Views\Home\Blog_ru.Mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
