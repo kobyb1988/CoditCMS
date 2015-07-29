@@ -45,7 +45,8 @@
 			</select>
 			
 			<checkbox name="ShowOnHomePage" title="Показывать на главной" />
-			
+    </tab>
+    <tab name="Content">
 			<wysiwyg name="Content" title="Контент" />
     </tab>
     <tab name="Images">
