@@ -255,6 +255,12 @@ body.royal_loader { background: none!important; visibility: hidden!important; }
 	font-size: 25px;
 	cursor: pointer;
 }
+
+#nav-toggle a{
+    font-size: 20px;
+    padding-right: 5px;
+}
+
 #nav-toggle .menu-text {
 	font-family: 'Open Sans', sans-serif; 
 	font-weight: 400;

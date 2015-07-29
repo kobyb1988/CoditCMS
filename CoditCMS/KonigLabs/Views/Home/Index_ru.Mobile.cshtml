@@ -8,29 +8,28 @@
             <div id="logo">
                 <a class="scroll" href="#home"><img src="/Content/media.mobile/img/logo.png" alt="" /></a>
             </div>
-           <ul id="menu">
+            <ul id="menu">
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
-            <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
-           </ul>
-           <div id="nav-toggle">
-			    @switch (Model.Language)
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
+            </ul>
+            <div id="nav-toggle">
+                @switch (Model.Language)
                 {
-                case LocalEntity.EN:
-                <a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a>  
-                <a class="lang" href="@Url.ChangeLang(LocalEntity.EN)"><strong>En</strong></a> 
-                break;
-                case LocalEntity.RU:
-                <a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)"><strong>Ru</strong></a> 
-                <a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a> 
-                break;
+                    case LocalEntity.EN:
+                        <a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a>
+                        <a class="lang" href="@Url.ChangeLang(LocalEntity.EN)"><strong>En</strong></a>
+                        break;
+                    case LocalEntity.RU:
+                    <a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)"><strong>Ru</strong></a>
+                    <a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a>
+                        break;
                 }
                 <i class="fa fa-bars"></i>
             </div>
-           
         </div>
     </div>
 </div>
@@ -248,10 +247,10 @@
                     <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все<span class="cbp-filter-counter"></span></button>
                     @foreach (var category in Model.Categories)
                     {
-                    <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
-                        @category.Name
-                        <span class="cbp-filter-counter"></span>
-                    </button>
+                        <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
+                            @category.Name
+                            <span class="cbp-filter-counter"></span>
+                        </button>
                     }
 
                 </div>
@@ -262,7 +261,7 @@
 
                             @foreach (var project in Model.Projects)
                             {
-                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
+                                Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
                             }
 
                         </ul>
@@ -292,7 +291,7 @@
                     <ul>
                         @foreach (var article in Model.Articles)
                         {
-                        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_ru.cshtml", article);
+                            Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_ru.cshtml", article);
                         }
 
                     </ul>
