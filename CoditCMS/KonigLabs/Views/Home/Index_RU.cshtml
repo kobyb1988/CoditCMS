@@ -10,7 +10,7 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
+                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt=""/></a>
             </div>
             <ul id="menu">
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
@@ -38,12 +38,6 @@
     </div>
 </div>
 
-@if (Request.Url.Host.Contains("localhost"))
-{
-
-}
-else
-{
 <section id="home" class="top_video">
     <div id="overlay"></div>
     <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
@@ -72,7 +66,6 @@ else
         </div>
     </div>
 </section>
-}
 
 <section id="big_image"></section>
 <section id="about">

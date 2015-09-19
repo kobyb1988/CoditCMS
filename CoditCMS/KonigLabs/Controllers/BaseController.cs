@@ -1,23 +1,52 @@
 ﻿using System;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using DB.Entities;
+using KonigLabs.Core;
 using KonigLabs.Core.ServiceProviderIml;
 using KonigLabs.Models;
 using Libs.Services;
+using ScientiaMobile.WurflCloud;
+using ScientiaMobile.WurflCloud.Config;
 
 namespace KonigLabs.Controllers
 {
     public partial class BaseController : Controller
     {
+
         protected ILocalizationProvider _lang = new Lang();
         public string CurentLang { get { return _lang.GetLanguageName(); } }
-        public string[]  AccessableLanguagesForTags {get
+        public string[] AccessableLanguagesForTags
         {
-            return GetAccessableLanguagesForTags(_lang.GetLanguageName());
-        }} 
+            get
+            {
+                return GetAccessableLanguagesForTags(_lang.GetLanguageName());
+            }
+        }
 
-        protected ViewResult LocalizableView(string viewPath,object model)
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            ViewBag.DeviceInfo = GetDataByRequest(HttpContext);
+            base.OnActionExecuting(filterContext);
+        }
+
+        public DeviceInfo GetDataByRequest(HttpContextBase context)
+        {
+            var config = new DefaultCloudClientConfig
+            {
+                ApiKey = "869109:KECpUB4sJ1jePSvXci95gINah6zQrkmx"
+            };
+
+            var manager = new CloudClientManager(config);
+
+            // Grab data
+            var info = manager.GetDeviceInfo(context);
+
+            return info.ConvertToKonigLabsDiviceInfo();
+        }
+
+        protected ViewResult LocalizableView(string viewPath, object model)
         {
             var language = _lang.GetLanguageName();
 
@@ -25,16 +54,16 @@ namespace KonigLabs.Controllers
             switch (language)
             {
                 case LocalEntity.RU:
-                    localizeViewPath = String.Format(viewPath, Request.Browser.IsMobileDevice ? language + ".mobile" : language);
+                    localizeViewPath = String.Format(viewPath, (Request.Browser.IsMobileDevice || ((DeviceInfo)ViewBag.DeviceInfo).IsTablet) ? language + ".mobile" : language);
                     break;
                 case LocalEntity.EN:
-                    localizeViewPath = String.Format(viewPath, Request.Browser.IsMobileDevice ? language + ".mobile" : language);
+                    localizeViewPath = String.Format(viewPath, (Request.Browser.IsMobileDevice || ((DeviceInfo)ViewBag.DeviceInfo).IsTablet) ? language + ".mobile" : language);
                     break;
                 default:
                     localizeViewPath = String.Format(viewPath, LocalEntity.RU);
                     break;
             }
-            return View(localizeViewPath,model);
+            return View(localizeViewPath, model);
         }
 
         private string[] GetAccessableLanguagesForTags(string language)

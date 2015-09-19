@@ -68,15 +68,15 @@ namespace KonigLabs
             var route = routes.MapRoute("static-pages-lang", "{lang}/{*location}", MVC.Home.Index(),
                 new { localizationRedirectRouteName = "homepage" },
                 new { lang = LanguageConstraint }, null);
-            route.DataTokens["RouteName"] = "static-pages-lang";
+            //route.DataTokens["RouteName"] = "static-pages-lang";
 
-            route = routes.MapRoute("static-pages", "{*location}", MVC.Home.Index(),
-                new { localizationRedirectRouteName = "homepage" });
-            route.DataTokens["RouteName"] = "static-pages";
+            //route = routes.MapRoute("static-pages", "{*location}", MVC.Home.Index(),
+            //    new { localizationRedirectRouteName = "homepage" });
+            //route.DataTokens["RouteName"] = "static-pages";
 
-            routes.MapRoute("default-t4", "{controller}/{action}", MVC.Home.Index());
-            routes.MapRoute("default", "{controller}/{action}/{id}", MVC.Home.Index());
-            routes.MapRoute("default-aliased", "{controller}/{action}/{alias}", MVC.Home.Index());
+            //routes.MapRoute("default-t4", "{controller}/{action}", MVC.Home.Index());
+            //routes.MapRoute("default", "{controller}/{action}/{id}", MVC.Home.Index());
+            //routes.MapRoute("default-aliased", "{controller}/{action}/{alias}", MVC.Home.Index());
         }
     }
 }
