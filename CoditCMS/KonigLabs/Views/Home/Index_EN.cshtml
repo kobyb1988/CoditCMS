@@ -408,16 +408,10 @@
                         <div class="contact_form">
                             <div id="note"></div>
                             <div id="fields">
-                                <form id="ajax-contact-form">
-                                    <input class="col-xs-12 col-md-12" type="text" name="Name" value="" placeholder="Your name" />
-                                    <input class="col-xs-12 col-md-12" type="text" name="Email" value="" placeholder="E-mail" />
-                                    <input class="col-xs-12 col-md-12" type="text" name="Phone" value="" placeholder="Phone" />
-                                    <textarea name="Text" id="message" class="col-xs-12  col-md-12" placeholder="Your message"></textarea>
-                                    <div class="clear"></div>
-                                    <input type="submit" class="btn marg-right10" value="Send" />
-                                    <div class="clear"></div>
-                                </form>
-                            </div>
+                                @{
+                                    Html.RenderPartial(MVC.Home.Views.Contact_en, Model.Contact);
+                                }
+                           </div>
                         </div>
                     </div>
                 </div>

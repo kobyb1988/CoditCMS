@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using System.Web.Routing;
 using CMS.Mvc;
 using KonigLabs.Core;
@@ -53,7 +54,7 @@ namespace KonigLabs
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRouteLang("homepage", "", MVC.Home.Index(), "home");
-            routes.MapRouteLang("Comment","Comment",MVC.Home.Comment(),"Comment");
+            routes.MapRouteLang("Comment","Comment",MVC.Home.Comment().Result,"Comment");
             routes.MapRouteLang("Blog","Blog",MVC.Home.Blog(), "Blog");
             routes.MapRouteLang("Article","BlogPost/{id}",MVC.Home.BlogPost(), "Article");
             routes.MapRouteLang("login", "Account/login", MVC.Account.Login(), "");
@@ -62,7 +63,7 @@ namespace KonigLabs
             routes.MapRouteLang("member", "Home/member/{id}", MVC.Home.Member(), "");
             routes.MapRouteLang("projects", "Home/project", MVC.Home.Project(), "");
             routes.MapRouteLang("project", "Home/project/{id}", MVC.Home.Project(), "");
-            routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact(), "");
+            routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact().Result, "");
 
 
             var route = routes.MapRoute("static-pages-lang", "{lang}/{*location}", MVC.Home.Index(),
@@ -78,5 +79,7 @@ namespace KonigLabs
             //routes.MapRoute("default", "{controller}/{action}/{id}", MVC.Home.Index());
             //routes.MapRoute("default-aliased", "{controller}/{action}/{alias}", MVC.Home.Index());
         }
+
+        
     }
 }

@@ -337,16 +337,10 @@
                         <div class="contact_form">
                             <div id="note"></div>
                             <div id="fields">
-                                <form id="ajax-contact-form">
-                                    <input class="col-xs-12" type="text" name="Name" value="" placeholder="Ваше имя" />
-                                    <input class="col-xs-12" type="text" name="Email" value="" placeholder="Email" />
-                                    <input class="col-xs-12" type="text" name="Phone" value="" placeholder="Телефон" />
-                                    <textarea name="Text" id="message" class="col-xs-12" placeholder="Ваше сообщение"></textarea>
-                                    <div class="clear"></div>
-                                    <input type="submit" class="btn" value="отправить" />
-                                    <div class="clear"></div>
-                                </form>
-                            </div>
+                                @{
+                                    Html.RenderPartial(MVC.Home.Views.Contact_ru, Model.Contact);
+                                }
+                           </div>
                         </div>
                     </div>
                 </div>

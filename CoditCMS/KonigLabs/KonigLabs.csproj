@@ -24,6 +24,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -234,6 +235,16 @@
     <Compile Include="Core\ServiceProviderIml\Lang.cs" />
     <Compile Include="Core\ServiceProviderIml\WurflService.cs" />
     <Compile Include="Core\UriHelper.cs" />
+    <Compile Include="ErrorMsg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMsg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMsg.En.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMsg.En.resx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -574,6 +585,10 @@
     <Content Include="Content\media.mobile\font\fontawesome-webfont.woff" />
     <Content Include="Content\media.mobile\font\FontAwesome.otf" />
     <Content Include="README.pdf" />
+    <EmbeddedResource Include="ErrorMsg.En.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMsg.En.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -596,7 +611,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -630,7 +647,6 @@
     <Content Include="Views\Shared\DisplayTemplates\Project.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Article_en.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index_en.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MemberBio.cshtml" />
@@ -658,6 +674,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Member.Mobile.cshtml" />
     <Content Include="Views\Home\Blog_en.Mobile.cshtml" />
     <Content Include="Views\Home\Blog_ru.Mobile.cshtml" />
+    <Content Include="Views\Home\Contact_en.cshtml" />
+    <Content Include="Views\Home\Contact_ru.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Abstract\" />
@@ -679,6 +697,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ErrorMsg.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMsg.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503211053084_Init.resx">
       <DependentUpon>201503211053084_Init.cs</DependentUpon>
     </EmbeddedResource>

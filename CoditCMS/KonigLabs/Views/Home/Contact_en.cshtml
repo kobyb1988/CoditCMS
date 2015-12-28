@@ -1,0 +1,16 @@
+﻿@model KonigLabs.Models.ViewContact
+
+@using (Ajax.BeginForm(MVC.Home.Contact(), new AjaxOptions() {  }, new { id = "ajax-contact-form" }))
+{
+    @Html.ValidationMessageFor(m => m.Name)<br />
+    @Html.TextBoxFor(m => m.Name, new { placeholder = "Your name", @class = "col-xs-12 col-md-12", autocomplete = "off" })<br/>
+    @Html.ValidationMessageFor(m => m.Email)<br />
+    @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "col-xs-12 col-md-12", autocomplete = "off" })<br />
+    @Html.ValidationMessageFor(m => m.Phone)<br />
+    @Html.TextBoxFor(m => m.Phone, new { placeholder = "Phone", @class = "col-xs-12 col-md-12", autocomplete = "off" })<br />
+    @Html.ValidationMessageFor(m => m.Text)<br />
+    @Html.TextAreaFor(m => m.Text, new { placeholder = "Your message", @class = "col-xs-12 col-md-12", autocomplete = "off" })<br />    
+    <div class="clear"></div>
+    <input type="submit" class="btn marg-right10" value="Send">
+    <div class="clear"></div>
+}

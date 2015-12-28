@@ -1,19 +1,13 @@
-﻿using KonigLabs.Models;
-using Libs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Reflection;
-using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using PagedList;
+﻿using System;
 using System.Data.Entity;
-using Hangfire;
-using KonigLabs.Core.ServiceProviderIml;
-using Libs.Services;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.Helpers;
+using System.Web.Mvc;
+using KonigLabs.Models;
+using Libs;
+using PagedList;
 
 namespace KonigLabs.Controllers
 {
@@ -27,7 +21,6 @@ namespace KonigLabs.Controllers
                 return LocalizableView("~/Views/Home/Index_{0}.cshtml", landing);
             }
         }
-
 
         public virtual ActionResult Member(int id)
         {
@@ -87,7 +80,7 @@ namespace KonigLabs.Controllers
         }
 
         [HttpPost]
-        public virtual ActionResult Contact(ViewContact contact)
+        public async virtual Task<ActionResult> Contact(ViewContact contact)
         {
             if (ModelState.IsValid)
             {
@@ -103,8 +96,8 @@ namespace KonigLabs.Controllers
                     db.Contacts.Add(dbContact);
                     db.SaveChanges();
                 }
-                contact.Status = "Спасибо за ваше сообщение, мы обязательно свяжемся с вами!";
-                Response.StatusCode = 201;
+                contact.Status = "true";
+                Response.StatusCode = 201; 
 
                 var sb = new StringBuilder();
                 sb.AppendFormat("<p>{0}</p>", contact.Name);
@@ -112,13 +105,13 @@ namespace KonigLabs.Controllers
                 sb.AppendFormat("<p>{0}</p>", contact.Email);
                 sb.AppendFormat("<p>{0}</p>", contact.Phone);
 
-                BackgroundJob.Schedule(() => Tasks.SendEmailToAdmin(sb.ToString()), TimeSpan.FromSeconds(1));
+                await Task.Factory.StartNew(() => Tasks.SendEmailToAdmin(sb.ToString()));
             }
             else
             {
-                contact.Status = "Что-то пошло не так :(";
+                contact.Status = "flase";
             }
-            return View(contact);
+            return LocalizablePartialView("~/Views/Home/Contact_{0}.cshtml",contact);
         }
 
         public virtual ActionResult BlogPost(int id)
@@ -141,7 +134,7 @@ namespace KonigLabs.Controllers
                     comment.WalkDawn(1);
                     commentCount += comment.CommentCount + 1;
                 }
-                ViewBag.BlogMeta = new BlogMeta(db, AccessableLanguagesForTags,_lang.GetLanguageName());
+                ViewBag.BlogMeta = new BlogMeta(db, AccessableLanguagesForTags, _lang.GetLanguageName());
                 ViewBag.CommentCount = commentCount;
                 return LocalizableView("~/Views/Home/BlogPost_{0}.cshtml", article);
             }
@@ -149,14 +142,14 @@ namespace KonigLabs.Controllers
 
 
         public static string[] StopWords = new[] {
-           "а", "без", "более", "бы", "был", "была", "были","один", "два", "три", "четыре", "пять", "шесть", "семь","восемь", 
-           "было", "быть", "в", "вам", "вас", "весь", "во", "вот", "все", "всего", "всех", "вы", "где", "да", "даже", "для", 
-           "до", "его", "ее", "если", "есть", "еще", "же", "за", "здесь", "и", "из", "из-за", "или", "им", "их", "к", "как", 
-           "как-то", "ко", "когда", "кто", "ли", "либо", "мне", "может", "мы", "на", "надо", "наш", "не", "него", "нее", "нет", 
+           "а", "без", "более", "бы", "был", "была", "были","один", "два", "три", "четыре", "пять", "шесть", "семь","восемь",
+           "было", "быть", "в", "вам", "вас", "весь", "во", "вот", "все", "всего", "всех", "вы", "где", "да", "даже", "для",
+           "до", "его", "ее", "если", "есть", "еще", "же", "за", "здесь", "и", "из", "из-за", "или", "им", "их", "к", "как",
+           "как-то", "ко", "когда", "кто", "ли", "либо", "мне", "может", "мы", "на", "надо", "наш", "не", "него", "нее", "нет",
            "ни", "них", "но", "ну", "о", "об", "однако",
            "1","2","3","4","5","6","7","8","9","0", "он", "она", "они", "интернет", "сайт", "вэб",
-           "сайт", "вопрос","оно", "от", "очень", "по", "под", "при", "с", "со", "так", 
-            "также", "такой", "там", "те", "тем", "то", "того", "тоже", "той", "только", "том", "ты", "у", "уже", 
+           "сайт", "вопрос","оно", "от", "очень", "по", "под", "при", "с", "со", "так",
+            "также", "такой", "там", "те", "тем", "то", "того", "тоже", "той", "только", "том", "ты", "у", "уже",
             "хотя", "чего", "чей", "чем", "что", "чтобы", "ответ", "чье", "чья", "эта", "эти", "это", "я"
         };
 
@@ -203,14 +196,14 @@ namespace KonigLabs.Controllers
                     }
                 }
                 var list = articles.ToPagedList(pageNumber, pageSize);
-                var bm = new BlogMeta(db, AccessableLanguagesForTags,_lang.GetLanguageName()) { SearchValue = search };
+                var bm = new BlogMeta(db, AccessableLanguagesForTags, _lang.GetLanguageName()) { SearchValue = search };
                 ViewBag.BlogMeta = bm;
                 return LocalizableView("~/Views/Home/Blog_{0}.cshtml", list);
             }
         }
 
-       
-        public virtual ActionResult Comment(string name, string email, string text, int? commentId, int? postId)
+
+        public async virtual Task<ActionResult> Comment(string name, string email, string text, int? commentId, int? postId)
         {
 
             using (var db = ApplicationDbContext.Create())
@@ -252,9 +245,7 @@ namespace KonigLabs.Controllers
                     sb.AppendFormat("<p>{0}</p>", c.Content);
                     sb.AppendFormat("<p>{0}</p>", c.Email);
 
-                    BackgroundJob.Schedule(() => Tasks.SendEmailToAdmin(sb.ToString()), TimeSpan.FromSeconds(1));
-
-
+                    await Task.Factory.StartNew(() => Tasks.SendEmailToAdmin(sb.ToString()));
                 }
                 return Content("ok");
             }

@@ -48,6 +48,20 @@ namespace KonigLabs.Controllers
 
         protected ViewResult LocalizableView(string viewPath, object model)
         {
+            return  View(GetPartialView(viewPath), model);
+        }
+
+        protected PartialViewResult LocalizablePartialView(string viewPath, object model)
+        {
+            return PartialView(GetPartialView(viewPath), model);
+        }
+        protected string LocalizablePartialViewName(string viewPath, object model)
+        {
+            return GetPartialView(viewPath);
+        }
+
+        private string GetPartialView(string viewPath)
+        {
             var language = _lang.GetLanguageName();
 
             string localizeViewPath;
@@ -63,7 +77,7 @@ namespace KonigLabs.Controllers
                     localizeViewPath = String.Format(viewPath, LocalEntity.RU);
                     break;
             }
-            return View(localizeViewPath, model);
+            return localizeViewPath;
         }
 
         private string[] GetAccessableLanguagesForTags(string language)

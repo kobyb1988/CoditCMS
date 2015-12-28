@@ -10,12 +10,13 @@ namespace KonigLabs
     {
         public static void SendEmailToAdmin(string text)
         {
+
             var message = new MailMessage();
 
             using (var db = DB.DAL.ApplicationDbContext.Create())
             {
                 var adminEmails = db.SiteSettings.Where(s => s.Name == "AdminEmails").FirstOrDefault();
-                var emailList = "aganzha@yandex.ru";
+                var emailList = "kobyb.palatkin@yandex.ru";
                 if (adminEmails != null)
                 {
                     emailList = adminEmails.Value;
@@ -30,18 +31,14 @@ namespace KonigLabs
             message.BodyEncoding = System.Text.Encoding.UTF8;
             message.IsBodyHtml = true;
             message.Subject = "New comment";
-
-
-
             message.Body = text;
 
             var client = new SmtpClient();
             if (client.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
             {
-                client.EnableSsl = false;
+                client.EnableSsl = true;
             }
-
-            client.Send(message);
+                client.Send(message);
             client.SendCompleted += (s, e) =>
             {
                 message.Dispose();

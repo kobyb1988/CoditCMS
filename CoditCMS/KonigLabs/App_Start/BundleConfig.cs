@@ -34,6 +34,8 @@ namespace KonigLabs
                       .Include("~/Content/media/js/eye.js")
                       .Include("~/Content/media/js/jquery.jkey-1.1.js")
                       .Include("~/Content/media/js/96_YTPlayer.js")
+                      .Include("~/Scripts/jquery.validate.min").
+                        Include("~/Scripts/jquery.validate.unobtrusive.min")
                       );
             bundles.Add(new ScriptBundle("~/Content/media.mobile/bundles/js")
                            .Include("~/Content/media.mobile/js/bootstrap.min.js")
@@ -65,6 +67,10 @@ namespace KonigLabs
                 .Include("~/Content/media.mobile/css/animate.css")
                 .Include("~/Content/media.mobile/css/font-awesome.min.css")
                 .Include("~/Content/media.mobile/css/cubeportfolio.min.css"));
+
+            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            //            "~/Scripts/jquery.validate.min").
+            //            Include("~/Scripts/jquery.validate.unobtrusive.min"));
         }
     }
 }

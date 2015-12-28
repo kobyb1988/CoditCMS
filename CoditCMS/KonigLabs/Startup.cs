@@ -10,7 +10,7 @@ namespace KonigLabs
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-            
+
             GlobalConfiguration.Configuration.UseSqlServerStorage("DefaultConnection");
             app.UseHangfireDashboard();
             app.UseHangfireServer();

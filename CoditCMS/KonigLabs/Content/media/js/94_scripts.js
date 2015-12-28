@@ -5,10 +5,16 @@ $(document).ready(function () {
 *****************************************************************************/
     var bindForm = function(){
         $("#ajax-contact-form").submit(function() {
-            var str = $(this).serialize();				
+            var str = $(this).serialize();
+            var url;
+            if($.inArray("en", window.location.pathname.split('/'))) {
+                url = "/en/home/contact/";
+            }
+            else
+                url = "/home/contact/";
             $.ajax({
                 type: "POST",
-                url: "/home/contact/",
+                url: url,
                 data: str,
                 success: function(msg, some, response) {
                     var fields = $('#fields').html(msg);
@@ -26,7 +32,7 @@ $(document).ready(function () {
             return false;
         });
     }
-    bindForm()
+    bindForm();
 
 //tooltip 
 $("[rel=tooltip]").tooltip();

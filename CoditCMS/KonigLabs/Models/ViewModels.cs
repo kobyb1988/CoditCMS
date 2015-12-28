@@ -257,7 +257,7 @@ namespace KonigLabs.Models
     public class ViewContact
     {
 
-        [Required]
+        [Required(ErrorMessageResourceType =typeof(ErrorMsg), ErrorMessageResourceName = "RequiredName")]
         [Display(Name = "Имя")]
         public string Name { get; set; }
 

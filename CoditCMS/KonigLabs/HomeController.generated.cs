@@ -84,9 +84,10 @@ namespace KonigLabs.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Contact()
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Contact()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -102,9 +103,10 @@ namespace KonigLabs.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Comment()
+        public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Comment()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -233,25 +235,33 @@ namespace KonigLabs.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Blog_en = "Blog_en";
+                public readonly string Blog_en_Mobile = "Blog_en.Mobile";
                 public readonly string Blog_ru = "Blog_ru";
+                public readonly string Blog_ru_Mobile = "Blog_ru.Mobile";
                 public readonly string BlogPost_en = "BlogPost_en";
                 public readonly string BlogPost_ru = "BlogPost_ru";
-                public readonly string Contact = "Contact";
+                public readonly string Contact_en = "Contact_en";
+                public readonly string Contact_ru = "Contact_ru";
                 public readonly string Index_en = "Index_en";
                 public readonly string Index_en_Mobile = "Index_en.Mobile";
                 public readonly string Index_ru = "Index_ru";
                 public readonly string Index_ru_Mobile = "Index_ru.Mobile";
             }
             public readonly string Blog_en = "~/Views/Home/Blog_en.cshtml";
+            public readonly string Blog_en_Mobile = "~/Views/Home/Blog_en.Mobile.cshtml";
             public readonly string Blog_ru = "~/Views/Home/Blog_ru.cshtml";
+            public readonly string Blog_ru_Mobile = "~/Views/Home/Blog_ru.Mobile.cshtml";
             public readonly string BlogPost_en = "~/Views/Home/BlogPost_en.cshtml";
             public readonly string BlogPost_ru = "~/Views/Home/BlogPost_ru.cshtml";
-            public readonly string Contact = "~/Views/Home/Contact.cshtml";
+            public readonly string Contact_en = "~/Views/Home/Contact_en.cshtml";
+            public readonly string Contact_ru = "~/Views/Home/Contact_ru.cshtml";
             public readonly string Index_en = "~/Views/Home/Index_en.cshtml";
             public readonly string Index_en_Mobile = "~/Views/Home/Index_en.Mobile.cshtml";
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
             public readonly string Index_ru_Mobile = "~/Views/Home/Index_ru.Mobile.cshtml";
         }
+
+      
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -322,12 +332,12 @@ namespace KonigLabs.Controllers
         partial void ContactOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, KonigLabs.Models.ViewContact contact);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Contact(KonigLabs.Models.ViewContact contact)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Contact(KonigLabs.Models.ViewContact contact)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "contact", contact);
             ContactOverride(callInfo, contact);
-            return callInfo;
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
         [NonAction]
@@ -362,7 +372,7 @@ namespace KonigLabs.Controllers
         partial void CommentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string name, string email, string text, int? commentId, int? postId);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Comment(string name, string email, string text, int? commentId, int? postId)
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Comment(string name, string email, string text, int? commentId, int? postId)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "name", name);
@@ -371,7 +381,7 @@ namespace KonigLabs.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "commentId", commentId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "postId", postId);
             CommentOverride(callInfo, name, email, text, commentId, postId);
-            return callInfo;
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
         [NonAction]

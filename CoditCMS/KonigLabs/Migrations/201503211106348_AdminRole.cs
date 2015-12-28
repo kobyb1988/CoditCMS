@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace KonigLabs.Migrations
 {
     using KonigLabs.Models;
