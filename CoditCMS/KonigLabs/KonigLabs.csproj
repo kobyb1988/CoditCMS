@@ -23,7 +23,7 @@
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.0</TypeScriptToolsVersion>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -233,7 +233,6 @@
     <Compile Include="Core\KonigLabsRoute.cs" />
     <Compile Include="Core\LanguageRouteHandler.cs" />
     <Compile Include="Core\ServiceProviderIml\Lang.cs" />
-    <Compile Include="Core\ServiceProviderIml\WurflService.cs" />
     <Compile Include="Core\UriHelper.cs" />
     <Compile Include="ErrorMsg.Designer.cs">
       <AutoGen>True</AutoGen>

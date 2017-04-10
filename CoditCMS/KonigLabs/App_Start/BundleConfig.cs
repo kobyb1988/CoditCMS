@@ -9,7 +9,7 @@ namespace KonigLabs
         public static void RegisterBundles(BundleCollection bundles)
         {
             BundleTable.EnableOptimizations = true;
-            
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
@@ -32,6 +32,7 @@ namespace KonigLabs
                       .Include("~/Content/media/js/921_toastr.js")
                       .Include("~/Content/media/js/custom.modernizr.js")
                       .Include("~/Content/media/js/eye.js")
+                      .Include("~/Content/media/js/jquery.fullPage.min.js")
                       .Include("~/Content/media/js/jquery.jkey-1.1.js")
                       .Include("~/Content/media/js/96_YTPlayer.js")
                       .Include("~/Scripts/jquery.validate.min").
@@ -59,6 +60,7 @@ namespace KonigLabs
                       .Include("~/Content/media/css/5_font-awesome.min.css")
                       .Include("~/Content/media/css/6_owl.carousel.css")
                       .Include("~/Content/media/css/7_cubeportfolio.min.css")
+                      .Include("~/Content/media/css/9_jquery.fullPage.css")
                       );
             bundles.Add(new StyleBundle("~/Content/media.mobile/bundles/css")
                 .Include("~/Content/media.mobile/css/bootstrap.min.css")
