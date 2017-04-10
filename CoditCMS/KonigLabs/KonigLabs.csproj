@@ -675,6 +675,8 @@
     <Content Include="Views\Home\Blog_ru.Mobile.cshtml" />
     <Content Include="Views\Home\Contact_en.cshtml" />
     <Content Include="Views\Home\Contact_ru.cshtml" />
+    <Content Include="Views\Home\GetProjects.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProjectList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Abstract\" />

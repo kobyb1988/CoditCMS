@@ -1,0 +1,6 @@
+﻿@model List<KonigLabs.Models.ViewProject>
+
+@foreach (var project in Model)
+{
+    Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
+}

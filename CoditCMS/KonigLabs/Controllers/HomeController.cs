@@ -79,6 +79,26 @@ namespace KonigLabs.Controllers
             }
         }
 
+        public ActionResult GetProjects(int page = 1)
+        {
+            var itemOnPage = 3;
+            string language = LocalEntity.RU;
+            using (var db = ApplicationDbContext.Create())
+            {
+                var viewProjects = new ViewProjects(language, db);
+                var projects = viewProjects.Projects;
+
+                if (Request.IsAjaxRequest())
+                {
+                    projects = projects.Skip(itemOnPage * page).Take(itemOnPage).ToList();
+                    return PartialView("ProjectList", projects);
+                }
+
+                projects = projects.Take(itemOnPage).ToList();
+                return PartialView(projects);
+            }
+        }
+
         [HttpPost]
         public async virtual Task<ActionResult> Contact(ViewContact contact)
         {
@@ -97,7 +117,7 @@ namespace KonigLabs.Controllers
                     db.SaveChanges();
                 }
                 contact.Status = "true";
-                Response.StatusCode = 201; 
+                Response.StatusCode = 201;
 
                 var sb = new StringBuilder();
                 sb.AppendFormat("<p>{0}</p>", contact.Name);
@@ -111,7 +131,7 @@ namespace KonigLabs.Controllers
             {
                 contact.Status = "flase";
             }
-            return LocalizablePartialView("~/Views/Home/Contact_{0}.cshtml",contact);
+            return LocalizablePartialView("~/Views/Home/Contact_{0}.cshtml", contact);
         }
 
         public virtual ActionResult BlogPost(int id)
