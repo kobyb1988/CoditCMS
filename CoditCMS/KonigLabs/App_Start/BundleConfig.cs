@@ -8,7 +8,7 @@ namespace KonigLabs
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            BundleTable.EnableOptimizations = true;
+            //BundleTable.EnableOptimizations = true;
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
@@ -35,11 +35,11 @@ namespace KonigLabs
                       .Include("~/Content/media/js/jquery.fullPage.min.js")
                       .Include("~/Content/media/js/jquery.jkey-1.1.js")
                       .Include("~/Content/media/js/96_YTPlayer.js")
-                      .Include("~/Scripts/jquery.validate.min").
-                        Include("~/Scripts/jquery.validate.unobtrusive.min")
+                      .Include("~/Scripts/jquery.validate.min")
+                      .Include("~/Scripts/jquery.validate.unobtrusive.min")
                       );
             bundles.Add(new ScriptBundle("~/Content/media.mobile/bundles/js")
-                           .Include("~/Content/media.mobile/js/bootstrap.min.js")
+                      .Include("~/Content/media.mobile/js/bootstrap.min.js")
                       .Include("~/Content/media.mobile/js/jquery.appear.js")
                       .Include("~/Content/media.mobile/js/royal_preloader.min.js")
                       .Include("~/Content/media.mobile/js/wow.js")

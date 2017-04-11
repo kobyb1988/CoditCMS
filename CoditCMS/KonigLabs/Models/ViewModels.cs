@@ -179,6 +179,7 @@ namespace KonigLabs.Models
     {
         public List<ViewProject> Projects { get; set; }
         public List<int> ShownProjects { get; set; }
+        public int TotalAmountOfProjects { get; set; }
 
         public ViewProjects(string language, ApplicationDbContext db)
         {

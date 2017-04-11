@@ -155,7 +155,7 @@
         
         // perform ajax request
         $.ajax({
-            url: me.attr('href'),
+            url: "Home/Projects/"+clicks,
             type: 'GET',
             dataType: 'HTML'
         })

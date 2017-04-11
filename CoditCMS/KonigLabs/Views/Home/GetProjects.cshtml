@@ -1,43 +1,50 @@
 ﻿@model List<KonigLabs.Models.ViewProject>
 
-<script>
-    $(function () {
-
-        var page = 0;
-        var _inCallback = false;
-        function loadItems() {
-            if (page > -1 && !_inCallback) {
-                _inCallback = true;
-                page++;
-
-                $.ajax({
-                    type: 'GET',
-                    url: '/Home/GetProjects/' + page,
-                    success: function (data, textstatus) {
-                        if (data != '') {
-                            $("#list").append(data);
-                        }
-                        else {
-                            page = -1;
-                        }
-                        _inCallback = false;
-                    }
-                });
-            }
-        }
-    })
-</script>
-
 <div class="cbp-l-grid-project">
     <div id="grid-container3" class="cbp-l-grid-projects">
         <ul id="list">
-            Html.RenderPartial("~/Views/Shared/DisplayTemplates/ProjectList.cshtml", Model);
+            @Html.Partial("~/Views/Shared/DisplayTemplates/ProjectList.cshtml", Model)
         </ul>
     </div>
-    <div id="load-more" class="cbp-l-loadMore-button">
-        <button onclick="loadItems()" class="cbp-l-loadMore-button-link">
+    <div id="loadMore" class="cbp-l-loadMore-button">
+        <a class="cbp-l-loadMore-button-link">
             <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="Еще"></i>
-        </button>
+        </a>
     </div>
 </div>
+
+<script>
+
+    $(function () {
+        $("#loadMore").click(function () {
+
+            console.log("load more items");
+            loadItems();
+        });
+    });
+
+    var page = 0;
+    var _inCallback = false;
+    var loadItems = function () {
+        if (page > -1 && !_inCallback) {
+            _inCallback = true;
+            page++;
+            console.log(page);
+            $.ajax({
+                type: 'GET',
+                url: '/Home/GetProjects/' + page,
+                success: function (data, textstatus) {
+                    if (data != '') {
+                        $("#list").append(data);
+                    }
+                    else {
+                        page = -1;
+                    }
+                    _inCallback = false;
+                }
+            });
+        }
+    };
+ 
+</script>
 

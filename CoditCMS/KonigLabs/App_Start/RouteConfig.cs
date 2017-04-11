@@ -60,8 +60,9 @@ namespace KonigLabs
             routes.MapRouteLang("login", "Account/login", MVC.Account.Login(), "");
             routes.MapRouteLang("logout", "Account/logout", MVC.Account.LogOut(), "");
             routes.MapRouteLang("members", "Home/member", MVC.Home.Member(), "");
-            routes.MapRouteLang("member", "Home/member/{id}", MVC.Home.Member(), "");
-            routes.MapRouteLang("projects", "Home/project", MVC.Home.Project(), "");
+            routes.MapRouteLang("member", "Home/member/{id}", MVC.Home.Member(), "");            
+           // routes.MapRouteLang("GetProjects", "Home/GetProjects/{page}", MVC.Home.GetProjects(), "");
+            routes.MapRouteLang("projects", "Home/Projects/{page}", MVC.Home.Projects(), "");
             routes.MapRouteLang("project", "Home/project/{id}", MVC.Home.Project(), "");
             routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact().Result, "");
 

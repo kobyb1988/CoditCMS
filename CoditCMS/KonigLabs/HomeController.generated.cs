@@ -84,6 +84,12 @@ namespace KonigLabs.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult GetProjects()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetProjects);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> Contact()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
@@ -129,6 +135,7 @@ namespace KonigLabs.Controllers
             public readonly string Project = "Project";
             public readonly string Article = "Article";
             public readonly string Projects = "Projects";
+            public readonly string GetProjects = "GetProjects";
             public readonly string Contact = "Contact";
             public readonly string BlogPost = "BlogPost";
             public readonly string Blog = "Blog";
@@ -144,6 +151,7 @@ namespace KonigLabs.Controllers
             public const string Project = "Project";
             public const string Article = "Article";
             public const string Projects = "Projects";
+            public const string GetProjects = "GetProjects";
             public const string Contact = "Contact";
             public const string BlogPost = "BlogPost";
             public const string Blog = "Blog";
@@ -182,7 +190,15 @@ namespace KonigLabs.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Projects
         {
-            public readonly string language = "language";
+            public readonly string page = "page";
+        }
+        static readonly ActionParamsClass_GetProjects s_params_GetProjects = new ActionParamsClass_GetProjects();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetProjects GetProjectsParams { get { return s_params_GetProjects; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetProjects
+        {
+            public readonly string page = "page";
         }
         static readonly ActionParamsClass_Contact s_params_Contact = new ActionParamsClass_Contact();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -242,6 +258,7 @@ namespace KonigLabs.Controllers
                 public readonly string BlogPost_ru = "BlogPost_ru";
                 public readonly string Contact_en = "Contact_en";
                 public readonly string Contact_ru = "Contact_ru";
+                public readonly string GetProjects = "GetProjects";
                 public readonly string Index_en = "Index_en";
                 public readonly string Index_en_Mobile = "Index_en.Mobile";
                 public readonly string Index_ru = "Index_ru";
@@ -255,13 +272,12 @@ namespace KonigLabs.Controllers
             public readonly string BlogPost_ru = "~/Views/Home/BlogPost_ru.cshtml";
             public readonly string Contact_en = "~/Views/Home/Contact_en.cshtml";
             public readonly string Contact_ru = "~/Views/Home/Contact_ru.cshtml";
+            public readonly string GetProjects = "~/Views/Home/GetProjects.cshtml";
             public readonly string Index_en = "~/Views/Home/Index_en.cshtml";
             public readonly string Index_en_Mobile = "~/Views/Home/Index_en.Mobile.cshtml";
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
             public readonly string Index_ru_Mobile = "~/Views/Home/Index_ru.Mobile.cshtml";
         }
-
-      
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -317,14 +333,26 @@ namespace KonigLabs.Controllers
         }
 
         [NonAction]
-        partial void ProjectsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string language);
+        partial void ProjectsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int page);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Projects(string language)
+        public override System.Web.Mvc.ActionResult Projects(int page)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Projects);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "language", language);
-            ProjectsOverride(callInfo, language);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "page", page);
+            ProjectsOverride(callInfo, page);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetProjectsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int page);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult GetProjects(int page)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetProjects);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "page", page);
+            GetProjectsOverride(callInfo, page);
             return callInfo;
         }
 

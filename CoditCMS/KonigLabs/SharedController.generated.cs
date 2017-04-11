@@ -76,6 +76,7 @@ namespace T4MVC
                 public readonly string MoreProjects = "MoreProjects";
                 public readonly string Project = "Project";
                 public readonly string ProjectDescr = "ProjectDescr";
+                public readonly string ProjectList = "ProjectList";
             }
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
             public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }

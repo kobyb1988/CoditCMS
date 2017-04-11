@@ -2,7 +2,7 @@
 
 <div class="cbp-loadMore-block1">
 
-    @foreach (var project in Model.Projects)
+    @foreach (var project in Model.Projects.Take(3))
     {
         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
     }
@@ -26,7 +26,11 @@
         </div>
     </li>*@
 
+</div>
 
-
-
+<div class="cbp-loadMore-block2">
+    @foreach (var project in Model.Projects.Skip(3).Take(1))
+    {
+        Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
+    }
 </div>

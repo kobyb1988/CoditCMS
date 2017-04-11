@@ -67,31 +67,35 @@ namespace KonigLabs.Controllers
             }
         }
 
-        public virtual ActionResult Projects(string language)
+        public virtual ActionResult Projects(int page)
         {
-            if (String.IsNullOrEmpty(language))
-            {
-                language = LocalEntity.RU;
-            }
+
+            var language = LocalEntity.RU;
+            var itemOnPage = 3;
             using (var db = ApplicationDbContext.Create())
             {
-                return View("~/Views/Shared/DisplayTemplates/MoreProjects.cshtml", new ViewProjects(language, db));
+                var landing = new LandingPage(_lang.GetLanguageName(), db);
+                var totalItems = landing.Projects;
+                var projects = totalItems.Skip(itemOnPage * page).Take(itemOnPage + 1).ToList();
+                return PartialView("~/Views/Shared/DisplayTemplates/MoreProjects.cshtml", new ViewProjects(language, db) { Projects = projects, TotalAmountOfProjects = totalItems.Count });
             }
         }
 
-        public ActionResult GetProjects(int page = 1)
+        [HttpGet]
+        public virtual ActionResult GetProjects(int page)
         {
             var itemOnPage = 3;
-            string language = LocalEntity.RU;
             using (var db = ApplicationDbContext.Create())
             {
-                var viewProjects = new ViewProjects(language, db);
-                var projects = viewProjects.Projects;
-
-                if (Request.IsAjaxRequest())
+                var landing = new LandingPage(_lang.GetLanguageName(), db);
+                var projects = landing.Projects;
+                if (Request != null)
                 {
-                    projects = projects.Skip(itemOnPage * page).Take(itemOnPage).ToList();
-                    return PartialView("ProjectList", projects);
+                    if (Request.IsAjaxRequest())
+                    {
+                        projects = projects.Skip(itemOnPage * page).Take(itemOnPage).ToList();
+                        return PartialView("~/Views/Shared/DisplayTemplates/ProjectList.cshtml", projects);
+                    }
                 }
 
                 projects = projects.Take(itemOnPage).ToList();
