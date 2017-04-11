@@ -8,7 +8,7 @@
         <div class="cbp-caption-activeWrap">
             <div class="cbp-l-caption-alignCenter">
                 <div class="cbp-l-caption-body">
-                    <a href="/Home/project/?id=@Model.Id" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
+                    <a href="@Url.Action(MVC.Home.Project(id:Model.Id))" class="cbp-singlePage cbp-l-caption-buttonLeft"><i class="fa fa-link"></i></a>
                     <a href="@Url.Content(Model.BigImage)" class="cbp-lightbox cbp-l-caption-buttonRight"
                        data-title="@Model.Name">
                         <i class="fa fa-eye"></i>

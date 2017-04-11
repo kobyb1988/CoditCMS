@@ -22,6 +22,7 @@ namespace KonigLabs.Controllers
             }
         }
 
+        [HttpGet]
         public virtual ActionResult Member(int id)
         {
             using (var db = ApplicationDbContext.Create())
@@ -33,10 +34,12 @@ namespace KonigLabs.Controllers
                     return View("NotFound");
                 }
                 var vm = new ViewMember(member);
-                return PartialView("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
+                vm.Language = _lang.GetLanguageName();
+                return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
             }
         }
 
+        [HttpGet]
         public virtual ActionResult Project(int id)
         {
             using (var db = ApplicationDbContext.Create())
@@ -48,7 +51,8 @@ namespace KonigLabs.Controllers
                     return View("NotFound");
                 }
                 var vm = new ViewProject(project);
-                return PartialView("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
+                vm.Language = _lang.GetLanguageName();
+                return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
             }
         }
 
