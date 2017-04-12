@@ -26,7 +26,7 @@ namespace CMS.Controllers
 			return (UploadFileSettings) Settings.FormSettings.Fields.FirstOrDefault(s => s.Name == propName);
 		}
 
-		[System.Web.Http.HttpPost]
+		[HttpPost]
 		public virtual FineUploaderResult UploadFile(FineUpload upload, int id, string propName)
 		{
 			var settings = GetFileSettings(propName);
@@ -130,7 +130,7 @@ namespace CMS.Controllers
 			return new FineUploaderResult(false, null, "файл не был передан");
 		}
 
-		[System.Web.Http.HttpPost]
+		[HttpPost]
 		public virtual ActionResult DeleteFile(CustomFileEntity model)
 		{
 			try
@@ -172,7 +172,7 @@ namespace CMS.Controllers
 			}
 		}
 
-		[System.Web.Http.HttpPost]
+		[HttpPost]
 		public virtual ActionResult SaveOrder(string model, int objId, string propName)
 		{
 			try
@@ -203,7 +203,7 @@ namespace CMS.Controllers
 			}
 		}
 
-		[System.Web.Http.HttpPost]
+		[HttpPost]
 		public virtual ActionResult SaveFileData(CustomFileEntity model)
 		{
 			try
