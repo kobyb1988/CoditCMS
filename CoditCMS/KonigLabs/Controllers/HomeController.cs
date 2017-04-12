@@ -35,7 +35,7 @@ namespace KonigLabs.Controllers
                 }
                 var vm = new ViewMember(member);
                 vm.Language = _lang.GetLanguageName();
-                return View("~/Views/Shared/DisplayTemplates/MemberBio.cshtml", vm);
+                return View("~/Views/Home/MemberBio.cshtml", vm);
             }
         }
 
@@ -52,7 +52,7 @@ namespace KonigLabs.Controllers
                 }
                 var vm = new ViewProject(project);
                 vm.Language = _lang.GetLanguageName();
-                return View("~/Views/Shared/DisplayTemplates/ProjectDescr.cshtml", vm);
+                return View("~/Views/Home/ProjectDescr.cshtml", vm);
             }
         }
 
