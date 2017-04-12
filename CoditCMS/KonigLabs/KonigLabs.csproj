@@ -563,6 +563,9 @@
     <Content Include="Content\media\js\7_wow.js" />
     <Content Include="Content\media\js\1_jquery-1.11.2.min.js" />
     <Content Include="Content\media\js\96_YTPlayer.js" />
+    <Content Include="Content\media\js\eye.js" />
+    <Content Include="Content\media\js\jquery.fullPage.min.js" />
+    <Content Include="Content\media\js\jquery.jkey-1.1.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="COPYING.txt" />
     <Content Include="favicon.ico" />

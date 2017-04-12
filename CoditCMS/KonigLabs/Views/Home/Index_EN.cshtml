@@ -13,31 +13,33 @@
                 <a class="scroll" href="@Url.Action(MVC.Home.Index())#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Home</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Services</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Team</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
+                <li id="menu_big_image"><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Home</a></li>
+                <li id="menu_about"><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Services</a></li>
+                <li id="menu_about"><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Team</a></li>
+                <li id="menu_work"><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Blog</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Details</a></li>
                 @switch (Model.Language)
                 {
                     case LocalEntity.EN:
-                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
-                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
                         break;
                     case LocalEntity.RU:
-                    <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
-                    <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
                         break;
                 }
             </ul>
-                <div id="nav-toggle">
-                    <i class="fa fa-bars"></i>
-                </div>
+            <div id="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
         </div>
     </div>
 </div>
-    <section id="home" class="top_video">
+
+<main id="fullpage">
+    <section id="home" class="section top_video">
         <div id="overlay"></div>
         <div id="BigVideo" class="player" data-property="{videoURL:'http://www.youtube.com/watch?v=YRFdL1CsYow', containment:'.top_video', autoPlay:true, mute:true, startAt:0, opacity:1, showControls : false}"></div>
 
@@ -65,253 +67,248 @@
             </div>
         </div>
     </section>
+    <section id="big_image" class="section"></section>
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <h1 class="wow fadeInRightBig text-center embo" data-wow-offset="80" data-wow-duration="2s">
+                        What we do…
+                    </h1>
 
-<section id="big_image"></section>
-<section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="wow fadeInRightBig text-center embo" data-wow-offset="80" data-wow-duration="2s">
-                    What we do…
-                </h1>
-
-                <div class="lead wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
-                    Our professionals get through the entire lifespan of each project.<br /> That is just what <span class="white embo"><strong>our customers</strong></span> appreciate.
-                </div>
-
-                <div>
-                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
-                        <div class="service">
-                            <i class="fa fa-laptop"></i>
-                        </div>
-                        <h6>Interface design</h6>
-                        <p>
-                            Our team will create the exquisite design for your website, portal, mobile or web-based application. Design development includes the adaptive layout that will perfectly fit any type of screen.
-                        </p>
+                    <div class="lead wow fadeInRightBig text-center" data-wow-offset="80" data-wow-duration="2s">
+                        Our professionals get through the entire lifespan of each project.<br /> That is just what <span class="white embo"><strong>our customers</strong></span> appreciate.
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
-                        <div class="service">
-                            <i class="fa fa-magic"></i>
+                    <div>
+                        <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
+                            <div class="service">
+                                <i class="fa fa-laptop"></i>
+                            </div>
+                            <h6>Interface design</h6>
+                            <p>
+                                Our team will create the exquisite design for your website, portal, mobile or web-based application. Design development includes the adaptive layout that will perfectly fit any type of screen.
+                            </p>
                         </div>
-                        <h6>Visual design</h6>
-                        <p>
-                            We develop corporate style, logos, visiting cards, advertising materials. Our professionals shape the ideas with lines and bring them to life. And… yes, we create smooth and clean design!
-                        </p>
-                    </div>
 
-                    <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
-                        <div class="service">
-                            <i class="fa fa-tasks"></i>
+                        <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                            <div class="service">
+                                <i class="fa fa-magic"></i>
+                            </div>
+                            <h6>Visual design</h6>
+                            <p>
+                                We develop corporate style, logos, visiting cards, advertising materials. Our professionals shape the ideas with lines and bring them to life. And… yes, we create smooth and clean design!
+                            </p>
                         </div>
-                        <h6>Website promotion</h6>
-                        <p>
-                            By drawing new visitors to your website, we boost the number of your potential customers.
-                        </p>
-                    </div>
 
-                    <div style="clear:both;"></div>
-                </div>
-                <div>
-                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
-                        <div class="service">
-                            <i class="fa fa-cloud"></i>
+                        <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                            <div class="service">
+                                <i class="fa fa-tasks"></i>
+                            </div>
+                            <h6>Website promotion</h6>
+                            <p>
+                                By drawing new visitors to your website, we boost the number of your potential customers.
+                            </p>
                         </div>
-                        <h6>Websites, web-based applications, portals</h6>
-                        <p>
-                            Easily scalable architecture, carefully designed and developed by our team helps to achieve reliability and flexibility of your software solutions.
-                        </p>
-                    </div>
 
-                    <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
-                        <div class="service">
-                            <i class="fa fa-cogs"></i>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div>
+                        <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
+                            <div class="service">
+                                <i class="fa fa-cloud"></i>
+                            </div>
+                            <h6>Websites, web-based applications, portals</h6>
+                            <p>
+                                Easily scalable architecture, carefully designed and developed by our team helps to achieve reliability and flexibility of your software solutions.
+                            </p>
                         </div>
-                        <h6>Desktop applications and services</h6>
-                        <p>
-                            Developing highly complex applications for Windows-based operating systems, we pay great attention to quality of code and architecture.
-                        </p>
-                    </div>
 
-                    <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
-                        <div class="service">
-                            <i class="fa fa-wrench"></i>
+                        <div class="col-sm-4 col-lg-4 text-center wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                            <div class="service">
+                                <i class="fa fa-cogs"></i>
+                            </div>
+                            <h6>Desktop applications and services</h6>
+                            <p>
+                                Developing highly complex applications for Windows-based operating systems, we pay great attention to quality of code and architecture.
+                            </p>
                         </div>
-                        <h6>Mobile and cloud-based applications</h6>
-                        <p>
-                            Cross-platform applications (Android, iOS, Windows Phone), cloud-based applications (AWS, Azure) – that’s what you come to us for.
-                        </p>
-                    </div>
 
-                    <div style="clear:both;"></div>
+                        <div class="col-sm-4 col-lg-4 text-center  wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                            <div class="service">
+                                <i class="fa fa-wrench"></i>
+                            </div>
+                            <h6>Mobile and cloud-based applications</h6>
+                            <p>
+                                Cross-platform applications (Android, iOS, Windows Phone), cloud-based applications (AWS, Azure) – that’s what you come to us for.
+                            </p>
+                        </div>
+
+                        <div style="clear:both;"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section id="charts" class="section">
+        <div class="well">
+            <div class="dark_overlay">
+                <div class="container">
+                    <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                        Application domain of our projects:
+                    </h1>
 
-
-<section id="charts">
-    <div class="well">
-        <div class="dark_overlay">
-            <div class="container">
-                <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Application domain of our projects:
-                </h1>
-
-                <div class="col-sm-4 col-lg-4 text-center  pie wow bounceIn" data-wow-delay="2s">
-                    <span class="chart1">
-                        <span class="percent">50%</span>
-                    </span>
-                    <p class="center">Global online services</p>
+                    <div class="col-sm-4 col-lg-4 text-center  pie wow bounceIn" data-wow-delay="2s">
+                        <span class="chart1">
+                            <span class="percent">50%</span>
+                        </span>
+                        <p class="center">Global online services</p>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="0.8s">
+                        <span class="chart2">
+                            <span class="percent">20%</span>
+                        </span>
+                        <p class="center">Complex cloud-based databases</p>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.2s">
+                        <span class="chart3">
+                            <span class="percent">30%</span>
+                        </span>
+                        <p class="center">Start-ups</p>
+                    </div>
                 </div>
-                <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="0.8s">
-                    <span class="chart2">
-                        <span class="percent">20%</span>
-                    </span>
-                    <p class="center">Complex cloud-based databases</p>
-                </div>
-                <div class="col-sm-4 col-lg-4 text-center bouncein pie wow bounceIn" data-wow-delay="1.2s">
-                    <span class="chart3">
-                        <span class="percent">30%</span>
-                    </span>
-                    <p class="center">Start-ups</p>
-                </div>
-            </div>
-            <div class="pad30"></div>
-        </div>
-    </div>
-</section>
-<section id="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
-                    About us
-                </h1>
-
-                <div class="lead  wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Our <strong>team</strong> combines professionals with different skills
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-lg-6">
-                <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Our team members get a charge out of IT-innovations and complicated algorithms. We put together our talents to make the life of our customers easier. We are always open for dialog.
-                </p>
-            </div>
-
-            <div class="col-sm-12 col-lg-6">
-                <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Wisely organized business process and high professionalism make it possible for us to handle the problems of our customers in the best possible way. That is precisely why we regularly participate in the profession-oriented trainings and conferences. Our specialists constantly develop their skills while interacting with the best professionals in their fields from around the world.
-                </p>
+                <div class="pad30"></div>
             </div>
         </div>
-    </div>
+    </section>
+    <section id="team" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
+                        About us
+                    </h1>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12 pad15">
-                <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
-                <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
-                <a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
-                <div class="vacancy collapse">
-                    <div class="pad30"></div>
+                    <div class="lead  wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                        Our <strong>team</strong> combines professionals with different skills
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                    <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                        Our team members get a charge out of IT-innovations and complicated algorithms. We put together our talents to make the life of our customers easier. We are always open for dialog.
+                    </p>
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                    <p class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                        Wisely organized business process and high professionalism make it possible for us to handle the problems of our customers in the best possible way. That is precisely why we regularly participate in the profession-oriented trainings and conferences. Our specialists constantly develop their skills while interacting with the best professionals in their fields from around the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 pad15">
+                    <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">DETAILS</a>
+                    <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">PORTFOLIO</a>
+                    <a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">JOBS</a>
+                    <div class="vacancy collapse">
+                        <div class="pad30"></div>
                         <h2>Jobs information will be here soon</h2>
-                </div>
+                    </div>
 
-                <div class="pad45"></div>
+                    <div class="pad45"></div>
 
-                <div id="grid-container" class="cbp-l-grid-team">
-                    <ul class="cbp-l-grid-team team-grid the-team">
-                        @foreach (var member in Model.Members)
+                    <div id="grid-container" class="cbp-l-grid-team">
+                        <ul class="cbp-l-grid-team team-grid the-team">
+                            @foreach (var member in Model.Members)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
                         }
-                    </ul>
-                </div>
-
-                <div class="pad60"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="milestones">
-    <div class="well">
-        <div class="dark_overlay">
-            <div class="container">
-                <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                    Some statistics
-                </h1>
-                <div class="pad45"></div>
-
-                <div class="col-sm-4 col-lg-4 text-center">
-                    <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
-                        <p class="light">years of experience<br /> in total for all team members</p>
-                        <div id="counter-1"></div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 text-center">
-                    <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
-                        <p class="light">projects<br /> developed</p>
-                        <div id="counter-2"></div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-lg-4 text-center ">
-                    <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
-                        <p class="light">industry certificates<br /> and awards</p>
-						<div id="counter-3"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="work">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
-                    Our everyday activity
-                </h1>
-                <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
-                    Recent projects:
-                </div>
-
-                <div id="filters-container" class="cbp-l-filters-button">
-                    <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">All<span class="cbp-filter-counter"></span></button>
-                    @foreach (var category in Model.Categories)
-                    {
-                        <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
-                            @category.Name
-                            <span class="cbp-filter-counter"></span>
-                        </button>
-                    }
-
-                </div>
-
-                <div class="cbp-l-grid-project">
-                    <div id="grid-container3" class="cbp-l-grid-projects">
-                        <ul>
-
-                            @foreach (var project in Model.Projects)
-                            {
-                                Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
-                            }
-
                         </ul>
                     </div>
-                    <div class="cbp-l-loadMore-button">
-                        <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
-                            <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="More"></i>
-                        </a>
-                    </div>
+
+                    <div class="pad60"></div>
                 </div>
-                <div class="pad45"></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section id="milestones" class="section">
+        <div class="well">
+            <div class="dark_overlay">
+                <div class="container">
+                    <h1 class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
+                        Some statistics
+                    </h1>
+                    <div class="pad45"></div>
+
+                    <div class="col-sm-4 col-lg-4 text-center">
+                        <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+                            <p class="light">years of experience<br /> in total for all team members</p>
+                            <div id="counter-1"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 text-center">
+                        <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+                            <p class="light">projects<br /> developed</p>
+                            <div id="counter-2"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 text-center ">
+                        <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
+                            <p class="light">industry certificates<br /> and awards</p>
+                            <div id="counter-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="work" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <h1 class="wow fadeInRightBig embo" data-wow-offset="80" data-wow-duration="2s">
+                        Our everyday activity
+                    </h1>
+                    <div class="lead wow fadeInRightBig" data-wow-offset="80" data-wow-duration="2s">
+                        Recent projects:
+                    </div>
+
+                    <div id="filters-container" class="cbp-l-filters-button">
+                        <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">All<span class="cbp-filter-counter"></span></button>
+                        @foreach (var category in Model.Categories)
+                        {
+                            <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
+                                @category.Name
+                                <span class="cbp-filter-counter"></span>
+                            </button>
+                        }
+                    </div>
+
+                    <div class="cbp-l-grid-project">
+                        <div id="grid-container3" class="cbp-l-grid-projects">
+                            <ul>
+                                @foreach (var project in Model.Projects.Take(3))
+                                {
+                                    Html.RenderPartial("~/Views/Shared/DisplayTemplates/Project.cshtml", project);
+                                }
+                            </ul>
+                        </div>
+                        <div class="cbp-l-loadMore-button">
+                            <a href="@Url.Action(MVC.Home.Projects())" class="cbp-l-loadMore-button-link">
+                                <i class="fa fa-plus-circle wow load pulse" data-wow-iteration="infinite" data-toggle="tooltip" data-placement="bottom" id="bottom" title="" data-original-title="More"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pad45"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
 <div class="pad30"></div>
 
@@ -384,23 +381,23 @@
 
                         <ul class="social-icons">
                             @*<li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                                  <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>*@
+                                      <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>*@
                             <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="0.5s">
                                 <a href="https://www.facebook.com/groups/534103116773719/" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
                             @*<li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                            </li>
-                            <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2.5s">
-                                <a href="#"><i class="fa fa-vk"></i></a>
-                            </li>*@
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </li>
+                                <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                                <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2.5s">
+                                    <a href="#"><i class="fa fa-vk"></i></a>
+                                </li>*@
                         </ul>
                     </div>
 
@@ -411,7 +408,7 @@
                                 @{
                                     Html.RenderPartial(MVC.Home.Views.Contact_en, Model.Contact);
                                 }
-                           </div>
+                            </div>
                         </div>
                     </div>
                 </div>

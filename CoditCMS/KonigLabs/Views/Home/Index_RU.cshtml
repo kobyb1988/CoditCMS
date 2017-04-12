@@ -5,18 +5,17 @@
     ViewBag.Title = "Index_EN";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <div id="header">
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt=""/></a>
+                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
             <ul id="menu">
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                <li id="menu_big_image" class="active"><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
+                <li id="menu_about"><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                <li id="menu_team"><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                <li id="menu_work"><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
                 <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
                 @switch (Model.Language)
@@ -26,8 +25,8 @@
                         <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
                         break;
                     case LocalEntity.RU:
-                    <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
-                    <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
                         break;
                 }
             </ul>
@@ -67,7 +66,6 @@
             </div>
         </div>
     </section>
-
     <section id="big_image" class="section"></section>
     <section id="about" class="section">
         <div class="container">
@@ -88,7 +86,7 @@
                             </div>
                             <h6>Дизайн интерфейсов</h6>
                             <p>
-                            Наши специалисты разработают эксклюзивный дизайн для вашего сайта, портала, мобильного или веб-приложения. При разработке дизайна проектируются адаптивные интерфейсы для любых видов экранов.
+                                Наши специалисты разработают эксклюзивный дизайн для вашего сайта, портала, мобильного или веб-приложения. При разработке дизайна проектируются адаптивные интерфейсы для любых видов экранов.
                             </p>
                         </div>
 
@@ -119,9 +117,9 @@
                             <div class="service">
                                 <i class="fa fa-cloud"></i>
                             </div>
-                        <h6>Веб-сайты, веб-приложения, порталы</h6>
+                            <h6>Веб-сайты, веб-приложения, порталы</h6>
                             <p>
-                            Тщательно проектируя и разрабатывая легко масштабируемую архитектуру, мы добиваемся надёжности и гибкости ваших программных решений.
+                                Тщательно проектируя и разрабатывая легко масштабируемую архитектуру, мы добиваемся надёжности и гибкости ваших программных решений.
                             </p>
                         </div>
 
@@ -129,7 +127,7 @@
                             <div class="service">
                                 <i class="fa fa-cogs"></i>
                             </div>
-                        <h6>Настольные приложения и сервисы</h6>
+                            <h6>Настольные приложения и сервисы</h6>
                             <p>
                                 Разрабатывая приложения высокой сложности для операционных систем семейства Windows, мы уделяем большое внимание качеству кода и архитектуры.
                             </p>
@@ -150,7 +148,7 @@
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
     <section id="charts" class="section">
         <div class="well">
             <div class="dark_overlay">
@@ -215,11 +213,11 @@
                     <a href="@Url.Action(MVC.Home.Index())#contact" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">КОНТАКТЫ</a>
                     <a href="@Url.Action(MVC.Home.Index())#work" class="scroll btn marg-right10 wow bounceIn" data-wow-offset="80" data-wow-duration="2s">ПОРТФОЛИО</a>
                     <a href=".vacancy" class="scroll btn wow bounceIn accordion-toggle" data-toggle="collapse">ВАКАНСИИ</a>
-					    <div class="vacancy collapse">
-						    <div class="pad30"></div>
-						     <h2>Здесь в будущем будет информация о вакансиях</h2>
-					    </div>
-							
+                    <div class="vacancy collapse">
+                        <div class="pad30"></div>
+                        <h2>Здесь в будущем будет информация о вакансиях</h2>
+                    </div>
+
                     <div class="pad45"></div>
 
                     <div id="grid-container" class="cbp-l-grid-team">
@@ -227,7 +225,7 @@
                             @foreach (var member in Model.Members)
                             {
                                 Html.RenderPartial("~/Views/Shared/DisplayTemplates/Member.cshtml", member);
-                            }                      
+                            }
                         </ul>
                     </div>
 
@@ -253,14 +251,14 @@
                     </div>
                     <div class="col-sm-4 col-lg-4 text-center">
                         <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
-                        <p class="light">разработанных<br /> проектов</p>
-					    <div id="counter-2"></div>
+                            <p class="light">разработанных<br /> проектов</p>
+                            <div id="counter-2"></div>
                         </div>
                     </div>
                     <div class="col-sm-4 col-lg-4 text-center ">
                         <div class="counter wow bounceIn" data-wow-offset="80" data-wow-duration="2s">
-                        <p class="light">профессиональных<br /> сертификатов и грамот</p>
-					    <div id="counter-3"></div>
+                            <p class="light">профессиональных<br /> сертификатов и грамот</p>
+                            <div id="counter-3"></div>
                         </div>
                     </div>
                 </div>
@@ -282,15 +280,12 @@
                         <button data-filter="*" class="cbp-filter-item-active cbp-filter-item">Все<span class="cbp-filter-counter"></span></button>
                         @foreach (var category in Model.Categories)
                         {
-                            <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
-                                @category.Name
-                                <span class="cbp-filter-counter"></span>
-                            </button>
+                        <button data-filter="@category.GetFilter()" class="cbp-filter-item-active cbp-filter-item">
+                            @category.Name
+                            <span class="cbp-filter-counter"></span>
+                        </button>
                         }
-                
                     </div>
-
-                    @*<div>@Html.Partial("GetProjects", Model.Projects.Take(3).ToList())</div>*@
 
                     <div class="cbp-l-grid-project">
                         <div id="grid-container3" class="cbp-l-grid-projects">
@@ -325,7 +320,7 @@
                     {
                         Html.RenderPartial("~/Views/Shared/DisplayTemplates/Client.cshtml", client);
                     }
-                   
+
                 </div>
             </div>
         </div>
@@ -343,8 +338,8 @@
                         @foreach (var article in Model.Articles)
                         {
                             Html.RenderPartial("~/Views/Shared/DisplayTemplates/Article_ru.cshtml", article);
-                        }                        
-                       
+                        }
+
                     </ul>
                 </div>
             </div>
@@ -385,23 +380,23 @@
 
                         <ul class="social-icons">
                             @*<li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>*@
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>*@
                             <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="0.5s">
                                 <a href="https://www.facebook.com/groups/534103116773719/" target="_blank"><i class="fa fa-facebook"></i></a>
                             </li>
                             @*<li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1s">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                            </li>
-                            <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </li>
-                            <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2.5s">
-                                <a href="#"><i class="fa fa-vk"></i></a>
-                            </li>*@
+                                    <a href="#"><i class="fa fa-github"></i></a>
+                                </li>
+                                <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="1.5s">
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                                <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2s">
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li class="wow fadeIn" data-wow-offset="80" data-wow-duration="2s" data-wow-delay="2.5s">
+                                    <a href="#"><i class="fa fa-vk"></i></a>
+                                </li>*@
                         </ul>
                     </div>
 
