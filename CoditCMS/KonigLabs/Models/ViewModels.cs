@@ -11,7 +11,7 @@ namespace KonigLabs.Models
     {
         public string Language { get; private set; }
 
-        private ApplicationDbContext db;
+       // private ApplicationDbContext db;
 
         public const int MaxProjectInCategory = 8;
         public List<int> ShownProjects { get; set; }
@@ -211,6 +211,8 @@ namespace KonigLabs.Models
         public string Title { get; set; }
         public int Id { get; set; }
         public string Bio { get; set; }
+
+        public string SmallPhotos { get; set; }
 
         public ViewMember(CrewMember member)
         {
