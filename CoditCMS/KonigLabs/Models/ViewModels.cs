@@ -222,6 +222,7 @@ namespace KonigLabs.Models
             Name = member.FirstName + " " + member.LastName;
             Bio = member.Bio;
             Id = member.Id;
+            SmallPhotos = member.Files?.FirstOrDefault(f => f.Description == "SmallPhotos")?.Name;
         }
     }
 

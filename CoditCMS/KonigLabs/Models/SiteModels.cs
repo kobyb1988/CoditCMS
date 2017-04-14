@@ -44,6 +44,9 @@ namespace KonigLabs.Models
 
         public int Sort { get; set; }
 
+        public int? SmallPhotoId { get; set; }
+        public virtual File SmallPhoto { get; set; }
+
         public virtual ICollection<File> Files { get; set; }
 
         public virtual ICollection<Article> Articles { get; set; }
@@ -67,7 +70,7 @@ namespace KonigLabs.Models
 
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
-            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).OrderBy(c=>c.Sort).ToList();
+            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).OrderBy(c => c.Sort).ToList();
         }
     }
 
@@ -94,6 +97,9 @@ namespace KonigLabs.Models
         public global::System.String Title { get; set; }
 
         public global::System.String Description { get; set; }
+
+        public int? MemberId { get; set; }
+        public virtual CrewMember Member { get; set; }
 
         public virtual ICollection<CrewMember> Members { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
@@ -123,7 +129,7 @@ namespace KonigLabs.Models
 
     }
 
-    public class Project :LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class Project : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
 
@@ -187,7 +193,7 @@ namespace KonigLabs.Models
                                                     .Include(p => p.Projects.Select(ip => ip.Files))
                                                     .Where(pc => pc.Language == language && pc.Visibility))
             {
-                foreach (var pro in pc.Projects.Where(p =>p.Language==language && p.Visibility))
+                foreach (var pro in pc.Projects.Where(p => p.Language == language && p.Visibility))
                 {
                     projects.Add(pro);
                 }
@@ -208,7 +214,7 @@ namespace KonigLabs.Models
             return answer;
         }
 
-        
+
     }
 
 
@@ -311,7 +317,7 @@ namespace KonigLabs.Models
             return answer;
         }
 
-        internal static IEnumerable<Article> GetArticles(string [] languages, ApplicationDbContext db)
+        internal static IEnumerable<Article> GetArticles(string[] languages, ApplicationDbContext db)
         {
             return db.Articles.Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
                 .Where(a => languages.Contains(a.Language) && a.Visibility).OrderByDescending(x => x.Date).ToArray();
@@ -328,7 +334,7 @@ namespace KonigLabs.Models
         public bool HasImageForBlog()
         {
             var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
-            if(ShowOnHomePage)
+            if (ShowOnHomePage)
             {
                 file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
             }
@@ -342,7 +348,7 @@ namespace KonigLabs.Models
             if (ShowOnHomePage)
             {
                 file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
-            }                       
+            }
             if (file != null)
             {
                 answer = file.Name;
@@ -406,7 +412,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class Tag :LocalEntity, IVisibleEntity, ISortableEntity
+    public class Tag : LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -421,7 +427,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class ArticleCategory :LocalEntity, IVisibleEntity, ISortableEntity
+    public class ArticleCategory : LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -539,7 +545,7 @@ namespace KonigLabs.Models
                 c.WalkDawn(level + 1);
                 CommentCount += c.CommentCount + 1;
 
-            }            
+            }
         }
     }
 }

@@ -339,6 +339,15 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Configurations\ArticleCategoryConfiguration.cs" />
+    <Compile Include="Models\Configurations\ArticleConfiguration.cs" />
+    <Compile Include="Models\Configurations\ClientsConfiguration.cs" />
+    <Compile Include="Models\Configurations\CommentConfiguration.cs" />
+    <Compile Include="Models\Configurations\CrewMemberConfiguration.cs" />
+    <Compile Include="Models\Configurations\FileConfiguration.cs" />
+    <Compile Include="Models\Configurations\ProjectCategoryConfiguration.cs" />
+    <Compile Include="Models\Configurations\ProjectConfiguration.cs" />
+    <Compile Include="Models\Configurations\TagConfiguration.cs" />
     <Compile Include="Models\DeviceInfo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

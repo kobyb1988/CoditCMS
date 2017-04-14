@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using KonigLabs.Models.Configurations;
 
 namespace KonigLabs.Models
 {
@@ -43,7 +44,27 @@ namespace KonigLabs.Models
 
         public virtual DbSet<Contact> Contacts { get; set; }
 
-        
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Article>()
+                .ToTable("Articles")
+                .HasKey(p => p.Id);
+            modelBuilder.Configurations.Add(new ArticleCategoryConfiguration());
+            modelBuilder.Configurations.Add(new ArticleConfiguration());
+            modelBuilder.Configurations.Add(new ClientsConfiguration());
+            modelBuilder.Configurations.Add(new CommentConfiguration());
+            modelBuilder.Configurations.Add(new CrewMemberConfiguration());
+            modelBuilder.Configurations.Add(new FileConfiguration());
+            modelBuilder.Configurations.Add(new ProjectCategoryConfiguration());
+            modelBuilder.Configurations.Add(new ProjectConfiguration());
+            modelBuilder.Configurations.Add(new TagConfiguration());
+
+            modelBuilder.Entity<CrewMember>()
+                        .HasRequired(s => s.SmallPhoto)
+                        .WithRequiredPrincipal(p => p.Member);
+
+            base.OnModelCreating(modelBuilder);
+        }
 
 
     }
