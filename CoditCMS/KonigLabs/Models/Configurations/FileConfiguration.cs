@@ -13,14 +13,14 @@ namespace KonigLabs.Models.Configurations
             ToTable("Files")
               .HasKey(p => p.Id);
 
-            HasMany(p => p.Clients)
-              .WithMany(p => p.Files)
-              .Map(p =>
-              {
-                  p.ToTable("ClientFiles");
-                  p.MapLeftKey("File_Id");
-                  p.MapRightKey("Client_Id");
-              });
+            //HasMany(p => p.Clients)
+            //  .WithMany(p => p.Files)
+            //  .Map(p =>
+            //  {
+            //      p.ToTable("ClientFiles");
+            //      p.MapLeftKey("File_Id");
+            //      p.MapRightKey("Client_Id");
+            //  });
         }
     }
 }

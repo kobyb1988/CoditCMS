@@ -34,13 +34,6 @@ namespace CMS.Controllers
 			{
 				try
 				{
-                    //здесь small photo записываем в Files и добавляем в description, что это small photo
-                    string fileDescr = "";
-                    if (propName == "SmallPhotos")
-                    {
-                        propName = "Files";
-                        fileDescr = "SmallPhotos";
-                    }
 					var entity = Repository.GetByPrimaryKey(id);
 					var value = TypeHelpers.GetPropertyValue(entity, propName);
 
@@ -74,13 +67,15 @@ namespace CMS.Controllers
 						{
 							upload.SaveAs(fullname);
 						}
-
+                        if(settings.IsSmallPhoto)
+                        {
+                            file.IsSmallPhoto = true;
+                        }
 						file.Name = Path.Combine(relativePath, filename);
 						file.SourceName = upload.Filename;
 						file.Date = DateTime.Now;
 						file.Visibility = true;
 						file.Size = new FileInfo(fullname).Length;
-                        file.Description = fileDescr;
 						var entitySetName = TypeHelpers.GetEntitySetName(file, Repository.DataContext);
 						((IObjectContextAdapter)Repository.DataContext).ObjectContext.AddObject(entitySetName, file);
 						return file;
@@ -118,11 +113,6 @@ namespace CMS.Controllers
 						result = saveImage();
 						TypeHelpers.SetPropertyValue(entity, propName, result);
 					}
-                    if(result.Description == "SmallPhotos")
-                    {
-                        var existingSmallPhotos = TypeHelpers.GetPropertyValue(entity, propName);
-
-                    }
 					Repository.Save();
 					return new FineUploaderResult(true, new
 					{
@@ -149,11 +139,7 @@ namespace CMS.Controllers
 			try
 			{
 				var db = Repository.DataContext;
-				var entity = Repository.GetByPrimaryKey(model.ObjId);
-                if (model.PropName == "SmallPhotos")
-                {
-                    model.PropName = "Files";
-                }
+				var entity = Repository.GetByPrimaryKey(model.ObjId);                
                 var type = TypeHelpers.GetPropertyType(entity, model.PropName);
 				var entitySetName = TypeHelpers.GetEntitySetName(type, db);
 				var key = new EntityKey(entitySetName, "Id", model.Id);

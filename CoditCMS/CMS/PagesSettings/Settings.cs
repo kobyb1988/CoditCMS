@@ -234,6 +234,7 @@ namespace CMS.PagesSettings
 			return new UploadFileSettings
 			{
 				PathToSave = element.GetString("path"),
+                IsSmallPhoto = element.GetBoolean("isSmallPhoto"),
 				IsImage = element.GetBoolean("isImage", true),
 				ShowTitle = element.GetBoolean("showTitle"),
 				ShowSourceName = element.GetBoolean("showSourceName"),

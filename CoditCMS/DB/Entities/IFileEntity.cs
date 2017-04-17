@@ -11,5 +11,6 @@ namespace DB.Entities
 		string Description { get; set; }
 		DateTime Date { get; set; }
 		long? Size { get; set; }
+        bool? IsSmallPhoto { get; set; }
 	}
 }

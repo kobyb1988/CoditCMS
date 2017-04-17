@@ -16,5 +16,6 @@ namespace DB.Entities.Mocks
 		public long? Size { get; set; }
 		public string PropName { get; set; }
 		public int ObjId { get; set; }
+        public bool? IsSmallPhoto { get; set; }
 	}
 }

@@ -41,7 +41,7 @@
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
     </tab>
     <tab name="Small photos">
-      <file name="SmallPhotos" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
+      <file name="Files" isSmallPhoto="true" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
     </tab>
 		<tab name="Metadata">			
 			<string name="MetaTitle" title="MetaTitle" />

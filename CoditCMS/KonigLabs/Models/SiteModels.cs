@@ -44,9 +44,6 @@ namespace KonigLabs.Models
 
         public int Sort { get; set; }
 
-        public int? SmallPhotoId { get; set; }
-        public virtual File SmallPhoto { get; set; }
-
         public virtual ICollection<File> Files { get; set; }
 
         public virtual ICollection<Article> Articles { get; set; }
@@ -77,7 +74,6 @@ namespace KonigLabs.Models
 
     public class File : IFileEntity
     {
-
         public global::System.Int32 Id { get; set; }
 
         public global::System.String Name { get; set; }
@@ -98,8 +94,7 @@ namespace KonigLabs.Models
 
         public global::System.String Description { get; set; }
 
-        public int? MemberId { get; set; }
-        public virtual CrewMember Member { get; set; }
+        public Nullable<global::System.Boolean> IsSmallPhoto { get; set; }
 
         public virtual ICollection<CrewMember> Members { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
