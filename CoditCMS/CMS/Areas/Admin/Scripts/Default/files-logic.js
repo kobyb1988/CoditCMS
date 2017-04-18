@@ -9,6 +9,7 @@ var FileItem = function(item) {
     self.Title = ko.observable(item.Title);
     self.Description = ko.observable(item.Description);
     self.Visibility = ko.observable(item.Visibility);
+    self.IsMarked = ko.observable(item.IsMarked);
 };
 
 var saveOrder = function (name, url, objId, propName, reference) {
