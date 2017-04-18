@@ -15,7 +15,7 @@ namespace CMS.PagesSettings.Forms
         /// <summary>
 		/// является ли файл аватаркой профиля
 		/// </summary>
-		public bool IsSmallPhoto { get; set; }
+		public bool IsMarked { get; set; }
 
         /// <summary>
         /// показывать заголовок файла для редактирования

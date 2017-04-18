@@ -67,10 +67,6 @@ namespace CMS.Controllers
 						{
 							upload.SaveAs(fullname);
 						}
-                        if(settings.IsSmallPhoto)
-                        {
-                           // file.IsMarked = true;
-                        }
 						file.Name = Path.Combine(relativePath, filename);
 						file.SourceName = upload.Filename;
 						file.Date = DateTime.Now;
@@ -221,6 +217,7 @@ namespace CMS.Controllers
 				file.Description = model.Description;
 				file.Title = model.Title;
 				file.Visibility = model.Visibility;
+                file.IsMarked = model.IsMarked;
 				db.SaveChanges();
 				return Json(new { success = true });
 			}

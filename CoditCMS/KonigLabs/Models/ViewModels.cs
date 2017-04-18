@@ -212,7 +212,7 @@ namespace KonigLabs.Models
         public int Id { get; set; }
         public string Bio { get; set; }
 
-        public string SmallPhotos { get; set; }
+        public string AnimateAvatar { get; set; }
 
         public ViewMember(CrewMember member)
         {
@@ -222,7 +222,7 @@ namespace KonigLabs.Models
             Name = member.FirstName + " " + member.LastName;
             Bio = member.Bio;
             Id = member.Id;
-            SmallPhotos = member.Files?.FirstOrDefault(f => f.Description == "SmallPhotos")?.Name;
+            AnimateAvatar = member.GetAnimateAvatar();
         }
     }
 

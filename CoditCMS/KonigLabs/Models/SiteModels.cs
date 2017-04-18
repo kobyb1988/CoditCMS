@@ -65,6 +65,18 @@ namespace KonigLabs.Models
             return answer;
         }
 
+        public string GetAnimateAvatar()
+        {
+            var answer = "";
+            //todo сейчас получаем первое помеченное флагом IsMarked фото. В последствии сделать, чтобы такой файл был уникальным для каждого пользователя
+            var file = Files.FirstOrDefault(f => f.IsMarked);
+            if (file != null)
+            {
+               answer = file.Name?.TrimStart('~');
+            }
+            return answer;
+        }
+
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
             return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).OrderBy(c => c.Sort).ToList();
