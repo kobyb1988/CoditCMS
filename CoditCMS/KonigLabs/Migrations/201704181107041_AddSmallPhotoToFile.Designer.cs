@@ -13,7 +13,7 @@ namespace KonigLabs.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201704171407308_AddSmallPhotoToFile"; }
+            get { return "201704181107041_AddSmallPhotoToFile"; }
         }
         
         string IMigrationMetadata.Source

@@ -37,11 +37,9 @@
 		
 		<wysiwyg name="Signature" title="Подпись" />
 		</tab>
-    <tab name="Images">
+  
+     <tab name="Images">
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
-    </tab>
-    <tab name="Small photos">
-      <file name="Files" isSmallPhoto="true" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
     </tab>
 		<tab name="Metadata">			
 			<string name="MetaTitle" title="MetaTitle" />

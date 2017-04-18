@@ -94,7 +94,7 @@ namespace KonigLabs.Models
 
         public global::System.String Description { get; set; }
 
-        public Nullable<global::System.Boolean> IsSmallPhoto { get; set; }
+        public global::System.Boolean IsMarked { get; set; }
 
         public virtual ICollection<CrewMember> Members { get; set; }
         public virtual ICollection<Project> Projects { get; set; }

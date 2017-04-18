@@ -7,12 +7,12 @@ namespace KonigLabs.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Files", "IsSmallPhoto", c => c.Boolean());
+            AddColumn("dbo.Files", "IsMarked", c => c.Boolean(nullable: false, defaultValue: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Files", "IsSmallPhoto");
+            DropColumn("dbo.Files", "IsMarked");
         }
     }
 }

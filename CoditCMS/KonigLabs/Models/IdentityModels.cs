@@ -55,7 +55,7 @@ namespace KonigLabs.Models
             //modelBuilder.Configurations.Add(new ProjectCategoryConfiguration());
             //modelBuilder.Configurations.Add(new ProjectConfiguration());
             //modelBuilder.Configurations.Add(new TagConfiguration());
-            modelBuilder.Entity<File>().Property(p => p.IsSmallPhoto).IsOptional();
+           // modelBuilder.Entity<File>().Property(p => p.IsMarked).IsRequired();
             base.OnModelCreating(modelBuilder);
         }
 

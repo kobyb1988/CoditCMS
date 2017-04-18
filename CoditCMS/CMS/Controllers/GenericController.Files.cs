@@ -69,7 +69,7 @@ namespace CMS.Controllers
 						}
                         if(settings.IsSmallPhoto)
                         {
-                            file.IsSmallPhoto = true;
+                           // file.IsMarked = true;
                         }
 						file.Name = Path.Combine(relativePath, filename);
 						file.SourceName = upload.Filename;

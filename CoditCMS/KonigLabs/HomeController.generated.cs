@@ -260,8 +260,6 @@ namespace KonigLabs.Controllers
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
             public readonly string Index_ru_Mobile = "~/Views/Home/Index_ru.Mobile.cshtml";
         }
-
-      
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
