@@ -64,7 +64,7 @@ return new System.Web.WebPages.HelperResult(__razor_helper_writer => {
 
 #line 76 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
  
-//, IsMarked: @file.IsMarked.ToString().ToLower()
+//
 
 
 #line default
@@ -148,6 +148,15 @@ WriteLiteralTo(__razor_helper_writer, "\", Visibility: ");
 
 #line 79 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                                                                                                                                                                                                                             WriteTo(__razor_helper_writer, file.Visibility.ToString().ToLower());
+
+
+#line default
+#line hidden
+WriteLiteralTo(__razor_helper_writer, ", IsMarked: ");
+
+
+#line 79 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
+                                                                                                                                                                                                                                                                             WriteTo(__razor_helper_writer, file.IsMarked.ToString().ToLower());
 
 
 #line default
@@ -330,18 +339,21 @@ WriteLiteral(" /></div>\r\n");
             
             #line 37 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
                     }
-                    
-            
-            #line default
-            #line hidden
-            
-            #line 38 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
-                                                                                                                                                   
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n");
+WriteLiteral("                    <div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral("><label>Фото для анимационного аватара</label><input");
+
+WriteLiteral(" type=\"checkbox\"");
+
+WriteLiteral(" data-bind=\"checked: IsMarked\"");
+
+WriteLiteral(" /></div>\r\n\r\n");
 
             
             #line 40 "..\..\Areas\Admin\Views\Shared\EditorTemplates\ozi_File.cshtml"
