@@ -151,7 +151,12 @@
 
         // set loading status
         oMsg = me.text();
-        me.text('Загрузка...');
+        if (document.location.pathname.match('en')) {
+            me.text('Loading...');
+        }
+        else {
+            me.text('Загрузка...');
+        }
         
         // perform ajax request
         $.ajax({
