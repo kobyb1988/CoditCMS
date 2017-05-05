@@ -15,9 +15,10 @@ namespace KonigLabs
     {
         public Task SendAsync(IdentityMessage message)
         {
+            //TODO Это не правильно!!!! Надо брать логин и пароль из настроек!!!!
             // настройка логина, пароля отправителя
-            var from = "keniglabs2017@yandex.ru";
-            var pass = "password1";
+            var from = "info@koniglabs.ru";
+            var pass = "KonigLabs2015Mail*";
 
             // адрес и порт smtp-сервера, с которого мы и будем отправлять письмо
             SmtpClient client = new SmtpClient("smtp.yandex.ru", 25);
