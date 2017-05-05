@@ -2,8 +2,8 @@
 @model KonigLabs.Models.ViewMember
 
 <li class="cbp-item">
-    <a href="@Url.Action(MVC.Home.Member(id:Model.Id))" >        
-		<figure class="eye"></figure>
+    <a href="/Home/member/?id=@Model.Id" class="cbp-caption cbp-singlePage">
+		<figure class="eye" style="background-image:url(@Model.AnimateAvatar)"></figure>  
     </a>
     <a href="@Url.Action(MVC.Home.Member(id:Model.Id))" >@Model.Name</a>
     <div class="cbp-l-grid-team-position">@Model.Title</div>

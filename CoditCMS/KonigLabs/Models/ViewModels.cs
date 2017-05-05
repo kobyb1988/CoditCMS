@@ -11,7 +11,7 @@ namespace KonigLabs.Models
     {
         public string Language { get; private set; }
 
-        private ApplicationDbContext db;
+       // private ApplicationDbContext db;
 
         public const int MaxProjectInCategory = 8;
         public List<int> ShownProjects { get; set; }
@@ -214,6 +214,8 @@ namespace KonigLabs.Models
         public string Bio { get; set; }
         public string Language { get; set; }
 
+        public string AnimateAvatar { get; set; }
+
         public ViewMember(CrewMember member)
         {
             Avatar = member.GetAvatar();
@@ -222,6 +224,7 @@ namespace KonigLabs.Models
             Name = member.FirstName + " " + member.LastName;
             Bio = member.Bio;
             Id = member.Id;
+            AnimateAvatar = member.GetAnimateAvatar();
         }
     }
 

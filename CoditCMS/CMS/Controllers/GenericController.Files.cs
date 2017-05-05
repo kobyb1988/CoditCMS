@@ -67,7 +67,6 @@ namespace CMS.Controllers
 						{
 							upload.SaveAs(fullname);
 						}
-
 						file.Name = Path.Combine(relativePath, filename);
 						file.SourceName = upload.Filename;
 						file.Date = DateTime.Now;
@@ -136,8 +135,8 @@ namespace CMS.Controllers
 			try
 			{
 				var db = Repository.DataContext;
-				var entity = Repository.GetByPrimaryKey(model.ObjId);
-				var type = TypeHelpers.GetPropertyType(entity, model.PropName);
+				var entity = Repository.GetByPrimaryKey(model.ObjId);                
+                var type = TypeHelpers.GetPropertyType(entity, model.PropName);
 				var entitySetName = TypeHelpers.GetEntitySetName(type, db);
 				var key = new EntityKey(entitySetName, "Id", model.Id);
 				var file = (IFileEntity)((IObjectContextAdapter)db).ObjectContext.GetObjectByKey(key);
@@ -218,6 +217,7 @@ namespace CMS.Controllers
 				file.Description = model.Description;
 				file.Title = model.Title;
 				file.Visibility = model.Visibility;
+                file.IsMarked = model.IsMarked;
 				db.SaveChanges();
 				return Json(new { success = true });
 			}

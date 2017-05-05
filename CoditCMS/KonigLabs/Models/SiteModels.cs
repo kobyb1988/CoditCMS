@@ -65,16 +65,27 @@ namespace KonigLabs.Models
             return answer;
         }
 
+        public string GetAnimateAvatar()
+        {
+            var answer = "";
+            //todo сейчас получаем первое помеченное флагом IsMarked фото. В последствии сделать, чтобы такой файл был уникальным для каждого пользователя
+            var file = Files.FirstOrDefault(f => f.IsMarked);
+            if (file != null)
+            {
+               answer = file.Name?.TrimStart('~');
+            }
+            return answer;
+        }
+
         internal static IEnumerable<CrewMember> GetMembers(string language, ApplicationDbContext db)
         {
-            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).OrderBy(c=>c.Sort).ToList();
+            return db.CrewMembers.Include(m => m.Files).Where(m => m.Language == language && m.Visibility).OrderBy(c => c.Sort).ToList();
         }
     }
 
 
     public class File : IFileEntity
     {
-
         public global::System.Int32 Id { get; set; }
 
         public global::System.String Name { get; set; }
@@ -94,6 +105,8 @@ namespace KonigLabs.Models
         public global::System.String Title { get; set; }
 
         public global::System.String Description { get; set; }
+
+        public global::System.Boolean IsMarked { get; set; }
 
         public virtual ICollection<CrewMember> Members { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
@@ -123,7 +136,7 @@ namespace KonigLabs.Models
 
     }
 
-    public class Project :LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
+    public class Project : LocalEntity, IVisibleEntity, ISortableEntity, IMetadataEntity
     {
         public int Id { get; set; }
 
@@ -187,7 +200,7 @@ namespace KonigLabs.Models
                                                     .Include(p => p.Projects.Select(ip => ip.Files))
                                                     .Where(pc => pc.Language == language && pc.Visibility))
             {
-                foreach (var pro in pc.Projects.Where(p =>p.Language==language && p.Visibility))
+                foreach (var pro in pc.Projects.Where(p => p.Language == language && p.Visibility))
                 {
                     projects.Add(pro);
                 }
@@ -208,7 +221,7 @@ namespace KonigLabs.Models
             return answer;
         }
 
-        
+
     }
 
 
@@ -311,7 +324,7 @@ namespace KonigLabs.Models
             return answer;
         }
 
-        internal static IEnumerable<Article> GetArticles(string [] languages, ApplicationDbContext db)
+        internal static IEnumerable<Article> GetArticles(string[] languages, ApplicationDbContext db)
         {
             return db.Articles.Include(a => a.Files).Include(a => a.Categories).Include(a => a.Tags).Include(a => a.CrewMember)
                 .Where(a => languages.Contains(a.Language) && a.Visibility).OrderByDescending(x => x.Date).ToArray();
@@ -328,7 +341,7 @@ namespace KonigLabs.Models
         public bool HasImageForBlog()
         {
             var file = Files.OrderBy(f => f.Sort).FirstOrDefault();
-            if(ShowOnHomePage)
+            if (ShowOnHomePage)
             {
                 file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
             }
@@ -342,7 +355,7 @@ namespace KonigLabs.Models
             if (ShowOnHomePage)
             {
                 file = Files.OrderBy(f => f.Sort).Skip(1).FirstOrDefault();
-            }                       
+            }
             if (file != null)
             {
                 answer = file.Name;
@@ -406,7 +419,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class Tag :LocalEntity, IVisibleEntity, ISortableEntity
+    public class Tag : LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -421,7 +434,7 @@ namespace KonigLabs.Models
         }
     }
 
-    public class ArticleCategory :LocalEntity, IVisibleEntity, ISortableEntity
+    public class ArticleCategory : LocalEntity, IVisibleEntity, ISortableEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -539,7 +552,7 @@ namespace KonigLabs.Models
                 c.WalkDawn(level + 1);
                 CommentCount += c.CommentCount + 1;
 
-            }            
+            }
         }
     }
 }

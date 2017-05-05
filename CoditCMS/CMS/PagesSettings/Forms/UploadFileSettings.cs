@@ -12,10 +12,15 @@ namespace CMS.PagesSettings.Forms
 		/// </summary>
 		public bool IsImage { get; set; }
 
-		/// <summary>
-		/// показывать заголовок файла для редактирования
+        /// <summary>
+		/// является ли файл аватаркой профиля
 		/// </summary>
-		public bool ShowTitle { get; set; }
+		public bool IsMarked { get; set; }
+
+        /// <summary>
+        /// показывать заголовок файла для редактирования
+        /// </summary>
+        public bool ShowTitle { get; set; }
 
 		/// <summary>
 		/// показывать исходное имя файла для редактирования

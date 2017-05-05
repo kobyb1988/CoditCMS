@@ -37,7 +37,8 @@
 		
 		<wysiwyg name="Signature" title="Подпись" />
 		</tab>
-    <tab name="Images">
+  
+     <tab name="Images">
       <file name="Files" isImage="true" size="300" title="Прикреплённые изображения" showTitle="true" />
     </tab>
 		<tab name="Metadata">			

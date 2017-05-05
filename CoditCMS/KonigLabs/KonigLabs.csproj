@@ -333,8 +333,25 @@
     <Compile Include="Migrations\201504220821529_EmbeddedMediaForArticle.Designer.cs">
       <DependentUpon>201504220821529_EmbeddedMediaForArticle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704131625062_AddLanguageProperty.cs" />
+    <Compile Include="Migrations\201704131625062_AddLanguageProperty.Designer.cs">
+      <DependentUpon>201704131625062_AddLanguageProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704181107041_AddSmallPhotoToFile.cs" />
+    <Compile Include="Migrations\201704181107041_AddSmallPhotoToFile.Designer.cs">
+      <DependentUpon>201704181107041_AddSmallPhotoToFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Configurations\ArticleCategoryConfiguration.cs" />
+    <Compile Include="Models\Configurations\ArticleConfiguration.cs" />
+    <Compile Include="Models\Configurations\ClientsConfiguration.cs" />
+    <Compile Include="Models\Configurations\CommentConfiguration.cs" />
+    <Compile Include="Models\Configurations\CrewMemberConfiguration.cs" />
+    <Compile Include="Models\Configurations\FileConfiguration.cs" />
+    <Compile Include="Models\Configurations\ProjectCategoryConfiguration.cs" />
+    <Compile Include="Models\Configurations\ProjectConfiguration.cs" />
+    <Compile Include="Models\Configurations\TagConfiguration.cs" />
     <Compile Include="Models\DeviceInfo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -569,7 +586,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Codit\XMLViews\CrewMember.xml" />
+    <Content Include="Codit\XMLViews\CrewMember.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="MIT License.txt" />
     <Content Include="Scripts\Blog.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -587,6 +606,12 @@
     <EmbeddedResource Include="ErrorMsg.En.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMsg.En.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704131625062_AddLanguageProperty.resx">
+      <DependentUpon>201704131625062_AddLanguageProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704181107041_AddSmallPhotoToFile.resx">
+      <DependentUpon>201704181107041_AddSmallPhotoToFile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

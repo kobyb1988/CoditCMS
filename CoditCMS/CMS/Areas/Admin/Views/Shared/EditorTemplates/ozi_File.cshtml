@@ -35,6 +35,8 @@ else
                     {
                         <div class="row"><label>Альтернативный текст</label><input type="text" data-bind="value: Alt" /></div>
                     }
+                    <div class="row"><label>Фото для анимационного аватара</label><input type="checkbox" data-bind="checked: IsMarked" /></div>
+
                     @if (field.ShowTitle) { <div class="row"><label>Подпись</label><textarea rows="5" style="width: 90%;" data-bind="value: Title"></textarea></div> }
                     @if (field.ShowDescription) { <div class="row"><label>Описание</label><textarea rows="5" style="width: 90%;" data-bind="value: Description"></textarea></div> }
                     @if (field.Visibility) { <div class="row"><label>Видимый</label><input type="checkbox" data-bind="checked: Visibility"/></div> }
@@ -72,7 +74,8 @@ else
 }
 @helper RenderScript(UploadFileSettings upload, IFileEntity file)
 {
+//
     <text>
-        files["@(upload.Name)_array"].files.push(new FileItem({ Id: @file.Id, Url: "@(Url.Content(file.Name))", SourceName: "@file.SourceName", Alt: "@file.Alt", Title: "@file.Title", Description: "@file.Description", Date: "@file.Date", Visibility: @file.Visibility.ToString().ToLower() }));
+        files["@(upload.Name)_array"].files.push(new FileItem({ Id: @file.Id, Url: "@(Url.Content(file.Name))", SourceName: "@file.SourceName", Alt: "@file.Alt", Title: "@file.Title", Description: "@file.Description", Date: "@file.Date", Visibility: @file.Visibility.ToString().ToLower(), IsMarked: @file.IsMarked.ToString().ToLower() }));
     </text>
 }

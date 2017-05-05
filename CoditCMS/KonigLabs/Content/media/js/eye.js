@@ -64,8 +64,12 @@ $(document).ready(function() {
     $('#straighten').click(straightenActions);
     changeOne = function(element, direction)
     {
-        element.attr('style', 'background-position:' + dir[direction] + 'px ' + ((teamSize - element.parents("li").index()) * imgSize) + 'px;');
+        for (var i = 0; i < element.length; ++i) {
+            element[i].style.backgroundPositionX = dir[direction] + 'px';
+            element[i].style.backgroundPositionY = imgSize + 'px';
+        }
     }
+
     changeAll = function(direction)
     {
 
@@ -136,9 +140,13 @@ function showTeam(){
         var teamSize = $('.team-grid li').length;
         $.each($('.team-grid li'), function(i, el){
             setTimeout(function(){
-                $(el).find("figure").attr("style", 'background-position: 0px ' + ((teamSize - i) * 250) + 'px;');
+                var figures = $(el).find("figure");
+                for (var i = 0; i < figures.length; ++i) {
+                    figures[i].style.backgroundPositionX = '0px';
+                    figures[i].style.backgroundPositionY = '250px';
+                }
                 $(el).addClass('visible-member');
-            }, 250 + ( i * 100 ));
+            }, 250);
         });
     }
 }
