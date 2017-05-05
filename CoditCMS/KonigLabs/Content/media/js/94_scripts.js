@@ -59,12 +59,15 @@ $(function() {
 ******************************************************************************/	
 
    $(window).scroll(function () {
-	var scaleBg = -$(window).scrollTop() / 4;
-		if ($(window).scrollTop() > 1) {
-            $('#header').addClass('show-header');
-        } else {
-            $('#header').removeClass('show-header');
-        }
+       var scaleBg = -$(window).scrollTop() / 4;
+       if(window.location.href.indexOf("Blog") <= -1)
+       {
+           if ($(window).scrollTop() > 1) {
+               $('#header').addClass('show-header');
+           } else {
+               $('#header').removeClass('show-header');
+           }
+       }
 	});
 
     $('.scroll').smoothScroll({
