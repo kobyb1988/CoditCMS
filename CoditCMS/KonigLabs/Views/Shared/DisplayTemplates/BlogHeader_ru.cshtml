@@ -1,6 +1,6 @@
 ﻿@using KonigLabs.Models
 @using Libs
-<div id="header">
+<div id="header" class="show-header">
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
@@ -13,7 +13,7 @@
                 <li><a href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
                 <li><a href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
                 <li><a href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
-                <li><a href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                <li class="active"><a href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
                 <li><a href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
                     @if (Request.Url.AbsoluteUri.ToLower().Contains("/en/"))
                     {
