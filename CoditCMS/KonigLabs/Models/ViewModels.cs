@@ -143,6 +143,7 @@ namespace KonigLabs.Models
         public string Description { get; set; }
         public List<string> Gallery { get; set; }
         public string Url { get; set; }
+        public string Language { get; set; }
 
         public ViewProject(Project project)
         {
@@ -211,6 +212,7 @@ namespace KonigLabs.Models
         public string Title { get; set; }
         public int Id { get; set; }
         public string Bio { get; set; }
+        public string Language { get; set; }
 
         public ViewMember(CrewMember member)
         {

@@ -1,0 +1,83 @@
+﻿@using KonigLabs.Models
+@using KonigLabs.Core
+@model ViewProject
+@{
+    ViewBag.Title = "Index_EN";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header">
+    <div class="col-sm-12 col-lg-12">
+        <div class="row">
+            <div id="logo">
+                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
+            </div>
+            <ul id="menu">
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
+                @switch (Model.Language)
+                {
+                    case LocalEntity.EN:
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                    case LocalEntity.RU:
+                        <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
+                        <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
+                        break;
+                }
+            </ul>
+            <div id="nav-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<div id="single">
+
+    <div class="col-sm-12 col-lg-12">
+
+        <h1 class="embo">@Model.Name</h1>
+
+        <!-- CAROUSEL-->
+        <div id="carousel" class="owl-carousel pad5">
+            @foreach (var img in Model.Gallery)
+            {
+                <div class="item">
+                    <img class="lazyOwl" data-src="@Url.Content(img)" alt="Image 2">
+                </div>
+            }
+
+        </div>
+        <!--//END-->
+        @if (!String.IsNullOrEmpty(Model.Url))
+        {
+            <a target="_blank" href="@Model.Url" style="background: none repeat scroll 0% 0% #00F1EB;margin:10px 0 10px 0;display:inline-block;color:white;padding:5px;">Сайт проекта</a>
+        }
+
+        <div class="row pad30">
+            @Html.Raw(@Model.Description)
+
+        </div>
+    </div>
+</div>
+<div class="pad90"></div>
+
+
+<script>
+	//<![CDATA[
+		$(document).ready(function() {
+			$("#carousel").owlCarousel({
+			items : 2,
+			lazyLoad : true,
+			navigation : false
+		});
+	});
+//]]>
+</script>
+

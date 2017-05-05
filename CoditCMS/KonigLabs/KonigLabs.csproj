@@ -642,17 +642,15 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </None>
-    <Content Include="Views\Shared\DisplayTemplates\Member.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Project.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Article_en.cshtml" />
     <Content Include="Views\Home\Index_en.cshtml" />
     <Content Include="Views\Home\Index_ru.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\MemberBio.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArticleFull.cshtml" />
     <Content Include="Views\Shared\_CoditLayout.cshtml" />
     <Content Include="Views\Shared\old_Layout.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\ProjectDescr.cshtml" />
+    <Content Include="Views\Home\ProjectDescr.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MoreProjects.cshtml" />
     <Content Include="Views\Home\Blog_ru.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArticleInBlog_ru.cshtml" />
@@ -670,11 +668,13 @@
     <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
     <Content Include="Views\Home\Index_ru.Mobile.cshtml" />
     <Content Include="Views\Home\Index_en.Mobile.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Member.Mobile.cshtml" />
     <Content Include="Views\Home\Blog_en.Mobile.cshtml" />
     <Content Include="Views\Home\Blog_ru.Mobile.cshtml" />
     <Content Include="Views\Home\Contact_en.cshtml" />
     <Content Include="Views\Home\Contact_ru.cshtml" />
+    <Content Include="Views\Home\MemberBio.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Member.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Member.Mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Abstract\" />
