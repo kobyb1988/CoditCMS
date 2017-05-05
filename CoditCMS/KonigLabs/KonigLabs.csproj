@@ -233,7 +233,6 @@
     <Compile Include="Core\KonigLabsRoute.cs" />
     <Compile Include="Core\LanguageRouteHandler.cs" />
     <Compile Include="Core\ServiceProviderIml\Lang.cs" />
-    <Compile Include="Core\ServiceProviderIml\WurflService.cs" />
     <Compile Include="Core\UriHelper.cs" />
     <Compile Include="ErrorMsg.Designer.cs">
       <AutoGen>True</AutoGen>
