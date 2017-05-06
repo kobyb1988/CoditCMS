@@ -10,27 +10,36 @@
     <div class="col-sm-12 col-lg-12">
         <div class="row">
             <div id="logo">
-                <a class="scroll" href="#home"><img src="/Content/media/img/logo.png" alt="" /></a>
+                <a class="scroll" href="@Url.Action(MVC.Home.Index())"><img src="/Content/media/img/logo.png" alt="" /></a>
             </div>
-            <ul id="menu">
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#home">Главная</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
-                <li><a class="scroll" href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
-                @switch (Model.Language)
-                {
-                    case LocalEntity.EN:
+            @switch (Model.Language)
+            {
+                case LocalEntity.EN:
+                    <ul id="menu">
+                        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#about">Services</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#team">Team</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#work">Our projects</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Blog())">Blog</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#contact">Details</a></li>
                         <li><a class="lang" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
                         <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
-                        break;
-                    case LocalEntity.RU:
+                    </ul>
+                    break;
+                case LocalEntity.RU:
+                    <ul id="menu">
+                        <li><a href="@Url.Action("Index","Home")">Главная</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#about">Услуги</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#team">Команда</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#work">Наши работы</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Blog())">Блог</a></li>
+                        <li><a href="@Url.Action(MVC.Home.Index())#contact">Контакты</a></li>
                         <li><a class="lang active" href="@Url.ChangeLang(LocalEntity.RU)">Ru</a></li>
                         <li><a class="lang" href="@Url.ChangeLang(LocalEntity.EN)">En</a></li>
-                        break;
-                }
-            </ul>
+                    </ul>
+                    break;
+            }
+            
             <div id="nav-toggle">
                 <i class="fa fa-bars"></i>
             </div>

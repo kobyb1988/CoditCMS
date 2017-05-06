@@ -60,6 +60,36 @@ namespace CMS.Areas.Admin.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult UploadFileCollectionItem()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadFileCollectionItem);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual CMS.ViewModels.FineUploaderResult UploadFile()
+        {
+            return new T4MVC_CMS_ViewModels_FineUploaderResult(Area, Name, ActionNames.UploadFile);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult DeleteFile()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteFile);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult SaveOrder()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveOrder);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult SaveFileData()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveFileData);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult Index()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
@@ -96,36 +126,6 @@ namespace CMS.Areas.Admin.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual CMS.ViewModels.FineUploaderResult UploadFile()
-        {
-            return new T4MVC_CMS_ViewModels_FineUploaderResult(Area, Name, ActionNames.UploadFile);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult DeleteFile()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteFile);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult SaveOrder()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveOrder);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult SaveFileData()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveFileData);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult UploadFileCollectionItem()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadFileCollectionItem);
-        }
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult SetLanguage()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SetLanguage);
@@ -146,6 +146,11 @@ namespace CMS.Areas.Admin.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
+            public readonly string UploadFileCollectionItem = "UploadFileCollectionItem";
+            public readonly string UploadFile = "UploadFile";
+            public readonly string DeleteFile = "DeleteFile";
+            public readonly string SaveOrder = "SaveOrder";
+            public readonly string SaveFileData = "SaveFileData";
             public readonly string Index = "Index";
             public readonly string Details = "Details";
             public readonly string Create = "Create";
@@ -153,17 +158,17 @@ namespace CMS.Areas.Admin.Controllers
             public readonly string Delete = "Delete";
             public readonly string SetVisibility = "SetVisibility";
             public readonly string SortList = "SortList";
-            public readonly string UploadFile = "UploadFile";
-            public readonly string DeleteFile = "DeleteFile";
-            public readonly string SaveOrder = "SaveOrder";
-            public readonly string SaveFileData = "SaveFileData";
-            public readonly string UploadFileCollectionItem = "UploadFileCollectionItem";
             public readonly string SetLanguage = "SetLanguage";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
+            public const string UploadFileCollectionItem = "UploadFileCollectionItem";
+            public const string UploadFile = "UploadFile";
+            public const string DeleteFile = "DeleteFile";
+            public const string SaveOrder = "SaveOrder";
+            public const string SaveFileData = "SaveFileData";
             public const string Index = "Index";
             public const string Details = "Details";
             public const string Create = "Create";
@@ -171,15 +176,57 @@ namespace CMS.Areas.Admin.Controllers
             public const string Delete = "Delete";
             public const string SetVisibility = "SetVisibility";
             public const string SortList = "SortList";
-            public const string UploadFile = "UploadFile";
-            public const string DeleteFile = "DeleteFile";
-            public const string SaveOrder = "SaveOrder";
-            public const string SaveFileData = "SaveFileData";
-            public const string UploadFileCollectionItem = "UploadFileCollectionItem";
             public const string SetLanguage = "SetLanguage";
         }
 
 
+        static readonly ActionParamsClass_UploadFileCollectionItem s_params_UploadFileCollectionItem = new ActionParamsClass_UploadFileCollectionItem();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UploadFileCollectionItem UploadFileCollectionItemParams { get { return s_params_UploadFileCollectionItem; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UploadFileCollectionItem
+        {
+            public readonly string upload = "upload";
+            public readonly string id = "id";
+            public readonly string propName = "propName";
+            public readonly string parentId = "parentId";
+        }
+        static readonly ActionParamsClass_UploadFile s_params_UploadFile = new ActionParamsClass_UploadFile();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UploadFile UploadFileParams { get { return s_params_UploadFile; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UploadFile
+        {
+            public readonly string upload = "upload";
+            public readonly string id = "id";
+            public readonly string propName = "propName";
+        }
+        static readonly ActionParamsClass_DeleteFile s_params_DeleteFile = new ActionParamsClass_DeleteFile();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DeleteFile DeleteFileParams { get { return s_params_DeleteFile; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DeleteFile
+        {
+            public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_SaveOrder s_params_SaveOrder = new ActionParamsClass_SaveOrder();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SaveOrder SaveOrderParams { get { return s_params_SaveOrder; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SaveOrder
+        {
+            public readonly string model = "model";
+            public readonly string objId = "objId";
+            public readonly string propName = "propName";
+        }
+        static readonly ActionParamsClass_SaveFileData s_params_SaveFileData = new ActionParamsClass_SaveFileData();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SaveFileData SaveFileDataParams { get { return s_params_SaveFileData; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SaveFileData
+        {
+            public readonly string model = "model";
+        }
         static readonly ActionParamsClass_Index s_params_Index = new ActionParamsClass_Index();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
@@ -243,53 +290,6 @@ namespace CMS.Areas.Admin.Controllers
             public readonly string page = "page";
             public readonly string collection = "collection";
         }
-        static readonly ActionParamsClass_UploadFile s_params_UploadFile = new ActionParamsClass_UploadFile();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_UploadFile UploadFileParams { get { return s_params_UploadFile; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_UploadFile
-        {
-            public readonly string upload = "upload";
-            public readonly string id = "id";
-            public readonly string propName = "propName";
-        }
-        static readonly ActionParamsClass_DeleteFile s_params_DeleteFile = new ActionParamsClass_DeleteFile();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_DeleteFile DeleteFileParams { get { return s_params_DeleteFile; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_DeleteFile
-        {
-            public readonly string model = "model";
-        }
-        static readonly ActionParamsClass_SaveOrder s_params_SaveOrder = new ActionParamsClass_SaveOrder();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_SaveOrder SaveOrderParams { get { return s_params_SaveOrder; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_SaveOrder
-        {
-            public readonly string model = "model";
-            public readonly string objId = "objId";
-            public readonly string propName = "propName";
-        }
-        static readonly ActionParamsClass_SaveFileData s_params_SaveFileData = new ActionParamsClass_SaveFileData();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_SaveFileData SaveFileDataParams { get { return s_params_SaveFileData; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_SaveFileData
-        {
-            public readonly string model = "model";
-        }
-        static readonly ActionParamsClass_UploadFileCollectionItem s_params_UploadFileCollectionItem = new ActionParamsClass_UploadFileCollectionItem();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_UploadFileCollectionItem UploadFileCollectionItemParams { get { return s_params_UploadFileCollectionItem; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_UploadFileCollectionItem
-        {
-            public readonly string upload = "upload";
-            public readonly string id = "id";
-            public readonly string propName = "propName";
-            public readonly string parentId = "parentId";
-        }
         static readonly ActionParamsClass_SetLanguage s_params_SetLanguage = new ActionParamsClass_SetLanguage();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_SetLanguage SetLanguageParams { get { return s_params_SetLanguage; } }
@@ -316,6 +316,73 @@ namespace CMS.Areas.Admin.Controllers
     public partial class T4MVC_LocationsController : CMS.Areas.Admin.Controllers.LocationsController
     {
         public T4MVC_LocationsController() : base(Dummy.Instance) { }
+
+        [NonAction]
+        partial void UploadFileCollectionItemOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, CMS.ViewModels.FineUpload upload, int id, string propName, int parentId);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UploadFileCollectionItem(CMS.ViewModels.FineUpload upload, int id, string propName, int parentId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadFileCollectionItem);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "upload", upload);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "propName", propName);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "parentId", parentId);
+            UploadFileCollectionItemOverride(callInfo, upload, id, propName, parentId);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UploadFileOverride(T4MVC_CMS_ViewModels_FineUploaderResult callInfo, CMS.ViewModels.FineUpload upload, int id, string propName);
+
+        [NonAction]
+        public override CMS.ViewModels.FineUploaderResult UploadFile(CMS.ViewModels.FineUpload upload, int id, string propName)
+        {
+            var callInfo = new T4MVC_CMS_ViewModels_FineUploaderResult(Area, Name, ActionNames.UploadFile);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "upload", upload);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "propName", propName);
+            UploadFileOverride(callInfo, upload, id, propName);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DeleteFileOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, DB.Entities.Mocks.CustomFileEntity model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult DeleteFile(DB.Entities.Mocks.CustomFileEntity model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteFile);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            DeleteFileOverride(callInfo, model);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SaveOrderOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string model, int objId, string propName);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SaveOrder(string model, int objId, string propName)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveOrder);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "objId", objId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "propName", propName);
+            SaveOrderOverride(callInfo, model, objId, propName);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void SaveFileDataOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, DB.Entities.Mocks.CustomFileEntity model);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult SaveFileData(DB.Entities.Mocks.CustomFileEntity model)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveFileData);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            SaveFileDataOverride(callInfo, model);
+            return callInfo;
+        }
 
         [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? page, string order, string desc);
@@ -440,73 +507,6 @@ namespace CMS.Areas.Admin.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "page", page);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "collection", collection);
             SortListOverride(callInfo, page, collection);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void UploadFileOverride(T4MVC_CMS_ViewModels_FineUploaderResult callInfo, CMS.ViewModels.FineUpload upload, int id, string propName);
-
-        [NonAction]
-        public override CMS.ViewModels.FineUploaderResult UploadFile(CMS.ViewModels.FineUpload upload, int id, string propName)
-        {
-            var callInfo = new T4MVC_CMS_ViewModels_FineUploaderResult(Area, Name, ActionNames.UploadFile);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "upload", upload);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "propName", propName);
-            UploadFileOverride(callInfo, upload, id, propName);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void DeleteFileOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, DB.Entities.Mocks.CustomFileEntity model);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult DeleteFile(DB.Entities.Mocks.CustomFileEntity model)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteFile);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            DeleteFileOverride(callInfo, model);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void SaveOrderOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string model, int objId, string propName);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult SaveOrder(string model, int objId, string propName)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveOrder);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "objId", objId);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "propName", propName);
-            SaveOrderOverride(callInfo, model, objId, propName);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void SaveFileDataOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, DB.Entities.Mocks.CustomFileEntity model);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult SaveFileData(DB.Entities.Mocks.CustomFileEntity model)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SaveFileData);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            SaveFileDataOverride(callInfo, model);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void UploadFileCollectionItemOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, CMS.ViewModels.FineUpload upload, int id, string propName, int parentId);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult UploadFileCollectionItem(CMS.ViewModels.FineUpload upload, int id, string propName, int parentId)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UploadFileCollectionItem);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "upload", upload);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "propName", propName);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "parentId", parentId);
-            UploadFileCollectionItemOverride(callInfo, upload, id, propName, parentId);
             return callInfo;
         }
 

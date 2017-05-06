@@ -27,6 +27,7 @@
 			<string name="FirstName" title="Имя" />
 			<string name="LastName" title="Фамилия" />
       <string name="Title" title="Должность" />
+      <string name="Alias" title="Алиас" />
 
       <select name="Language" title="Язык">
         <option value="ru">ru</option>

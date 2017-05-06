@@ -42,7 +42,7 @@ namespace KonigLabs.Core
         public static string ChangeLang(this UrlHelper helper, string lang)
         {
             var uri = helper.RequestContext.HttpContext.Request.Url;
-            var url = uri == null ? "/" : uri.AbsolutePath;
+            var url = uri == null ? "/" : uri.PathAndQuery;
             return ChangeLang(url, lang);
         }
 
@@ -67,6 +67,7 @@ namespace KonigLabs.Core
             var urlHelper = new UrlHelper(new RequestContext(new HttpContextWrapper(HttpContext.Current), route));
             var result = urlHelper.RouteUrl(name, route.Values)
                 ?? ChangeLangRecursively(route.Values, lang, urlHelper);
+            result=HttpUtility.UrlDecode(result);
             return result;
         }
 

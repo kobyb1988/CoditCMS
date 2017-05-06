@@ -145,6 +145,8 @@ namespace KonigLabs.Models
         public string Url { get; set; }
         public string Language { get; set; }
 
+        public string Alias { get; set; }
+
         public ViewProject(Project project)
         {
             Id = project.Id;
@@ -155,6 +157,7 @@ namespace KonigLabs.Models
             Name = project.Name;
             Description = project.Description;
             Url = project.Url;
+            Alias = project.Alias;
             foreach (var cat in project.ProjectCategory.ToArray())
             {
                 Categories.Add(new ViewCategory(cat));
@@ -215,6 +218,7 @@ namespace KonigLabs.Models
         public string Language { get; set; }
 
         public string AnimateAvatar { get; set; }
+        public string Alias { get; set; }
 
         public ViewMember(CrewMember member)
         {
@@ -225,6 +229,7 @@ namespace KonigLabs.Models
             Bio = member.Bio;
             Id = member.Id;
             AnimateAvatar = member.GetAnimateAvatar();
+            Alias = member.Alias;
         }
     }
 

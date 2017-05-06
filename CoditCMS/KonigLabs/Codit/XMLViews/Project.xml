@@ -25,6 +25,8 @@
 		<tab name="General">
 			<string name="Name" title="Название" />
 				<string name="Url" title="Ссылка" />
+      <string name="Alias" title="Алиас" />
+
       <select name="Language" title="Язык">
         <option value="ru">ru</option>
         <option value="en">en</option>

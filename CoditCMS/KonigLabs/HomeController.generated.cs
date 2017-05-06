@@ -158,7 +158,7 @@ namespace KonigLabs.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Member
         {
-            public readonly string id = "id";
+            public readonly string alias = "alias";
         }
         static readonly ActionParamsClass_Project s_params_Project = new ActionParamsClass_Project();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -166,7 +166,7 @@ namespace KonigLabs.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Project
         {
-            public readonly string id = "id";
+            public readonly string alias = "alias";
         }
         static readonly ActionParamsClass_Article s_params_Article = new ActionParamsClass_Article();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -246,6 +246,8 @@ namespace KonigLabs.Controllers
                 public readonly string Index_en_Mobile = "Index_en.Mobile";
                 public readonly string Index_ru = "Index_ru";
                 public readonly string Index_ru_Mobile = "Index_ru.Mobile";
+                public readonly string MemberBio = "MemberBio";
+                public readonly string ProjectDescr = "ProjectDescr";
             }
             public readonly string Blog_en = "~/Views/Home/Blog_en.cshtml";
             public readonly string Blog_en_Mobile = "~/Views/Home/Blog_en.Mobile.cshtml";
@@ -259,6 +261,8 @@ namespace KonigLabs.Controllers
             public readonly string Index_en_Mobile = "~/Views/Home/Index_en.Mobile.cshtml";
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
             public readonly string Index_ru_Mobile = "~/Views/Home/Index_ru.Mobile.cshtml";
+            public readonly string MemberBio = "~/Views/Home/MemberBio.cshtml";
+            public readonly string ProjectDescr = "~/Views/Home/ProjectDescr.cshtml";
         }
     }
 
@@ -279,26 +283,26 @@ namespace KonigLabs.Controllers
         }
 
         [NonAction]
-        partial void MemberOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void MemberOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string alias);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Member(int id)
+        public override System.Web.Mvc.ActionResult Member(string alias)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Member);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            MemberOverride(callInfo, id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "alias", alias);
+            MemberOverride(callInfo, alias);
             return callInfo;
         }
 
         [NonAction]
-        partial void ProjectOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
+        partial void ProjectOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string alias);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Project(int id)
+        public override System.Web.Mvc.ActionResult Project(string alias)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Project);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
-            ProjectOverride(callInfo, id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "alias", alias);
+            ProjectOverride(callInfo, alias);
             return callInfo;
         }
 

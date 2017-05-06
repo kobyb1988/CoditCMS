@@ -23,35 +23,37 @@ namespace KonigLabs.Controllers
         }
 
         [HttpGet]
-        public virtual ActionResult Member(int id)
+        public virtual ActionResult Member(string alias)
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var member = db.CrewMembers.FirstOrDefault(m => m.Id == id);
+                string lang = _lang.GetLanguageName();
+                var member = db.CrewMembers.FirstOrDefault(m => m.Alias.ToLower() == alias.ToLower() && m.Language.ToLower() == lang.ToLower());
                 if (member == null)
                 {
                     Response.StatusCode = 404;
                     return View("NotFound");
                 }
                 var vm = new ViewMember(member);
-                vm.Language = _lang.GetLanguageName();
+                vm.Language = lang;
                 return View("~/Views/Home/MemberBio.cshtml", vm);
             }
         }
 
         [HttpGet]
-        public virtual ActionResult Project(int id)
+        public virtual ActionResult Project(string alias)
         {
             using (var db = ApplicationDbContext.Create())
             {
-                var project = db.Projects.FirstOrDefault(p => p.Id == id);
+                string lang = _lang.GetLanguageName();
+                var project = db.Projects.FirstOrDefault(p => p.Alias.ToLower() == alias.ToLower() && p.Language.ToLower() == lang.ToLower());
                 if (project == null)
                 {
                     Response.StatusCode = 404;
                     return View("NotFound");
                 }
                 var vm = new ViewProject(project);
-                vm.Language = _lang.GetLanguageName();
+                vm.Language = lang;
                 return View("~/Views/Home/ProjectDescr.cshtml", vm);
             }
         }
@@ -101,7 +103,7 @@ namespace KonigLabs.Controllers
                     db.SaveChanges();
                 }
                 contact.Status = "true";
-                Response.StatusCode = 201; 
+                Response.StatusCode = 201;
 
                 var sb = new StringBuilder();
                 sb.AppendFormat("<p>{0}</p>", contact.Name);
@@ -115,7 +117,7 @@ namespace KonigLabs.Controllers
             {
                 contact.Status = "flase";
             }
-            return LocalizablePartialView("~/Views/Home/Contact_{0}.cshtml",contact);
+            return LocalizablePartialView("~/Views/Home/Contact_{0}.cshtml", contact);
         }
 
         public virtual ActionResult BlogPost(int id)
@@ -261,8 +263,6 @@ namespace KonigLabs.Controllers
             Response.StatusCode = 404;
             return View("NotFound");
         }
-
-
     }
 
 }

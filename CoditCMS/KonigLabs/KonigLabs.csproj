@@ -341,6 +341,14 @@
     <Compile Include="Migrations\201704181107041_AddSmallPhotoToFile.Designer.cs">
       <DependentUpon>201704181107041_AddSmallPhotoToFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705061106244_CrewMemberAlias.cs" />
+    <Compile Include="Migrations\201705061106244_CrewMemberAlias.Designer.cs">
+      <DependentUpon>201705061106244_CrewMemberAlias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705061132194_AddAliasToProject.cs" />
+    <Compile Include="Migrations\201705061132194_AddAliasToProject.Designer.cs">
+      <DependentUpon>201705061132194_AddAliasToProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Configurations\ArticleCategoryConfiguration.cs" />
@@ -612,6 +620,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704181107041_AddSmallPhotoToFile.resx">
       <DependentUpon>201704181107041_AddSmallPhotoToFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061106244_CrewMemberAlias.resx">
+      <DependentUpon>201705061106244_CrewMemberAlias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705061132194_AddAliasToProject.resx">
+      <DependentUpon>201705061132194_AddAliasToProject.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

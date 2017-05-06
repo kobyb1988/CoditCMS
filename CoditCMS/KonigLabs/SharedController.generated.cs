@@ -72,10 +72,8 @@ namespace T4MVC
                 public readonly string Comment = "Comment";
                 public readonly string Member = "Member";
                 public readonly string Member_Mobile = "Member.Mobile";
-                public readonly string MemberBio = "MemberBio";
                 public readonly string MoreProjects = "MoreProjects";
                 public readonly string Project = "Project";
-                public readonly string ProjectDescr = "ProjectDescr";
             }
             static readonly _EditorTemplatesClass s_EditorTemplates = new _EditorTemplatesClass();
             public _EditorTemplatesClass EditorTemplates { get { return s_EditorTemplates; } }
