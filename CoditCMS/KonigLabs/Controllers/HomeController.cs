@@ -257,12 +257,10 @@ namespace KonigLabs.Controllers
             }
         }
 
-
         public virtual ActionResult PageNotFound()
         {
             Response.StatusCode = 404;
             return View("NotFound");
         }
     }
-
 }

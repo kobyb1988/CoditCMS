@@ -247,6 +247,7 @@ namespace KonigLabs.Controllers
                 public readonly string Index_ru = "Index_ru";
                 public readonly string Index_ru_Mobile = "Index_ru.Mobile";
                 public readonly string MemberBio = "MemberBio";
+                public readonly string PrivatePolicy = "PrivatePolicy";
                 public readonly string ProjectDescr = "ProjectDescr";
             }
             public readonly string Blog_en = "~/Views/Home/Blog_en.cshtml";
@@ -262,6 +263,7 @@ namespace KonigLabs.Controllers
             public readonly string Index_ru = "~/Views/Home/Index_ru.cshtml";
             public readonly string Index_ru_Mobile = "~/Views/Home/Index_ru.Mobile.cshtml";
             public readonly string MemberBio = "~/Views/Home/MemberBio.cshtml";
+            public readonly string PrivatePolicy = "~/Views/Home/PrivatePolicy.cshtml";
             public readonly string ProjectDescr = "~/Views/Home/ProjectDescr.cshtml";
         }
     }

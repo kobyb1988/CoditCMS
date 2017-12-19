@@ -16,6 +16,12 @@
     @Html.TextAreaFor(m => m.Text, new { placeholder = "Ваше сообщение", @class = "col-xs-12 col-md-12", autocomplete = "off" })<br />    
     <div class="clear"></div>
     <input type="submit" class="btn marg-right10" value="отправить">
+    <p>
+        Нажимая на кнопку, вы даете 
+        <a href="@Url.Action(MVC.Policy.PersonalDataAgreement())" style="text-decoration:underline">Согласие на обработку персональных данных</a> 
+        и соглашаетесь c 
+        <a href="@Url.Action(MVC.Policy.PrivatePolicyAgreement())" style="text-decoration:underline">Политикой конфиденциальности</a>
+    </p>
     <div class="clear"></div>
 }
 

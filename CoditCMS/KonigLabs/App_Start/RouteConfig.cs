@@ -4,6 +4,7 @@ using System.Web.Routing;
 using CMS.Mvc;
 using KonigLabs.Core;
 using KonigLabs.Core.Constraints;
+using KonigLabs.Controllers;
 
 namespace KonigLabs
 {
@@ -68,7 +69,8 @@ namespace KonigLabs
             routes.MapRouteLang("projects", "Home/project", MVC.Home.Project(), "");
             routes.MapRouteLang("project", "Home/project/{alias}", MVC.Home.Project(), "");
             routes.MapRouteLang("contact", "Home/contact", MVC.Home.Contact().Result, "");
-
+            routes.MapRouteLang("PrivatePolicy", "Policy/{action}", MVC.Policy.PrivatePolicyAgreement(), "");
+            routes.MapRouteLang("PersonalData", "Policy/{action}", MVC.Policy.PersonalDataAgreement(), "");
 
             var route = routes.MapRoute("static-pages-lang", "{lang}/{*location}", MVC.Home.Index(),
                 new { localizationRedirectRouteName = "homepage" },

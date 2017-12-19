@@ -31,6 +31,7 @@ public static partial class MVC
     public static KonigLabs.Controllers.BaseController Base = new KonigLabs.Controllers.T4MVC_BaseController();
     public static KonigLabs.Controllers.HomeController Home = new KonigLabs.Controllers.T4MVC_HomeController();
     public static KonigLabs.Controllers.ManageController Manage = new KonigLabs.Controllers.T4MVC_ManageController();
+    public static KonigLabs.Controllers.PolicyController Policy = new KonigLabs.Controllers.T4MVC_PolicyController();
     public static T4MVC.ArticleController Article = new T4MVC.ArticleController();
     public static T4MVC.CategoryController Category = new T4MVC.CategoryController();
     public static T4MVC.ClientController Client = new T4MVC.ClientController();

@@ -228,6 +228,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Codit\Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\PolicyController.cs" />
     <Compile Include="Core\Constraints\LanguageConstraints.cs" />
     <Compile Include="Core\Extensions.cs" />
     <Compile Include="Core\KonigLabsRoute.cs" />
@@ -365,6 +366,9 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SiteModels.cs" />
     <Compile Include="Models\ViewModels.cs" />
+    <Compile Include="PolicyController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProjectController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -714,6 +718,11 @@
     <Content Include="Views\Home\MemberBio.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Member.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Member.Mobile.cshtml" />
+    <Content Include="Views\Home\PrivatePolicy.cshtml" />
+    <Content Include="Views\Policy\PrivatePolicyAgreement_ru.cshtml" />
+    <Content Include="Views\Policy\PersonalDataAgreement_ru.cshtml" />
+    <Content Include="Views\Policy\PersonalDataAgreement_en.cshtml" />
+    <None Include="Views\Policy\PrivatePolicyAgreement_en.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Abstract\" />
