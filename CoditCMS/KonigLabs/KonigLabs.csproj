@@ -722,7 +722,11 @@
     <Content Include="Views\Policy\PrivatePolicyAgreement_ru.cshtml" />
     <Content Include="Views\Policy\PersonalDataAgreement_ru.cshtml" />
     <Content Include="Views\Policy\PersonalDataAgreement_en.cshtml" />
+    <Content Include="Views\Policy\PersonalDataAgreement_en.mobile.cshtml" />
+    <Content Include="Views\Policy\PrivatePolicyAgreement_en.mobile.cshtml" />
+    <Content Include="Views\Policy\PersonalDataAgreement_ru.mobile.cshtml" />
     <None Include="Views\Policy\PrivatePolicyAgreement_en.cshtml" />
+    <Content Include="Views\Policy\PrivatePolicyAgreement_ru.mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Abstract\" />
@@ -841,7 +845,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1073</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
